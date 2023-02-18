@@ -1,15 +1,15 @@
 # EKAAShop
 Proyecto final del curso UP de Codellege - eCommerce EKAAShop
 
-_¡Hola! Este es nuestro proyecto final de eCommerce, aún estamos en su desarrollo.
+_¡Hola! Este es nuestro proyecto final de eCommerce, aún estamos en su desarrollo._
 
-Nuestro proyecto de página de venta de termos y hieleras tiene como objetivo ofrecer una experiencia de compra en línea rápida, intuitiva y segura. Nuestra página web está pensada y diseñada para que puedas encontrar fácilmente la amplia variedad de productos que se ofrecen, con descripciones detalladas e imágenes claras del producto para que puedas elegir el que mejor se adapte a tus necesidades o el que estás buscando.
+_Nuestro proyecto de página de venta de termos y hieleras tiene como objetivo ofrecer una experiencia de compra en línea rápida, intuitiva y segura. Nuestra página web está pensada y diseñada para que puedas encontrar fácilmente la amplia variedad de productos que se ofrecen, con descripciones detalladas e imágenes claras del producto para que puedas elegir el que mejor se adapte a tus necesidades o el que estás buscando._
 
-Además, contamos con un sistema de búsqueda inteligente que te ayudará a encontrar el producto que estás buscando de forma rápida y eficiente. También está pensada en ofrecerte múltiples opciones de pago seguro y envíos gratis en una compra mayor a la que establecida.
+_Además, contamos con un sistema de búsqueda inteligente que te ayudará a encontrar el producto que estás buscando de forma rápida y eficiente. También está pensada en ofrecerte múltiples opciones de pago seguro y envíos gratis en una compra mayor a la que establecida._
 
-Nuestra página web también cuenta con una sección de reseñas de clientes para que puedas conocer las opiniones de otros compradores antes de realizar tu compra.
+_Nuestra página web también cuenta con una sección de reseñas de clientes para que puedas conocer las opiniones de otros compradores antes de realizar tu compra._
 
-En resumen, nuestro proyecto de página de venta de termos y hieleras ofrece una experiencia de compra en línea fácil y segura, con una amplia selección de productos de alta calidad, envío rápido y opciones de pago convenientes._
+_En resumen, nuestro proyecto de página de venta de termos y hieleras ofrece una experiencia de compra en línea fácil y segura, con una amplia selección de productos de alta calidad, envío rápido y opciones de pago convenientes._
 
 
 ## ¿Quieres ver un pequeño vistazo de nuestro prototipo? Este es nuestro diseño en figma. 💅
@@ -42,7 +42,7 @@ _¡Gracias por considerar contribuir a nuestro proyecto! Aquí te presentamos al
 * Haz un fork de este repositorio en tu cuenta de GitHub.
 * Clona el fork en tu máquina local.
 * Crea una **branch** para tus cambios o contribución siguiendo esta estructura:
-> **<token>/<short-descriptive-name>.**
+> `<token>/<short-descriptive-name>`.
 
 > Los **tokens** que podemos usar son:
 > * **chore**: mejoras en temas de administración/mantenimiento del proyecto (i.e. actualización de dependencias).
@@ -62,7 +62,7 @@ _¡Gracias por considerar contribuir a nuestro proyecto! Aquí te presentamos al
 > * `git checkout -b refactor/settings-components`
 > * `git checkout -b test/cohort`
 * Haz tus cambios y haz **commit** de ellos siguiendo esta estructura: 
-> **<type>(<scope>): <subject>
+> `<type>(<scope>): <subject>`
 
 > El **type** son tokens cortos similares a los de las ramas, pueden ser:
 > * **Fix: Utiliza este prefijo para correcciones de errores o bugs. Por ejemplo: "fix(payment): fix error when calculating taxes in payments".
@@ -92,7 +92,7 @@ _¡Gracias por considerar contribuir a nuestro proyecto! Aquí te presentamos al
 * Mantén tus Pull Requests pequeños y enfocados en una sola tarea o funcionalidad.
 * Se respetuoso y colaborativo en tus comentarios y discusiones dentro del Pull Request.
 
-_¡Gracias por tu interés y tus contribuciones! 🤝
+_¡Gracias por tu interés y tus contribuciones!_ 🤝
 
 
 ## Autores ✒️
