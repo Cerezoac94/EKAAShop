@@ -98,9 +98,9 @@ _¡Gracias por tu interés y tus contribuciones!_ 🤝
 ## Autores ✒️
 
 * **Jorge Cerezo Guzmán** - [Cerezoac94](https://github.com/Cerezoac94)
-* **Kevin Conde Jiménez** - [CondeJimenez](https://github.com/CondeJimenez)
-* **Ana Sánchez** - [AnaCova](https://github.com/AnaCova)
-* **Eugenia Ramírez Salinas** - [EugeniaRS](https://github.com/EugeniaRS)
+* <!-- Ingresa aquí tú información con el siguiente formato: '**nombre y apellidos** - [userGitHub](urlPerfilGithub)' -->
+* <!-- Ingresa aquí tú información con el siguiente formato: '**nombre y apellidos** - [userGitHub](urlPerfilGithub)' -->
+* <!-- Ingresa aquí tú información con el siguiente formato: '**nombre y apellidos** - [userGitHub](urlPerfilGithub)' -->
 
 
 ## Gracias especiales 🎁
