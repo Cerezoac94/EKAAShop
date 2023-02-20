@@ -65,13 +65,13 @@ _¡Gracias por considerar contribuir a nuestro proyecto! Aquí te presentamos al
 > `<type>(<scope>): <subject>`
 
 > El **type** son tokens cortos similares a los de las ramas, pueden ser:
-> * **Fix: Utiliza este prefijo para correcciones de errores o bugs. Por ejemplo: "fix(payment): fix error when calculating taxes in payments".
-> * **Add: Utiliza este prefijo para agregar nuevas funcionalidades o características. Por ejemplo: "Add(auth): Implement two-factor authentication".
-> * **Refactor: Utiliza este prefijo para refactorizar el código existente sin cambiar su comportamiento. Por ejemplo: "refactor(cart): simplify logic for calculating cart total".
-> * **Update: Utiliza este prefijo para actualizar o mejorar características existentes. Por ejemplo: "Update(search): Improve search results relevance".
-> * **Docs: Utiliza este prefijo para cambios en la documentación del proyecto. Por ejemplo: "docs(readme): update installation instructions in README".
-> * **Style: Utiliza este prefijo para cambios en el formato o estilo del código. Por ejemplo: "style(css): fix indentation in stylesheet".
-> * **Test: Utiliza este prefijo para cambios en las pruebas unitarias o de integración. Por ejemplo: "test(product): add integration tests for product module".
+> * **fix: Utiliza este prefijo para correcciones de errores o bugs. Por ejemplo: "fix(payment): Fix error when calculating taxes in payments".
+> * **add: Utiliza este prefijo para agregar nuevas funcionalidades o características. Por ejemplo: "add(auth): Implement two-factor authentication".
+> * **refactor: Utiliza este prefijo para refactorizar el código existente sin cambiar su comportamiento. Por ejemplo: "refactor(cart): Simplify logic for calculating cart total".
+> * **update: Utiliza este prefijo para actualizar o mejorar características existentes. Por ejemplo: "update(search): Improve search results relevance".
+> * **docs: Utiliza este prefijo para cambios en la documentación del proyecto. Por ejemplo: "docs(readme): Update installation instructions in README".
+> * **style: Utiliza este prefijo para cambios en el formato o estilo del código. Por ejemplo: "style(css): Fix indentation in stylesheet".
+> * **test: Utiliza este prefijo para cambios en las pruebas unitarias o de integración. Por ejemplo: "test(product): Add integration tests for product module".
 
 > El **scope** representa el alcance del cambio que se ha realizado. Debe ser una descripción breve y específica del componente del sistema o módulo que ha sido modificado.
 
@@ -98,7 +98,7 @@ _¡Gracias por tu interés y tus contribuciones!_ 🤝
 ## Autores ✒️
 
 * **Jorge Cerezo Guzmán** - [Cerezoac94](https://github.com/Cerezoac94)
-* <!-- Ingresa aquí tú información con el siguiente formato: '**nombre y apellidos** - [userGitHub](urlPerfilGithub)' -->
+* **Kevin Jhovani Conde Jiménez** - [CondeJimenez](https://github.com/CondeJimenez)
 * <!-- Ingresa aquí tú información con el siguiente formato: '**nombre y apellidos** - [userGitHub](urlPerfilGithub)' -->
 * <!-- Ingresa aquí tú información con el siguiente formato: '**nombre y apellidos** - [userGitHub](urlPerfilGithub)' -->
 
