@@ -100,7 +100,7 @@ _¡Gracias por tu interés y tus contribuciones!_ 🤝
 * **Jorge Cerezo Guzmán** - [Cerezoac94](https://github.com/Cerezoac94)
 * **Kevin Jhovani Conde Jiménez** - [CondeJimenez](https://github.com/CondeJimenez)
 * <!-- Ingresa aquí tú información con el siguiente formato: '**nombre y apellidos** - [userGitHub](urlPerfilGithub)' -->
-* <!-- Ingresa aquí tú información con el siguiente formato: '**nombre y apellidos** - [userGitHub](urlPerfilGithub)' -->
+* **Eugenia Ramirez Salinas** - [ EugeniaRS ](https://github.com/EugeniaRS)
 
 
 ## Gracias especiales 🎁
