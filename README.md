@@ -99,8 +99,9 @@ _¡Gracias por tu interés y tus contribuciones!_ 🤝
 
 * **Jorge Cerezo Guzmán** - [Cerezoac94](https://github.com/Cerezoac94)
 * **Kevin Jhovani Conde Jiménez** - [CondeJimenez](https://github.com/CondeJimenez)
-* **Ana Cecilia Sánchez Covarrubias** - [AnaCova](https://github.com/AnaCova)
 * **Eugenia Ramirez Salinas** - [ EugeniaRS ](https://github.com/EugeniaRS)
+* **Ana Cecilia Sánchez Covarrubias** - [AnaCova](https://github.com/AnaCova)
+
 
 
 ## Gracias especiales 🎁
