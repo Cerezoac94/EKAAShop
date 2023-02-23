@@ -1,8 +1,9 @@
-import {Link} from "react-router-dom"; 
+import { Link } from "react-router-dom"; 
 const Footer = () => {
   return (
-    
+    /* TRANFORMAR A REACT SASS */
     <footer className="footer">
+
       <section className="footer_contact">
         <article className="footer_logo-box">
           <img src="#" alt="" />
