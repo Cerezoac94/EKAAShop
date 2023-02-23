@@ -12,6 +12,8 @@ import codeDiscountRoutes from "./codeDiscount/codeDiscount.routes.js";
 import orderRoutes from "./order/order.routes.js";
 import typesDiscountRoutes from "./typeDiscount/typeDiscount.routes.js";
 import cartRoutes from "./cart/cart.routes.js";
+import reviewRoutes from "./review/review.routes.js";
+import cardRoutes from "./card/card.routes.js";
 
 const routes = Router();
 
@@ -29,5 +31,7 @@ routes.use("/type_discount", typesDiscountRoutes);
 routes.use("/code_discount", codeDiscountRoutes);
 routes.use("/order", orderRoutes);
 routes.use('/cart', cartRoutes);
+routes.use('/review', reviewRoutes);
+routes.use('/card', cardRoutes);
 
 export default routes;

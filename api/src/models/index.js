@@ -1,5 +1,5 @@
 
-import Product from "./product/Product.models.js";
+import Product from "./product/Product.model.js";
 import User from "./user/User.model.js"
 import WishProduct from "./wishProduct/WishProduct.model.js";
 import Wish from "./wish/Wish.model.js";
@@ -12,6 +12,8 @@ import CodeDiscount from "./codeDiscount/CodeDiscount.model.js";
 import Order from "./order/Order.model.js";
 import TypeDiscount from "./typeDiscount/TypeDiscount.model.js";
 import Cart from "./cart/Cart.model.js";
+import Review from "./review/Review.model.js";
+import Card from "./card/Card.model.js";
 
 export { 
   Product,
@@ -19,13 +21,14 @@ export {
   WishProduct,
   Wish,
   State,
-  Role,
-  Product, 
+  Role, 
   Category, 
   Payment, 
   CartProduct, 
   CodeDiscount, 
   Order,
   TypeDiscount,
-  Cart
+  Cart,
+  Review,
+  Card
 };
