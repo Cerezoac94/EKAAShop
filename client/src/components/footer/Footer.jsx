@@ -7,7 +7,7 @@ const Footer = () => {
       <section className="footer_contact">
         <article className="footer_logo-box">
           <img src="#" alt="" />
-          <h1>hola</h1>
+          <h1>hola este es el footer</h1>
         </article>
         <article className="footer_social_media">
           <Link to="/"> 
