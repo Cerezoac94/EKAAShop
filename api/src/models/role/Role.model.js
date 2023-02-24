@@ -6,7 +6,7 @@ class Role extends Model {}
 Role.init({
   name: {
     type: Dt.STRING(15),
-    allowNull: null,
+    allowNull: false,
   }
 },{
   sequelize: conn,
