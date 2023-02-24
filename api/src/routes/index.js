@@ -14,6 +14,7 @@ import typesDiscountRoutes from "./typeDiscount/typeDiscount.routes.js";
 import cartRoutes from "./cart/cart.routes.js";
 import reviewRoutes from "./review/review.routes.js";
 import cardRoutes from "./card/card.routes.js";
+import orderDetailRoutes from "./orderDetail/orderDetail.routes.js";
 
 const routes = Router();
 
@@ -33,5 +34,6 @@ routes.use("/order", orderRoutes);
 routes.use('/cart', cartRoutes);
 routes.use('/review', reviewRoutes);
 routes.use('/card', cardRoutes);
+routes.use("/order_detail", orderDetailRoutes)
 
 export default routes;
