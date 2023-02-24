@@ -2,18 +2,11 @@
 
 //abstracts
 @import './base/variables';
-
 //base
 @import './base/base';
 @import './base/reset';
-
 //React-bootstrap
 @import "../../node_modules/bootstrap/scss/bootstrap";
-
-
-
-
 // Components
 @import './components/header';
-
-//Screens
+@import './components/footer' //Screens

@@ -1,4 +1,9 @@
-html,body{
+html {
     font-family: var(--font-poppins);
-    
+}
+
+body {
+    font-family: var(--font-poppins);
+    display: flex;
+    flex-direction: column;
 }
