@@ -1,12 +1,17 @@
 import { Link } from "react-router-dom"; 
+import logo from "../../assets/LOGO.svg";
 const Footer = () => {
   return (
     /* TRANFORMAR A REACT SASS */
     <footer className="footer">
-      <section className="footer_contact">
-        <article className="footer_logo-box">
-          <img src="#" alt="" />
-          <h1>hola este es el footer</h1>
+      <section className="footer__contact">
+        <article className="footer__logo-box">
+        <img
+              src={logo}
+              alt="logo_home"
+              className="logo"
+            />
+         
         </article>
         <article className="footer_social_media">
           <Link to="/"> 
