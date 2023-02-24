@@ -2,7 +2,7 @@ import { Outlet } from "react-router-dom"
 
 const Main = () => {
   return (
-    <main>
+    <main className="vh-100">
       <Outlet/>
     </main>
   )

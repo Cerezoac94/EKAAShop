@@ -3,4 +3,8 @@ footer {
     margin-top: auto;
     height: 200px;
     display: flex;
+    &select {
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
 }
