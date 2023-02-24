@@ -7,10 +7,14 @@ OrderDetail.init({
     quantity: {
         type: Dt.SMALLINT,
         allowNull: false
+    },
+    unitPrice: {
+        type: Dt.DECIMAL(10,2),
+        allowNull: false
     }
 }, {
     sequelize: conn,
-    modelName: 'OrderDetail',
+    modelName: 'Order_Detail',
     timestamps: false
 })
 
