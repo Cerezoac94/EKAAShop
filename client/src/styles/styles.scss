@@ -1,18 +1,11 @@
 // UI Settings
 //abstracts
 @use './abstracts/variables';
-
 //base
 @use './base/base';
 @use './base/reset';
-
 //React-bootstrap
 @import "../../node_modules/bootstrap/scss/bootstrap";
-
-
-
-
 // Components
 @import './components/header';
-
-//Screens
+@import './components/footer' //Screens
