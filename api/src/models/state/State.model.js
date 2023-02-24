@@ -6,7 +6,7 @@ class State extends Model { }
 State.init({
   name: {
     type: Dt.STRING(25),
-    allowNull: null,
+    allowNull: false,
   }
 }, {
   sequelize: conn,

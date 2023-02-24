@@ -3,9 +3,18 @@ import { Role } from "../../models/index.js";
 class RoleController {
   static async createRole(req, res){
     try {
-      res.send("<h1>Create role</h1>")
+      const results = await Role.create(req.body)
+      if (!results) throw "The category is not created"
+      res.status(200).send({
+        success: true,
+        message: "Role created succesfully",
+        results
+      })
     } catch (err) {
-      
+      res.status(400).send({
+        success: false,
+        message: err
+      })
     }
   }
 
