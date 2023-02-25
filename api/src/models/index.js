@@ -14,22 +14,25 @@ import Cart from "./cart/Cart.model.js";
 import Review from "./review/Review.model.js";
 import Card from "./card/Card.model.js";
 import OrderDetail from './orderDetail/OrderDetail.model.js'
+import Discount from "./discount/Discount.model.js";
 
-export {
-    Product,
-    User,
-    WishProduct,
-    Wish,
-    State,
-    Role,
-    Category,
-    Payment,
-    CartProduct,
-    CodeDiscount,
-    Order,
-    TypeDiscount,
-    Cart,
-    Review,
-    Card,
-    OrderDetail
+export { 
+  Product,
+  User,
+  WishProduct,
+  Wish,
+  State,
+  Role, 
+  Category, 
+  Payment, 
+  CartProduct, 
+  CodeDiscount, 
+  Order,
+  TypeDiscount,
+  Cart,
+  Review,
+  Card,
+  Discount,
+  OrderDetail
 };
+

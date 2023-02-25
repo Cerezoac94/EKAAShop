@@ -8,7 +8,7 @@ header {
 
 //navbar_styles
 
-.navbar.navbar-expand-xxl.navbar-light {
+.navbar.navbar-expand-md.navbar-light {
     background-color: $secondary_background;
     height: 10vh;
     margin: 0.625rem 0;
@@ -70,7 +70,10 @@ img.logo{
 
 }
 
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 768px) {
+    .navbar-expand-md{
+        height: 18vh;
+    }
     .md.hydrated{
         display: none;
     }
@@ -78,6 +81,9 @@ img.logo{
         display: none;
     }
 
+    .justify-content-end{
+        justify-content: space-evenly;
+    }
   }
 
 
