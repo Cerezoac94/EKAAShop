@@ -20,7 +20,7 @@ User.init(
       allowNull: false,
     },
     password: {
-      type: Dt.STRING(100),
+      type: Dt.TEXT,
       allowNull: false,
     },
     birthday: {

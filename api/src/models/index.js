@@ -1,4 +1,3 @@
-
 import Product from "./product/Product.model.js";
 import User from "./user/User.model.js"
 import WishProduct from "./wishProduct/WishProduct.model.js";
@@ -14,6 +13,7 @@ import TypeDiscount from "./typeDiscount/TypeDiscount.model.js";
 import Cart from "./cart/Cart.model.js";
 import Review from "./review/Review.model.js";
 import Card from "./card/Card.model.js";
+import OrderDetail from './orderDetail/OrderDetail.model.js'
 import Discount from "./discount/Discount.model.js";
 
 export { 
@@ -32,5 +32,7 @@ export {
   Cart,
   Review,
   Card,
-  Discount
+  Discount,
+  OrderDetail
 };
+

@@ -12,7 +12,7 @@ TypeDiscount.init(
   },
   {
     sequelize: conn,
-    modelName: "TypeDiscount",
+    modelName: "Type_Discount",
     timestamps: false,
   }
 );

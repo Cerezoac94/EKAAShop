@@ -18,4 +18,3 @@ await conn.sync({ force: false }).then(() => {
     console.log("Server UP");
   });
 });
-f

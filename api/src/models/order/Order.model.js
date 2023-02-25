@@ -12,7 +12,7 @@ Order.init(
   },
   {
     sequelize: conn,
-    modelName: "OrderDate",
+    modelName: "Order",
     timestamps: false,
   }
 );
