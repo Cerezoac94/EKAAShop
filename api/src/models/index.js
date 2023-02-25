@@ -14,6 +14,7 @@ import TypeDiscount from "./typeDiscount/TypeDiscount.model.js";
 import Cart from "./cart/Cart.model.js";
 import Review from "./review/Review.model.js";
 import Card from "./card/Card.model.js";
+import Discount from "./discount/Discount.model.js";
 
 export { 
   Product,
@@ -30,5 +31,6 @@ export {
   TypeDiscount,
   Cart,
   Review,
-  Card
+  Card,
+  Discount
 };
