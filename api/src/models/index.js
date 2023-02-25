@@ -15,6 +15,15 @@ import Review from "./review/Review.model.js";
 import Card from "./card/Card.model.js";
 import OrderDetail from './orderDetail/OrderDetail.model.js'
 
+User.belongsTo(State, {
+    foreignKey:'idState',
+        onDelete: 'set null'
+})
+State.hasMany(User, {
+    foreignKey: 'idState',
+        allowNull: false
+})
+
 export {
     Product,
     User,

@@ -38,6 +38,11 @@ User.init(
     isActive: {
       type: Dt.BOOLEAN,
       allowNull: false,
+    },
+    idState: {
+      type: Dt.INTEGER,
+      allowNull: true,
+      defaultValue: null
     }
   },
   {
