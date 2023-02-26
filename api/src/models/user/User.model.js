@@ -35,10 +35,6 @@ User.init(
     memberSince: {
       type: Dt.DATE
     },
-    isActive: {
-      type: Dt.BOOLEAN,
-      allowNull: false,
-    },
     idState: {
       type: Dt.INTEGER,
       allowNull: true,
