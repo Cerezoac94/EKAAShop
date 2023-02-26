@@ -47,7 +47,6 @@ class RoleController {
         },
         attributes: ["name"]
       })
-      console.log(results);
       if(!results) throw "No role found"
       res.status(200).send({
         success: true,
@@ -70,7 +69,6 @@ class RoleController {
           id: req.params.id
         }
       })
-      console.log(results);
       if(results[0] === 0) throw "No role was updated"
       res.status(204).send() 
     } catch (err) {
@@ -89,7 +87,6 @@ class RoleController {
           id: req.params.id
         }
       })
-      console.log(results);
       if(results === 0) throw "No role was deleted"
       res.status(204).send() 
     } catch (err) {
