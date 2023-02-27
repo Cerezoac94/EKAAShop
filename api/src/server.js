@@ -13,7 +13,7 @@ app.use(morgan("tiny"));
 
 app.use("/api", routes);
 
-await conn.sync({ force: false }).then(() => {
+await conn.sync({ force: true }).then(() => {
   app.listen(port, () => {
     console.log("Server UP");
   });

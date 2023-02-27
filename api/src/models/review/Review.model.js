@@ -15,7 +15,12 @@ Review.init({
     type: Dt.TEXT
   },
   reviewDate: {
-    type: Dt.DATEONLY
+    type: Dt.DATEONLY,
+    allowNull: false
+  },
+  idUser: {
+    type: Dt.INTEGER,
+    allowNull: false
   }
 }, {
   sequelize: conn,

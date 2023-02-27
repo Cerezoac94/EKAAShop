@@ -16,6 +16,10 @@ Card.init({
     type: Dt.SMALLINT,
     allowNull: false
   },
+  idUser: {
+    type: Dt.INTEGER,
+    allowNull: false
+  }
 },{
   sequelize: conn,
   modelName: "Card",

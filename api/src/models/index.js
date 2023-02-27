@@ -16,14 +16,57 @@ import Card from "./card/Card.model.js";
 import OrderDetail from './orderDetail/OrderDetail.model.js'
 import Discount from "./discount/Discount.model.js";
 
+// user-state
 User.belongsTo(State, {
     foreignKey:'idState',
         onDelete: 'set null'
 })
 State.hasMany(User, {
     foreignKey: 'idState',
-        allowNull: false
+        // allowNull: false
 })
+
+// user-role
+User.belongsTo(Role, {
+  foreignKey:'idRole',
+      onDelete: 'RESTRICT'
+})
+Role.hasMany(User, {
+  foreignKey: 'idRole',
+      // allowNull: false
+})
+
+// card-user
+Card.belongsTo(User, {
+  foreignKey: 'idUser',
+  onDelete: 'CASCADE'
+})
+User.hasMany(Card, {
+  foreignKey:'idUser'
+})
+
+// review-user
+Review.belongsTo(User, {
+  foreignKey: 'idUser',
+  onDelete: 'CASCADE'
+})
+User.hasMany(Review, {
+  foreignKey: 'idUser'
+})
+
+// wish-user
+Wish.belongsTo(User, {
+  foreignKey:'idUser',
+      onDelete: 'CASCADE'
+})
+User.hasMany(Wish, {
+  foreignKey: 'idUser',
+      // allowNull: false
+})
+
+// wish-user
+Wish.belongsToMany(Product, { through: WishProduct, foreignKey:'idWish' })
+Product.belongsToMany(Wish, { through: WishProduct, foreignKey:'idProduct' })
 
 export { 
   Product,

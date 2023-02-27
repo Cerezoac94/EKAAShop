@@ -4,6 +4,17 @@ import conn from "../../db/db.js";
 class WishProduct extends Model {}
 
 WishProduct.init({
+    idWishProduct:{
+        type:Dt.INTEGER,
+        allowNull: false
+    },
+    idWish:{
+        type:Dt.INTEGER,
+        allowNull: false
+    },idProduct:{
+        type:Dt.INTEGER,
+        allowNull: false
+    }
 
 },{
     sequelize: conn,
