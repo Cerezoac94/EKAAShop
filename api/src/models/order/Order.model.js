@@ -9,6 +9,10 @@ Order.init(
       type: Dt.DATE,
       allowNull: false,
     },
+    idUser:{
+      type: Dt.INTEGER,
+      allowNull: false
+    }
   },
   {
     sequelize: conn,

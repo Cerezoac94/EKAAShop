@@ -6,7 +6,8 @@ class Cart extends Model {}
 Cart.init(
   {
     idUser:{
-      type:Dt.INTEGER
+      type:Dt.INTEGER,
+      allowNull: false
     }
   },
   {

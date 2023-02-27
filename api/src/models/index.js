@@ -69,6 +69,101 @@ User.hasMany(Wish, {
 Wish.belongsToMany(Product, { through: WishProduct, foreignKey:'idWish' })
 Product.belongsToMany(Wish, { through: WishProduct, foreignKey:'idProduct' })
 
+//Aqui comienza la parte de Kevin
+// product-category
+Product.belongsTo(Category,{
+  foreignKey: 'idCategory',
+  // onDelete:'set null', Esto me marca un error
+  onDelete:'CASCADE',
+  onUpdate:'CASCADE'
+})
+Category.hasMany(Product,{
+  foreignKey: 'idCategory'
+})
+
+
+//Product-discount
+Discount.belongsTo(Product, {
+  foreignKey: 'idProduct',
+  onDelete: 'CASCADE'
+});
+Product.hasMany(Discount, {
+  foreignKey: 'idProduct',
+});
+
+//Product-cart_Product
+CartProduct.belongsTo(Product,{
+  foreignKey:'idProduct',
+})
+Product.hasMany(CartProduct,{
+  foreignKey:'idProduct'
+})
+
+//Product-review
+
+Review.belongsTo(Product,{
+  foreignKey:'idProduct',
+  onDelete:'CASCADE'
+})
+Product.hasMany(Review,{
+  foreignKey:'idProduct',  
+})
+
+//Product-order_details
+OrderDetail.belongsTo(Product,{
+  foreignKey:'idProduct',
+  // onUpdate:'CASCADE' Esto no va, porque si cambia porque si por ejemplo el precio del producto cambia, el precio anterior se respeta porque ya esta en la oden
+})
+Product.hasMany(OrderDetail,{
+  foreignKey:'idProduct'
+})
+
+//order_details-order
+OrderDetail.belongsTo(Order,{
+  foreignKey:'idOrder'
+})
+Order.hasMany(OrderDetail,{
+  foreignKey:'idOrder'
+})
+
+// Order-Payment
+Payment.belongsTo(Order,{
+  foreignKey:'idOrder'
+})
+Order.hasMany(Payment,{
+  foreignKey:'idOrder',
+  onUpdate:'CASCADE'
+})
+// Order-User
+Order.belongsTo(User,{
+  foreignKey:'idUser',
+  onUpdate:'CASCADE'
+})
+User.hasMany(Order,{
+  foreignKey:'idUser'
+})
+
+// user-cart
+Cart.belongsTo(User,{
+  foreignKey:'idUser',
+  onUpdate:'CASCADE'
+})
+User.hasMany(Cart,{
+  foreignKey:'idUser'
+})
+
+// cart-cart_product
+CartProduct.belongsTo(Cart,{
+  foreignKey:'idCart',
+})
+Cart.hasMany(CartProduct,{
+  foreignKey:'idCart'
+})
+
+
+
+
+
 
 export { 
   Product,
