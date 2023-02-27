@@ -1,23 +1,86 @@
-import { Card } from "../../models/index.js";
+import { Card, User } from "../../models/index.js";
 
 class CardController {
-  static async createCard(req, res){
+  // CREATE
+  static async createCard(req, res) {
     try {
-      res.send("<h1>Create card</h1>")
+      const results = await Card.create(req.body)
+      if (!results) throw "The card is not created"
+      res.status(201).send({
+        success: true,
+        message: "User card succesfully",
+        results
+      })
     } catch (err) {
-      
+      res.status(400).send({
+        success: false,
+        message: err
+      })
     }
   }
 
-  static async getCard(req, res){
+  // GET ALL WILL NOT BE USED
+  static async getAllCard(req, res) {
     try {
-      res.send("<h1>Get card</h1>")
+      const results = await Card.findAll()
+      if (results.length === 0) throw "No card found"
+      res.status(200).send({
+        success: true,
+        message: "Cards",
+        results
+      })
     } catch (err) {
-      
+      res.status(404).send({
+        success: false,
+        message: err
+      })
     }
   }
 
-  // TODO: metodos de clase
+  // GET BY ID
+  static async getCardById(req, res) {
+    try {
+      const results = await Card.findOne({
+        where: {
+          id: req.params.id
+        },
+        attributes: ["cardNumber", "expirationDate", "cvv"],
+        include: { model: User, attributes: ["firstName", "lastName", "email"] }
+      })
+      if (!results) throw "No card found"
+      res.status(200).send({
+        success: true,
+        message: "Cards",
+        results
+      })
+    } catch (err) {
+      res.status(404).send({
+        success: false,
+        message: err
+      })
+    }
+  }
+
+// NOTE: No se permitirá update, simplemente eliminar
+
+// DELETE
+static async deleteCard(req, res) {
+  try {
+    const results = await Card.destroy({
+      where: {
+        id: req.params.id
+      }
+    })
+    if (results === 0) throw "No card was deleted"
+    res.status(204).send()
+  } catch (err) {
+    res.status(403).send({
+      success: false,
+      message: err
+    })
+  }
+}
+
 }
 
 export default CardController;
