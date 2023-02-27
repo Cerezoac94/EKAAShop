@@ -1,4 +1,4 @@
-import { DataTypes as Dt, INTEGER, Model } from "sequelize";
+import { DataTypes as Dt, Model } from "sequelize";
 import conn from "../../db/db.js";
 
 class CodeDiscount extends Model {}

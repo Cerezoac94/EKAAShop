@@ -1,4 +1,4 @@
-import { TypeDiscount } from "../../models/index.js";
+// import { TypeDiscount } from "../../models/index.js";
 
 class TypeDiscountController {
   static async createTypeDiscount(req, res) {
