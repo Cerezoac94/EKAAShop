@@ -1,13 +1,15 @@
+@use '../base/variables';
 footer {
-    background-color: #224F63;
+    background-color: $main_fonts;
     margin-top: auto;
     height: 200px;
     display: flex;
     justify-content: space-between;
-    .footer__contact {
+    &__contact {
         justify-content: space-between;
     }
-    .footer_social_media {
+    &__socialmedia {
         display: flex;
     }
+    .footer_about {}
 }
