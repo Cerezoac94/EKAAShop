@@ -11,6 +11,14 @@ OrderDetail.init({
     unitPrice: {
         type: Dt.DECIMAL(10,2),
         allowNull: false
+    },
+    idOrder:{
+        type: Dt.INTEGER,
+        allowNull:false
+    },
+    idProduct:{
+        type: Dt.INTEGER,
+        allowNull:false
     }
 }, {
     sequelize: conn,

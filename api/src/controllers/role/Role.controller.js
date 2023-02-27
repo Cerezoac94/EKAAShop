@@ -50,7 +50,7 @@ class RoleController {
       if(!results) throw "No role found"
       res.status(200).send({
         success: true,
-        message: "Categories",
+        message: "Role",
         results
       }) 
     } catch (err) {

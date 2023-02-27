@@ -15,7 +15,12 @@ Payment.init(
     },
     transactionStatus: {
       type: Dt.STRING(20),
+      allowNull:false
     },
+    idOrder:{
+      type:Dt.INTEGER,
+      allowNull:false
+    }
   },
   {
     sequelize: conn,

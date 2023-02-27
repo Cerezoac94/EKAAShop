@@ -21,6 +21,7 @@ User.belongsTo(State, {
     foreignKey:'idState',
         onDelete: 'set null'
 })
+
 State.hasMany(User, {
     foreignKey: 'idState',
         // allowNull: false
@@ -67,6 +68,7 @@ User.hasMany(Wish, {
 // wish-user
 Wish.belongsToMany(Product, { through: WishProduct, foreignKey:'idWish' })
 Product.belongsToMany(Wish, { through: WishProduct, foreignKey:'idProduct' })
+
 
 export { 
   Product,
