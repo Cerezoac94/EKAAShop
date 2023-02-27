@@ -22,7 +22,11 @@ Product.init(
     },
     image: {
       type: Dt.TEXT,
+      allowNull: false
     },
+    idCategory:{
+      type: Dt.INTEGER
+    }
   },
   {
     sequelize: conn,
