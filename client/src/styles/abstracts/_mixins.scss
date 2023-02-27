@@ -1,0 +1,5 @@
+@mixin desktop-view ($width) {
+    @media (min-width: 1440px) {
+        width: $width;
+    }
+}

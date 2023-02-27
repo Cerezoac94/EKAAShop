@@ -1,3 +1,4 @@
+@use '../abstracts/mixins';
 html {
     font-family: var(--font-poppins);
 }
@@ -6,4 +7,11 @@ body {
     font-family: var(--font-poppins);
     display: flex;
     flex-direction: column;
+}
+
+.main-container {
+    border: 3px solid red;
+    width: 375px;
+    margin: 0 auto 25px;
+    @include mixins.desktop-view(1440px);
 }

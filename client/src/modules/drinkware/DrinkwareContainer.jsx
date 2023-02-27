@@ -1,6 +1,13 @@
+import ProductDrinkwareMap from "./components/productDrinkware/ProductDrinkwareMap"
+
+
 const DrinkwareContainer = () => {
   return (
-    <div>DrinkwareContainer</div>
+    <section>
+      DrinkwareContainer
+    <ProductDrinkwareMap/>
+
+    </section>
   )
 }
 export default DrinkwareContainer

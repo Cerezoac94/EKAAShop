@@ -13,7 +13,7 @@ const Footer = () => {
             />
          
         </article>
-        <article className="footer_social_media">
+        <article className="footer__socialmedia">
           <Link to="/"> 
             <ion-icon name="logo-facebook"></ion-icon>{" "}
           </Link>
@@ -26,7 +26,7 @@ const Footer = () => {
         </article>
       </section>
 
-      <section className="footer_about">
+      <section className="footer__about">
         <article>
           <span>My account</span>
           <span>  Wish List</span>
