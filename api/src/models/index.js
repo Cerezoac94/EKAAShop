@@ -20,10 +20,14 @@ User.belongsTo(State, {
     foreignKey:'idState',
         onDelete: 'set null'
 })
+
 State.hasMany(User, {
     foreignKey: 'idState',
         allowNull: false
 })
+
+
+
 
 export { 
   Product,

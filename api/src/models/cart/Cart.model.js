@@ -4,7 +4,11 @@ import conn from "../../db/db.js";
 class Cart extends Model {}
 
 Cart.init(
-  {},
+  {
+    idUser:{
+      type:Dt.INTEGER
+    }
+  },
   {
     sequelize: conn,
     modelName: "Cart",
