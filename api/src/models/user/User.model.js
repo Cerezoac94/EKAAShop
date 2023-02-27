@@ -39,6 +39,10 @@ User.init(
       type: Dt.INTEGER,
       allowNull: true,
       defaultValue: null
+    },
+    idRole: {
+      type: Dt.INTEGER,
+      allowNull: false
     }
   },
   {
