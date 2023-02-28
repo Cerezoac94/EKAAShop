@@ -1,4 +1,4 @@
-import { State, User } from "../../models/index.js";
+import { State, User, Cart } from "../../models/index.js";
 
 class UserController {
 
@@ -12,6 +12,11 @@ class UserController {
         message: "User created succesfully",
         results
       })
+      // NOTE: MODIFICAR MODELO USER, AGREGANDO EL CAMPO idCart
+      // Y MODIFICAR LAS RELACIONES, QUEDANDO 1:1
+      await Cart.create({
+        idUser: results.id
+      });
     } catch (err) {
       res.status(400).send({
         success: false,

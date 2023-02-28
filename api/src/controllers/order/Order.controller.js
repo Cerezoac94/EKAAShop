@@ -1,4 +1,4 @@
-import { Order } from "../../models/index.js";
+import { Order, OrderDetail, Payment, Product } from "../../models/index.js";
 
 class OrderController {
   static async createOrder(req, res) {
@@ -20,7 +20,26 @@ class OrderController {
   //Esto puede tal vez quitartse
   static async getAllOrder(req, res) {
     try {
-      const results = await Order.findAll(req.body);
+      const results = await Order.findAll({
+        include: [
+        {
+          model: OrderDetail,
+          include: [
+            {
+              model: Product,
+              attributes: ['name', 'image'],
+            },
+          ],
+        },
+        {
+          model: Payment,
+          attributes: ['paymentMethod']
+        }
+      ],
+      // subQuery: false,
+      // group: ['id']
+      attributes: ['id']
+    });
       if (results.length === 0) throw "The user has no orders";
       res.status(201).send({
         success: true,

@@ -1,6 +1,7 @@
-import { Product } from "../../models/index.js";
+import { Category, Product } from "../../models/index.js";
 
 class ProductController {
+  // CREATE
   static async createProduct(req, res) {
     try {
       const results = await Product.create(req.body);
@@ -20,7 +21,9 @@ class ProductController {
 
   static async getAllProducts(req, res) {
     try {
-      const results = await Product.findAll(req.body);
+      const results = await Product.findAll({
+        include: { model: Category, attributes: ["name"] }
+      });
       if (results.length === 0) throw "No products registered";
       res.status(201).send({
         success: true,
