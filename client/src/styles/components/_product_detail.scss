@@ -1,0 +1,14 @@
+.product_detail_header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.product_detail_label {
+    margin-right: 0.625rem;
+}
+.rate_icons_container {
+    display: flex;
+    align-items: center;
+}

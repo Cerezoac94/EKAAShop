@@ -18,10 +18,10 @@ const Header = () => {
             <img src={logo} alt="logo_home" className="logo" />
           </Navbar.Brand>
           <Navbar.Brand href="#" className="mobile_nav_icons">
-            <ion-icon name="cart-outline"></ion-icon>
+            <ion-icon name="cart-outline" class="nav_icon"></ion-icon>
           </Navbar.Brand>
           <Navbar.Brand href="#" className="mobile_nav_icons">
-            <ion-icon name="person-outline"></ion-icon>
+            <ion-icon name="person-outline" class="nav_icon"></ion-icon>
           </Navbar.Brand>
           <Navbar.Offcanvas
             id={`offcanvasNavbar-expand-md`}
