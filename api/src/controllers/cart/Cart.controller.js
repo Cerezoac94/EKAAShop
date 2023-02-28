@@ -19,7 +19,19 @@ class CartController {
   }
   static async getAllCart(req, res) {
     try {
-    } catch (err) {}
+      const results = await Cart.findAll();
+      if (results.length === 0) throw "No cart found";
+      res.status(201).send({
+        success: true,
+        message: "Cart",
+        results,
+      });
+    } catch (err) {
+      res.status(404).send({
+        success: false,
+        message: err,
+      });
+    }
   }
   static async getCartById(req, res) {
     try {

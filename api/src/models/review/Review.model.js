@@ -22,6 +22,7 @@ Review.init({
     type: Dt.INTEGER,
     allowNull: false
   }
+  // Falata agregar el campo de la clave foranea de product
 }, {
   sequelize: conn,
   modelName: "Review",

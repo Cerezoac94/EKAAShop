@@ -74,7 +74,7 @@ Product.belongsToMany(Wish, { through: WishProduct, foreignKey:'idProduct' })
 Product.belongsTo(Category,{
   foreignKey: 'idCategory',
   // onDelete:'set null', Esto me marca un error
-  onDelete:'CASCADE',
+  onDelete:'RESTRICT',
   onUpdate:'CASCADE'
 })
 Category.hasMany(Product,{
