@@ -1,8 +1,6 @@
-import DrinkwareContainer from "../modules/drinkware/DrinkwareContainer"
+import DrinkwareContainer from "../modules/drinkware/DrinkwareContainer";
 
 const Drinkware = () => {
-  return (
-<DrinkwareContainer/>
-  )
-}
-export default Drinkware
+	return <DrinkwareContainer />;
+};
+export default Drinkware;
