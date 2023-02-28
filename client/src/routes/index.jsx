@@ -4,6 +4,9 @@ import Drinkware from "../pages/Drinkware";
 import Home from "../pages/Home";
 import Login from "../components/forms/Login";
 import Register from "../components/forms/Register";
+import Detail from "../pages/Detail";
+import ShoppingCart from "../pages/ShoppingCart";
+import WishList from "../pages/WishList";
 
 const router = createBrowserRouter([
 	{
@@ -14,12 +17,25 @@ const router = createBrowserRouter([
 				path: "/",
 				element: <Home />,
 				
-			},{
+			},
+			{
 				path: "/drinkware",
 				element: <Drinkware />,
 				
 			},
-
+			{
+				path: "/product_detail",
+				element: <Detail/>
+				
+			},
+			{
+				path: "/cart",
+				element: <ShoppingCart/>
+			},
+			{
+				path: "/wish_list",
+				element: <WishList/>
+			},
 
 			// TODO: RUTAS PARA ADMIN
 			// {
