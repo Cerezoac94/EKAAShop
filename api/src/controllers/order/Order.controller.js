@@ -38,7 +38,7 @@ class OrderController {
       ],
       // subQuery: false,
       // group: ['id']
-      attributes: ['id']
+      attributes: ['id', 'orderDate']
     });
       if (results.length === 0) throw "The user has no orders";
       res.status(201).send({

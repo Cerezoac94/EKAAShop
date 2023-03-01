@@ -179,6 +179,7 @@ Order.hasMany(Payment,{
   foreignKey:'idOrder',
   onUpdate:'CASCADE'
 })
+
 // Order-User
 Order.belongsTo(User,{
   foreignKey:'idUser',
