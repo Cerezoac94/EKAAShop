@@ -59,6 +59,39 @@ class ProductController {
       })
     }
   }
+
+  static async getProductByCategory(req,res){
+    try {
+      // const {category}=req.body
+      const results = await Category.findOne({
+        where: { name: 'Termos' },
+        include: [Product]
+      })
+      res.status(200).send({
+        results
+      })
+    } catch (error) {
+      
+    }
+  }
+
+  // static async getProductByCategory(req,res){
+  //   try {
+  //     // const {category}=req.body
+  //     const results = await Product.findAll({
+  //       where: { idCategory: req.params.id },
+  //       include: [Category]
+  //     })
+  //     console.log("🚀 ~ file: Product.controller.js:70 ~ ProductController ~ getProductByCategory ~ results:", results)
+  //     res.status(201).send({
+  //       results
+  //     })
+  //   } catch (error) {
+      
+  //   }
+  // }
+
+
   static async updateProduct(req, res) {
     try {
       const results = await Product.update(req.body,{
