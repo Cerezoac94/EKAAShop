@@ -43,7 +43,16 @@ User.init(
     idRole: {
       type: Dt.INTEGER,
       allowNull: false
+    },
+    idCart: {
+      type: Dt.INTEGER,
+      allowNull: true
+    },
+    idWish: {
+      type: Dt.INTEGER,
+      allowNull: true
     }
+
   },
   {
     sequelize: conn,
