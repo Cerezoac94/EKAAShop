@@ -1,15 +1,70 @@
 @use '../base/variables';
-footer {
+@use '../abstracts/mixins';
+.footer {
     background-color: $main_fonts;
     margin-top: auto;
     height: 200px;
     display: flex;
     justify-content: space-between;
     &__contact {
-        justify-content: space-between;
+        width: 40%;
+        align-self: center;
     }
-    &__socialmedia {
+    &__logoBox {
         display: flex;
+        justify-content: center;
     }
-    .footer_about {}
+    &__logo {
+        width: 95px;
+        height: 100px;
+        @include mixins.desktop-view(240px, 38px)
+    }
+    &__socialMedia {
+        display: flex;
+        justify-content: center;
+    }
+    .footer__icon {
+        height: 2.5rem;
+        width: 2.5rem;
+        @include mixins.desktop-view(4rem, 4rem)
+    }
+    &__about {
+        display: flex;
+        gap: 5rem;
+        width: 60%;
+        justify-content: space-around;
+        align-self: center;
+    }
+    &__list {
+        span {
+            display: block;
+            flex-wrap: wrap;
+            color: variables.$main_background;
+        }
+    }
+    &__list2 {
+        span {
+            display: block;
+            flex-wrap: wrap;
+            color: variables.$main_background;
+        }
+    }
+}
+
+.container,
+.container-fluid,
+.container-xxl,
+.container-xl,
+.container-lg,
+.container-md,
+.container-sm {
+    --bs-gutter-x: 1.5rem;
+    --bs-gutter-y: 0;
+    width: 100%;
+    padding-right: 0;
+    padding-left: 0;
+    /* padding-right: calc(var(--bs-gutter-x) * 0.5); */
+    /* padding-left: calc(var(--bs-gutter-x) * 0.5); */
+    margin-right: auto;
+    margin-left: auto;
 }

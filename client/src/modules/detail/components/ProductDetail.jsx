@@ -11,7 +11,7 @@ const ProductDetail = () => {
         <label className="product_detail_label">Lorem ipsum dolor sit</label>
         <Container className="rate_icons_container">
           <ion-icon name="star-outline"></ion-icon>
-          <ion-icon name="star-outline"></ion-icon>
+          <ion-icon name="star-outline"></ion-icon >
           <ion-icon name="star-outline"></ion-icon>
         </Container>
       </section>

@@ -2,7 +2,10 @@ import React from 'react'
 
 const ListCart = () => {
   return (
-    <div>ListCart</div>
+    <section>
+      <h2>Subtotal<span>$980.00</span></h2>
+      
+      </section>
   )
 }
 
