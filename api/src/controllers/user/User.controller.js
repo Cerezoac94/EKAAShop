@@ -1,4 +1,5 @@
-import { State, User, Cart, Wish, Product, CartProduct, WishProduct, Card } from "../../models/index.js";
+import { where } from "sequelize";
+import { State, User, Cart, Wish, Product, CartProduct, WishProduct, Card, Order, OrderDetail } from "../../models/index.js";
 
 class UserController {
 
@@ -8,8 +9,8 @@ class UserController {
       const results = await User.create(req.body)
       if (!results) throw "The User is not created"
       const cart = await Cart.create({
-          idUser: results.id
-        });
+        idUser: results.id
+      });
       const wish = await Wish.create({
         idUser: results.id
       });
@@ -78,7 +79,6 @@ class UserController {
     }
   }
 
-
   // GET USER CART
   static async getUserCart(req, res) {
     try {
@@ -93,7 +93,7 @@ class UserController {
         }
       });
 
-      if(results === null) throw "No cart found"
+      if (results === null) throw "No cart found"
       res.status(200).send({
         success: true,
         message: "Cart",
@@ -106,7 +106,6 @@ class UserController {
       })
     }
   }
-
 
   // GET USER WISH
   static async getUserWish(req, res) {
@@ -121,7 +120,7 @@ class UserController {
           }
         }
       });
-      if(results === null) throw "No wish found"
+      if (results === null) throw "No wish found"
       res.status(200).send({
         success: true,
         message: "Wish",
@@ -140,7 +139,7 @@ class UserController {
     try {
       const userId = req.params.id
       const results = await Card.findByPk(userId)
-      if(results === null) throw "No card found"
+      if (results === null) throw "No card found"
       res.status(200).send({
         success: true,
         message: "Cards",
@@ -154,6 +153,34 @@ class UserController {
     }
   }
 
+  // GET USER WISH
+  static async getUserOrder(req, res) {
+    try {
+      const userId = req.params.id
+      const results = await Order.findAll({
+        where: { idUser: userId },
+        include: [
+          {
+            model: OrderDetail,
+            include: {
+              model: Product
+            }
+          }
+        ]
+      });
+      if (results === null) throw "No order found"
+      res.status(200).send({
+        success: true,
+        message: "Order",
+        results
+      })
+    } catch (err) {
+      res.status(404).send({
+        success: false,
+        message: err
+      })
+    }
+  }
 
   // UPDATE
   // REVIEW: check if only indicated fields can be updated

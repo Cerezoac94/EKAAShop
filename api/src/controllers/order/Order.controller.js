@@ -54,6 +54,8 @@ class OrderController {
     }
   }
 
+  // GET BY ID (Admin)
+  // REVIEW: analizar y corregir los atributos a devolver que verá el admin
   static async getOrderById(req, res) {
     try {
       const results = await Order.findOne({
