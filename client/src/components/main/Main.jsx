@@ -1,8 +1,10 @@
 import { Outlet } from "react-router-dom"
 
+/* <main className="vh-100 main-container"> */
 const Main = () => {
   return (
-    <main className="vh-100 main-container">
+    
+      <main className="main-container">
       <Outlet/>
     </main>
   )

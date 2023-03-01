@@ -8,10 +8,9 @@ const ProductDrinkwareMap = () => {
 	return isLoading ?(
     <h3>Cargando...</h3>// Aquí iría un spinner...Si tuviera uno >:(
   ):(
-    // <h1>results</h1>
     
-		<section>
-			ProductDrinwareMap
+		<section className="product_drinkware_container">
+			{/* ProductDrinwareMap */}
      { 
      results.results.map(p => <ProductDrinkware product={p} key={p.id} />)
 			}
