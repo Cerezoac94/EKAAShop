@@ -1,65 +1,8 @@
-import { User, Wish } from "../../models/index.js"
+import { Wish } from "../../models/index.js"
 
 class WishController {
-  // Create
-  static async createWish(req, res) {
-    try {
-      const results = await Wish.create(req.body)
-      if (!results) throw "The wish is not created"
-      res.status(201).send({
-        success: true,
-        message: "Wish created succesfully",
-        results
-      })
-    } catch (err) {
-      res.status(400).send({
-        success: false,
-        message: err
-      })
-    }
-  }
 
- // GET ALL WILL NOT BE USED
- static async getAllWish(req, res) {
-  try {
-    const results = await Wish.findAll()
-    if (results.length === 0) throw "No wish found"
-    res.status(200).send({
-      success: true,
-      message: "Wish",
-      results
-    })
-  } catch (err) {
-    res.status(404).send({
-      success: false,
-      message: err
-    })
-  }
-}
 
- // GET BY ID
- static async getWishById(req, res) {
-  try {
-    const results = await Wish.findOne({
-      where: {
-        id: req.params.id
-      },
-      attributes: ["name"],
-      include: { model: User, attributes: ["userName"] }
-    })
-    if (!results) throw "No wish found"
-    res.status(200).send({
-      success: true,
-      message: "Users",
-      results
-    })
-  } catch (err) {
-    res.status(404).send({
-      success: false,
-      message: err
-    })
-  }
-}
 
 // UPDATE
   // REVIEW: check if only indicated fields can be updated
