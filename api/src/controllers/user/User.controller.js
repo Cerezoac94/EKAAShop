@@ -1,4 +1,4 @@
-import { State, User, Cart } from "../../models/index.js";
+import { State, User, Cart, Wish, Product, CartProduct, WishProduct, Card } from "../../models/index.js";
 
 class UserController {
 
@@ -7,16 +7,26 @@ class UserController {
     try {
       const results = await User.create(req.body)
       if (!results) throw "The User is not created"
+      const cart = await Cart.create({
+          idUser: results.id
+        });
+      const wish = await Wish.create({
+        idUser: results.id
+      });
+
+      await results.setCart(cart);
+      await results.setWish(wish);
+      await results.update({
+        idCart: cart.id,
+        idWish: wish.id
+      });
       res.status(201).send({
         success: true,
         message: "User created succesfully",
         results
       })
-      // NOTE: MODIFICAR MODELO USER, AGREGANDO EL CAMPO idCart
-      // Y MODIFICAR LAS RELACIONES, QUEDANDO 1:1
-      await Cart.create({
-        idUser: results.id
-      });
+
+
     } catch (err) {
       res.status(400).send({
         success: false,
@@ -67,6 +77,83 @@ class UserController {
       })
     }
   }
+
+
+  // GET USER CART
+  static async getUserCart(req, res) {
+    try {
+      const userId = req.params.id
+      const results = await User.findByPk(userId, {
+        include: {
+          model: Cart,
+          include: {
+            model: Product,
+            through: CartProduct
+          }
+        }
+      });
+
+      if(results === null) throw "No cart found"
+      res.status(200).send({
+        success: true,
+        message: "Cart",
+        results
+      })
+    } catch (err) {
+      res.status(404).send({
+        success: false,
+        message: err
+      })
+    }
+  }
+
+
+  // GET USER WISH
+  static async getUserWish(req, res) {
+    try {
+      const userId = req.params.id
+      const results = await User.findByPk(userId, {
+        include: {
+          model: Wish,
+          include: {
+            model: Product,
+            through: WishProduct
+          }
+        }
+      });
+      if(results === null) throw "No wish found"
+      res.status(200).send({
+        success: true,
+        message: "Wish",
+        results
+      })
+    } catch (err) {
+      res.status(404).send({
+        success: false,
+        message: err
+      })
+    }
+  }
+
+  // GET USER CARD
+  static async getUserCard(req, res) {
+    try {
+      const userId = req.params.id
+      const results = await Card.findByPk(userId)
+      if(results === null) throw "No card found"
+      res.status(200).send({
+        success: true,
+        message: "Cards",
+        results
+      })
+    } catch (err) {
+      res.status(404).send({
+        success: false,
+        message: err
+      })
+    }
+  }
+
 
   // UPDATE
   // REVIEW: check if only indicated fields can be updated

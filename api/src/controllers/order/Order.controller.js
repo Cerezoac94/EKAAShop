@@ -17,7 +17,7 @@ class OrderController {
       });
     }
   }
-  //Esto puede tal vez quitartse
+  //Esto es vista para el admin
   static async getAllOrder(req, res) {
     try {
       const results = await Order.findAll({
