@@ -2,10 +2,10 @@ import ProductDrinkwareMap from "./components/productDrinkware/ProductDrinkwareM
 
 const DrinkwareContainer = () => {
 	return (
-		<section>
+		<>
 			DrinkwareContainer
 			<ProductDrinkwareMap />
-		</section>
+		</>
 	);
 };
 export default DrinkwareContainer;
