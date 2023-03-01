@@ -1,5 +1,25 @@
-@mixin desktop-view ($width) {
+@use '../base/variables';
+@mixin desktop-view ($width, $height: unset) {
     @media (min-width: 1440px) {
         width: $width;
+        height: $height;
+    }
+}
+
+@mixin button($bg-color, $br-color, $fn-color, $width, $height) {
+    background-color: $bg-color;
+    border: none;
+    border: 1px solid $br-color;
+    border-radius: 50px;
+    color: $fn-color;
+    width: $width;
+    height: $height;
+}
+
+@mixin button-hover($bg-color) {
+    &:hover {
+        cursor: pointer;
+        background-color: $bg-color;
+        color: variables.$main_background;
     }
 }
