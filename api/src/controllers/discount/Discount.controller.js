@@ -1,4 +1,5 @@
-import { Discount } from "../../models/index.js";
+import { Op } from "sequelize";
+import { Discount, Product, Category } from "../../models/index.js";
 
 class DiscountController {
   static async createDiscount(req, res) {
@@ -12,23 +13,6 @@ class DiscountController {
       });
     } catch (err) {
       res.status(400).send({
-        succes: false,
-        message: err,
-      });
-    }
-  }
-
-  static async getAllDiscounts(req, res) {
-    try {
-      const results = await Discount.findAll(req.body);
-      if (results[0] === 0) throw "No discount registered";
-      res.status(201).send({
-        succes: true,
-        message: "Discount",
-        results,
-      });
-    } catch (err) {
-      res.status(404).send({
         succes: false,
         message: err,
       });

@@ -86,10 +86,10 @@ class UserController {
       const results = await User.findByPk(userId, {
         include: {
           model: Cart,
-          include: {
-            model: Product,
-            through: CartProduct
-          }
+          // include: {
+          //   model: Product,
+          //   through: CartProduct
+          // }
         }
       });
 
