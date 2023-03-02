@@ -1,5 +1,4 @@
-import { Op } from "sequelize";
-import { Discount, Product, Category } from "../../models/index.js";
+import { Discount} from "../../models/index.js";
 
 class DiscountController {
   static async createDiscount(req, res) {
