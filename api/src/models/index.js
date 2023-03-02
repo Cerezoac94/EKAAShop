@@ -146,15 +146,14 @@ Product.hasMany(Discount, {
 //   foreignKey:'idProduct'
 // })
 
-//Product-review
-
-// Review.belongsTo(Product,{
-//   foreignKey:'idProduct',
-//   onDelete:'CASCADE'
-// })
-// Product.hasMany(Review,{
-//   foreignKey:'idProduct',  
-// })
+// Product-review
+Review.belongsTo(Product,{
+  foreignKey:'idProduct',
+  onDelete:'CASCADE'
+})
+Product.hasMany(Review,{
+  foreignKey:'idProduct',  
+})
 
 //Product-order_details
 OrderDetail.belongsTo(Product,{

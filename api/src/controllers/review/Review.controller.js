@@ -1,4 +1,4 @@
-import { Review } from "../../models/index.js";
+import { Review, Product, User } from "../../models/index.js";
 
 class ReviewController {
   // CREATE
@@ -22,7 +22,18 @@ class ReviewController {
   // GET ALL
   static async getAllReview(req, res) {
     try {
-      const results = await Review.findAll()
+      const results = await Review.findAll({
+        include:[
+        {
+            model:User,
+            attributes:['userName'],
+        },
+        {
+          model:Product,
+          attributes:['image']
+        }
+      ]
+      })
       if (results.length === 0) throw "No review found"
       res.status(200).send({
         success: true,
