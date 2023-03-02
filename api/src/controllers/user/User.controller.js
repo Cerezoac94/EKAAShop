@@ -1,4 +1,3 @@
-import { where } from "sequelize";
 import { State, User, Cart, Wish, Product, CartProduct, WishProduct, Card, Order, OrderDetail } from "../../models/index.js";
 
 class UserController {
@@ -15,12 +14,15 @@ class UserController {
         idUser: results.id
       });
 
-      await results.setCart(cart);
-      await results.setWish(wish);
+      // await results.setCart(cart);
+      // // 'idCart', cart.id
+      // await results.setWish(wish);
+      // // 'idCart', wish.id
       await results.update({
         idCart: cart.id,
         idWish: wish.id
       });
+    
       res.status(201).send({
         success: true,
         message: "User created succesfully",
@@ -79,60 +81,59 @@ class UserController {
     }
   }
 
-  // GET USER CART
-  static async getUserCart(req, res) {
-    try {
-      const userId = req.params.id
-      const results = await User.findByPk(userId, {
-        include: {
-          model: Cart,
-          include: {
-            model: Product,
-            through: CartProduct
-          }
-        }
-      });
+  // GET USER CART  findByPk(id, { include: [{ all: true }] })
+  // static async getUserCart(req, res) {
+  //   try {
+  //     const userId = req.params.id
+  //     const results = await User.findByPk(userId, {
+  //       include: [{ all: true }]
 
-      if (results === null) throw "No cart found"
-      res.status(200).send({
-        success: true,
-        message: "Cart",
-        results
-      })
-    } catch (err) {
-      res.status(404).send({
-        success: false,
-        message: err
-      })
-    }
-  }
+  //       //  include: {
+  //       //     model: Product,
+  //       //     through: CartProduct
+  //       //   }
+  //     });
+
+  //     if (results === null) throw "No cart found"
+  //     res.status(200).send({
+  //       success: true,
+  //       message: "Cart",
+  //       results
+  //     })
+  //   } catch (err) {
+  //     res.status(404).send({
+  //       success: false,
+  //       message: err
+  //     })
+  //   }
+  // }
 
   // GET USER WISH
-  static async getUserWish(req, res) {
-    try {
-      const userId = req.params.id
-      const results = await User.findByPk(userId, {
-        include: {
-          model: Wish,
-          include: {
-            model: Product,
-            through: WishProduct
-          }
-        }
-      });
-      if (results === null) throw "No wish found"
-      res.status(200).send({
-        success: true,
-        message: "Wish",
-        results
-      })
-    } catch (err) {
-      res.status(404).send({
-        success: false,
-        message: err
-      })
-    }
-  }
+  // static async getUserWish(req, res) {
+  //   try {
+  //     const userId = req.params.id
+  //     const results = await User.findByPk(userId, {
+  //       include: {
+  //         model: Wish,
+  //         include: {
+  //           model: Product,
+  //           through: WishProduct
+  //         }
+  //       }
+  //     });
+  //     if (results === null) throw "No wish found"
+  //     res.status(200).send({
+  //       success: true,
+  //       message: "Wish",
+  //       results
+  //     })
+  //   } catch (err) {
+  //     res.status(404).send({
+  //       success: false,
+  //       message: err
+  //     })
+  //   }
+  // }
 
   // GET USER CARD
   static async getUserCard(req, res) {

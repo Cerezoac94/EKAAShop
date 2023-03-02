@@ -1,4 +1,5 @@
-import { Category, Product } from "../../models/index.js";
+import { Op } from "sequelize";
+import { Category, Product, Discount, Order, OrderDetail } from "../../models/index.js";
 
 class ProductController {
   // CREATE
@@ -59,37 +60,73 @@ class ProductController {
       })
     }
   }
-
+  //Filtrar productos por categoria
   static async getProductByCategory(req,res){
     try {
-      // const {category}=req.body
+      const {category}=req.body
       const results = await Category.findOne({
-        where: { name: 'Termos' },
+        where: { name: category },
         include: [Product]
       })
+      if (!results) throw 'No products for this category'
       res.status(200).send({
         results
       })
-    } catch (error) {
+    } catch (err) {
+      res.status(404).send(err)
+    }
+  }
+  //Filtrar productos con descuento
+  static async getDiscountProducts(req, res) {
+    try {
+      let dateToday = new Date();
+      const results = await Discount.findAll({
+        where: {
+          endDate: { [Op.gt]: dateToday },
+        },
+        include: {
+          model: Product,
+          include:{model:Category}
+        },
+      });
+      if (results[0] === 0) throw "No discount with discount";
+
+      res.status(201).send({
+        succes: true,
+        message: "Discount",
+        results,
+      });
+    } catch (err) {
+      res.status(404).send({
+        succes: false,
+        message: err,
+      });
+    }
+  }
+  
+  //Filtrar todas las ordenes de un producto en especifico
+
+  static async getOrdersByProduct(req, res){
+    try {
+       const results = await Order.findAll({
+        include: [{
+          model: OrderDetail,
+          where: { idProduct: 1 }
+        }]
+       })  
+       
+       res.status(201).send({
+        succes: true,
+        message: "All orders by product",
+        results,
+      });
+    } catch (err) {
       
     }
   }
 
-  // static async getProductByCategory(req,res){
-  //   try {
-  //     // const {category}=req.body
-  //     const results = await Product.findAll({
-  //       where: { idCategory: req.params.id },
-  //       include: [Category]
-  //     })
-  //     console.log("🚀 ~ file: Product.controller.js:70 ~ ProductController ~ getProductByCategory ~ results:", results)
-  //     res.status(201).send({
-  //       results
-  //     })
-  //   } catch (error) {
-      
-  //   }
-  // }
+
+
 
 
   static async updateProduct(req, res) {

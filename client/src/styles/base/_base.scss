@@ -18,8 +18,8 @@ body,
     width: 375px;
     margin: 0 auto 25px;
     min-height: 100vh;
-    @include mixins.desktop-view(1440px);
-}
+    @include mixins.dx);
+}esktop-view(1440p
  */
 
 .main-container {
