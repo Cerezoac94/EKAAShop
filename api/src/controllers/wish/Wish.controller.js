@@ -2,6 +2,7 @@ import { Wish } from "../../models/index.js"
 
 class WishController {
 
+ 
 
 
 // UPDATE
