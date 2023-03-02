@@ -1,16 +1,17 @@
 @use '../base/variables';
-@mixin desktop-view ($width, $height: unset) {
+@mixin desktop-view ($width, $height: unset, $fn-size:unset) {
     @media (min-width: 1440px) {
         width: $width;
         height: $height;
+        font-size: $fn-size;
     }
 }
 
-@mixin button($bg-color, $br-color, $fn-color, $width, $height) {
+@mixin button($bg-color, $br-color:unset, $fn-color, $width, $height:unset, $br-radius:unset) {
     background-color: $bg-color;
     border: none;
     border: 1px solid $br-color;
-    border-radius: 50px;
+    border-radius: $br-radius;
     color: $fn-color;
     width: $width;
     height: $height;
@@ -20,6 +21,6 @@
     &:hover {
         cursor: pointer;
         background-color: $bg-color;
-        color: variables.$main_background;
+        color: variables.$secondary_fonts;
     }
 }
