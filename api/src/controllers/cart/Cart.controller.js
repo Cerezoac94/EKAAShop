@@ -48,7 +48,6 @@ class CartController {
       const { idUser, idProduct } = req.params
       const { quantity } = req.body
       const qtyInt = parseInt(quantity)
-      // toInteger(quantity)
       // Se busca al usuario
       const user = await User.findByPk(idUser)
       if (!user) throw 'Problem with finding the user'

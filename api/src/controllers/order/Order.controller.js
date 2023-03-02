@@ -36,9 +36,6 @@ class OrderController {
           attributes: ['paymentMethod']
         }
       ],
-      // subQuery: false,
-      // group: ['id']
-      attributes: ['id', 'orderDate']
     });
       if (results.length === 0) throw "The user has no orders";
       res.status(201).send({
@@ -54,7 +51,10 @@ class OrderController {
     }
   }
 
-  // GET BY ID (Admin)
+
+  // GET ORDER BY IDUSER
+
+  // GET BY ID ORDER (Admin)
   // REVIEW: analizar y corregir los atributos a devolver que verá el admin
   static async getOrderById(req, res) {
     try {
