@@ -59,7 +59,8 @@ Cart.belongsTo(User,{
   onUpdate:'CASCADE'
 })
 Cart.belongsToMany(Product, {
-  through: CartProduct
+  through: CartProduct,
+  foreignKey: 'idCart'
 })
 Cart.hasMany(CartProduct,{
   foreignKey: 'idCart'
@@ -85,7 +86,8 @@ Wish.belongsTo(User, {
       onDelete: 'CASCADE'
 })
 Wish.belongsToMany(Product, {
-  through: WishProduct
+  through: WishProduct,
+  foreignKey: 'idWish'
 })
 Wish.hasMany(WishProduct,{
   foreignKey: 'idWish'
@@ -110,10 +112,10 @@ Wish.hasMany(WishProduct,{
 // Product.belongsToMany(Wish, { through: WishProduct, foreignKey:'idProduct' })
 
 // product (wish & cart)
-Product.belongsToMany(Cart,  { through: CartProduct })
-Product.belongsToMany(Wish,  { through: WishProduct })
-Cart.belongsToMany(Product, { through: CartProduct })
-Wish.belongsToMany(Product, { through: WishProduct })
+Product.belongsToMany(Cart,  { through: CartProduct, foreignKey: 'idProduct' })
+Product.belongsToMany(Wish,  { through: WishProduct, foreignKey: 'idProduct' })
+// Cart.belongsToMany(Product, { through: CartProduct })
+// Wish.belongsToMany(Product, { through: WishProduct })
 
 // product-category
 Product.belongsTo(Category,{
