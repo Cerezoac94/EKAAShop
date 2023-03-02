@@ -36,7 +36,6 @@ class OrderController {
           attributes: ['paymentMethod']
         }
       ],
-      attributes: ['id']
     });
       if (results.length === 0) throw "The user has no orders";
       res.status(201).send({
