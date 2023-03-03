@@ -6,7 +6,10 @@ const cartRoutes = Router()
 cartRoutes.get('/:id', CartController.getCart)
 cartRoutes.post('/:idUser/:idProduct', CartController.addProductCart)
 // cartRoutes.post('/', CartController.createCart)
-cartRoutes.put('/:id',CartController.updateCart)
+// cartRoutes.put('/:id',CartController.updateCart)
+cartRoutes.put('/:idCart/:idProduct/increase', CartController.increaseProductCart)
+cartRoutes.put('/:idCart/:idProduct/decrease', CartController.decreaseProductCart)
+cartRoutes.delete('/:idCart/:idProduct', CartController.deletedProductCart)
 cartRoutes.delete('/:id', CartController.deletedCart)
 
 export default cartRoutes

@@ -1,52 +1,40 @@
+//desktop
+.product_details_desktop{
+    display: none;
+}
+
 .product_detail_container {
     padding: 0 1.25rem;
 }
-.product_detail_header {
+
+//Product header
+.product_rate_container {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: flex-start;
-    padding: 0.625rem 0;
 }
 
-
-.product_detail_label {
-    margin-right: 0.625rem;
+.rate_product_label {
     width: 100%;
+    margin: 0.625rem 0;
 }
 
-.rate_icons.md.hydrated {
-    visibility: visible;
-    margin: 0 0.313rem;
-}
-
-.product_detail_description_container {
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: self-end;
-}
-
-.product_detail_description {
+.product_description {
     text-align: justify;
 }
 
-.share_product_icon {
-    visibility: visible;
+//image_section
+.add_product_icon.md.hydrated{
     font-size: 1.875rem;
 }
 
-.image_product_container {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+
+//might_like section
+.might_like_swiper_container {
+    margin: 3.75rem 0 1.25rem;
 }
 
-.add_product_icon {
-    visibility: visible;
-    font-size:1.875rem;
-}
-
+//footeer
 .product_detail_footer_container {
     display: flex;
     flex-direction: column;
@@ -60,7 +48,7 @@
 }
 
 .product_price {
-    font-size: 2.8rem;
+    font-size: 2.188rem;
     font-weight: 500;
 }
 .product_free_ship_label {
@@ -68,7 +56,7 @@
 }
 
 //actions_buttons
-.action_products_btns {
+.action_products_btns_container {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -86,3 +74,38 @@ button.buy_product_btn {
     background: $secondary;
     color: $main_background;
 }
+
+@media only screen and (min-width: 768px) {
+    //product_header
+    .product_header_mobile,
+    .product_detail_footer_container {
+        display: none;
+    }
+    .product_detail_desktop {
+        display: flex;
+    }
+
+    /* Product Detail Desktop */
+    .product_details_desktop{
+        display: flex;
+    }
+ /*    .product_image_section,
+    .product_detail_header,
+    .buying_info_container {
+        margin: 20px 20px;
+    }
+ */
+    .buying_info_container {
+        display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    border: 2px solid blue;
+    border-radius: 8px;
+    padding: 20px;
+    width: 40vw;
+}
+    //product_image
+/*     .product_image_section {
+        width: 40vw;
+    } */
+  }

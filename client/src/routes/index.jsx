@@ -7,6 +7,7 @@ import Register from "../components/forms/Register";
 import Detail from "../pages/Detail";
 import ShoppingCart from "../pages/ShoppingCart";
 import WishList from "../pages/WishList";
+import OrderList from "../pages/OrderList";
 
 const router = createBrowserRouter([
 	{
@@ -35,6 +36,12 @@ const router = createBrowserRouter([
 			{
 				path: "/wish_list",
 				element: <WishList/>
+			},
+
+			//Admin routes
+			{
+				path: "/orders_list",
+				element: <OrderList/>
 			},
 
 			// TODO: RUTAS PARA ADMIN
