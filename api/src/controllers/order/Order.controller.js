@@ -1,4 +1,5 @@
 import {
+  Category,
   Order,
   OrderDetail,
   Payment,
@@ -102,11 +103,52 @@ class OrderController {
 
   // GET ORDER BY IDUSER
 
-  static async getOrderByUser(req, res){
+  static async getOrderByUser(req, res) {
     try {
-      const {id} = req.params
+      const { idUser } = req.params;
 
       const results = await Order.findAll({
+        where: {
+          idUser: idUser,
+        },
+        attributes: ["orderDate"],
+        include: [
+          {
+            model: OrderDetail,
+            attributes: ["quantity", "unitPrice"],
+            include: [
+              {
+                model: Product,
+                attributes: ["name", "image"],
+              },
+            ],
+          },
+        ],
+      });
+
+      if (results.length === 0) throw "no products with orders";
+      res.status(201).send({
+        success: true,
+        message: "Orders",
+        results,
+      });
+    } catch (err) {
+      res.status(404).send({
+        success: false,
+        message: err,
+      });
+    }
+  }
+
+  // GET BY ID ORDER (Admin)
+  // REVIEW: analizar y corregir los atributos a devolver que verá el admin
+  static async getOrderById(req, res) {
+    try {
+      const {idOrder} = req.params
+      const results = await Order.findOne({
+        where: {
+          id: idOrder,
+        },
         attributes:['orderDate'],
         include:[
           {
@@ -115,36 +157,19 @@ class OrderController {
             include:[
               {
                 model:Product,
-                attributes:['name', 'image']
+                attributes:['name', 'image'],
+                include:[
+                  {
+                    model:Category,
+                    attributes:['name']
+                  }
+                ]
               }
             ]
           }
         ]
-      })
-      if(!results) throw 'no products with orders'
-      res.status(201).send({
-        success: true,
-        message: "Orders",
-        results,
-      });      
-    } catch (err) {
-      res.status(404).send({
-        success: false,
-        message: err,
-      });      
-    }
-  }
-
-  // GET BY ID ORDER (Admin)
-  // REVIEW: analizar y corregir los atributos a devolver que verá el admin
-  static async getOrderById(req, res) {
-    try {
-      const results = await Order.findOne({
-        where: {
-          id: req.params.id,
-        },
       });
-      if (!results) throw "No order found";
+      if (!results) throw "No order aviable";
       res.status(200).send({
         success: true,
         message: "order found",
