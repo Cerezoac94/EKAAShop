@@ -37,29 +37,6 @@ class RoleController {
     }
   }
 
-  // GET BY ID
-  // REVIEW: Es probable que este endpoint no sea necesario
-  static async getRoleById(req, res){
-    try {
-      const results = await Role.findOne({
-        where: {
-          id: req.params.id
-        },
-        attributes: ["name"]
-      })
-      if(!results) throw "No role found"
-      res.status(200).send({
-        success: true,
-        message: "Role",
-        results
-      }) 
-    } catch (err) {
-      res.status(404).send({ 
-        success: false,
-        message: err
-      })
-    }
-  }
 
   // UPDATE
   static async updateRole(req, res){
@@ -98,7 +75,6 @@ class RoleController {
   }
 
 
-  // TODO: metodos de clase
 }
 
 export default RoleController;

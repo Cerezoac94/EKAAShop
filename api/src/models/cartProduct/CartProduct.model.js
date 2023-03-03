@@ -4,6 +4,11 @@ import conn from "../../db/db.js";
 class CartProduct extends Model { }
 
 CartProduct.init({
+  id:{
+    type: Dt.INTEGER,
+    primaryKey: true,
+    autoIncrement: true
+  },
   idCart: {
     type: Dt.INTEGER,
     allowNull: false

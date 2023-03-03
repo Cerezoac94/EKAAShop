@@ -5,7 +5,6 @@ import Wish from "./wish/Wish.model.js";
 import State from "./state/State.model.js";
 import Role from "./role/Role.model.js";
 import Category from "./category/Category.model.js";
-import Payment from "./payment/Payment.model.js";
 import CartProduct from "./cartProduct/CartProduct.model.js";
 import Order from "./order/Order.model.js";
 import Cart from "./cart/Cart.model.js";
@@ -172,15 +171,6 @@ Order.hasMany(OrderDetail,{
   foreignKey:'idOrder'
 })
 
-// Order-Payment
-Payment.belongsTo(Order,{
-  foreignKey:'idOrder'
-})
-Order.hasMany(Payment,{
-  foreignKey:'idOrder',
-  onUpdate:'CASCADE'
-})
-
 // Order-User
 Order.belongsTo(User,{
   foreignKey:'idUser',
@@ -203,8 +193,7 @@ export {
   Wish,
   State,
   Role, 
-  Category, 
-  Payment, 
+  Category,
   CartProduct, 
   Order,
   Cart,
