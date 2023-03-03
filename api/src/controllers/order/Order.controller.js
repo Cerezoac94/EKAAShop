@@ -1,4 +1,4 @@
-import { Order, OrderDetail, Payment, Product } from "../../models/index.js";
+import { Order, OrderDetail, Product } from "../../models/index.js";
 
 class OrderController {
   static async createOrder(req, res) {
@@ -22,21 +22,19 @@ class OrderController {
     try {
       const results = await Order.findAll({
         include: [
+          // NumOrden, Quien la hizo, fecha Orden, total de la order, status
         {
           model: OrderDetail,
+          attributes:['quantity', 'unitPrice', 'paid', 'shipmentState'],
           include: [
             {
               model: Product,
               attributes: ['name', 'image'],
             },
           ],
-        },
-        {
-          model: Payment,
-          attributes: ['paymentMethod']
         }
       ],
-      attributes: ['id']
+      attributes: ['id', 'orderDate']
     });
       if (results.length === 0) throw "The user has no orders";
       res.status(201).send({

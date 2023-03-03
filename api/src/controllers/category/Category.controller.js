@@ -35,27 +35,6 @@ class CategoryController {
     }
   }
 
-  static async getCategoryById(req, res) {
-    try {
-      const results = await Category.findOne({
-        where: {
-          id: req.params.id,
-        },
-        attributes: ["name"],
-      });
-      if (!results) throw "No category found";
-      res.status(200).send({
-        success: true,
-        message: "Category found",
-        results,
-      });
-    } catch (err) {
-      res.status(404).send({
-        success: false,
-        message: err,
-      });
-    }
-  }
 
   static async updateCategory(req, res) {
     try {

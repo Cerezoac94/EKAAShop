@@ -2,6 +2,7 @@ import { Review } from "../../models/index.js";
 
 class ReviewController {
   // CREATE
+  // VALIDAR QUE EL USER PUEDA CREAR REVIEW, SOLO SI A PRODUCTOS QUE HA ORDENADO
   static async createReview(req, res) {
     try {
       const results = await Review.create(req.body)
@@ -43,9 +44,10 @@ class ReviewController {
   // REVIEW: check if only indicated fields can be updated
   static async updateReview(req, res) {
     try {
+      // solo actualizará descripcion
       const results = await Review.update(req.body, {
         where: {
-          id: req.params.id
+          idUser: req.params.id
         }
       })
       if (results[0] === 0) throw "No review was updated"

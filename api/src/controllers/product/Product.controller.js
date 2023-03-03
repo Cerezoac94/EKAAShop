@@ -38,6 +38,8 @@ class ProductController {
     }
   }
 
+  // GET BY ID
+  // faltan los include
   static async getProductById(req, res) {
     try {
       const results = await Product.findOne({

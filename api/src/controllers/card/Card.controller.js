@@ -4,6 +4,7 @@ class CardController {
   // CREATE
   static async createCard(req, res) {
     try {
+// desestrcutura campos idUser, cardNumber, expirationDate, cvv
       const results = await Card.create(req.body)
       if (!results) throw "The card is not created"
       res.status(201).send({
@@ -19,30 +20,13 @@ class CardController {
     }
   }
 
-  // GET ALL WILL NOT BE USED
-  static async getAllCard(req, res) {
-    try {
-      const results = await Card.findAll()
-      if (results.length === 0) throw "No card found"
-      res.status(200).send({
-        success: true,
-        message: "Cards",
-        results
-      })
-    } catch (err) {
-      res.status(404).send({
-        success: false,
-        message: err
-      })
-    }
-  }
 
-  // GET BY ID
+  // GET BY IDUSER
   static async getCardById(req, res) {
     try {
-      const results = await Card.findOne({
+      const results = await Card.findAll({
         where: {
-          id: req.params.id
+          idUser: req.params.id
         },
         attributes: ["cardNumber", "expirationDate", "cvv"],
         include: { model: User, attributes: ["firstName", "lastName", "email"] }

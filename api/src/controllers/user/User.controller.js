@@ -57,14 +57,15 @@ class UserController {
   }
   // 
 
-  // GET BY ID
+  // GET BY ID  (authme)
+  // Review: como cambiar contraseña
   static async getUserById(req, res) {
     try {
       const results = await User.findOne({
         where: {
           id: req.params.id
         },
-        attributes: ["userName", "firstName", "lastName", "email", "birthday", "phone", "adress", "memberSince"],
+        attributes: ["userName", "firstName", "lastName", "email", "birthday", "phone", "adress"],
         include: { model: State, attributes: ["name"] }
       })
       if (!results) throw "No user found"
@@ -81,107 +82,24 @@ class UserController {
     }
   }
 
-  // GET USER CART  findByPk(id, { include: [{ all: true }] })
-  // static async getUserCart(req, res) {
-  //   try {
-  //     const userId = req.params.id
-  //     const results = await User.findByPk(userId, {
-  //       include: [{ all: true }]
-
-  //       //  include: {
-  //       //     model: Product,
-  //       //     through: CartProduct
-  //       //   }
-  //     });
-
-  //     if (results === null) throw "No cart found"
-  //     res.status(200).send({
-  //       success: true,
-  //       message: "Cart",
-  //       results
-  //     })
-  //   } catch (err) {
-  //     res.status(404).send({
-  //       success: false,
-  //       message: err
-  //     })
-  //   }
-  // }
-
-  // GET USER WISH
-  // static async getUserWish(req, res) {
-  //   try {
-  //     const userId = req.params.id
-  //     const results = await User.findByPk(userId, {
-  //       include: {
-  //         model: Wish,
-  //         include: {
-  //           model: Product,
-  //           through: WishProduct
-  //         }
-  //       }
-  //     });
-  //     if (results === null) throw "No wish found"
-  //     res.status(200).send({
-  //       success: true,
-  //       message: "Wish",
-  //       results
-  //     })
-  //   } catch (err) {
-  //     res.status(404).send({
-  //       success: false,
-  //       message: err
-  //     })
-  //   }
-  // }
-
   // GET USER CARD
-  static async getUserCard(req, res) {
-    try {
-      const userId = req.params.id
-      const results = await Card.findByPk(userId)
-      if (results === null) throw "No card found"
-      res.status(200).send({
-        success: true,
-        message: "Cards",
-        results
-      })
-    } catch (err) {
-      res.status(404).send({
-        success: false,
-        message: err
-      })
-    }
-  }
-
-  // GET USER WISH
-  static async getUserOrder(req, res) {
-    try {
-      const userId = req.params.id
-      const results = await Order.findAll({
-        where: { idUser: userId },
-        include: [
-          {
-            model: OrderDetail,
-            include: {
-              model: Product
-            }
-          }
-        ]
-      });
-      if (results === null) throw "No order found"
-      res.status(200).send({
-        success: true,
-        message: "Order",
-        results
-      })
-    } catch (err) {
-      res.status(404).send({
-        success: false,
-        message: err
-      })
-    }
-  }
+  // static async getUserCard(req, res) {
+    // try {
+      // const userId = req.params.id
+      // const results = await Card.findByPk(userId)
+      // if (results === null) throw "No card found"
+      // res.status(200).send({
+        // success: true,
+        // message: "Cards",
+        // results
+      // })
+    // } catch (err) {
+      // res.status(404).send({
+        // success: false,
+        // message: err
+      // })
+    // }
+  // }
 
   // UPDATE
   // REVIEW: check if only indicated fields can be updated
