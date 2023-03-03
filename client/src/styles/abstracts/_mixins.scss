@@ -7,7 +7,7 @@
     }
 }
 
-@mixin button($bg-color, $br-color:unset, $fn-color, $width, $height:unset, $br-radius:unset) {
+@mixin button($bg-color, $br-color:unset, $br-radius:unset, $fn-color, $width:unset, $height:unset) {
     background-color: $bg-color;
     border: none;
     border: 1px solid $br-color;

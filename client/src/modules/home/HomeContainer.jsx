@@ -11,7 +11,7 @@ const HomeContainer = () => {
     <section>
       <SlideHomeMap/>
       <Warranty/>
-      <Warranty/>
+    
       <InterestYouMap/>
       <BannerOffersMap/>
       <ReviewsClientMap/>
