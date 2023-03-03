@@ -13,10 +13,6 @@ Order.init(
       type: Dt.INTEGER,
       allowNull: false
     },
-    unitPrice:{
-      type: Dt.DECIMAL(10, 2),
-      allowNull: false
-    },
     paid:{
       type: Dt.BOOLEAN,
       allowNull: false
