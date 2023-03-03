@@ -1,0 +1,35 @@
+@use '../base/variables';
+@use '../abstracts/mixins';
+.slideHome {
+    display: flex;
+    justify-content: space-between;
+    &__img {
+        height: 250px;
+        width: 250px;
+    }
+    &__btn {
+        @include mixins.button(variables.$color9, variables.$color10, 10px, variables.$color10, 85px, 37px);
+        @include mixins.button-hover(variables.$color10);
+    }
+    &__btn2 {
+        @include mixins.button(variables.$color9, variables.$color10, 10px, variables.$color10, 85px, 37px);
+        @include mixins.button-hover(variables.$color9);
+    }
+    &__text {
+        display: flex;
+        flex-direction: column;
+        border: 1px solid red;
+        width: 250px;
+        font-weight: bold;
+        font-size: 1.48em;
+        @include mixins.desktop-view(1010px, unset, 2.98em);
+        margin-bottom: 2rem;
+    }
+}
+
+.swiper-horizontal>.swiper-pagination-bullets,
+.swiper-pagination-bullets.swiper-pagination-horizontal,
+.swiper-pagination-custom,
+.swiper-pagination-fraction {
+    top: 250px;
+}
