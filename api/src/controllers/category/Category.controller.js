@@ -20,7 +20,7 @@ class CategoryController {
 
   static async getAllCategory(req, res) {
     try {
-      const results = await Category.findAll(req.body);
+      const results = await Category.findAll();
       if (results.length === 0) throw "No categories registered";
       res.status(200).send({
         success: true,

@@ -1,4 +1,6 @@
+
 import { Discount, Product } from "../../models/index.js";
+
 
 class DiscountController {
   static async createDiscount(req, res) {
@@ -33,7 +35,7 @@ class DiscountController {
       });
     } catch (err) {
       res.status(404).send({
-        succes: false,
+        success: false,
         message: err,
       });
     }
@@ -61,6 +63,7 @@ class DiscountController {
   //     });
   //   }
   // }
+
   static async updateDiscount(req, res) {
     try {
       const results = await Discount.update(req.body, {

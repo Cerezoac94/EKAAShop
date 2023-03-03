@@ -21,6 +21,10 @@ Review.init({
   idUser: {
     type: Dt.INTEGER,
     allowNull: false
+  },
+  idProduct:{
+    type: Dt.INTEGER,
+    allowNull: false
   }
   // Falata agregar el campo de la clave foranea de product
 }, {

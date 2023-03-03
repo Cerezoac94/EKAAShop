@@ -1,0 +1,51 @@
+@use '../base/variables';
+@use '../abstracts/mixins';
+.listCart {
+    padding: 2rem;
+    h2 {
+        color: variables.$main_fonts;
+        margin-bottom: 2rem;
+        span {
+            font-weight: bolder;
+            margin-bottom: 2rem;
+        }
+    }
+    div {
+        display: flex;
+        /*    justify-content: center; */
+        .listCart__btn {
+            @include mixins.button(variables.$secondary, variables.$main_fonts, variables.$main_background, 90%, 3rem, 15px);
+            margin: auto;
+            @include mixins.button-hover( variables.$main_background);
+            /*  @include mixins.desktop-view() */
+        }
+    }
+    .card {
+        margin-top: 2rem;
+        &__footer {
+            display: flex;
+            justify-self: flex-start;
+        }
+        &__containerBtn {
+            justify-self: flex-start;
+            button {
+                width: 2rem;
+                @include mixins.button(variables.$secondary, variables.$main_fonts, variables.$main_background, 36px, 36px);
+            }
+            input {
+                width: 2.5rem;
+                height: 2.5rem;
+            }
+        }
+        &__btn {
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+            .btn {
+                @include mixins.button(variables.$secondary, variables.$main_fonts, variables.$main_background, 75px, 35px);
+                @include mixins.desktop-view(150px, 60px);
+                @include mixins.button-hover( variables.$main_background);
+            }
+        }
+    }
+}
