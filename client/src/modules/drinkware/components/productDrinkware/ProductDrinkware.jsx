@@ -1,5 +1,5 @@
 import React from "react";
-//import Link from 'react-router-dom'
+import {Link} from 'react-router-dom'
 //import Container from "react-bootstrap/Container";
 
 const ProductDrinkware = ({ product }) => {
@@ -14,7 +14,7 @@ const ProductDrinkware = ({ product }) => {
   ) */
 
   return (
-        <div className="product_item_container">
+<Link to="/" className="product_item_container">
           <img
             src={`${product.image}`}
             alt={product.name}
@@ -27,7 +27,7 @@ const ProductDrinkware = ({ product }) => {
             <ion-icon name="star-outline" class="rate_icons"></ion-icon>
             <ion-icon name="star-outline" class="rate_icons"></ion-icon>
           </div>
-        </div>
+</Link>
   );
 };
 
