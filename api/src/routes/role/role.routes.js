@@ -5,7 +5,6 @@ const roleRoutes = Router();
 
 roleRoutes.post("/", RoleController.createRole);
 roleRoutes.get("/", RoleController.getAllRoles);
-roleRoutes.get("/:id", RoleController.getRoleById);
 roleRoutes.put("/:id", RoleController.updateRole);
 roleRoutes.delete("/:id", RoleController.deleteRole);
 // TODO: all necessary paths

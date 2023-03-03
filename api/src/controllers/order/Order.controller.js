@@ -1,11 +1,5 @@
-import {
-  Category,
-  Order,
-  OrderDetail,
-  Payment,
-  Product,
-  User,
-} from "../../models/index.js";
+import { Order, OrderDetail, Product } from "../../models/index.js";
+
 
 class OrderController {
   static async createOrder(req, res) {
@@ -24,26 +18,26 @@ class OrderController {
       });
     }
   }
+  
   //Esto es vista para el admin
   static async getAllOrder(req, res) {
     try {
       const results = await Order.findAll({
         include: [
-          {
-            model: OrderDetail,
-            include: [
-              {
-                model: Product,
-                attributes: ["name", "image"],
-              },
-            ],
-          },
-          {
-            model: Payment,
-            attributes: ["paymentMethod"],
-          },
-        ],
-      });
+          // NumOrden, Quien la hizo, fecha Orden, total de la order, status
+        {
+          model: OrderDetail,
+          attributes:['quantity', 'unitPrice', 'paid', 'shipmentState'],
+          include: [
+            {
+              model: Product,
+              attributes: ['name', 'image'],
+            },
+          ],
+        }
+      ],
+      attributes: ['id', 'orderDate']
+    });
       if (results.length === 0) throw "The user has no orders";
       res.status(201).send({
         success: true,

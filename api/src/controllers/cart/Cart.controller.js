@@ -1,30 +1,18 @@
 import { Cart, CartProduct, User, Product } from "../../models/index.js";
 
 class CartController {
-  // static async createCart(req, res) {
-  //   try {
-  //     const results = await Category.create(req.body);
-  //     if (!results) throw "The cart is not created";
-  //     res.status(201).send({
-  //       success: true,
-  //       message: "Cart created succesfully",
-  //       results,
-  //     });
-  //   } catch (err) {
-  //     res.status(400).send({
-  //       success: false,
-  //       message: err,
-  //     });
-  //   }
-  // }
+// GET CART BY IDUSER
   static async getCart(req, res) {
     try {
       const idUser = req.params;
       const results = await Cart.findOne({
         where: idUser,
-        include: [{ model: Product }],
+
+        include: [
+          { model: Product,
+          attributes: ['name', 'description', 'price', 'stock', 'image'] }
+        ]
       });
-      console.log(results);
       if (results.length === 0) throw "No cart found";
       res.status(201).send({
         success: true,
