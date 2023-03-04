@@ -2,7 +2,7 @@ import { Review, Product, User } from "../../models/index.js";
 
 class ReviewController {
   // CREATE
-  // VALIDAR QUE EL USER PUEDA CREAR REVIEW, SOLO SI A PRODUCTOS QUE HA ORDENADO
+  // VALIDAR QUE EL USER PUEDA CREAR REVIEW, SOLO A PRODUCTOS QUE HA ORDENADO
   static async createReview(req, res) {
     try {
       const results = await Review.create(req.body)
@@ -71,7 +71,7 @@ class ReviewController {
     }
   }
 
-   // DELETE probably won't be used
+   // DELETE inly admin be used
    static async deleteReview(req, res) {
     try {
       const results = await Review.destroy({
