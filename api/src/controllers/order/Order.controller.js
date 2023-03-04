@@ -1,82 +1,112 @@
-import { Order, OrderDetail, Product } from "../../models/index.js";
+import { Order, OrderDetail, Product, Cart, CartProduct, Discount, User, Category } from "../../models/index.js";
 
 
 class OrderController {
-  // static async addProductCart(req, res) {
-  //   try {
-  //     // REVIEW: idUser obtenerlo más adelante desde payload, desde cookie o metodo authMe, más adelante ver cómo!
-  //     // Analizar si idProduct vendrá desde el body o como param
-  //     const { idUser, idProduct } = req.params;
-  //     const { quantity } = req.body;
-  //     const qtyInt = parseInt(quantity);
-  //     // Se busca al usuario
-  //     const user = await User.findByPk(idUser);
-  //     if (!user) throw "Problem with finding the user";
+  //CREATE ORDER
+  static async createOrder(req, res) {
+    try {
+      const id = req.body.id
+      // encontrar carrito del usuario
+      const cart = await Cart.findOne({
+        where: {
+          idUser: id
+        }
+      });
+      if(!cart) throw "Error finding cart"
+      // guardar detalle del carrito
+      const cartProducts = await CartProduct.findAll({
+        where: {
+          idCart: cart.id
+        }
+      });
+      if (cartProducts[0] === 0) throw 'There are no products to add to the order'
+      // comprobar stock suficiente
+      // Verificamos si los productos tienen suficiente stock
+      for (const cartProduct of cartProducts) {
+        const product = await Product.findByPk(cartProduct.idProduct);
+         if (parseInt(product.stock) < parseInt(cartProduct.quantity)) throw "Uno o más productos no tienen suficiente stock";
+      }
+      // Calcular total
+      let total = cartProducts.reduce(async (acc, cartProduct) => {
+        const product = await Product.findByPk(cartProduct.idProduct);
+        let productPrice = product.price
 
-  //     // Target Cart para el usuario correspondinte
-  //     const cart = await Cart.findOne({ where: { idUser: user.id } });
-  //     if (!cart) throw "Problem with finding the cart";
+        // Buscar descuento y aplicarlo si existe
+        const discount = await Discount.findOne({
+          where: {
+            idProduct: cartProduct.idProduct
+          }
+        });
+        if (discount) {
+          const now = new Date();
+          if (now >= discount.startDate && now <= discount.endDate) {
+            productPrice *= (1 - discount.discount / 100);
+          }
+        }else throw 'Error al encontrar descuentos'
+        return acc + (parseInt(productPrice) * parseInt(cartProduct.quantity))
+      }, 0)
+      
+      // Creamos la orden y el detalle de la orden
+      const order = await Order.create({
+        idUser: cart.idUser,
+        paid: true,
+        shipmentState: "no enviado",
+        orderDate: new Date()
+      });
+      if (!order) throw "The order is not created";
 
-  //     // Validate product
-  //     const product = await Product.findByPk(idProduct);
-  //     if (!product) throw "No product found";
+      for (const p of cartProducts) {
+        const product = await Product.findByPk(p.idProduct);
+        await OrderDetail.create({
+          idOrder: order.id,
+          idProduct: p.idProduct,
+          quantity: p.quantity,
+          unitPrice: product.price
+        })
+        await product.update({
+          stock: parseInt(product.stock) - parseInt(p.quantity)
+        })
+      }
 
-  //     //  add to cart
-  //     // Primero busco el cartProduct asociado al cart que se busco anteriormente
-  //     const cartProduct = await CartProduct.findOne({
-  //       where: { idCart: cart.id, idProduct: product.id },
-  //     });
-  //     //  if(!cartProduct) throw "Not added to cart"
+      // Eliminar productos del carrito
+      await CartProduct.destroy({
+        where: {
+          idCart: cart.id
+        }
+      });
 
-  //     // Si no hay un cartProduct o en el cartProduct no existe el producto, crea un cartProduct
-  //     if (!cartProduct) {
-  //       const results = await CartProduct.create({
-  //         idCart: cart.id,
-  //         idProduct: product.id,
-  //         quantity: quantity,
-  //       });
-  //       if (!results) throw "Not added to cart";
-  //     }
-  //     // Si hay cartProduct y el producto es el mismo, modifica la cantidad de el cartProduct aumentandole la cantidad indicada
-  //     // if (cartProduct && cartProduct.idProduct == product.idProduct) {
-  //     else {
-  //       const results = await cartProduct.update({
-  //         quantity: cartProduct.quantity + qtyInt,
-  //       });
-  //       if (results[0] === 0) throw "Not added to cart";
-  //     }
-  //     res.status(201).send({
-  //       success: true,
-  //       message: "Cart added",
-  //     });
-  //   } catch (err) {
-  //     res.status(404).send({
-  //       success: false,
-  //       message: err,
-  //     });
-  //   }
-  // }
+      res.status(201).send({
+        success: true,
+        message: "Order successfully created",
+        order,
+      });
+    } catch (err) {
+      res.status(404).send({
+        success: false,
+        message: err,
+      });
+    }
+  }
 
-  
   //Esto es vista para el admin
   static async getAllOrder(req, res) {
     try {
       const results = await Order.findAll({
         include: [
           // NumOrden, Quien la hizo, fecha Orden, total de la order, status
-        {
-          model: OrderDetail,
-          attributes:['quantity', 'total', 'paid', 'shipmentState'],
-          include: [
-            {
-              model: Product,
-              attributes: ['name', 'image'],
-            },
-          ],
-        }
-      ],
-      attributes: ['id', 'orderDate']
-    });
+          {
+            model: OrderDetail,
+            attributes: ['quantity', 'total', 'paid', 'shipmentState'],
+            include: [
+              {
+                model: Product,
+                attributes: ['name', 'image'],
+              },
+            ],
+          }
+        ],
+        attributes: ['id', 'orderDate']
+      });
       if (results.length === 0) throw "The user has no orders";
       res.status(201).send({
         success: true,
@@ -175,24 +205,24 @@ class OrderController {
   // REVIEW: analizar y corregir los atributos a devolver que verá el admin
   static async getOrderById(req, res) {
     try {
-      const {idOrder} = req.params
+      const { idOrder } = req.params
       const results = await Order.findOne({
         where: {
           id: idOrder,
         },
-        attributes:['orderDate'],
-        include:[
+        attributes: ['orderDate'],
+        include: [
           {
-            model:OrderDetail,
-            attributes:['quantity', 'unitPrice'],
-            include:[
+            model: OrderDetail,
+            attributes: ['quantity', 'unitPrice'],
+            include: [
               {
-                model:Product,
-                attributes:['name', 'image'],
-                include:[
+                model: Product,
+                attributes: ['name', 'image'],
+                include: [
                   {
-                    model:Category,
-                    attributes:['name']
+                    model: Category,
+                    attributes: ['name']
                   }
                 ]
               }

@@ -47,6 +47,7 @@ class ProductController {
         where: {
           id: req.params.id,
         },
+        include: { model: Category, attributes: ["name"]},
         attributes: ["name", "description", "price", "stock", "image"],
       });
       if (!results) throw "No product found";
@@ -66,7 +67,7 @@ class ProductController {
   static async getProductByCategory(req, res) {
     try {
       const { category } = req.body;
-      const results = await Category.findOne({
+      const results = await Category.findAll({
         where: { name: category },
         include: [Product],
       });
