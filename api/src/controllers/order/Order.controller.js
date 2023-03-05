@@ -1,57 +1,67 @@
-import { Order, OrderDetail, Product, Cart, CartProduct, Discount, User, Category } from "../../models/index.js";
-
+import {
+  Order,
+  OrderDetail,
+  Product,
+  Cart,
+  CartProduct,
+  Discount,
+  User,
+  Category,
+} from "../../models/index.js";
 
 class OrderController {
   //CREATE ORDER
   static async createOrder(req, res) {
     try {
-      const id = req.body.id
+      const id = req.body.id;
       // encontrar carrito del usuario
       const cart = await Cart.findOne({
         where: {
-          idUser: id
-        }
+          idUser: id,
+        },
       });
-      if(!cart) throw "Error finding cart"
+      if (!cart) throw "Error finding cart";
       // guardar detalle del carrito
       const cartProducts = await CartProduct.findAll({
         where: {
-          idCart: cart.id
-        }
+          idCart: cart.id,
+        },
       });
-      if (cartProducts[0] === 0) throw 'There are no products to add to the order'
+      if (cartProducts[0] === 0)
+        throw "There are no products to add to the order";
       // comprobar stock suficiente
       // Verificamos si los productos tienen suficiente stock
       for (const cartProduct of cartProducts) {
         const product = await Product.findByPk(cartProduct.idProduct);
-         if (parseInt(product.stock) < parseInt(cartProduct.quantity)) throw "Uno o más productos no tienen suficiente stock";
+        if (parseInt(product.stock) < parseInt(cartProduct.quantity))
+          throw "Uno o más productos no tienen suficiente stock";
       }
       // Calcular total
       let total = cartProducts.reduce(async (acc, cartProduct) => {
         const product = await Product.findByPk(cartProduct.idProduct);
-        let productPrice = product.price
+        let productPrice = product.price;
 
         // Buscar descuento y aplicarlo si existe
         const discount = await Discount.findOne({
           where: {
-            idProduct: cartProduct.idProduct
-          }
+            idProduct: cartProduct.idProduct,
+          },
         });
         if (discount) {
           const now = new Date();
           if (now >= discount.startDate && now <= discount.endDate) {
-            productPrice *= (1 - discount.discount / 100);
+            productPrice *= 1 - discount.discount / 100;
           }
-        }else throw 'Error al encontrar descuentos'
-        return acc + (parseInt(productPrice) * parseInt(cartProduct.quantity))
-      }, 0)
-      
+        } else throw "Error al encontrar descuentos";
+        return acc + parseInt(productPrice) * parseInt(cartProduct.quantity);
+      }, 0);
+
       // Creamos la orden y el detalle de la orden
       const order = await Order.create({
         idUser: cart.idUser,
         paid: true,
         shipmentState: "no enviado",
-        orderDate: new Date()
+        orderDate: new Date(),
       });
       if (!order) throw "The order is not created";
 
@@ -61,18 +71,18 @@ class OrderController {
           idOrder: order.id,
           idProduct: p.idProduct,
           quantity: p.quantity,
-          unitPrice: product.price
-        })
+          unitPrice: product.price,
+        });
         await product.update({
-          stock: parseInt(product.stock) - parseInt(p.quantity)
-        })
+          stock: parseInt(product.stock) - parseInt(p.quantity),
+        });
       }
 
       // Eliminar productos del carrito
       await CartProduct.destroy({
         where: {
-          idCart: cart.id
-        }
+          idCart: cart.id,
+        },
       });
 
       res.status(201).send({
@@ -96,16 +106,16 @@ class OrderController {
           // NumOrden, Quien la hizo, fecha Orden, total de la order, status
           {
             model: OrderDetail,
-            attributes: ['quantity', 'total', 'paid', 'shipmentState'],
+            attributes: ["quantity", "total", "paid", "shipmentState"],
             include: [
               {
                 model: Product,
-                attributes: ['name', 'image'],
+                attributes: ["name", "image"],
               },
             ],
-          }
+          },
         ],
-        attributes: ['id', 'orderDate']
+        attributes: ["id", "orderDate"],
       });
       if (results.length === 0) throw "The user has no orders";
       res.status(201).send({
@@ -205,30 +215,30 @@ class OrderController {
   // REVIEW: analizar y corregir los atributos a devolver que verá el admin
   static async getOrderById(req, res) {
     try {
-      const { idOrder } = req.params
+      const { idOrder } = req.params;
       const results = await Order.findOne({
         where: {
           id: idOrder,
         },
-        attributes: ['orderDate'],
+        attributes: ["orderDate"],
         include: [
           {
             model: OrderDetail,
-            attributes: ['quantity', 'unitPrice'],
+            attributes: ["quantity", "unitPrice"],
             include: [
               {
                 model: Product,
-                attributes: ['name', 'image'],
+                attributes: ["name", "image"],
                 include: [
                   {
                     model: Category,
-                    attributes: ['name']
-                  }
-                ]
-              }
-            ]
-          }
-        ]
+                    attributes: ["name"],
+                  },
+                ],
+              },
+            ],
+          },
+        ],
       });
       if (!results) throw "No order aviable";
       res.status(200).send({
@@ -246,11 +256,19 @@ class OrderController {
   //Esto puede que se quite
   static async updateOrder(req, res) {
     try {
-      const results = await Order.update(req.body, {
-        where: {
-          id: req.params.id,
+      const { paid, shipmentState } = req.body;
+      const { id } = req.params;
+      const results = await Order.update(
+        {
+          paid,
+          shipmentState,
         },
-      });
+        {
+          where: {
+            id: id,
+          },
+        }
+      );
       if (results[0] === 0) throw "order was not updated";
       res.status(201).send({
         success: true,
@@ -266,9 +284,10 @@ class OrderController {
   //Esto puede que se quite
   static async deleteOrder(req, res) {
     try {
+      const { id } = req.params;
       const results = await Order.destroy({
         where: {
-          id: req.params.id,
+          id: id,
         },
       });
       if (results === 0) throw "No order was deleted";

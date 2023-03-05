@@ -1,11 +1,16 @@
-
 import { Discount, Product } from "../../models/index.js";
-
 
 class DiscountController {
   static async createDiscount(req, res) {
     try {
-      const results = await Discount.create(req.body);
+      const { code, startDate, endDate, discount, idProduct } = req.body;
+      const results = await Discount.create({
+        code,
+        startDate,
+        endDate,
+        discount,
+        idProduct,
+      });
       if (!results) throw "The discount is not registered";
       res.status(201).send({
         success: true,
@@ -22,11 +27,12 @@ class DiscountController {
 
   static async getAllDiscounts(req, res) {
     try {
-      const results = await Discount.findAll({include:
-      {
-        model: Product,
-        attributes: ['name', 'image']
-      }});
+      const results = await Discount.findAll({
+        include: {
+          model: Product,
+          attributes: ["name", "image"],
+        },
+      });
       if (results[0] === 0) throw "No discount registered";
       res.status(201).send({
         succes: true,
@@ -66,11 +72,16 @@ class DiscountController {
 
   static async updateDiscount(req, res) {
     try {
-      const results = await Discount.update(req.body, {
-        where: {
-          id: req.params.id,
-        },
-      });
+      const { code, startDate, endDate, discount, idProduct } = req.body;
+      const { id } = req.params;
+      const results = await Discount.update(
+        { code, startDate, endDate, discount, idProduct },
+        {
+          where: {
+            id: id,
+          },
+        }
+      );
       if (results[0] === 0) throw "No discount was updated";
       res.status(201).send({
         success: true,
@@ -85,9 +96,10 @@ class DiscountController {
   }
   static async deleteDiscount(req, res) {
     try {
+      const { id } = req.params;
       const results = await Discount.destroy({
         where: {
-          id: req.params.id,
+          id: id,
         },
       });
       if (results === 0) throw "No discount was deleted";

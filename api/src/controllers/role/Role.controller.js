@@ -4,7 +4,8 @@ class RoleController {
   // CREATE
   static async createRole(req, res){
     try {
-      const results = await Role.create(req.body)
+      const {name} = req.body
+      const results = await Role.create({name})
       if (!results) throw "The category is not created"
       res.status(201).send({
         success: true,
@@ -41,9 +42,10 @@ class RoleController {
   // UPDATE
   static async updateRole(req, res){
     try {
+      const {id} = req.params
       const results = await Role.update( req.body, {
         where: {
-          id: req.params.id
+          id: id
         }
       })
       if(results[0] === 0) throw "No role was updated"
@@ -59,9 +61,10 @@ class RoleController {
   // DELETE
   static async deleteRole(req, res){
     try {
+      const {id} = req.params
       const results = await Role.destroy({
         where: {
-          id: req.params.id
+          id: id
         }
       })
       if(results === 0) throw "No role was deleted"

@@ -5,18 +5,28 @@ class ReviewController {
   // VALIDAR QUE EL USER PUEDA CREAR REVIEW, SOLO A PRODUCTOS QUE HA ORDENADO
   static async createReview(req, res) {
     try {
-      const results = await Review.create(req.body)
-      if (!results) throw "The Review is not created"
+      const { idProduct, idUser, rating, title, description, reviewDate } =
+        req.body;
+
+      const results = await Review.create({
+        idProduct,
+        idUser,
+        rating,
+        title,
+        description,
+        reviewDate,
+      });
+      if (!results) throw "The Review is not created";
       res.status(201).send({
         success: true,
         message: "Review created succesfully",
-        results
-      })
+        results,
+      });
     } catch (err) {
       res.status(400).send({
         success: false,
-        message: err
-      })
+        message: err,
+      });
     }
   }
 
@@ -24,28 +34,28 @@ class ReviewController {
   static async getAllReview(req, res) {
     try {
       const results = await Review.findAll({
-        include:[
-        {
-            model:User,
-            attributes:['userName'],
-        },
-        {
-          model:Product,
-          attributes:['image']
-        }
-      ]
-      })
-      if (results.length === 0) throw "No review found"
+        include: [
+          {
+            model: User,
+            attributes: ["userName"],
+          },
+          {
+            model: Product,
+            attributes: ["image"],
+          },
+        ],
+      });
+      if (results.length === 0) throw "No review found";
       res.status(200).send({
         success: true,
         message: "Review",
-        results
-      })
+        results,
+      });
     } catch (err) {
       res.status(404).send({
         success: false,
-        message: err
-      })
+        message: err,
+      });
     }
   }
 
@@ -55,40 +65,53 @@ class ReviewController {
   // REVIEW: check if only indicated fields can be updated
   static async updateReview(req, res) {
     try {
+      const {id} =req.params
+      const { idProduct, idUser, rating, title, description, reviewDate } =
+        req.body;
       // solo actualizará descripcion
-      const results = await Review.update(req.body, {
-        where: {
-          idUser: req.params.id
+      const results = await Review.update(
+        {
+          idProduct,
+          idUser,
+          rating,
+          title,
+          description,
+          reviewDate,
+        },
+        {
+          where: {
+            idUser: id,
+          },
         }
-      })
-      if (results[0] === 0) throw "No review was updated"
-      res.status(204).send()
+      );
+      if (results[0] === 0) throw "No review was updated";
+      res.status(204).send();
     } catch (err) {
       res.status(400).send({
         success: false,
-        message: err
-      })
+        message: err,
+      });
     }
   }
 
-   // DELETE inly admin be used
-   static async deleteReview(req, res) {
+  // DELETE inly admin be used
+  static async deleteReview(req, res) {
     try {
+      const {id} = req.params
       const results = await Review.destroy({
         where: {
-          id: req.params.id
-        }
-      })
-      if (results === 0) throw "No review was deleted"
-      res.status(204).send()
+          id: id,
+        },
+      });
+      if (results === 0) throw "No review was deleted";
+      res.status(204).send();
     } catch (err) {
       res.status(403).send({
         success: false,
-        message: err
-      })
+        message: err,
+      });
     }
   }
-
 }
 
 export default ReviewController;
