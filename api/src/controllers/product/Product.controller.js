@@ -5,7 +5,15 @@ class ProductController {
   // CREATE
   static async createProduct(req, res) {
     try {
-      const results = await Product.create(req.body);
+      const { name, description, price, stock, image, idCategory } = req.body;
+      const results = await Product.create({
+        name,
+        description,
+        price,
+        stock,
+        image,
+        idCategory,
+      });
       if (!results) throw "The product is not created";
       res.status(201).send({
         success: true,
@@ -47,7 +55,7 @@ class ProductController {
         where: {
           id: req.params.id,
         },
-        include: { model: Category, attributes: ["name"]},
+        include: { model: Category, attributes: ["name"] },
         attributes: ["name", "description", "price", "stock", "image"],
       });
       if (!results) throw "No product found";
@@ -111,11 +119,23 @@ class ProductController {
 
   static async updateProduct(req, res) {
     try {
-      const results = await Product.update(req.body, {
-        where: {
-          id: req.params.id,
+      const {id} =req.params
+      const { name, description, price, stock, image, idCategory } = req.body;
+      const results = await Product.update(
+        {
+          name,
+          description,
+          price,
+          stock,
+          image,
+          idCategory,
         },
-      });
+        {
+          where: {
+            id: id,
+          },
+        }
+      );
       if (results[0] === 0) throw "No product was updated";
       res.status(201).send({
         success: true,
@@ -130,9 +150,10 @@ class ProductController {
   }
   static async deletedProduct(req, res) {
     try {
+      const {id} =req.params
       const results = await Product.destroy({
         where: {
-          id: req.params.id,
+          id: id,
         },
       });
       if (results === 0) throw "No Product was deleted";
