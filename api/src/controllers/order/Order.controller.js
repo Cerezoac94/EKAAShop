@@ -53,7 +53,7 @@ class OrderController {
             productPrice *= 1 - discount.discount / 100;
           }
         }
-        // crear orden
+        // crear detalle de orden
         await OrderDetail.create({
           idOrder: order.id,
           idProduct: cartProduct.idProduct,
