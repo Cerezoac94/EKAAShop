@@ -18,8 +18,8 @@ class OrderController {
           idCart: cart.id,
         },
       });
-      if (cartProducts[0] === 0)
-        throw "There are no products to add to the order";
+      console.log('cartProduct',cartProducts);
+      if (!cartProducts.length) throw "There are no products to add to the order";
       // comprobar stock suficiente
       // Verificamos si los productos tienen suficiente stock
       for (const cartProduct of cartProducts) {
@@ -66,7 +66,6 @@ class OrderController {
 
         total += (parseInt(productPrice) * parseInt(cartProduct.quantity))
       }
-
 
       // Eliminar productos del carrito
       await CartProduct.destroy({
