@@ -1,13 +1,4 @@
-import {
-  Order,
-  OrderDetail,
-  Product,
-  Cart,
-  CartProduct,
-  Discount,
-  User,
-  Category,
-} from "../../models/index.js";
+import { Order, OrderDetail, Product, Cart, CartProduct, Discount, User, Category } from "../../models/index.js";
 
 class OrderController {
   //CREATE ORDER
@@ -35,7 +26,16 @@ class OrderController {
         const product = await Product.findByPk(cartProduct.idProduct);
         if (parseInt(product.stock) < parseInt(cartProduct.quantity)) throw "Uno o más productos no tienen suficiente stock";
       }
-      // Calcular total
+      // Creamos la orden
+      const order = await Order.create({
+        idUser: cart.idUser,
+        paid: true,
+        shipmentState: "no enviado",
+        orderDate: new Date(),
+      });
+      if (!order) throw "The order is not created";
+
+      // Calcular total y creación del detalle de la orden
       let total = 0
       for (const cartProduct of cartProducts) {
         const product = await Product.findByPk(cartProduct.idProduct);
@@ -53,31 +53,20 @@ class OrderController {
             productPrice *= 1 - discount.discount / 100;
           }
         }
+        // crear orden
+        await OrderDetail.create({
+          idOrder: order.id,
+          idProduct: cartProduct.idProduct,
+          quantity: cartProduct.quantity,
+          unitPrice: productPrice
+        });
+        await product.update({
+          stock: parseInt(product.stock) - parseInt(cartProduct.quantity),
+        });
+
         total += (parseInt(productPrice) * parseInt(cartProduct.quantity))
       }
 
-
-      // Creamos la orden y el detalle de la orden
-      const order = await Order.create({
-        idUser: cart.idUser,
-        paid: true,
-        shipmentState: "no enviado",
-        orderDate: new Date(),
-      });
-      if (!order) throw "The order is not created";
-
-      for (const p of cartProducts) {
-        const product = await Product.findByPk(p.idProduct);
-        await OrderDetail.create({
-          idOrder: order.id,
-          idProduct: p.idProduct,
-          quantity: p.quantity,
-          unitPrice: product.price,
-        });
-        await product.update({
-          stock: parseInt(product.stock) - parseInt(p.quantity),
-        });
-      }
 
       // Eliminar productos del carrito
       await CartProduct.destroy({
