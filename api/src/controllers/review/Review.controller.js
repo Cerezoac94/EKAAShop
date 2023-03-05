@@ -5,6 +5,7 @@ class ReviewController {
   // VALIDAR QUE EL USER PUEDA CREAR REVIEW, SOLO A PRODUCTOS QUE HA ORDENADO
   static async createReview(req, res) {
     try {
+
       console.log(0);
       const { idUser, idProduct } = req.params
       const { title, description, rating } = req.body
@@ -34,11 +35,12 @@ class ReviewController {
         results
       })
       console.log(3);
+
     } catch (err) {
       res.status(400).send({
         success: false,
-        message: err
-      })
+        message: err,
+      });
     }
   }
 
@@ -58,16 +60,17 @@ class ReviewController {
       ]
       })
       if (results.length === 0) throw "No review found"
+
       res.status(200).send({
         success: true,
         message: "Review",
-        results
-      })
+        results,
+      });
     } catch (err) {
       res.status(404).send({
         success: false,
-        message: err
-      })
+        message: err,
+      });
     }
   }
 
@@ -77,40 +80,53 @@ class ReviewController {
   // REVIEW: check if only indicated fields can be updated
   static async updateReview(req, res) {
     try {
+      const {id} =req.params
+      const { idProduct, idUser, rating, title, description, reviewDate } =
+        req.body;
       // solo actualizará descripcion
-      const results = await Review.update(req.body, {
-        where: {
-          idUser: req.params.id
+      const results = await Review.update(
+        {
+          idProduct,
+          idUser,
+          rating,
+          title,
+          description,
+          reviewDate,
+        },
+        {
+          where: {
+            idUser: id,
+          },
         }
-      })
-      if (results[0] === 0) throw "No review was updated"
-      res.status(204).send()
+      );
+      if (results[0] === 0) throw "No review was updated";
+      res.status(204).send();
     } catch (err) {
       res.status(400).send({
         success: false,
-        message: err
-      })
+        message: err,
+      });
     }
   }
 
-   // DELETE inly admin be used
-   static async deleteReview(req, res) {
+  // DELETE inly admin be used
+  static async deleteReview(req, res) {
     try {
+      const {id} = req.params
       const results = await Review.destroy({
         where: {
-          id: req.params.id
-        }
-      })
-      if (results === 0) throw "No review was deleted"
-      res.status(204).send()
+          id: id,
+        },
+      });
+      if (results === 0) throw "No review was deleted";
+      res.status(204).send();
     } catch (err) {
       res.status(403).send({
         success: false,
-        message: err
-      })
+        message: err,
+      });
     }
   }
-
 }
 
 export default ReviewController;
