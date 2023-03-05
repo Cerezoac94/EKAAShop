@@ -65,12 +65,25 @@ class ReviewController {
   // REVIEW: check if only indicated fields can be updated
   static async updateReview(req, res) {
     try {
+      const {id} =req.params
+      const { idProduct, idUser, rating, title, description, reviewDate } =
+        req.body;
       // solo actualizará descripcion
-      const results = await Review.update(req.body, {
-        where: {
-          idUser: req.params.id,
+      const results = await Review.update(
+        {
+          idProduct,
+          idUser,
+          rating,
+          title,
+          description,
+          reviewDate,
         },
-      });
+        {
+          where: {
+            idUser: id,
+          },
+        }
+      );
       if (results[0] === 0) throw "No review was updated";
       res.status(204).send();
     } catch (err) {
@@ -84,9 +97,10 @@ class ReviewController {
   // DELETE inly admin be used
   static async deleteReview(req, res) {
     try {
+      const {id} = req.params
       const results = await Review.destroy({
         where: {
-          id: req.params.id,
+          id: id,
         },
       });
       if (results === 0) throw "No review was deleted";

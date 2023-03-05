@@ -51,9 +51,10 @@ class ProductController {
   // faltan los include
   static async getProductById(req, res) {
     try {
+      const {id} =req.params
       const results = await Product.findOne({
         where: {
-          id: req.params.id,
+          id: id,
         },
         include: { model: Category, attributes: ["name"] },
         attributes: ["name", "description", "price", "stock", "image"],
