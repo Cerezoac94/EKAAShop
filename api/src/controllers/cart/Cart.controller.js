@@ -26,6 +26,7 @@ class CartController {
       });
     }
   }
+  // AddProductCart
   static async addProductCart(req, res) {
     try {
       // REVIEW: idUser obtenerlo más adelante desde payload, desde cookie o metodo authMe, más adelante ver cómo!
