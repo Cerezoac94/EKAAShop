@@ -12,7 +12,7 @@ class OrderController {
           idUser: id
         }
       });
-      if(!cart) throw "Error finding cart"
+      if (!cart) throw "Error finding cart"
       // guardar detalle del carrito
       const cartProducts = await CartProduct.findAll({
         where: {
@@ -24,10 +24,11 @@ class OrderController {
       // Verificamos si los productos tienen suficiente stock
       for (const cartProduct of cartProducts) {
         const product = await Product.findByPk(cartProduct.idProduct);
-         if (parseInt(product.stock) < parseInt(cartProduct.quantity)) throw "Uno o más productos no tienen suficiente stock";
+        if (parseInt(product.stock) < parseInt(cartProduct.quantity)) throw "Uno o más productos no tienen suficiente stock";
       }
       // Calcular total
-      let total = cartProducts.reduce(async (acc, cartProduct) => {
+      let total = 0
+      for (const cartProduct of cartProducts) {
         const product = await Product.findByPk(cartProduct.idProduct);
         let productPrice = product.price
 
@@ -42,10 +43,10 @@ class OrderController {
           if (now >= discount.startDate && now <= discount.endDate) {
             productPrice *= (1 - discount.discount / 100);
           }
-        }else throw 'Error al encontrar descuentos'
-        return acc + (parseInt(productPrice) * parseInt(cartProduct.quantity))
-      }, 0)
-      
+        }
+        total += (parseInt(productPrice) * parseInt(cartProduct.quantity))
+      }
+
       // Creamos la orden y el detalle de la orden
       const order = await Order.create({
         idUser: cart.idUser,
@@ -79,6 +80,7 @@ class OrderController {
         success: true,
         message: "Order successfully created",
         order,
+        total,
       });
     } catch (err) {
       res.status(404).send({
@@ -96,7 +98,7 @@ class OrderController {
           // NumOrden, Quien la hizo, fecha Orden, total de la order, status
           {
             model: OrderDetail,
-            attributes: ['quantity', 'total', 'paid', 'shipmentState'],
+            attributes: ['idProduct', 'quantity', 'unitPrice'],
             include: [
               {
                 model: Product,
@@ -105,7 +107,7 @@ class OrderController {
             ],
           }
         ],
-        attributes: ['id', 'orderDate']
+
       });
       if (results.length === 0) throw "The user has no orders";
       res.status(201).send({
@@ -172,11 +174,10 @@ class OrderController {
         where: {
           idUser: idUser,
         },
-        attributes: ["orderDate"],
         include: [
           {
             model: OrderDetail,
-            attributes: ["quantity", "unitPrice"],
+            attributes: ["idProduct", "quantity", "unitPrice"],
             include: [
               {
                 model: Product,

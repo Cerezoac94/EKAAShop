@@ -3,7 +3,7 @@ import ReviewController from "../../controllers/review/Review.controller.js";
 
 const reviewRoutes = Router();
 
-reviewRoutes.post("/", ReviewController.createReview);
+reviewRoutes.post("/:idUser/:idProduct", ReviewController.createReview);
 reviewRoutes.get("/", ReviewController.getAllReview);
 reviewRoutes.put("/:id", ReviewController.updateReview);
 reviewRoutes.delete("/:id", ReviewController.deleteReview);

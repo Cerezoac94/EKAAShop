@@ -1,17 +1,39 @@
-import { Review, Product, User } from "../../models/index.js";
+import { Review, Product, User, Order, OrderDetail } from "../../models/index.js";
 
 class ReviewController {
   // CREATE
   // VALIDAR QUE EL USER PUEDA CREAR REVIEW, SOLO A PRODUCTOS QUE HA ORDENADO
   static async createReview(req, res) {
     try {
-      const results = await Review.create(req.body)
+      console.log(0);
+      const { idUser, idProduct } = req.params
+      const { title, description, rating } = req.body
+      const reviewDate = new Date()
+      reviewDate.toLocaleDateString();
+      const ProductInOrder = await Order.findOne({
+        where:{
+          idUser: idUser
+        },
+        include: {
+          model: OrderDetail,
+          where:{
+            idProduct: idProduct
+          }
+        }
+      })
+      if (!ProductInOrder) {
+        throw 'You cannot create a review for a product that has not been purchased'
+      }
+      console.log(1);
+      const results = await Review.create({ rating, title, description, reviewDate, idUser, idProduct })
+      console.log(2);
       if (!results) throw "The Review is not created"
       res.status(201).send({
         success: true,
         message: "Review created succesfully",
         results
       })
+      console.log(3);
     } catch (err) {
       res.status(400).send({
         success: false,
@@ -31,7 +53,7 @@ class ReviewController {
         },
         {
           model:Product,
-          attributes:['image']
+          attributes:['name', 'image']
         }
       ]
       })
