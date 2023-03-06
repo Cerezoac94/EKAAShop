@@ -7,13 +7,15 @@ import Form from "react-bootstrap/Form";
 const OrderList = ({ data, handleChange }) => {
   return (
     <Container fluid className="orders_list_container">
-      <Container fluid>
+      <Container fluid className="list_header_container">
         <Form.Control
           type="search"
           aria-label="search"
           onChange={handleChange}
+          className="input_search_order"
+          placeholder="order, name"
         />
-        <select name="select">
+        <select name="select" className="status_filter">
           <option value="value1">Complete</option>
           <option value="value2" selected>
          In Progress
@@ -21,7 +23,7 @@ const OrderList = ({ data, handleChange }) => {
           <option value="value3">Sent</option>
         </select>
       </Container>
-      <Table hover responsive="sm" className="table_container">
+      <Table hover responsive="xl" className="table_container"> {/* responsive = "sm" */}
         <tbody className="table_body">
           <tr>
             <th>Order #</th>
@@ -38,8 +40,8 @@ const OrderList = ({ data, handleChange }) => {
               <td>$ {item.subtotal}</td>
               <td>{item.status}</td>
               <td className="buttons_container">
-                <button>view</button>
-                <button>ship</button>
+                <button className="view_order_btn">View</button>
+                <button className="shipped_order_btn">Shipped</button>
               </td>
             </tr>
           ))}

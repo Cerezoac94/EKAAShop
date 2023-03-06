@@ -5,7 +5,7 @@ import stanley_cup from "../../../assets/stanley_tumbler.jpg";
 
 const ProductDetailDesktop = () => {
   return (
-    <Container className="product_details_desktop">
+    <Container className="product_details_desktop_container">
       <section className="product_image_section">
         <Image fluid src={stanley_cup} />
         <ion-icon name="heart-outline" class="add_product_icon"></ion-icon>

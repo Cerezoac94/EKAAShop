@@ -1,7 +1,7 @@
 import React from "react";
 import {Link} from 'react-router-dom'
 //import Container from "react-bootstrap/Container";
-
+import Image from 'react-bootstrap/Image'
 const ProductDrinkware = ({ product }) => {
   /*   return (
     <section>
@@ -14,8 +14,8 @@ const ProductDrinkware = ({ product }) => {
   ) */
 
   return (
-<Link to="/" className="product_item_container">
-          <img
+<Link to="/product_detail" className="product_item_container">
+          <Image
             src={`${product.image}`}
             alt={product.name}
             className="product_image"

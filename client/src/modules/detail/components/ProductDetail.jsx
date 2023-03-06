@@ -12,7 +12,7 @@ const ProductDetail = () => {
       <section className="product_header_mobile">
       <section className="product_detail_header">
         <section className="product_rate_container">
-          <label className="rate_product_label">Lorem ipsum dolor sit</label>
+          <label className="rate_product_label">Yeti Harvest - Vaso rojo</label>
           <Container className="rate_icons_container">
             <ion-icon name="star-outline" class="rate_icons"></ion-icon>
             <ion-icon name="star-outline" class="rate_icons"></ion-icon>

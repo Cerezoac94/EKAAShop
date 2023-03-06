@@ -13,7 +13,7 @@ const Header = () => {
       <Navbar expand="md"  sticky="top">
         <Container fluid className="navbar_style">
           <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-md`} />
-          <Navbar.Brand href="#">
+          <Navbar.Brand href="/">
             <img src={logo} alt="logo_home" className="logo" />
           </Navbar.Brand>
           <div className="navbar_icons">
