@@ -26,6 +26,7 @@ class CartController {
       });
     }
   }
+  // AddProductCart
   static async addProductCart(req, res) {
     try {
       // REVIEW: idUser obtenerlo más adelante desde payload, desde cookie o metodo authMe, más adelante ver cómo!
@@ -149,9 +150,6 @@ class CartController {
       });
     }
   }
-  static async deletedCart(req, res) {
-    try {
-    } catch (err) {}
-  }
+  
 }
 export default CartController;

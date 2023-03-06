@@ -3,7 +3,8 @@ import { State } from "../../models/index.js";
 class StateController {
   static async createState(req, res) {
     try {
-      const results = await State.create(req.body)
+      const {name} = req.body
+      const results = await State.create({name})
       if (!results) throw "The state is not created"
       res.status(201).send({
         success: true,
@@ -39,9 +40,11 @@ class StateController {
   // UPDATE
   static async updateState(req, res){
     try {
-      const results = await State.update( req.body, {
+      const {id} = req.params
+      const {name} = req.body
+      const results = await State.update( {id,name}, {
         where: {
-          id: req.params.id
+          id: id
         }
       })
       if(results[0] === 0) throw "No state was updated"
@@ -58,9 +61,10 @@ class StateController {
   // DELETE
   static async deleteState(req, res){
     try {
+      const {id} = req.params
       const results = await State.destroy({
         where: {
-          id: req.params.id
+          id: id
         }
       })
       if(results === 0) throw "No state was deleted"
