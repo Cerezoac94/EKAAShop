@@ -19,14 +19,28 @@ img.product_image {
 }
 .product_item_name {
     font-size: 1.5rem;
+    font-weight: 600;
     text-align: center;
     margin-top: 0.938rem;
 }
 
 .product_item_description {
-    font-size: 1.25rem;
+    font-size: 1.125rem;
     //margin: 0.313rem 0;
 }
-.rate_icons.md.hydrated {
+/* .rate_icons.md.hydrated {
     margin: 0 0.313rem;
+}
+ */
+
+//Desktop
+@media only screen and (min-width: 768px) {
+    .product_drinkware_container{
+        align-items: stretch;
+        justify-content: space-evenly;
+    }
+
+    .product_item_container {
+        width: 20%;
+    }
 }

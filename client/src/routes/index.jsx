@@ -8,6 +8,7 @@ import Detail from "../pages/Detail";
 import ShoppingCart from "../pages/ShoppingCart";
 import WishList from "../pages/WishList";
 import OrderList from "../pages/OrderList";
+import AboutUs from "../pages/AboutUs";
 
 const router = createBrowserRouter([
 	{
@@ -36,6 +37,10 @@ const router = createBrowserRouter([
 			{
 				path: "/wish_list",
 				element: <WishList/>
+			},
+			{
+				path: "/about_us",
+				element: <AboutUs/>
 			},
 
 			//Admin routes

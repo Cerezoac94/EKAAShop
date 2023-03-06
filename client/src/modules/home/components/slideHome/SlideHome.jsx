@@ -1,5 +1,5 @@
 import SlideHomeSwipe from "./SlideHomeSwipe"
-import Container from "react-bootstrap/container"
+import Container from "react-bootstrap/Container" //debe ser mayuscula
 import stanley_cup from "../../../../assets/stanley_tumbler.jpg"
 import Image from 'react-bootstrap/Image'
 
