@@ -89,7 +89,7 @@ class OrderController {
   }
 
   //Esto es vista para el admin
-  static async getAllOrder(req, res) {
+  static async getAllOrders(req, res) {
     try {
       const results = await Order.findAll({
         include: [
@@ -199,7 +199,7 @@ class OrderController {
     }
   }
 
-  // GET BY ID ORDER (detail order Admin)
+  // GET BY ID ORDER (detail order)
   // REVIEW: analizar y corregir los atributos a devolver que verá el admin
   static async getOrderById(req, res) {
     try {
@@ -244,11 +244,10 @@ class OrderController {
   //Esto puede que se quite
   static async updateOrder(req, res) {
     try {
-      const { paid, shipmentState } = req.body;
+      const { shipmentState } = req.body;
       const { id } = req.params;
       const results = await Order.update(
         {
-          paid,
           shipmentState,
         },
         {
@@ -269,13 +268,13 @@ class OrderController {
       });
     }
   }
-  //Esto puede que se quite
+  //Desde vista de lista o general de las ordenes
   static async deleteOrder(req, res) {
     try {
-      const { id } = req.params;
+      const  idOrder  = req.params;
       const results = await Order.destroy({
         where: {
-          id: id,
+          id: idOrder,
         },
       });
       if (results === 0) throw "No order was deleted";
@@ -289,6 +288,12 @@ class OrderController {
         message: err,
       });
     }
+  }
+
+  // desde el detalle de la orden
+  static async deleteProductOrder(req, res){
+// idOrder y idProduct desde params
+// quantity desde body
   }
 }
 export default OrderController;

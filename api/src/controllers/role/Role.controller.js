@@ -42,8 +42,9 @@ class RoleController {
   // UPDATE
   static async updateRole(req, res){
     try {
-      const {id} = req.params
-      const results = await Role.update( req.body, {
+      const { id } = req.params
+      const { name } = req.body
+      const results = await Role.update( { name } , {
         where: {
           id: id
         }
