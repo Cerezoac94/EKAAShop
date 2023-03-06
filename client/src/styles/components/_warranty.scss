@@ -1,5 +1,32 @@
+@use '../base/variables';
+@use '../abstracts/mixins';
 .warranty {
+    margin-top: 1rem;
     &__options {
         display: flex;
+        justify-content: space-evenly;
+    }
+    &__join {
+        display: flex;
+        gap: 0.5rem;
+        ion-icon {
+            font-size: 2.5rem;
+            color: variables.$color9;
+            font-weight: bold;
+        }
+        &__txtContainer {
+            display: flex;
+            flex-direction: column;
+        }
+        span {
+            font-size: .5rem;
+            @include mixins.desktop-view(unset, unset, 0.8rem, unset);
+            line-height: 0.2rem;
+        }
+    }
+    &__textWarranty {
+        font-size: 1rem;
+        @include mixins.desktop-view(unset, unset, 1.48rem, unset);
+        margin-bottom: 1px;
     }
 }
