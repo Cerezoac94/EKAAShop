@@ -75,9 +75,9 @@ class ProductController {
   //Filtrar productos por categoria
   static async getProductByCategory(req, res) {
     try {
-      const { category } = req.body;
+      const { idCategory } = req.body;
       const results = await Category.findAll({
-        where: { name: category },
+        where: { id: idCategory },
         include: [Product],
       });
       if (!results) throw "No products for this category";
@@ -89,12 +89,12 @@ class ProductController {
     }
   }
   //Filtrar productos con descuento
-  static async getProductWithDiscount(req, res) {
+  static async getProductsWithDiscount(req, res) {
     try {
-      let dateToday = new Date();
+      let now = new Date();
       const results = await Discount.findAll({
         where: {
-          endDate: { [Op.gt]: dateToday },
+          endDate: { [Op.gt]: now },
         },
         include: {
           model: Product,
@@ -151,7 +151,7 @@ class ProductController {
   }
   static async deletedProduct(req, res) {
     try {
-      const {id} =req.params
+      const { id } =req.params
       const results = await Product.destroy({
         where: {
           id: id,

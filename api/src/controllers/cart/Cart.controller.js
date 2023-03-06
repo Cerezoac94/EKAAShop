@@ -83,12 +83,13 @@ class CartController {
   }
 
   //Actualizar en uno el quantity del carritoncrementa su cantidad en 1 unidad utilizando el método increment()
-  static async increaseProductCart(req, res) {
+  static async incrementProductCart(req, res) {
     try {
-      const { idProduct } = req.params;
+      const { idCart, idProduct } = req.params;
       const results = await CartProduct.findOne({
         where: {
-          idProduct: idProduct,
+          idCart,
+          idProduct,
         },
       });
       await results.increment("quantity");
@@ -105,12 +106,13 @@ class CartController {
     }
   }
 
-  static async decreaseProductCart(req, res) {
+  static async decrementProductCart(req, res) {
     try {
-      const { idProduct } = req.params;
+      const { idCart, idProduct } = req.params;
       const results = await CartProduct.findOne({
         where: {
-          idProduct: idProduct,
+          idCart,
+          idProduct,
         },
       });
 
@@ -118,7 +120,7 @@ class CartController {
 
       res.status(201).send({
         success: true,
-        message: "added",
+        message: "removed",
       });
     } catch (err) {
       res.status(404).send({
@@ -129,12 +131,13 @@ class CartController {
   }
 
   //Eliminar un registro de la tabla CartProduct
-  static async deletedProductCart(req, res) {
+  static async deleteProductCart(req, res) {
     try {
-      const { idProduct } = req.params;
+      const { idCart, idProduct } = req.params;
       const results = await CartProduct.destroy({
         where: {
-          idProduct: idProduct,
+          idCart,
+          idProduct
         },
       });
       if (results === 0) throw "No product in the cart";

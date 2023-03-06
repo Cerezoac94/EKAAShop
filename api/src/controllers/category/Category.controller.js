@@ -3,8 +3,8 @@ import { Category} from "../../models/index.js";
 class CategoryController {
   static async createCategory(req, res) {
     try {
-      const {name} = req.body
-      const results = await Category.create({name});
+      const { name } = req.body
+      const results = await Category.create({ name });
       if (!results) throw "The category is not created";
       res.status(201).send({
         success: true,
@@ -39,9 +39,9 @@ class CategoryController {
 
   static async updateCategory(req, res) {
     try {
-      const {id} = req.params
-      const {name} = req.body
-      const results = await Category.update({name}, {
+      const { id } = req.params
+      const { name } = req.body
+      const results = await Category.update({ name }, {
         where: {
           id: id,
         },
@@ -61,7 +61,7 @@ class CategoryController {
 
   static async deleteCategory(req, res) {
     try {
-      const {id} = req.params
+      const { id } = req.params
       const results = await Category.destroy({
         where: {
           id: id,

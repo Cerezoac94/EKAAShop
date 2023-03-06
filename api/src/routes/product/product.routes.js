@@ -4,7 +4,7 @@ import ProductController from "../../controllers/product/Product.controller.js";
 const productRoutes = Router();
 
 productRoutes.get("/", ProductController.getAllProducts);
-productRoutes.get("/filter/discount", ProductController.getProductWithDiscount);
+productRoutes.get("/filter/discount", ProductController.getProductsWithDiscount);
 productRoutes.get("/:id", ProductController.getProductById);
 productRoutes.get("/filter/category", ProductController.getProductByCategory);
 // productRoutes.get("/category/:id", ProductController.getProductByCategory)
