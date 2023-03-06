@@ -16,7 +16,7 @@
         .listCart__btn {
             @include mixins.button(variables.$secondary, variables.$main_fonts, variables.$main_background, 90%, 3rem, 15px);
             margin: auto;
-            @include mixins.button-hover( variables.$main_background);
+            @include mixins.button-hover( variables.$main_background, variables.$secondary_fonts);
             /*  @include mixins.desktop-view() */
         }
     }
@@ -44,7 +44,7 @@
             .btn {
                 @include mixins.button(variables.$secondary, variables.$main_fonts, variables.$main_background, 75px, 35px);
                 @include mixins.desktop-view(150px, 60px);
-                @include mixins.button-hover( variables.$main_background);
+                @include mixins.button-hover( variables.$main_background, $secondary_fonts);
             }
         }
     }

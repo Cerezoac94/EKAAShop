@@ -1,14 +1,34 @@
 import React from 'react'
+import InterestYouSwiper from './InterestYouSwiper'
+import Container from "react-bootstrap/esm/Container";
+/* import Image from "react-bootstrap/Image";
+import yeti from '../../../../assets/stanley_tumbler.jpg'  */
 
 
-const InterestYou = ( {element}) => {
+
+const InterestYou = ( ) => {
   return (
-    <section>InterestYou
-        <h1>{element.name}</h1>
-        <p>{element.desc}</p>
-    </section>
     
+
+    
+    <section className="might_like_swiper_container">
+      <label>te puede interesar</label>
+      <Container>
+      <InterestYouSwiper/>
+      </Container>
+      
+    </section>
+ 
+  
+
+   /*  <section>InterestYou
+      <InterestYouSwiper/>
+        
+    </section> */
+    
+ 
+
   )
 }
-
+  
 export default InterestYou

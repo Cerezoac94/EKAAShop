@@ -1,13 +1,21 @@
 @use '../base/variables';
-@mixin desktop-view ($width, $height: unset, $fn-size:unset) {
+@mixin desktop-view ($width, $height: unset, $fn-size:unset, $top:unset) {
     @media (min-width: 1440px) {
         width: $width;
         height: $height;
         font-size: $fn-size;
+        top: $top;
     }
 }
 
-@mixin button($bg-color, $br-color:unset, $br-radius:unset, $fn-color, $width:unset, $height:unset) {
+@mixin margins-desk( $marginb: unset, $top) {
+    @media (min-width: 1440px) {
+        margin-bottom: $marginb;
+        top: $top;
+    }
+}
+
+@mixin button($bg-color, $br-color:unset, $br-radius:unset, $fn-color, $width:unset, $height:unset, $fn-size:unset) {
     background-color: $bg-color;
     border: none;
     border: 1px solid $br-color;
@@ -15,12 +23,13 @@
     color: $fn-color;
     width: $width;
     height: $height;
+    font-size: $fn-size;
 }
 
-@mixin button-hover($bg-color) {
+@mixin button-hover($bg-color, $fn-color) {
     &:hover {
         cursor: pointer;
         background-color: $bg-color;
-        color: variables.$secondary_fonts;
+        color: $fn-color;
     }
 }
