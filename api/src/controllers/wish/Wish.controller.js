@@ -10,7 +10,7 @@ class WishController {
         where: idUser,
         include: [
           { model: Product,
-          attributes: ['name', 'description', 'price', 'stock', 'image'] }
+          attributes: ['id','name', 'description', 'price', 'stock', 'image'] }
         ]
       });
       if (results.length === 0) throw "No wish found";

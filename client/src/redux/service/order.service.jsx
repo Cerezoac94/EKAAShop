@@ -11,12 +11,12 @@ export const orders = createApi({
 		}),
 		// detail
 		getOrderById: builder.query({
-			query: (idOrder) => `/${idOrder}`,
+			query: (idOrder) => `/detail/${idOrder}`,
 			providesTags: ["Orders"],
 		}),
 		// orders from user
 		getOrderByUser: builder.query({
-			query: (idUser) => `/detail/${idUser}`,
+			query: (idUser) => `/${idUser}`,
 		}),
 		// all orders by product
 		getOrderByProduct: builder.query({
