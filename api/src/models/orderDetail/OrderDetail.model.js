@@ -18,7 +18,7 @@ OrderDetail.init({
     },
     idProduct:{
         type: Dt.INTEGER,
-        allowNull:false
+        allowNull:true
     }
 }, {
     sequelize: conn,

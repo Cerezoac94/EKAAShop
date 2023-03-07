@@ -55,7 +55,7 @@ User.hasMany(Review, {
 // user-cart
 Cart.belongsTo(User,{
   foreignKey:'idUser',
-  onUpdate:'CASCADE'
+  onDelete:'CASCADE'
 })
 Cart.belongsToMany(Product, {
   through: CartProduct,
@@ -71,6 +71,7 @@ User.hasOne(Cart,{
 // cart-cart_product
 CartProduct.belongsTo(Cart,{
   foreignKey:'idCart',
+  onDelete: 'CASCADE'
 })
 CartProduct.belongsTo(Product, { 
   foreignKey: 'idProduct'
@@ -99,6 +100,7 @@ User.hasOne(Wish, {
 // wish-wish_product
 WishProduct.belongsTo(Wish,{
   foreignKey:'idWish',
+  onDelete: 'CASCADE'
 })
 WishProduct.belongsTo(Product, { 
   foreignKey: 'idProduct'
@@ -111,8 +113,16 @@ Wish.hasMany(WishProduct,{
 // Product.belongsToMany(Wish, { through: WishProduct, foreignKey:'idProduct' })
 
 // product (wish & cart)
-Product.belongsToMany(Cart,  { through: CartProduct, foreignKey: 'idProduct' })
-Product.belongsToMany(Wish,  { through: WishProduct, foreignKey: 'idProduct' })
+Product.belongsToMany(Cart,  {
+  through: CartProduct,
+  foreignKey: 'idProduct',
+  // onDelete: 'NO ACTION' 
+})
+Product.belongsToMany(Wish,  {
+  through: WishProduct,
+  foreignKey: 'idProduct',
+  // onDelete: 'NO ACTION' 
+})
 // Cart.belongsToMany(Product, { through: CartProduct })
 // Wish.belongsToMany(Product, { through: WishProduct })
 
@@ -120,7 +130,7 @@ Product.belongsToMany(Wish,  { through: WishProduct, foreignKey: 'idProduct' })
 Product.belongsTo(Category,{
   foreignKey: 'idCategory',
   // onDelete:'set null', Esto me marca un error
-  onDelete:'RESTRICT',
+  onDelete:'SET NULL',
   onUpdate:'CASCADE'
 })
 Category.hasMany(Product,{
@@ -157,7 +167,7 @@ Product.hasMany(Review,{
 //Product-order_details
 OrderDetail.belongsTo(Product,{
   foreignKey:'idProduct',
-  // onUpdate:'CASCADE' Esto no va, porque si cambia porque si por ejemplo el precio del producto cambia, el precio anterior se respeta porque ya esta en la oden
+  onDelete: 'SET NULL'
 })
 Product.hasMany(OrderDetail,{
   foreignKey:'idProduct'
@@ -165,7 +175,8 @@ Product.hasMany(OrderDetail,{
 
 //order_details-order
 OrderDetail.belongsTo(Order,{
-  foreignKey:'idOrder'
+  foreignKey:'idOrder',
+  onDelete: 'CASCADE'
 })
 Order.hasMany(OrderDetail,{
   foreignKey:'idOrder'
@@ -174,7 +185,7 @@ Order.hasMany(OrderDetail,{
 // Order-User
 Order.belongsTo(User,{
   foreignKey:'idUser',
-  onUpdate:'CASCADE'
+  onDelete:'SET NULL'
 })
 User.hasMany(Order,{
   foreignKey:'idUser'
