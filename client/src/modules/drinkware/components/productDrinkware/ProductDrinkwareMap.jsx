@@ -1,4 +1,4 @@
-import { useGetAllProductsQuery } from "../../../../redux/service/productService";
+import { useGetAllProductsQuery } from "../../../../redux/service/product.service";
 import ProductDrinkware from "./ProductDrinkware";
 
 const ProductDrinkwareMap = () => {

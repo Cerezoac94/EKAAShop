@@ -1,5 +1,5 @@
 //import React from 'react'
-import { useGetAllProductsQuery } from "../../../../redux/service/productService";
+import { useGetAllProductsQuery } from "../../../../redux/service/product.service";
 import MightLike from "./MightLike.jsx";
 
 const MightLikeMap = () => {

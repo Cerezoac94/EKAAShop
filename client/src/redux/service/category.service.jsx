@@ -16,7 +16,7 @@ export const categories = createApi({
       query: ()=>'',
       providesTags:['Categories']
     }),
-    updateCategory,
+    // updateCategory,
     deleteCategory: builder.mutation({
       query: (id)=>({
         url: `/${id}`,
