@@ -6,7 +6,7 @@ class ReviewController {
   static async createReview(req, res) {
     try {
 
-      console.log(0);
+      // console.log(0);
       const { idUser, idProduct } = req.params
       const { title, description, rating } = req.body
       const reviewDate = new Date()
@@ -25,7 +25,7 @@ class ReviewController {
       if (!ProductInOrder) {
         throw 'You cannot create a review for a product that has not been purchased'
       }
-      console.log(1);
+      // console.log(1);
       const results = await Review.create({ rating, title, description, reviewDate, idUser, idProduct })
       console.log(2);
       if (!results) throw "The Review is not created"
@@ -34,7 +34,7 @@ class ReviewController {
         message: "Review created succesfully",
         results
       })
-      console.log(3);
+      // console.log(3);
 
     } catch (err) {
       res.status(400).send({
