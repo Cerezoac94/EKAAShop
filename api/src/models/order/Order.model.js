@@ -11,7 +11,7 @@ Order.init(
     },
     idUser:{
       type: Dt.INTEGER,
-      allowNull: false
+      allowNull: true
     },
     paid:{
       type: Dt.BOOLEAN,

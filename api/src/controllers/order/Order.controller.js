@@ -271,7 +271,7 @@ class OrderController {
   //Desde vista de lista o general de las ordenes
   static async deleteOrder(req, res) {
     try {
-      const  idOrder  = req.params;
+      const  { idOrder } = req.params;
       const results = await Order.destroy({
         where: {
           id: idOrder,

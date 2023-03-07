@@ -26,7 +26,7 @@ Product.init(
     },
     idCategory:{
       type: Dt.INTEGER,
-      allowNull:false
+      allowNull:true
     }
   },
   {
