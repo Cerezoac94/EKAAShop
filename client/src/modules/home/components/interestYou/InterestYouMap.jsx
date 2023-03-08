@@ -1,5 +1,6 @@
 import React from 'react'
-import InterestYou from './InterestYou'
+import InterestYouSwiper from './InterestYouSwiper'
+
 
 
 
@@ -22,8 +23,11 @@ const InterestYouMap = () => {
   /*   array.map(e =>{
         return <InterestYou element={e} key={e.id }  />
     }) */
+    <>
     
-    <InterestYou   />
+ <InterestYouSwiper/>
+    </>
+   
   )
 }
 

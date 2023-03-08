@@ -6,7 +6,7 @@ import Card from "react-bootstrap/Card";
 const MightLike = ({ items }) => {
   return (
     <Swiper
-      spaceBetween={50}
+    spaceBetween={50}
       slidesPerView={2}
       onSlideChange={() => console.log("slide change")}
       onSwiper={(swiper) => console.log(swiper)}
