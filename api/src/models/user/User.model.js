@@ -1,7 +1,7 @@
 import { DataTypes as Dt, Model } from "sequelize";
 import conn from "../../db/db.js";
 
-class User extends Model {}
+class User extends Model { }
 
 User.init(
   {
@@ -34,6 +34,9 @@ User.init(
     },
     memberSince: {
       type: Dt.DATE
+    },
+    salt: {
+      type: Dt.STRING
     },
     idState: {
       type: Dt.INTEGER,
