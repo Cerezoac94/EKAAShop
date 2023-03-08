@@ -1,6 +1,5 @@
 @use '../base/variables';
-
-@mixin laptop-view ($width, $height: unset, $fn-size:unset, $top:unset) {
+@mixin laptop-view ($width:unset, $height: unset, $fn-size:unset, $top:unset) {
     @media (min-width: 760px) {
         width: $width;
         height: $height;
@@ -18,10 +17,35 @@
     }
 }
 
+@mixin desktop-viewXXL($width, $height: unset, $fn-size:unset, $top:unset) {
+    @media (min-width: 1440px) {
+        width: $width;
+        height: $height;
+        font-size: $fn-size;
+        top: $top;
+    }
+}
+
 @mixin margins-desk( $marginb: unset, $top) {
     @media (min-width: 1440px) {
         margin-bottom: $marginb;
         top: $top;
+    }
+}
+
+// especial para centrar, solo en casos especiales donde no se puede centrar
+@mixin center($display:unset, $margin:unset, $fn-size) {
+    @media (min-width: 1280px) {
+        display: $display;
+        margin: $margin;
+        font-size: $fn-size;
+    }
+}
+
+@mixin center-tablet($display:unset, $margin:unset, $fn-size) {
+    @media (min-width: 665px) {
+        display: $display;
+        margin: $margin;
     }
 }
 

@@ -11,7 +11,7 @@ const BannerOffers = () => {
           <button className="bannerHome__btn" variant="primary">
            Ver más 
           </button>
-          <div>
+          <div className="bannerHome__contText">
             <h2 className="bannerHome__h2">Obténlo con un 20% de descuento</h2>
             <span className="bannerHome__span">TUNDRA 65 HARD COOLER</span>
           </div>

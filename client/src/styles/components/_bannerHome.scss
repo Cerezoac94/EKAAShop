@@ -1,22 +1,42 @@
 @use '../base/variables';
 @use '../abstracts/mixins';
 .bannerHome {
-    //width: 20rem;
     display: flex;
     flex-direction: row;
-    /* background-color: black; */
     background-color: variables.$secondary_fonts;
+    padding: 0.5rem;
+    @include mixins.desktop-view(unset, 250px);
     &__img {
         width: 35%;
+        @include mixins.desktop-viewXXL(28%, unset, unset, unset)
     }
-    &__container {}
+    &__container {
+        @include mixins.center(block, 0 auto, unset);
+        @include mixins.center-tablet(block, 0 auto, unset);
+    }
     &__btn {
         @include mixins.button(variables.$color11, unset, 5px, variables.$color10, 90px, 30px, 14px);
+        @include mixins.laptop-view(155px, 50px, 2rem, 2rem);
+        display: block;
+        margin: 0 auto;
+    }
+    &__contText {
+        margin: 0.5rem 0;
     }
     &__h2 {
         color: variables.$text;
+        font-size: 1rem;
+        text-align: center;
+        @include mixins.center(unset, unset, 3rem);
+        @include mixins.center-tablet(unset, unset, 3rem)
     }
     &__span {
+        display: block;
+        margin: auto;
         color: variables.$color10;
+        font-size: 0.6rem;
+        text-align: center;
+        @include mixins.center(block, 0 auto, 1.4rem);
+        @include mixins.center-tablet(block, 0 auto, 1.4rem);
     }
 }
