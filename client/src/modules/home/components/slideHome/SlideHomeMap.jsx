@@ -1,9 +1,12 @@
-import SlideHome from "./SlideHome"
+import SlideHomeSwipe from "./SlideHomeSwipe"
+
 
 const SlideHomeMap = () => {
   return (
-  
-    <SlideHome/>
+   
+    <SlideHomeSwipe/>
+
+    
   )
 }
 export default SlideHomeMap
