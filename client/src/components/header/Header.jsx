@@ -20,7 +20,7 @@ const Header = () => {
           <Link to="/cart" className="mobile_nav_icons">
             <ion-icon name="cart-outline" class="nav_icon"></ion-icon>
           </Link>
-          <Link to="/user_profile" className="mobile_nav_icons">
+          <Link to="/login" className="mobile_nav_icons">
             <ion-icon name="person-outline" class="nav_icon"></ion-icon>
           </Link>
           </div>
@@ -53,6 +53,9 @@ const Header = () => {
                 </Link>
                 <Link to="/get_help" className="nav_menu_links">
                   Get help
+                </Link>
+                <Link to="/login" className="nav_menu_links login_link">
+                  login / register
                 </Link>
               </Nav>
             </Offcanvas.Body>
