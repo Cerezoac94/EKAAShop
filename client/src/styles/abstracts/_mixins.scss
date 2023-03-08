@@ -1,6 +1,16 @@
 @use '../base/variables';
+
+@mixin laptop-view ($width, $height: unset, $fn-size:unset, $top:unset) {
+    @media (min-width: 760px) {
+        width: $width;
+        height: $height;
+        font-size: $fn-size;
+        top: $top;
+    }
+}
+
 @mixin desktop-view ($width, $height: unset, $fn-size:unset, $top:unset) {
-    @media (min-width: 1440px) {
+    @media (min-width: 1280px) {
         width: $width;
         height: $height;
         font-size: $fn-size;

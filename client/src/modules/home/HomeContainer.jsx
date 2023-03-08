@@ -1,25 +1,26 @@
 import BannerOffersMap from "./components/bannerOffers/BannerOffersMap"
-import BuyAgainMap from "./components/buyagain/BuyAgainMap"
 import InterestYouMap from "./components/interestYou/InterestYouMap"
-import KeepBuyingMap from "./components/keepBuying/KeepBuyingMap"
+import KeepBuyingMap from "./components/keepBuying_buyAgain/KeepBuyingMap"
+// import BuyAgainMap from "./components/keepBuying_buyAgain/BuyAgainMap"
 import ReviewsClientMap from "./components/reviewsClient/ReviewsClientMap"
 import SlideHomeMap from "./components/slideHome/SlideHomeMap"
 import Warranty from "./components/warranty/Warranty"
 
 const HomeContainer = () => {
   return (
-    <section>
-   {/* <SlideHomeMap/> */}
+
+    <>
+      <SlideHomeMap/>
       <Warranty/>
     
-      {/* <InterestYouMap/> */}
-       <BannerOffersMap/>
-   <ReviewsClientMap/>
-        <KeepBuyingMap/>
-      <BuyAgainMap/>
-     <h1>soy home</h1>
+      <InterestYouMap/>
+      <BannerOffersMap/>
+      <ReviewsClientMap/>
+      <KeepBuyingMap me={1}/>
+      {/* <BuyAgainMap me={1}/> */}
 
-    </section>
+
+    </>
   )
 }
 export default HomeContainer

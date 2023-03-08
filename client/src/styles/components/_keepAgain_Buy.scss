@@ -1,0 +1,46 @@
+@use "../base/variables";
+@use "../abstracts/mixins";
+
+.keepBuying {
+  width: 140px;
+	display: flex;
+	// justify-content: space-between;
+  align-items: center;
+  border: 1px solid variables.$color1;
+  border-radius: 10px;
+
+  @include mixins.laptop-view(290px, 240px);
+    @include mixins.desktop-view(400px, 350px);
+	&__img {
+		height: 60px;
+		width: 60px;
+		@include mixins.laptop-view(150px, 150px);
+    @include mixins.desktop-view(200px, 200px);
+	}
+	&__text {
+		display: flex;
+		flex-direction: column;
+	}
+  &__title {
+    font-size: .8em;
+    @include mixins.laptop-view(unset, unset, 1.3em);
+    @include mixins.desktop-view(unset, unset, 1.8em);
+  }
+  &__paragraph {
+    font-size: .8em;
+    @include mixins.laptop-view(unset, unset, 1em);
+    @include mixins.desktop-view(unset, unset, 1.5em);
+  }
+}
+
+
+.keepBuyingContainer {
+  width: 352px;
+	display: flex;
+	justify-content: center;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  gap: 5px;
+  @include mixins.laptop-view(602px, unset);
+    @include mixins.desktop-view(950px, unset);
+}
