@@ -6,23 +6,24 @@ import Navbar from "react-bootstrap/Navbar";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import logo from "../../assets/LOGO.svg";
 import { Link } from "react-router-dom";
+import UserMenu from "./UserMenu";
+import UserLoginMenu from "./UserLoginMenu";
 
 const Header = () => {
   return (
     <header>
-      <Navbar expand="md"  sticky="top">
+      <Navbar expand="md" sticky="top">
         <Container fluid className="navbar_style">
           <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-md`} />
           <Navbar.Brand href="/">
             <img src={logo} alt="logo_home" className="logo" />
           </Navbar.Brand>
           <div className="navbar_icons">
-          <Link to="/cart" className="mobile_nav_icons">
-            <ion-icon name="cart-outline" class="nav_icon"></ion-icon>
-          </Link>
-          <Link to="/login" className="mobile_nav_icons">
-            <ion-icon name="person-outline" class="nav_icon"></ion-icon>
-          </Link>
+            <Link to="/cart" className="mobile_nav_icons">
+              <ion-icon name="cart-outline" class="nav_icon"></ion-icon>
+            </Link>
+            {/* <UserMenu/> */}
+            <UserLoginMenu/>
           </div>
           <Navbar.Offcanvas
             id={`offcanvasNavbar-expand-md`}
