@@ -28,7 +28,7 @@ export const reviews = createApi({
     deleteReview: builder.mutation({
       query: (id) => ({
         url: `/${id}`,
-        method: "DELETED",
+        method: "DELETE",
       }),
     }),
     invalidatesTags: ["Reviews"],

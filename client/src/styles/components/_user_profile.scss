@@ -1,0 +1,92 @@
+.user_profile_container {
+    padding: 20px;
+}
+
+//Header_profile
+.profile_header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.25rem;
+}
+
+//basic_info section
+.basic_info_container {
+    padding: 20px;
+    border: 2px solid $main_dark;
+    border-radius: 10px;
+}
+.basic_info_header {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    margin-bottom: 1.25rem;
+}
+.basic_info_text {
+    text-align: justify;
+}
+
+//Form group
+.profile_info {
+    border-bottom: 1px solid $main_dark;
+    margin-bottom: 0.938rem;
+}
+
+//input group
+label.input_label.form-label{
+        margin: 0;
+        font-size: 1.25rem;
+}
+
+/* TODO: remove margin from input group,
+    edit the !importan
+*/
+.mb-3.profile_input_group.input-group {
+    margin-bottom: 0.313rem !important;
+}
+
+
+input.profile_input.form-control {
+    border: none;
+    border-radius: 0;
+    padding: 0.313rem 0;
+    font-size: 1.125rem;
+    font-weight: 100;
+}
+
+//edit button
+button#button-addon2.edit_btn {
+    border: none;
+    border-radius: 0;
+    font-size: 1.5rem;
+}
+
+//font color
+h2,
+.basic_info_text,
+label.input_label.form-label
+{
+    color: $main_fonts;
+}
+
+@media only screen and (min-width: 768px) {
+    .basic_info_container {
+        width: 60vw;
+    }
+
+    .basic_info_text.form-text {
+        font-size: 1rem;
+    }
+
+    label.input_label.form-label {
+        font-size: 1rem;
+    }
+    input.profile_input.form-control {
+        font-size: 1.5rem;
+    }
+    button#button-addon2.edit_btn {
+        font-size: 2rem;
+    }
+
+}

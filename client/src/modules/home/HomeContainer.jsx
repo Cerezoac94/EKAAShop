@@ -10,6 +10,7 @@ import Warranty from "./components/warranty/Warranty"
 
 const HomeContainer = () => {
   return (
+
     <>
       <SlideHomeMap/>
 
@@ -19,7 +20,7 @@ const HomeContainer = () => {
       <ReviewsClientMap/>
       <KeepBuyingMap me={1}/>
       {/* <BuyAgainMap me={1}/> */}
-     
+
 
     </>
   )

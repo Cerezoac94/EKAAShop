@@ -10,6 +10,6 @@ orderRoutes.get('/product/:idProduct', OrderController.getOrdersByProduct);
 orderRoutes.post("/", OrderController.createOrder);
 orderRoutes.put("/:id", OrderController.updateOrder);
 orderRoutes.delete("/:idOrder", OrderController.deleteOrder);
-orderRoutes.delete("/:idOrder/idProduct", OrderController.deleteProductOrder);
+orderRoutes.delete("/:idOrder/:idProduct", OrderController.deleteProductOrder);
 
 export default orderRoutes;
