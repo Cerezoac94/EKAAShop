@@ -10,9 +10,11 @@
     }
     &__text {
         background-color: variables.$main_background;
-        height: 122px;
+        height: 170px;
         text-align: left;
         display: grid;
+        padding: 0.5rem;
+        margin-bottom: 0.5rem;
     }
     &__label {}
     &__priceItem {}
