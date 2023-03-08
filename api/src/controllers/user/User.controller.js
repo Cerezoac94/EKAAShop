@@ -191,7 +191,6 @@ class UserController {
     }
   }
 
-  // todo: metodos de clase
 }
 
 export default UserController;

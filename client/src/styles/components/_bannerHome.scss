@@ -1,0 +1,22 @@
+@use '../base/variables';
+@use '../abstracts/mixins';
+.bannerHome {
+    //width: 20rem;
+    display: flex;
+    flex-direction: row;
+    /* background-color: black; */
+    background-color: variables.$secondary_fonts;
+    &__img {
+        width: 35%;
+    }
+    &__container {}
+    &__btn {
+        @include mixins.button(variables.$color11, unset, 5px, variables.$color10, 90px, 30px, 14px);
+    }
+    &__h2 {
+        color: variables.$text;
+    }
+    &__span {
+        color: variables.$color10;
+    }
+}
