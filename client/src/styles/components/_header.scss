@@ -72,6 +72,12 @@ img.logo{
     margin: 1rem 0;
 }
 
+
+//login_link
+.login_link {
+    display: none;
+}
+
 //search_input
 .section_search_header{
     display: flex;
@@ -107,6 +113,11 @@ img.logo{
     .nav_icon.md.hydrated{
         display: none;
     }
+    
+//login_link
+.login_link {
+    display: inline;
+}
     .search_header_container{
         display: none;
     }

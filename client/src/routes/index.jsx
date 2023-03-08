@@ -9,6 +9,7 @@ import ShoppingCart from "../pages/ShoppingCart";
 import WishList from "../pages/WishList";
 import OrderList from "../pages/OrderList";
 import AboutUs from "../pages/AboutUs";
+import UserProfile from "../pages/UserProfile";
 
 const router = createBrowserRouter([
 	{
@@ -18,6 +19,11 @@ const router = createBrowserRouter([
 			{
 				path: "/",
 				element: <Home />,
+				
+			},
+			{
+				path: "/profile",
+				element: <UserProfile/>
 				
 			},
 			{

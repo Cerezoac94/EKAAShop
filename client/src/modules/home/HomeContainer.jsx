@@ -9,15 +9,15 @@ import Warranty from "./components/warranty/Warranty"
 const HomeContainer = () => {
   return (
     <section>
-      <SlideHomeMap/>
+   {/* <SlideHomeMap/> */}
       <Warranty/>
     
-      <InterestYouMap/>
-      <BannerOffersMap/>
-      <ReviewsClientMap/>
-      <KeepBuyingMap/>
+      {/* <InterestYouMap/> */}
+       <BannerOffersMap/>
+   <ReviewsClientMap/>
+        <KeepBuyingMap/>
       <BuyAgainMap/>
-     
+     <h1>soy home</h1>
 
     </section>
   )
