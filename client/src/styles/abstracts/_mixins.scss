@@ -8,6 +8,23 @@
     }
 }
 
+//mixin para cambiar orden de sections en desktop (GRID,COLUMNAS)
+@mixin order-desktop($display:unset, $flex:unset, $heigth:unset, $justify:unset) {
+    @media (min-width: 1280px) {
+        display: $display;
+        flex-direction: $flex;
+        height: $heigth;
+        justify-content: $justify;
+    }
+}
+
+@mixin desktop-text($text-alig:unset, $border-color) {
+    @media (min-width: 1280px) {
+        text-align: $text-alig;
+        border: 1px solid $border-color;
+    }
+}
+
 @mixin desktop-view ($width, $height: unset, $fn-size:unset, $top:unset) {
     @media (min-width: 1280px) {
         width: $width;
