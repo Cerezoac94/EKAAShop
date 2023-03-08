@@ -21,21 +21,20 @@
     &__text {
         display: flex;
         flex-direction: column;
-        /*        border: 1px solid red; */
         width: 180px;
         font-weight: bold;
         font-size: 1em;
         @include mixins.desktop-view(1010px, unset, 2.98em);
-        /*     margin-bottom: 2rem; */
         margin-bottom: 1rem;
         @include mixins.margins-desk(2rem, unset);
     }
 }
 
-.swiper-horizontal>.swiper-pagination-bullets,
+
+/* .swiper-horizontal>.swiper-pagination-bullets,
 .swiper-pagination-bullets.swiper-pagination-horizontal,
 .swiper-pagination-custom,
 .swiper-pagination-fraction {
-    /*   top: 153px;
-    @include mixins.margins-desk(unset, 250px) */
-}
+       top: 153px;
+    @include mixins.margins-desk(unset, 250px) 
+} */
