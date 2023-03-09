@@ -1,0 +1,77 @@
+//login_false
+
+//user_menu_btn
+.user_menu_btn {
+    background: none;
+    border: none;
+}
+.btn.user_menu_btn:hover {
+    background-color: $color5;
+    border-color: none;
+}
+
+.user_menu_header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: none;
+}
+.user_menu_login_btn {
+    width: 100%;
+    background-color: $secondary_background;
+    border: none;
+    margin: 0.5rem 0;
+    font-size: 1.125rem;
+}
+
+.user_menu_register {
+    margin: 0 0.313rem;
+}
+
+.popover-body {
+    padding: 0.313rem;
+    font-size: 1rem;
+}
+
+.user_menu_links {
+    padding-left: 0.5rem;
+}
+
+.user_menu_item {
+    margin: 1rem 0;
+}
+
+
+//login_true
+.logged_user_menu_header {
+    display: flex;
+    flex-direction:row;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    padding: 0.938rem 0.625rem;
+}
+.user_menu_photo {
+    width: 40%;
+}
+
+.user_greeting {
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    justify-content: center;
+}
+
+.user_name_label,
+.role_span { 
+    color: $main_fonts;
+}
+
+.user_name_label {
+    font-size: 1.125rem;
+    font-weight: 600;
+}
+.role_span {
+    font-size: 0.875rem;
+}

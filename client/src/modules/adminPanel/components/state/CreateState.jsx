@@ -1,9 +1,8 @@
 import React from 'react'
-import { StateMap } from './StateMap'
 
 const CreateState = () => {
   return (
-    <section className="category">
+    <section className="section">
       <form className="form">
         <h1>Estados</h1>
         <div className="prop">
