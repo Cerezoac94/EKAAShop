@@ -71,7 +71,7 @@ const InterestYouSwiper = () => {
               </article>
             </section>
           </SwiperSlide>
-          <SwiperSlide>Slid
+          <SwiperSlide>
           <section className="interestYou">
               <article className="interestYou__description">
                 <div>
@@ -99,7 +99,7 @@ const InterestYouSwiper = () => {
               </article>
             </section>
           </SwiperSlide>
-          <SwiperSlide>Slide 3
+          <SwiperSlide>
           <section className="interestYou">
               <article className="interestYou__description">
                 <div>
@@ -127,7 +127,7 @@ const InterestYouSwiper = () => {
               </article>
             </section>
           </SwiperSlide>
-          <SwiperSlide>Slide 4
+          <SwiperSlide>
           <section className="interestYou">
               <article className="interestYou__description">
                 <div>

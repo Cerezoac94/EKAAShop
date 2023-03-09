@@ -1,13 +1,25 @@
 import { DataTypes as Dt, Model } from "sequelize";
 import conn from "../../db/db.js";
+import bcrypt from "bcrypt"
 
-class User extends Model { }
+class User extends Model { 
+
+  hashAuth(password, salt){
+    return bcrypt.hash(password, salt)
+  }
+
+  async validatePassword(password) {
+    const passwordHash = await this.hashAuth(password, this.salt)
+    return passwordHash === this.password
+  }
+ }
 
 User.init(
   {
     userName: {
       type: Dt.STRING(50),
       allowNull: false,
+      unique:true
     },
     firstName: {
       type: Dt.STRING(30)
@@ -18,6 +30,7 @@ User.init(
     email: {
       type: Dt.STRING(100),
       allowNull: false,
+      unique:true
     },
     password: {
       type: Dt.TEXT,
@@ -63,5 +76,19 @@ User.init(
     timestamps: false
   }
 );
+
+User.beforeCreate(async(user, options)=>{
+  const salt = await bcrypt.genSalt()
+  user.salt = salt
+  const passwordHash = await user.hashAuth(user.password, user.salt)
+  user.password = passwordHash
+})
+
+User.afterCreate(async user => {
+  if (user.id === 1) {
+  await user.update({ idRole: 1 })
+  }
+})
+
 
 export default User;
