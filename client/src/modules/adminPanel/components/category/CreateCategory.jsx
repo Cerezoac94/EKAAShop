@@ -3,7 +3,7 @@ import CategoryMap from "./CategoryMap";
 
 const CreateCategory = () => {
   return (
-    <section className="category">
+    <section className="section">
       <form className="form">
         <h1>Categorias</h1>
         <div className="prop">

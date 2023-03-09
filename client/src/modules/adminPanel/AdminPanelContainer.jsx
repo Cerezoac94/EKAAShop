@@ -1,10 +1,13 @@
 import React from "react";
-import Product from "./components/product/Product";
+import Product from "./components/product/CreateProduct";
 import CategoryMap from "./components/category/CategoryMap";
 import Accordion from "react-bootstrap/Accordion";
 import CreateCategory from "./components/category/CreateCategory";
 import CreateState from "./components/state/CreateState";
-import { StateMap } from "./components/state/StateMap";
+import ProductMap from "./components/product/ProductMap";
+import StateMap from "./components/state/StateMap";
+import Dropdown from "react-bootstrap/Dropdown";
+import DropdownButton from "react-bootstrap/DropdownButton";
 
 const AdminPanelContainer = () => {
   return (
@@ -33,6 +36,14 @@ const AdminPanelContainer = () => {
         <Accordion.Header>Productos</Accordion.Header>
         <Accordion.Body>
           <Product />
+          <section>
+            <h3>Productos</h3>
+            <DropdownButton title="Lista de Productos">
+              <Dropdown.Item>
+                <ProductMap />
+              </Dropdown.Item>
+            </DropdownButton>
+          </section>
         </Accordion.Body>
       </Accordion.Item>
     </Accordion>

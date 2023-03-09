@@ -7,11 +7,9 @@ const CategoryMap = () => {
   return isLoading ? (
     <h3>Cargando...</h3>
   ) : (
-    <ul>
-      {results.results.map((category) => (
-        <Category category={category} key={category.id} />
-      ))}
-    </ul>
+    results.results.map((category) => (
+      <Category category={category} key={category.id} />
+    ))
   );
 };
 
