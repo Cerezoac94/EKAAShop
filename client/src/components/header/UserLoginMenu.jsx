@@ -16,7 +16,7 @@ const UserLoginMenu = () => {
         overlay={
           <Popover id={`popover-positioned-bottom`}>
             <Popover.Header className="logged_user_menu_header">
-                <Image src={admin} rounded roundedCircle className="user_menu_photo"/>
+                <Image src={admin} roundedCircle  className="user_menu_photo"/>
               <Container className="user_greeting">
               <label className="user_name_label"> Hello Sierra</label>
               <span className="role_span">Admin</span>

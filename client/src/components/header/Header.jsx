@@ -1,13 +1,14 @@
 import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
-import NavbarBrand from "react-bootstrap/esm/NavbarBrand";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import logo from "../../assets/LOGO.svg";
 import { Link } from "react-router-dom";
-import UserMenu from "./UserMenu";
+//import UserMenu from "./UserMenu";
 import UserLoginMenu from "./UserLoginMenu";
+import Image from "react-bootstrap/esm/Image";
+
 
 const Header = () => {
   return (
@@ -15,16 +16,16 @@ const Header = () => {
       <Navbar expand="md" sticky="top">
         <Container fluid className="navbar_style">
           <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-md`} />
-          <Navbar.Brand href="/">
-            <img src={logo} alt="logo_home" className="logo" />
-          </Navbar.Brand>
-          <div className="navbar_icons">
-            <Link to="/cart" className="mobile_nav_icons">
-              <ion-icon name="cart-outline" class="nav_icon"></ion-icon>
-            </Link>
-            {/* <UserMenu/> */}
-            <UserLoginMenu/>
-          </div>
+          <Link to='/'  className="logo_link_home">
+          <Image src={logo} alt="logo_home" thumbnail = 'true' className="logo_home"/>
+          </Link>
+            <div className="user_actions_container">
+              <Button href="/cart" className="user_menu_btn">
+                <ion-icon name="cart-outline"></ion-icon>
+              </Button>
+              {/* <UserMenu/> */}
+              <UserLoginMenu />
+            </div>
           <Navbar.Offcanvas
             id={`offcanvasNavbar-expand-md`}
             aria-labelledby={`offcanvasNavbarLabel-expand-md`}

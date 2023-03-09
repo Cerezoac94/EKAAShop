@@ -3,50 +3,69 @@ header {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background: $secondary_background;
+    //background: $secondary_background;
+    background-color: red;
 }
 
-//links
-a, a:visited {
-    text-decoration: none;
-    color: $main_fonts;
-    margin: 1rem;
-}
 
 //navbar_styles
 
 .navbar_style.container-fluid{
+    flex-wrap: nowrap;
+    height: 100%;
     padding: 0 0.625rem;
 }
 
-.mobile_nav_icons {
-    padding: 0.3125rem;
+//Logo
+a.logo_link_home {
+    display: flex;
+    justify-content: center;
 }
 
+img.logo_home.img-thumbnail {
+    width: 40%;
+    border: none;
+    background: none;
+    border-radius: 0;
+}
+// mobile actions
+.user_actions_container {
+    display: flex;
+    align-items: center;
+}
+
+.user_menu_btn {
+    font-size: 1.5rem;
+    color: $main_fonts;
+    font-weight: 600;
+}
+
+//Offcanvas
 .navbar.navbar-expand-md.navbar-light {
     background-color: $secondary_background;
     height: 10vh;
     margin: 0.625rem 0;
 }
 
+//Toggle button
 button.navbar-toggler.collapsed{
-    color: #fff;
+    color: $color8;
 }
 
-.navbar-brand{
+/* .navbar-brand{
     margin: 0;
-}
+} */
 
-img.logo{
+/* img.logo{
     width: 95px;
     height: auto;
-}
+} */
 
-.navbar_icons {
+/* .navbar_icons {
     display: flex;
     align-items: center;
-}
-.nav_icon{
+} */
+/* .nav_icon{
     display: flex;
     flex-direction: row;
     align-items: flex-end;
@@ -54,7 +73,7 @@ img.logo{
     font-size:1.85rem;
     color:#fff;
 } 
-
+ */
 //offcanvas
 .offcanvas.offcanvas-start.show {
     width: 220px;
@@ -68,11 +87,18 @@ img.logo{
     font-size: 1.125rem;
 }
 
+
+//Links
+a, a:visited {
+    text-decoration: none;
+    color: $main_fonts;
+    //margin: 1rem;
+}
+
 .nav-link{
     color: $main_fonts;
     margin: 1rem 0;
 }
-
 
 //login_link
 .login_link {
@@ -99,13 +125,13 @@ img.logo{
 
 }
 
-@media only screen and (min-width: 768px) {
+/* @media only screen and (min-width: 768px) {
     .navbar-expand-md{
         height: 18vh;
     }
 
-    img.logo{
-        width: 70%;
+    img.logo_home.img-thumbnail {
+        width: 30%;
     }
 
     .offcanvas-body { 
@@ -126,6 +152,6 @@ img.logo{
     .justify-content-end{
         justify-content: space-evenly;
     }
-  }
+  } */
 
 
