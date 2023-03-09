@@ -36,7 +36,6 @@ class UserController {
       res.status(201).send({
         success: true,
         message: "User created succesfully",
-        results,
       });
     } catch (err) {
       res.status(400).send({
@@ -53,7 +52,7 @@ class UserController {
       if (results.length === 0) throw "No user found";
       res.status(200).send({
         success: true,
-        message: "States",
+        message: "Users",
         results,
       });
     } catch (err) {

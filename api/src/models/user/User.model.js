@@ -19,6 +19,7 @@ User.init(
     userName: {
       type: Dt.STRING(50),
       allowNull: false,
+      unique:true
     },
     firstName: {
       type: Dt.STRING(30)
@@ -29,6 +30,7 @@ User.init(
     email: {
       type: Dt.STRING(100),
       allowNull: false,
+      unique:true
     },
     password: {
       type: Dt.TEXT,
