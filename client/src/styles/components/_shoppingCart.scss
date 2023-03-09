@@ -1,51 +1,135 @@
 @use '../base/variables';
 @use '../abstracts/mixins';
 .listCart {
-    padding: 2rem;
-    h2 {
+    // border: 2px solid blue;
+    @include mixins.order-desktop(flex, row-reverse);
+    &__h2 {
         color: variables.$main_fonts;
         margin-bottom: 2rem;
-        span {
-            font-weight: bolder;
-            margin-bottom: 2rem;
-        }
+        @include mixins.desktop-text(center, unset)
     }
-    div {
+    &__span {
+        font-weight: bolder;
+        margin-bottom: 2rem;
+    }
+    &__div {
         display: flex;
-        /*    justify-content: center; */
-        .listCart__btn {
-            @include mixins.button(variables.$secondary, variables.$main_fonts, variables.$main_background, 90%, 3rem, 15px);
-            margin: auto;
-            @include mixins.button-hover( variables.$main_background, variables.$secondary_fonts);
-            /*  @include mixins.desktop-view() */
-        }
     }
-    .card {
+    &__btn {
+        @include mixins.button(variables.$secondary_background, unset, 10px, variables.$color10, 100%, 2.5rem, 15px);
+        margin: 10px 20px;
+        @include mixins.button-hover( variables.$main_background, variables.$secondary_fonts);
+        @include mixins.desktop-view(200px, 2.5rem, unset, 3rem)
+    }
+    &__card {
         margin-top: 2rem;
-        &__footer {
-            display: flex;
-            justify-self: flex-start;
-        }
-        &__containerBtn {
-            justify-self: flex-start;
-            button {
-                width: 2rem;
-                @include mixins.button(variables.$secondary, variables.$main_fonts, variables.$main_background, 36px, 36px);
-            }
-            input {
-                width: 2.5rem;
-                height: 2.5rem;
-            }
-        }
-        &__btn {
-            display: flex;
-            justify-content: space-around;
-            width: 100%;
-            .btn {
-                @include mixins.button(variables.$secondary, variables.$main_fonts, variables.$main_background, 75px, 35px);
-                @include mixins.desktop-view(150px, 60px);
-                @include mixins.button-hover( variables.$main_background, $secondary_fonts);
-            }
-        }
+        border: 2px solid variables.$secondary_background;
+        height: 300px;
+        border-radius: 5px;
     }
+    &__cardTwo {
+        border: 1px solid variables.$secondary_background;
+        margin-top: 2rem;
+        height: 245px;
+        @include mixins.order-desktop(unset, unset, 280px);
+        @include mixins.desktop-text(unset, variables.$secondary_background);
+        /*  width: 320px; */
+    }
+    &__contText {
+        padding: 1rem;
+    }
+    &__contenedorTxt {
+        display: flex;
+        justify-content: center;
+    }
+    &__contimg {
+        width: 50%;
+        align-self: center;
+        @include mixins.order-desktop(flex, unset, unset, center)
+    }
+    &__img {
+        width: 100%;
+        @include mixins.laptop-view(50%, unset, unset, unset);
+        @include mixins.desktop-view(33%, unset, unset, unset);
+    }
+    &__text {
+        flex-direction: column;
+        display: flex;
+        width: 50%;
+        @include mixins.desktop-view(unset, unset, 1.3rem, unset)
+    }
+    &__confirmation {
+        color: variables.$confirmation;
+        font-weight: bold;
+        font-size: 1rem;
+        @include mixins.desktop-view(unset, unset, 1.5rem, unset)
+    }
+    &__desc {
+        color: variables.$secondary_fonts;
+        font-weight: 400;
+        line-height: initial;
+    }
+    &__price {
+        color: variables.$secondary_fonts;
+        font-weight: 700;
+    }
+    &__stock {
+        color: variables.$confirmation;
+        font-weight: 600;
+    }
+    &__color {
+        color: variables.$secondary_fonts;
+    }
+    &__footer {
+        display: flex;
+        // justify-self: flex-start;
+        justify-content: space-between;
+    }
+    &__contBtn {
+        /*  justify-self: flex-start; */
+        display: flex;
+        /*  margin: auto; */
+        width: 50%;
+        justify-content: center;
+    }
+    &__btnIcon {
+        @include mixins.button(variables.$secondary_background, variables.$secondary_background, 1px, variables.$color10, 36px, 36px);
+        @include mixins.desktop-view(70px, 40px, 2rem, unset);
+    }
+    &__inputIcon {
+        width: 36px;
+        height: 36px;
+        @include mixins.desktop-view(70px, 40px, 2rem, unset);
+    }
+    &__contBtnTwo {
+        display: flex;
+        gap: 1.3rem;
+        width: 50%;
+        justify-content: center;
+        @include mixins.order-desktop(flex, unset, unset, unset)
+    }
+    &__btnThird {
+        @include mixins.button(variables.$secondary_background, variables.$secondary_background, 4px, variables.$color10, 52px, 36px);
+        @include mixins.desktop-view(120px, 40px, unset, unset);
+    }
+    &__btnThirdA {
+        @include mixins.button(variables.$secondary_background, variables.$secondary_background, 4px, variables.$color10, 92px, 36px);
+        @include mixins.desktop-view(120px, 40px, unset, unset);
+    }
+    &__h3condicional {
+        color: variables.$confirmation;
+        font-weight: bold;
+        font-size: 1rem;
+        text-align: center;
+        margin-top: 1rem;
+    }
+    /*    &__btn {
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+        @include mixins.button(variables.$secondary, variables.$main_fonts, variables.$main_background, 75px, 35px);
+        @include mixins.desktop-view(150px, 60px);
+        @include mixins.button-hover( variables.$main_background, $secondary_fonts);
+    }
+*/
 }

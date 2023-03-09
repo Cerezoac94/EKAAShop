@@ -3,24 +3,18 @@ import {
   User,
   Cart,
   Wish,
-  Product,
-  CartProduct,
-  WishProduct,
-  Card,
-  Order,
-  OrderDetail,
 } from "../../models/index.js";
 
 class UserController {
   // FIXME: Al haber error de no encontrar "state" existente, aún así incrementa el id
   static async createUser(req, res) {
     try {
-      const { userName, email, password, idRole } = req.body;
+      const { userName, email, password } = req.body;
       const results = await User.create({
         userName,
         email,
         password,
-        idRole,
+        idRole: 2,
       });
       if (!results) throw "The User is not created";
       const cart = await Cart.create({
@@ -42,7 +36,6 @@ class UserController {
       res.status(201).send({
         success: true,
         message: "User created succesfully",
-        results,
       });
     } catch (err) {
       res.status(400).send({
@@ -59,7 +52,7 @@ class UserController {
       if (results.length === 0) throw "No user found";
       res.status(200).send({
         success: true,
-        message: "States",
+        message: "Users",
         results,
       });
     } catch (err) {
@@ -104,25 +97,6 @@ class UserController {
       });
     }
   }
-
-  // GET USER CARD
-  // static async getUserCard(req, res) {
-  // try {
-  // const userId = req.params.id
-  // const results = await Card.findByPk(userId)
-  // if (results === null) throw "No card found"
-  // res.status(200).send({
-  // success: true,
-  // message: "Cards",
-  // results
-  // })
-  // } catch (err) {
-  // res.status(404).send({
-  // success: false,
-  // message: err
-  // })
-  // }
-  // }
 
   // UPDATE
   // REVIEW: check if only indicated fields can be updated
@@ -191,7 +165,6 @@ class UserController {
     }
   }
 
-  // todo: metodos de clase
 }
 
 export default UserController;
