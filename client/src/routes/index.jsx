@@ -14,7 +14,7 @@ import Login from "../pages/Login";
 import Register from "../pages/Register";
 import AllProducts from "../pages/AllProducts";
 import Cooler from "../pages/Cooler";
-import Accesories from "../pages/Accesories";
+import Accessories from "../pages/Accessories";
 
 const router = createBrowserRouter([
 	{
@@ -46,7 +46,7 @@ const router = createBrowserRouter([
 			},
 			{
 				path:'/accessories',
-				element: <Accesories/>
+				element: <Accessories/>
 			},
 			// {
 			// 	path:'/product_by_category',
