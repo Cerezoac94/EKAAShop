@@ -2,82 +2,70 @@ import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
-import { Pagination } from "swiper";
-import InterestYouMap from "./InterestYouMap";
- 
-const InterestYouSwiper = ({e}) => {
-  
-    console.log(e)
-  return (
-    <section>
-    {/*   InterestYouSwiper */}
-      <Swiper
-     slidesPerView={1}
-     spaceBetween={10}
-     pagination={{
-       clickable: true,
-     }}
-     breakpoints={{
-       "@0.00": {
-         slidesPerView: 1,
-         spaceBetween: 10,
-       },
-       "@0.75": {
-         slidesPerView: 2,
-         spaceBetween: 20,
-       },
-       "@1.00": {
-         slidesPerView: 3,
-         spaceBetween: 40,
-       },
-       "@1.50": {
-         slidesPerView: 4,
-         spaceBetween: 50,
-       },
-     }}
-     modules={[Pagination]}
-     className="mySwiper"
-    
-      >
+import { Pagination, Navigation } from "swiper";
+import { useGetAllProductsQuery } from "../../../../redux/service/product.service";
 
+const InterestYouSwiper = () => {
+  const  {data:results= [], isLoading, error } = useGetAllProductsQuery();
+  if(!error){
+    return isLoading ? (
+      <h3>Cargando...</h3>
+    ) : ( results.length != 0 && ( 	<Swiper
+			slidesPerView={3}
+			spaceBetween={30}
+			pagination={{
+				clickable: true,
+			}}
+			navigation={true}
+			breakpoints={{
+				200: {
+					slidesPerView: 1,
+					spaceBetween: 10,
+				},
+				490: {
+					slidesPerView: 2,
+					spaceBetween: 20,
+				},
+				700: {
+					slidesPerView: 3,
+					spaceBetween: 40,
+				},
+				1400: {
+					slidesPerView: 4,
+					spaceBetween: 50,
+				},
+			}}
+			modules={[Navigation, Pagination]}
+			className="mySwiper"
+		>
+      {results?.results?.slice(0,10).map(e => {
+					return (
+			<SwiperSlide key={e.id}>
+				<section className="interestYou">
+					<article className="interestYou__description">
+						<div>
+							<img className="interestYou__img" src={e.image} alt={e.name}/>
+						</div>
 
-         <InterestYouMap/>
-        
- {/*          <SwiperSlide>
-          <section className="interestYou">
-              <article className="interestYou__description">
-                <div>
-                  <img className="interestYou__img" src={img} alt="product" />
-                </div>
+						<div className="interestYou__text">
+							<label htmlFor="name" className="interestYou__label">
+								{e.name}
+							</label>
+							{""}
 
-                <div className="interestYou__text">
-                  <label htmlFor="name" className="interestYou__label">
-                    Termo Yeti 30 Oz.
-                  </label>
-                  <span className="interestYou__priceItem">
-                    Acero Inoxidable Rosa
-                  </span>
-                  {""}
-
-                  <span className="interestYou__priceItem">$1500.00</span>
-                  <span className="interestYou__stockitem">In Stock</span>
-                  <div>
-                    <ion-icon name="star"></ion-icon>
-                    <ion-icon name="star"></ion-icon>
-                    <ion-icon name="star"></ion-icon>
-                    <ion-icon name="star"></ion-icon>
-                  </div>
-                </div>
-              </article>
-            </section>
-            </SwiperSlide>
- */}
-
-{/*           <SwiperSlide>Slide 5</SwiperSlide> */}
-       {/*  </Container> */}
-      </Swiper>
-    </section>
-  );
+							<span className="interestYou__priceItem">{`$${e.price}`}</span>
+							<span className="interestYou__stockitem">{`stock: ${e.stock}`}</span>
+							<div>
+								<ion-icon name="star"></ion-icon>
+								<ion-icon name="star"></ion-icon>
+								<ion-icon name="star"></ion-icon>
+								<ion-icon name="star"></ion-icon>
+							</div>
+						</div>
+					</article>
+				</section>
+			</SwiperSlide>)})}
+		</Swiper>))}
 };
 
 export default InterestYouSwiper;
