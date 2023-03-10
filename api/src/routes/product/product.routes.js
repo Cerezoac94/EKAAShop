@@ -8,7 +8,7 @@ const productRoutes = Router();
 productRoutes.get("/", ProductController.getAllProducts);
 productRoutes.get("/filter/discount", ProductController.getProductsWithDiscount);
 productRoutes.get("/:id", ProductController.getProductById);
-productRoutes.get("/filter/category", ProductController.getProductByCategory);
+productRoutes.get("/filter/category/:id", ProductController.getProductByCategory);
 // productRoutes.use(authMe);
 // productRoutes.use(authAdmin);
 productRoutes.post("/", ProductController.createProduct);

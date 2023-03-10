@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 //import UserMenu from "./UserMenu";
 import UserLoginMenu from "./UserLoginMenu";
 import Image from "react-bootstrap/esm/Image";
+// import CategoryContainer from "./Categories/CategoryContainer";
 
 
 const Header = () => {
@@ -38,20 +39,11 @@ const Header = () => {
             </Offcanvas.Header>
             <Offcanvas.Body>
               <Nav className="justify-content-end flex-grow-1 pe-3">
-                <Link to="/drinkware" className="nav_menu_links">
-                  Drinkware
-                </Link>
-                <Link to="/coolers" className="nav_menu_links">
-                  Coolers
-                </Link>
-                <Link to="/Accesories" className="nav_menu_links">
-                  Accesories
-                </Link>
-                <Link to="/all_products" className="nav_menu_links">
+                <Link to='/all_products' className="nav_menu_links">
                   All Products
-                </Link>
-                <Link to="/about_us" className="nav_menu_links">
-                  About US
+                </Link>                
+                <Link to="/get_help" className="nav_menu_links">
+                  Drinkware
                 </Link>
                 <Link to="/get_help" className="nav_menu_links">
                   Get help

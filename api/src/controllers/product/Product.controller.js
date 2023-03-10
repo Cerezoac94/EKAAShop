@@ -75,9 +75,9 @@ class ProductController {
   //Filtrar productos por categoria
   static async getProductByCategory(req, res) {
     try {
-      const { idCategory } = req.body;
+      const { id } = req.params;
       const results = await Category.findAll({
-        where: { id: idCategory },
+        where: { id: id },
         include: [Product],
       });
       if (!results) throw "No products for this category";
