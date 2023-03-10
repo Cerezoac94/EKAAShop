@@ -10,7 +10,7 @@ import { useLoginMutation } from "../../../redux/service/session.service";
 
 
 const LoginForm = () => {
-  const [login, {error, data} ] = useLoginMutation()
+  const [login, { error, data } ] = useLoginMutation()
   const navigate = useNavigate();
   const { register, handleSubmit, watch, formState: { errors } } = useForm();
 
