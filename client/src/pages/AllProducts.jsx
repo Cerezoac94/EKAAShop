@@ -1,9 +1,8 @@
-import React from 'react'
-import ProductsMap from '../modules/products/components/products/ProductsMap'
+import { AllProductsContainer } from '../modules/products/ProductsContainer'
 
 const AllProducts = () => {
   return (
-    <ProductsMap/>
+    <AllProductsContainer/>
   )
 }
 
