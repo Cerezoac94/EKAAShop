@@ -6,11 +6,12 @@ export const categories = createApi({
   tagTypes: ['Categories'],
   endpoints: (builder) =>({
     createCategory: builder.mutation({
-      query: (name) => ({
+      query: (body) => ({
         url: "",
         method: "POST",
-        name,
-      })
+        body,
+      }),
+      invalidatesTags: ["Categories"]
     }),
     getAllCategory: builder.query({
       query: ()=>'',

@@ -1,7 +1,11 @@
-import React from "react";
+import { useEffect } from "react";
 import Dropdown from "react-bootstrap/Dropdown";
 import DropdownButton from "react-bootstrap/DropdownButton";
 import CategoryMap from "../category/CategoryMap";
+// import { useCreateProductMutation } from "../../../../redux/service/product.service";
+// import { useForm } from "react-hook-form";
+// import ErrorForm from "../../../../components/errorsForms/ErrorForm";
+// import Swal from 'sweetalert2'
 
 const CreateProduct = () => {
   return (
