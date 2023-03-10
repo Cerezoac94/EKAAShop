@@ -17,7 +17,8 @@ const Header = () => {
       <Navbar expand="md" sticky="top">
         <Container fluid className="navbar_style">
           <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-md`} />
-          <Link to='/'  className="logo_link_home">
+          <Navbar>
+            <Link to='/'  className="logo_link_home">
           <Image src={logo} alt="logo_home" thumbnail = 'true' className="logo_home"/>
           </Link>
             <div className="user_actions_container">
@@ -26,7 +27,7 @@ const Header = () => {
               </Button>
               {/* <UserMenu/> */}
               <UserLoginMenu />
-            </div>
+            </div></Navbar>
           <Navbar.Offcanvas
             id={`offcanvasNavbar-expand-md`}
             aria-labelledby={`offcanvasNavbarLabel-expand-md`}
