@@ -2,16 +2,16 @@ import { createBrowserRouter } from "react-router-dom";
 import App from "../App";
 import Drinkware from "../pages/Drinkware";
 import Home from "../pages/Home";
-import Login from "../components/forms/Login";
-import Register from "../components/forms/Register";
 import Detail from "../pages/Detail";
 import ShoppingCart from "../pages/ShoppingCart";
 import WishList from "../pages/WishList";
 import OrderList from "../pages/OrderList";
 import AboutUs from "../pages/AboutUs";
 import UserProfile from "../pages/UserProfile";
-import Isadmin from "../components/isAdmin/Isadmin";
+import IsAdmin from "../components/isAdmin/IsAdmin";
 import AdminPanel from "../pages/AdminPanel";
+import Login from "../pages/Login";
+import Register from "../pages/Register";
 import AllProducts from "../pages/AllProducts";
 import Cooler from "../pages/Cooler";
 import Accesories from "../pages/Accesories";
@@ -83,7 +83,7 @@ const router = createBrowserRouter([
 			// TODO: RUTAS PARA ADMIN
 			{
 				path: "admin/",
-				element: <Isadmin/>,
+				element: <IsAdmin/>,
 				children: [
 					{
 						path: 'panel',

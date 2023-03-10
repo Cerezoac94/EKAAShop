@@ -3,11 +3,13 @@ import State from "./State";
 
 const StateMap = () => {
   const { data: results = [], isLoading, error } = useGetAllStatesQuery();
-  return isLoading ? (
+return error ? (<h3>{error?.data?.message}</h3>) :(
+
+isLoading ? (
     <h3>Cargando...</h3>
-  ) : (
-    results.results.map((state) => <State state={state} key={state.id} />)
-  );
+  ) : ((results?.results?.map((state) => <State state={state} key={state.id} />)
+   ) 
+  ))
 };
 
 export default StateMap;

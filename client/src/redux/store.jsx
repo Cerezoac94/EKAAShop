@@ -8,6 +8,7 @@ import { states } from "./service/state.service";
 import { users } from "./service/user.service";
 import { wishes } from "./service/wish.service";
 import { reviews } from "./service/review.service";
+import { sessions } from "./service/session.service";
 
 export const store = configureStore({
   reducer: {
@@ -20,6 +21,7 @@ export const store = configureStore({
     [carts.reducerPath]: carts.reducer,
     [orders.reducerPath]: orders.reducer,
     [reviews.reducerPath]: reviews.reducer,
+    [sessions.reducerPath]: sessions.reducer
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware()
@@ -31,5 +33,6 @@ export const store = configureStore({
       .concat(wishes.middleware)
       .concat(carts.middleware)
       .concat(orders.middleware)
-      .concat(reviews.middleware),
+      .concat(reviews.middleware)
+      .concat(sessions.middleware)
 });

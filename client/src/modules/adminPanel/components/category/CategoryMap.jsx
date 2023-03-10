@@ -3,14 +3,13 @@ import Category from "./Category";
 
 const CategoryMap = () => {
   const { data: results = [], isLoading, error } = useGetAllCategoryQuery();
+  return error ? (<h3>{error?.data?.message}</h3>) :(
 
-  return isLoading ? (
-    <h3>Cargando...</h3>
-  ) : (
-    results.results.map((category) => (
-      <Category category={category} key={category.id} />
-    ))
-  );
+isLoading ? (
+    <h3>Cargando...</h3>):(
+    results.length != 0 && (results.results.map(category => (
+      <Category category={category} key={category.id} />)))
+      ))
 };
 
 export default CategoryMap;
