@@ -13,7 +13,7 @@ export const reviews = createApi({
       }),
       invalidatesTags: ["Reviews"],
     }),
-    getAllReview: builder.query({
+    getAllReviews: builder.query({
       query: () => "",
       providesTags: ["Reviews"],
     }),
