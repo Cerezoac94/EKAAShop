@@ -15,7 +15,7 @@ const HomeContainer = () => {
       <SlideHomeMap/>
 
       <Warranty/>
-     <InterestYouMap/>  
+      <InterestYouMap/>  
       <BannerOffersMap/>
       <ReviewsClientMap/>
       <KeepBuyingMap me={1}/>
