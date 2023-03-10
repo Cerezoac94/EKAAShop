@@ -1,6 +1,5 @@
-import React from 'react'
 
-const Category = ({category}) => {
+const Category = ({ category }) => {
   return (
     <li>
         {category.name}
