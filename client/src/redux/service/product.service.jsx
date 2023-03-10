@@ -18,10 +18,10 @@ export const products = createApi({
       providesTags:['Products']
     }),
     getProductById: builder.query({
-      query: (id) => `/${id}`
+      query: (id) => `/filter/category/${id}`
     }),
     getProductByCategory: builder.query({
-      query: (IdCategory) => `/${ IdCategory }`
+      query: (id) => `/${ id }`
     }),
     getProductsWithDiscount: builder.query({
       query: () => ``

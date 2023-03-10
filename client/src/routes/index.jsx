@@ -12,6 +12,9 @@ import AboutUs from "../pages/AboutUs";
 import UserProfile from "../pages/UserProfile";
 import Isadmin from "../components/isAdmin/Isadmin";
 import AdminPanel from "../pages/AdminPanel";
+import AllProducts from "../pages/AllProducts";
+import Cooler from "../pages/Cooler";
+import Accesories from "../pages/Accesories";
 
 const router = createBrowserRouter([
 	{
@@ -29,10 +32,26 @@ const router = createBrowserRouter([
 				
 			},
 			{
-				path: "/drinkware",
-				element: <Drinkware />,
-				
+				path:"/all_products",
+				element: <AllProducts/>
+
 			},
+			{
+				path: "/drinkware",
+				element: <Drinkware />,				
+			},
+			{
+				path:'/cooler',
+				element: <Cooler/>
+			},
+			{
+				path:'/accessories',
+				element: <Accesories/>
+			},
+			// {
+			// 	path:'/product_by_category',
+			// 	element:<ProductsByCategory/>
+			// }
 			{
 				path: "/product_detail",
 				element: <Detail/>
@@ -56,6 +75,9 @@ const router = createBrowserRouter([
 				path: "/orders_list",
 				element: <OrderList/>,
 		
+			},
+			{
+
 			},
 
 			// TODO: RUTAS PARA ADMIN
