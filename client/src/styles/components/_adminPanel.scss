@@ -1,0 +1,75 @@
+@use "../abstracts/mixins";
+
+.adminPage{
+    @include mixins.display(flex,unset, center,unset);
+    height: 100vh;
+}
+.acordeon{
+    @include mixins.display(flex,column, unset, stretch);
+    width: 80vw;
+    margin-top: 2rem;
+}
+.category{
+    @include mixins.display(flex, column, space-between, stretch);
+    height: fit-content;   
+}
+
+.form{
+    @include mixins.display(flex, column, space-between, flex-start);
+    height: 60%;
+}
+.prop{
+    @include mixins.display(flex, column, center, flex-start);
+    width: 50%;
+    height: 100%;
+    gap: 1rem;
+    margin: 2rem 0 2rem 0;
+
+
+    &__input{
+        width: 100%;
+        max-width: 220px;
+        min-width: 150px;
+        height: 45px;
+        padding: 12px;
+        border-radius: 12px;
+        border: 1.5px solid lightgrey;
+        outline: none;
+        transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+        box-shadow: 0px 0px 20px -18px;
+    }
+
+    &__input:hover {
+        border: 2px solid lightgrey;
+        box-shadow: 0px 0px 20px -17px;
+      }
+      
+      &__input:active {
+        transform: scale(0.95);
+      }
+      
+    &__input:focus {
+        border: 2px solid grey;
+    }
+
+    &__button{
+
+        min-width: 100px;
+        height: 2.5rem;
+        border: none;
+        border-radius: 8px;
+        background: $secondary;
+        color: $main_background;
+    }
+}
+
+
+// button{
+//     width: 90%;
+//     padding: 0.625rem;
+//     height: 50%;
+//     font-size: 1rem;
+//     border: none;
+//     border-radius: 8px;
+//     background: $secondary;
+//     color: $main_background; 

@@ -84,3 +84,10 @@
         color: $fn-color;
     }
 }
+
+@mixin display($display,$direction,$justify:unset, $align:unset){
+    display:$display;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+}

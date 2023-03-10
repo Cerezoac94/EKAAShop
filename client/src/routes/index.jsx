@@ -10,6 +10,8 @@ import WishList from "../pages/WishList";
 import OrderList from "../pages/OrderList";
 import AboutUs from "../pages/AboutUs";
 import UserProfile from "../pages/UserProfile";
+import Isadmin from "../components/isAdmin/Isadmin";
+import AdminPanel from "../pages/AdminPanel";
 
 const router = createBrowserRouter([
 	{
@@ -52,24 +54,29 @@ const router = createBrowserRouter([
 			//Admin routes
 			{
 				path: "/orders_list",
-				element: <OrderList/>
+				element: <OrderList/>,
+		
 			},
 
 			// TODO: RUTAS PARA ADMIN
-			// {
-			// 	path: "admin",
-			// 	element: "component",
-			// 	children: [
-			// 		{
-			// 			path: "create_product",
-			// 			element: "component",
-			// 		},
-			// 		{
-			// 			path: "update_product",
-			// 			element: "component",
-			// 		},
-			// 	],
-			// },
+			{
+				path: "admin/",
+				element: <Isadmin/>,
+				children: [
+					{
+						path: 'panel',
+						element: <AdminPanel/>					
+					},
+					// {
+					// 	path: "create_product",
+					// 	element: "component",
+					// },
+					// {
+					// 	path: "update_product",
+					// 	element: "component",
+					// },
+				],
+			},
 
       
 		],
