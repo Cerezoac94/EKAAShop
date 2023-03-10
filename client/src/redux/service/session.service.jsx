@@ -1,6 +1,6 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react"
 
-const sessions = createApi({
+export const sessions = createApi({
   reducerPath: 'sessions',
   baseQuery: fetchBaseQuery({baseUrl: '/api/session'}),
   tagTypes: ['Me'],
