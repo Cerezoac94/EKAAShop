@@ -7,9 +7,10 @@ import DrinkwareMap from "./components/categories/drinkware/DrinkwareMap"
 export const AllProductsContainer = () => {
     
   return (
-    <section className="container">
-    <ProductsMap/>
-    </section>
+
+       
+      <ProductsMap/>
+    
     // este llamará al componente Productsmap
   )
 }
@@ -17,9 +18,9 @@ export const AllProductsContainer = () => {
 export const DrinkwareContainer = () => {
     
   return (
-    <section className="container">
+    
       <DrinkwareMap/>
-    </section>
+    
     // este llamará al componente drinkwaremap
   )
 }
@@ -27,17 +28,17 @@ export const DrinkwareContainer = () => {
 export const CoolerContainer = () => {
     
   return (
-    <section className="container">
+   
       <CoolerMap/>
-    </section>
+    
   )
 }
 
 export const AccessoriesContainer = () => {
     
   return (
-    <section className="container">
+    
       <AccessoriesMap/>
-    </section>
+    
   )
 }

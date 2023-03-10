@@ -1,5 +1,6 @@
 import { useGetProductByCategoryQuery } from "../../../../../redux/service/product.service"
-import Product from "../../Product"
+import Product from "../../presentacional/Product";
+
 
 const DrinkwareMap = () => {
   const { data:results = [], isLoading, error }=useGetProductByCategoryQuery(1)
@@ -10,7 +11,7 @@ const DrinkwareMap = () => {
       <h3>Cargando...</h3>
     ) : (
       
-      results.results[0].Products.map((p)=><Product product={p} key={p.id}/>)
+      results.results[0].Products.map((p)=> <Product product={p} key={p.id}/>)
     )
 }
 export default DrinkwareMap

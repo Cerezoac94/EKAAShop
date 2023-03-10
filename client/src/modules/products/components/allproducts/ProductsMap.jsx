@@ -1,5 +1,6 @@
 import { useGetAllProductsQuery } from "../../../../redux/service/product.service";
-import Product from "../Product";
+import Product from "../presentacional/Product";
+
 
 const ProductsMap = () => {
 	const { data: results = [], isLoading, error } = useGetAllProductsQuery();	return error ? (
@@ -7,7 +8,9 @@ const ProductsMap = () => {
 	) : isLoading ? (
 		<h3>Cargando...</h3>
 	) : (
-		results.results.map((product) => <Product product={product} key={product.id}/>)
+		<section className="productContainer">
+		{results.results.map((product) => <Product product={product} key={product.id}/>)}
+		</section>
 	);
 };
 
