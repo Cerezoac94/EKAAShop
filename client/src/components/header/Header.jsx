@@ -63,14 +63,14 @@ const Header = () => {
           </Navbar.Offcanvas>
         </Container>
       </Navbar>
-      <section className="section_search_header">
+      {/* <section className="section_search_header">
         <input
           type="search"
           placeholder="Search"
           className="search_header_container"
           aria-label="Search"
         />
-      </section>
+      </section> */}
     </header>
   );
 };

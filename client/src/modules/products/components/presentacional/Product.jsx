@@ -1,6 +1,6 @@
 import React from "react";
 import {Link} from 'react-router-dom'
-//import Container from "react-bootstrap/Container";
+// import Container from "react-bootstrap/Container";
 import Image from 'react-bootstrap/Image'
 const ProductDrinkware = ({ product }) => {
   /*   return (

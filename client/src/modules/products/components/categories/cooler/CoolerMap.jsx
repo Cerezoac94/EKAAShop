@@ -1,5 +1,6 @@
 import { useGetProductByCategoryQuery } from "../../../../../redux/service/product.service"
-import Product from "../../Product"
+// import Product from "../../Product"
+import Product from "../../presentacional/Product";
 
 const CoolerMap = () => {
     const { data:results = [], isLoading, error }=useGetProductByCategoryQuery(2)

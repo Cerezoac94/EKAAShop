@@ -1,5 +1,5 @@
 import { useGetProductByCategoryQuery } from "../../../../../redux/service/product.service";
-import Product from "../../Product";
+import Product from "../../presentacional/Product";
 
 const AccessoriesMap = () => {
   const { data:results = [], isLoading, error }=useGetProductByCategoryQuery(3)
