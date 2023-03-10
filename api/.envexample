@@ -4,3 +4,14 @@ DB_NAME=databasename
 DB_USERNAME=user
 DB_PASSWORD=
 DB_HOST=urlhost
+
+
+SECRET = secret
+
+// this is from firebase
+API_KEY = apikey
+AUTH_DOMAIN = authdomain.firebase.com
+PROJECT_ID = project_id
+STORAGE_BUCKET = storage-bucket
+MESSAGING_SENDER_ID = 1111111111
+APP_ID = appid12345678

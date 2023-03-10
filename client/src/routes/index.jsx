@@ -2,14 +2,19 @@ import { createBrowserRouter } from "react-router-dom";
 import App from "../App";
 import Drinkware from "../pages/Drinkware";
 import Home from "../pages/Home";
-import Login from "../components/forms/Login";
-import Register from "../components/forms/Register";
 import Detail from "../pages/Detail";
 import ShoppingCart from "../pages/ShoppingCart";
 import WishList from "../pages/WishList";
 import OrderList from "../pages/OrderList";
 import AboutUs from "../pages/AboutUs";
 import UserProfile from "../pages/UserProfile";
+import IsAdmin from "../components/isAdmin/IsAdmin";
+import AdminPanel from "../pages/AdminPanel";
+import Login from "../pages/Login";
+import Register from "../pages/Register";
+import AllProducts from "../pages/AllProducts";
+import Cooler from "../pages/Cooler";
+import Accesories from "../pages/Accesories";
 
 const router = createBrowserRouter([
 	{
@@ -27,10 +32,26 @@ const router = createBrowserRouter([
 				
 			},
 			{
-				path: "/drinkware",
-				element: <Drinkware />,
-				
+				path:"/all_products",
+				element: <AllProducts/>
+
 			},
+			{
+				path: "/drinkware",
+				element: <Drinkware />,				
+			},
+			{
+				path:'/cooler',
+				element: <Cooler/>
+			},
+			{
+				path:'/accessories',
+				element: <Accesories/>
+			},
+			// {
+			// 	path:'/product_by_category',
+			// 	element:<ProductsByCategory/>
+			// }
 			{
 				path: "/product_detail",
 				element: <Detail/>
@@ -52,24 +73,32 @@ const router = createBrowserRouter([
 			//Admin routes
 			{
 				path: "/orders_list",
-				element: <OrderList/>
+				element: <OrderList/>,
+		
+			},
+			{
+
 			},
 
 			// TODO: RUTAS PARA ADMIN
-			// {
-			// 	path: "admin",
-			// 	element: "component",
-			// 	children: [
-			// 		{
-			// 			path: "create_product",
-			// 			element: "component",
-			// 		},
-			// 		{
-			// 			path: "update_product",
-			// 			element: "component",
-			// 		},
-			// 	],
-			// },
+			{
+				path: "admin/",
+				element: <IsAdmin/>,
+				children: [
+					{
+						path: 'panel',
+						element: <AdminPanel/>					
+					},
+					// {
+					// 	path: "create_product",
+					// 	element: "component",
+					// },
+					// {
+					// 	path: "update_product",
+					// 	element: "component",
+					// },
+				],
+			},
 
       
 		],
