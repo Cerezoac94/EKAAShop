@@ -1,8 +1,9 @@
 import React from 'react'
+import { CoolerContainer } from '../modules/products/ProductsContainer'
 
 const Cooler = () => {
   return (
-    <div>Cooler</div>
+    <CoolerContainer/>
   )
 }
 
