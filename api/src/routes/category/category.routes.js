@@ -4,6 +4,7 @@ import CategoryController from "../../controllers/category/Category.controller.j
 const categoryRoutes = Router();
 
 categoryRoutes.get("/", CategoryController.getAllCategory);
+categoryRoutes.get('/:id', CategoryController.getCategoryById);
 categoryRoutes.post("/", CategoryController.createCategory);
 categoryRoutes.put("/:id", CategoryController.updateCategory);
 categoryRoutes.delete("/:id", CategoryController.deleteCategory);

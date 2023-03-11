@@ -20,6 +20,7 @@ const CategoryMap = ({ select }) => {
 		results.results.map((category) => (
 			<CategoryOption category={category} key={category.id} />
 		))
+
 	);
 };
 
