@@ -75,9 +75,19 @@ class OrderController {
         await product.update({
           stock: parseInt(product.stock) - parseInt(cartProduct.quantity),
         });
-
         total += parseInt(productPrice) * parseInt(cartProduct.quantity);
       }
+
+      order.update({
+        total
+      })
+
+      // const orderDetail = await OrderDetail.findOne({
+      //   where:{idOrder: order.id }
+      // })
+      // orderDetail.update({
+      //   total
+      // })
 
       // Eliminar productos del carrito
       await CartProduct.destroy({
@@ -221,23 +231,26 @@ class OrderController {
           id: idOrder,
         },
         attributes: ["orderDate"],
-        include: [
-          {
-            model: OrderDetail,
-            attributes: ["quantity", "unitPrice"],
-            include: [
-              {
-                model: Product,
-                attributes: ["name", "image"],
-                include: [
-                  {
-                    model: Category,
-                    attributes: ["name"],
-                  },
-                ],
-              },
-            ],
-          },
+        include: [{
+          model: User,
+          attributes: ["firstName", "lastName", "phone", "adress"]
+        },
+        {
+          model: OrderDetail,
+          attributes: ["quantity", "unitPrice"],
+          include: [
+            {
+              model: Product,
+              attributes: ["name", "image"],
+              include: [
+                {
+                  model: Category,
+                  attributes: ["name"],
+                },
+              ],
+            },
+          ],
+        },
         ],
       });
       if (!results) throw "No order aviable";

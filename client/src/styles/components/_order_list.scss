@@ -1,5 +1,5 @@
 .orders_list_container {
-    padding: 1.25rem;
+    padding: 1rem;
 }
 
 //list header
@@ -27,8 +27,21 @@
 //Table_styles
 .table_container,
 .modal_header_date {
-    font-size: 0.75rem;
+    font-size: 0.6rem;
+
 }
+
+#icon_paid_true{
+    color: $confirmation;
+    --ionicon-stroke-width: 50px;
+}
+#icon_paid_false{
+    color: $color6;
+    --ionicon-stroke-width: 50px;
+}
+
+
+
 
 tbody.table_body {
     vertical-align: middle;
@@ -41,12 +54,11 @@ button.view_order_btn {
     border: none;
     border-radius: 4px;
     margin: 0.313rem 0;
-    padding: 5px;
+    padding: 3px;
     color: $main_background;
     font-size: 0.75rem;
     background-color: $secondary_background;
 }
-
 
 //Modal styles
 .modal-dialog.modal-dialog-centered {
@@ -96,6 +108,7 @@ td.order_label_detail {
     justify-content: center;
 }
 
+
 //Desktop
 @media only screen and (min-width: 768px) {
     .input_search_order {
@@ -120,11 +133,6 @@ td.order_label_detail {
         justify-content: space-evenly;
     }
 
-    .view_order_btn,
-    .shipped_order_btn {
-        width: 30%;
-    }
-
     //modal
     .modal-content {
         width: 100%;
@@ -142,4 +150,5 @@ td.order_label_detail {
     .order_address_label{ 
         width: 44%;
     }
+
 }

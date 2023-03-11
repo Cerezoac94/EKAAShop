@@ -39,11 +39,13 @@ class CategoryController {
   static async getCategoryById(req, res){
     try {
       const {id}=req.params
-      const results = Category.findOne({
+      const results = await Category.findOne({
         where:{
           id:id
         }
-      }) 
+      })
+      console.log("🚀 ~ file: Category.controller.js:47 ~ CategoryController ~ getCategoryById ~ results:", results)
+      if (!results)throw'Category not found'
       res.status(200).send({
         success: true,
         message: "Category",
