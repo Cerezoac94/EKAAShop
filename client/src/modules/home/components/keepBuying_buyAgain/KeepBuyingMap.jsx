@@ -19,9 +19,7 @@ const KeepBuyingMap = ({ me }) => {
         </section>
       )
     );
-  
   }
-  
 };
 
 export default KeepBuyingMap;
