@@ -86,14 +86,14 @@ const router = createBrowserRouter([
             path: "panel",
             element: <AdminPanel />,
           },
-          {
-            path: "/:id",
-            element: <CategoryMutationContainer />,
-          },
-          {
-            path: "/:id",
-            element: <ProductMutationContainer />,
-          },
+        //   {
+        //     path: "/:id",
+        //     element: <CategoryMutationContainer />,
+        //   },
+        //   {
+        //     path: "/:id",
+        //     element: <ProductMutationContainer />,
+        //   },
           // {
           // 	path: "update_product",
           // 	element: "component",
