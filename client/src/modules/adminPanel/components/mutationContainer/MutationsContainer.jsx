@@ -5,7 +5,7 @@ import { useGetCategoryByIdQuery } from "../../../../redux/service/category.serv
 
 export const CategoryMutationContainer = () => {
   const {id} = useParams()
-  const results = useGetCategoryByIdQuery()
+  const results = useGetCategoryByIdQuery(id)
   console.log("🚀 ~ file: MutationsContainer.jsx:9 ~ CategoryMutationContainer ~ results:", results)
   //Const {is}= useGetCategoryById(id)
   return (
@@ -22,7 +22,8 @@ export const ProductMutationContainer = () => {
   //Const {is}= useGetCategoryById(id)
   return (
     //Category
-    <Detail category={id}/>
+    <h1>holaproduct</h1>
+    // <Detail category={id}/>
     //Delete
     //<Category.id> 
   )
