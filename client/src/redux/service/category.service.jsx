@@ -13,6 +13,12 @@ export const categories = createApi({
       }),
       invalidatesTags: ["Categories"]
     }),
+    getCategoryById: builder.query({
+      query: (id)=>({
+        url: `${id}`,
+        providesTags:['Categories']
+      })
+    }),
     getAllCategory: builder.query({
       query: ()=>'',
       providesTags:['Categories']
@@ -29,4 +35,4 @@ export const categories = createApi({
   })
 })
 
-export const { useCreateCategoryMutation, useGetAllCategoryQuery, useDeleteCategoryMutation } = categories
+export const { useCreateCategoryMutation, useGetCategoryByIdQuery,useGetAllCategoryQuery, useDeleteCategoryMutation } = categories
