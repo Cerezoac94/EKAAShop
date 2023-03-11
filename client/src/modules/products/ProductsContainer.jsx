@@ -1,9 +1,16 @@
-// import ProductsMap from "./components/products/ProductsMap"
+import ProductsMap from "./components/allproducts/ProductsMap"
+import AccessoriesMap from "./components/categories/accesories/AccessoriesMap"
+import CoolerMap from "./components/categories/cooler/CoolerMap"
+import DrinkwareMap from "./components/categories/drinkware/DrinkwareMap"
+
 
 export const AllProductsContainer = () => {
     
   return (
-    <h2>pendiente</h2>
+
+       
+      <ProductsMap/>
+    
     // este llamará al componente Productsmap
   )
 }
@@ -11,7 +18,27 @@ export const AllProductsContainer = () => {
 export const DrinkwareContainer = () => {
     
   return (
-    <h2>pendiente drinkware</h2>
+    
+      <DrinkwareMap/>
+    
     // este llamará al componente drinkwaremap
+  )
+}
+
+export const CoolerContainer = () => {
+    
+  return (
+   
+      <CoolerMap/>
+    
+  )
+}
+
+export const AccessoriesContainer = () => {
+    
+  return (
+    
+      <AccessoriesMap/>
+    
   )
 }

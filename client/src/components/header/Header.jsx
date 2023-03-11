@@ -48,8 +48,15 @@ const Header = () => {
                 <Link to="/all_products" className="nav_menu_links">
                   All Products
                 </Link>
-                <Link to="/get_help" className="nav_menu_links">
+
+                <Link to='/drinkware' className="nav_menu_links">
                   Drinkware
+                </Link>
+                <Link to='/cooler' className="nav_menu_links">
+                  Cooler
+                </Link>
+                <Link to='/accessories' className="nav_menu_links">
+                  Accessories
                 </Link>
                 <Link to="/get_help" className="nav_menu_links">
                   Get help

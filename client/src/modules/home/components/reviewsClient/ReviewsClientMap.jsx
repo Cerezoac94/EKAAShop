@@ -1,26 +1,16 @@
 import React from 'react'
 import ReviewsClient from './ReviewsClient'
+/* import {useGetAllProductsQuery} from '../../../../redux/service/product.service' */
+import {useGetAllReviewsQuery} from '../../../../redux/service/review.service'
 
 const ReviewsClientMap = () => {
-    const reviews=[{
-      id: 1,
-        start:'REVIEW 1',
-        desc:'Description review Lorem  ',
-        user:'euge25',
-        type:'cooler'
-    },{
-      id: 2,
-        start:'REVIEW 2',
-        desc:'Description review Lorem2  ',
-        user:'kat22',
-        type:'Yeti'
-    }]
-  return (
-    reviews.map(e => {
-       return <ReviewsClient element={e} key={e.id}/>
-    })
-   
+const { data: results = [], isLoading, error } = useGetAllReviewsQuery();
+if(!error) {
+  return isLoading ? (<h3> cargando</h3>) :   (
+    results.length != 0 &&(results?.results.slice(0,1).map(e  => (<ReviewsClient e={e} key={e.id}/>))
+    )
   )
+}
 }
 
 export default ReviewsClientMap

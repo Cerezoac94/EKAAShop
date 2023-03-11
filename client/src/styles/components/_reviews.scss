@@ -1,0 +1,39 @@
+@use '../base/variables';
+@use '../abstracts/mixins';
+.reviews {
+    /*   border: 2px solid red; */
+    margin-top: 1rem;
+    @include mixins.laptop-view(unset, unset, unset, unset);
+    &__container {
+        border: 1px solid variables.$secondary_background;
+        height: 30rem;
+        width: 22.5rem;
+        @include mixins.laptop-view(unset, unset, unset, unset)
+    }
+    &__descContainer {
+        display: flex;
+        align-items: center;
+    }
+    &__icons {
+        color: variables.$color9;
+        font-size: 2rem;
+        display: flex;
+    }
+    &__img {
+        width: 11rem;
+        height: 13rem;
+    }
+    &__h3 {
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+    &__reiting {
+        display: flex;
+    }
+    &__text {
+        margin-top: 1rem;
+        text-align: center;
+        line-height: .3rem;
+        padding: 1rem;
+    }
+}

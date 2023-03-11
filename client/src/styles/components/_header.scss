@@ -2,7 +2,12 @@
 header {
     height: 20vh;
     display: flex;
-    //background-color: red;
+
+    flex-direction: column;
+    justify-content: center;
+    //background: $secondary_background;
+    background-color: $secondary_background;
+
 }
 
 //navbar_styles

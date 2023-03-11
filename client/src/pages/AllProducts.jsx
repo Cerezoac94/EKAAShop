@@ -1,9 +1,11 @@
-import { AllProductsContainer } from '../modules/products/ProductsContainer'
+import { AllProductsContainer } from "../modules/products/ProductsContainer";
 
 const AllProducts = () => {
   return (
-    <AllProductsContainer/>
-  )
-}
+      
+    
+      <AllProductsContainer />
+  );
+};
 
-export default AllProducts
+export default AllProducts;

@@ -1,11 +1,12 @@
-import React from 'react'
+import { Link } from "react-router-dom";
 
-const Category = ({category}) => {
+const Category = ({ category }) => {
+  console.log("🚀 ~ file: Category.jsx:4 ~ Category ~ category:", category)
   return (
-    <li>
-        {category.name}
-    </li>
-  )
-}
+    <Link to={`edit/${category.id}`}>
+      <li>{category.name}</li>
+    </Link>
+  );
+};
 
-export default Category
+export default Category;
