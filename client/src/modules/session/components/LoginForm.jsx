@@ -134,7 +134,7 @@ const LoginForm = () => {
 							name="information-circle-outline"
 							className="info_circle"
 						></ion-icon>
-						{error.data.message}
+						{error?.data?.message}
 					</Form.Text>
 				)}
 			</Form>
