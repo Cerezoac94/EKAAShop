@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
 
 const Category = ({ category }) => {
-  console.log("🚀 ~ file: Category.jsx:4 ~ Category ~ category:", category)
+  // console.log("🚀 ~ file: Category.jsx:4 ~ Category ~ category:", category)
   return (
-    <Link to={`edit/${category.id}`}>
+    <Link to={`category_mutation/${category.id}`}>
       <li>{category.name}</li>
     </Link>
   );

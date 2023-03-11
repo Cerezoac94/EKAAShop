@@ -75,25 +75,24 @@ const router = createBrowserRouter([
         path: "/orders_list",
         element: <OrderList />,
       },
-      {},
 
       // TODO: RUTAS PARA ADMIN
       {
-        path: "/admin/",
+        path: "admin/",
         element: <IsAdmin />,
         children: [
           {
             path: "panel",
             element: <AdminPanel />,
           },
-        //   {
-        //     path: "/:id",
-        //     element: <CategoryMutationContainer />,
-        //   },
-        //   {
-        //     path: "/:id",
-        //     element: <ProductMutationContainer />,
-        //   },
+          {
+            path: "category_mutation/:id",
+            element: <CategoryMutationContainer />,
+          },
+          {
+            path: "product_mutation/:id",
+            element: <ProductMutationContainer />,
+          },
           // {
           // 	path: "update_product",
           // 	element: "component",

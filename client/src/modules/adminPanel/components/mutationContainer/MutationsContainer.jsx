@@ -1,15 +1,17 @@
 import { useParams } from "react-router-dom"
-// import { useGetCategoryByIdQuery } from "../../../../redux/service/category.service"
+import { useGetCategoryByIdQuery } from "../../../../redux/service/category.service"
 // import Detail from "../../../../pages/Detail"
 //importar el useGetCategoryById()
 
 export const CategoryMutationContainer = () => {
   const {id} = useParams()
-  
+  const results = useGetCategoryByIdQuery()
+  console.log("🚀 ~ file: MutationsContainer.jsx:9 ~ CategoryMutationContainer ~ results:", results)
   //Const {is}= useGetCategoryById(id)
   return (
     //Category
-    <Detail category={id}/>
+    <h1>hola</h1>
+    // <Detail category={id}/>
     //Delete
     //<Category.id> 
   )
