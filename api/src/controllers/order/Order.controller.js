@@ -221,7 +221,9 @@ class OrderController {
           id: idOrder,
         },
         attributes: ["orderDate"],
-        include: [
+        include: [{model: User,
+          attributes: ["adress"]
+        },
           {
             model: OrderDetail,
             attributes: ["quantity", "unitPrice"],
