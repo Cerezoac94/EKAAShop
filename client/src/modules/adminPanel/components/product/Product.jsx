@@ -1,10 +1,11 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Product = ({product}) => {
   return (
-    <li>
+    <Link to= {`product_mutation/${product.id}`}>
         {product.name}
-    </li>
+    </Link>
   )
 }
 

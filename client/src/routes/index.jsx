@@ -78,15 +78,15 @@ const router = createBrowserRouter([
 
       // TODO: RUTAS PARA ADMIN
       {
-        path: "admin/",
+        path: "admin",
         element: <IsAdmin />,
         children: [
           {
-            path: "panel",
+            path: "",
             element: <AdminPanel />,
           },
           {
-            path: "category_mutation/:id",
+            path: "category_mutation/:id/",
             element: <CategoryMutationContainer />,
           },
           {
