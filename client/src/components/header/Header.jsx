@@ -16,14 +16,13 @@ const Header = () => {
     <header>
       <Navbar expand="md" sticky="top">
         <Container fluid className="navbar_style">
-          <Nav className="nav_menu_container">
           <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-md`} />
           <Link to="/" className="logo_link_home">
             <Image src={logo} alt="logo_home" thumbnail="true" className="logo_home"/>
           </Link>
-          <section className="section_search_header_desktop" >
+{/*           <section className="section_search_header_desktop" >
             <Search/>
-          </section>
+          </section> */}
           <div className="user_actions_container">
             <Button href="/cart" className="user_menu_btn">
               <ion-icon name="cart-outline"></ion-icon>
@@ -31,8 +30,6 @@ const Header = () => {
             <UserMenu />
             {/* <UserLoginMenu /> */}
           </div>
-          </Nav>
-
           <Navbar.Offcanvas
             id={`offcanvasNavbar-expand-md`}
             aria-labelledby={`offcanvasNavbarLabel-expand-md`}
@@ -68,9 +65,9 @@ const Header = () => {
             </Offcanvas.Body>
           </Navbar.Offcanvas>
         </Container>
-<section className="section_search_header">
+{/* <section className="section_search_header">
   <Search/>
-</section>
+</section> */}
       </Navbar>
     </header>
   );

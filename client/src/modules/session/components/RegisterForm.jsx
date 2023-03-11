@@ -213,7 +213,7 @@ const RegisterForm = () => {
 								name="information-circle-outline"
 								className="info_circle"
 							></ion-icon>
-							{ error.data.message.errors.length != 0 && (`${error?.data?.message?.errors[0]?.path} no disponible`)}
+							{ error.data.message.length != 0 && (`${error?.data?.message?.errors[0]?.path} no disponible`)}
 						</Form.Text>
 					)}
 				</Form.Group>

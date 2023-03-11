@@ -1,6 +1,7 @@
 import Table from "react-bootstrap/Table";
 import Container from "react-bootstrap/Container";
 import Form from "react-bootstrap/Form";
+import OrdenAdminView from "./order_admin_view/OrdernAdminView";
 
 const OrderList = ({ data, handleSearch, handleSelect }) => {
 	return (
@@ -50,8 +51,8 @@ const OrderList = ({ data, handleSearch, handleSelect }) => {
 							<td>{item.shipmentState}</td>
 							<td>{`$${item.total}`}</td>
 							<td className="buttons_container">
-								<button className="view_order_btn">View</button>
-							</td>
+                <OrdenAdminView />
+              </td>
 						</tr>
 					))}
 				</tbody>
@@ -61,3 +62,4 @@ const OrderList = ({ data, handleSearch, handleSelect }) => {
 };
 
 export default OrderList;
+
