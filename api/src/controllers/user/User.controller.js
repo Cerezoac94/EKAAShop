@@ -15,6 +15,7 @@ class UserController {
         email,
         password,
         idRole: 2,
+        memberSince:  new Date()
       });
       if (!results) throw "The User is not created";
       const cart = await Cart.create({

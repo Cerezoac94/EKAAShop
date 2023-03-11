@@ -1,5 +1,5 @@
 .orders_list_container {
-    padding: 1.25rem;
+    padding: 1rem;
 }
 
 //list header
@@ -26,8 +26,20 @@
 
 //Table_styles
 .table_container {
-    font-size: 0.75rem;
+    font-size: 0.6rem;
 }
+
+#icon_paid_true{
+    color: $confirmation;
+    --ionicon-stroke-width: 50px;
+}
+#icon_paid_false{
+    color: $color6;
+    --ionicon-stroke-width: 50px;
+}
+
+
+
 
 tbody.table_body {
     vertical-align: middle;
@@ -41,18 +53,19 @@ tbody.table_body {
     border: none;
     border-radius: 4px;
     margin: 0.313rem 0;
-    padding: 5px;
+    padding: 3px;
     color: $main_background;
 }
 
 .view_order_btn {
+    width: fit-content;
     background-color: $secondary_background;
 }
 
-.shipped_order_btn {
-    background-color: #AAC456;
-    color: #fff;
-}
+// .shipped_order_btn {
+//     background-color: #AAC456;
+//     color: #fff;
+// }
 
 //Desktop
 @media only screen and (min-width: 768px) {
@@ -78,8 +91,8 @@ tbody.table_body {
         justify-content: space-evenly;
     }
 
-    .view_order_btn,
-    .shipped_order_btn {
-        width: 30%;
-    }
+    // .view_order_btn,
+    // .shipped_order_btn {
+    //     width: 30%;
+    // }
 }

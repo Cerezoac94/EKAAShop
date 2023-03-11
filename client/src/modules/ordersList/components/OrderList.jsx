@@ -1,54 +1,63 @@
-import React, { useState } from "react";
 import Table from "react-bootstrap/Table";
-import { Orders } from "./orders";
 import Container from "react-bootstrap/Container";
 import Form from "react-bootstrap/Form";
 
-const OrderList = ({ data, handleChange }) => {
-  return (
-    <Container fluid className="orders_list_container">
-      <Container fluid className="list_header_container">
-        <Form.Control
-          type="search"
-          aria-label="search"
-          onChange={handleChange}
-          className="input_search_order"
-          placeholder="order, name"
-        />
-        <select name="select" className="status_filter">
-          <option value="value1">Complete</option>
-          <option value="value2" selected>
-         In Progress
-          </option>
-          <option value="value3">Sent</option>
-        </select>
-      </Container>
-      <Table hover responsive="xl" className="table_container"> {/* responsive = "sm" */}
-        <tbody className="table_body">
-          <tr>
-            <th>Order #</th>
-            <th>Bill name</th>
-            <th>Subtotal</th>
-            <th>Status</th>
-            <th>Actions</th>
-          </tr>
+const OrderList = ({ data, handleSearch, handleSelect }) => {
+	return (
+		<Container fluid className="orders_list_container">
+			<Container fluid className="list_header_container">
+				<Form.Control
+					type="search"
+					aria-label="search"
+					onChange={handleSearch}
+					className="input_search_order"
+					placeholder="Search by date"
+				/>
+				<select onChange={handleSelect} name="select" className="status_filter">
+					<option value="no enviado">No enviado</option>
+					<option value="enviado">Envidado</option>
+				</select>
+			</Container>
+			<Table hover responsive="xl" className="table_container">
+				{/* responsive = "sm" */}
+				<tbody className="table_body">
+					<tr>
+						<th>Order #</th>
+						<th>Order date</th>
+						<th>Paid</th>
+						<th>Shipment</th>
+						<th>total</th>
+						<th>action</th>
+					</tr>
 
-          {data.map((item) => (
-            <tr key={item.order_id}>
-              <td>{item.order_id}</td>
-              <td>{item.bill_name}</td>
-              <td>$ {item.subtotal}</td>
-              <td>{item.status}</td>
-              <td className="buttons_container">
-                <button className="view_order_btn">View</button>
-                <button className="shipped_order_btn">Shipped</button>
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </Table>
-    </Container>
-  );
+					{data.map((item) => (
+						<tr key={item.id}>
+							<td>{item.id}</td>
+							<td>{new Date(item.orderDate).toLocaleDateString()}</td>
+							<td>
+								{item.paid ? (
+									<ion-icon
+										id="icon_paid_true"
+										name="checkmark-circle-outline"
+									></ion-icon>
+								) : (
+									<ion-icon
+										id="icon_paid_false"
+										name="close-circle-outline"
+									></ion-icon>
+								)}
+							</td>
+							<td>{item.shipmentState}</td>
+							<td>{`$${item.total}`}</td>
+							<td className="buttons_container">
+								<button className="view_order_btn">View</button>
+							</td>
+						</tr>
+					))}
+				</tbody>
+			</Table>
+		</Container>
+	);
 };
 
 export default OrderList;
