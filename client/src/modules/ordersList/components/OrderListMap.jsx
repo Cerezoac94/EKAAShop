@@ -1,25 +1,32 @@
 import React, { useState } from 'react'
 import OrderList from './OrderList'
-import { Orders } from './orders'
+import { useGetAllOrdersQuery } from '../../../redux/service/order.service';
 
 
 const OrderListMap = () => {
-
-  const data = Orders;
+  const { data:results = [], isLoading, error } = useGetAllOrdersQuery()
   const [query, setQuery] = useState("");
-  //console.log("Data",data);
+  const [select, setSelect] = useState("");
   
-  const handleChange = (e) => {
+  const handleSearch = (e) => {
     setQuery(e.target.value)
   }
+  const handleSelect = (e) => {
+    setSelect(e.target.value)
+    console.log(e.target.value);
+  }
 
-  const search = (data) => {
-    return data.filter((item) => item.bill_name.toLowerCase().includes(query))
+  const searchDate = (data) => {
+    return data.filter((item) => new Date(item.orderDate).toLocaleDateString().toLowerCase().includes(query))
   };
 
-  return (
-    <OrderList data = {search(Orders)} handleChange={handleChange}/>
+  const searchShipment = (data) => {
+    return data.filter((item) => item.shipmentState.toLowerCase().startsWith(select))
+  };
+  if(!error) {
+  return !isLoading && ( <OrderList data = {searchDate(searchShipment(results.results))} handleSearch={handleSearch} handleSelect={handleSelect} />
   )
+  }
 }
 
 export default OrderListMap

@@ -20,6 +20,9 @@ Order.init(
     shipmentState:{
       type: Dt.STRING(12),
       allowNull: false
+    },
+    total: {
+        type: Dt.DECIMAL(10,2)
     }
   },
   {
