@@ -75,7 +75,6 @@ const router = createBrowserRouter([
         path: "/orders_list",
         element: <OrderList />,
       },
-      {},
 
       // TODO: RUTAS PARA ADMIN
       {
@@ -101,11 +100,6 @@ const router = createBrowserRouter([
         ],
       },
     ],
-  },
-
-  {
-    path: "/signup",
-    element: "componente de signUp",
   },
   {
     path: "/login",

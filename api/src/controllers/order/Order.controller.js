@@ -222,7 +222,7 @@ class OrderController {
         },
         attributes: ["orderDate"],
         include: [{model: User,
-          attributes: ["adress"]
+          attributes: ["firstName", "lastName","phone","adress"]
         },
           {
             model: OrderDetail,
