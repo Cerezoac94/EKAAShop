@@ -3,6 +3,7 @@ import Table from "react-bootstrap/Table";
 import { Orders } from "./orders";
 import Container from "react-bootstrap/Container";
 import Form from "react-bootstrap/Form";
+import OrdenAdminView from "./order_admin_view/OrdernAdminView";
 
 const OrderList = ({ data, handleChange }) => {
   return (
@@ -15,15 +16,15 @@ const OrderList = ({ data, handleChange }) => {
           className="input_search_order"
           placeholder="order, name"
         />
-        <select name="select" className="status_filter">
+        {/*         <select name="select" className="status_filter">
           <option value="value1">Complete</option>
           <option value="value2" selected>
          In Progress
           </option>
           <option value="value3">Sent</option>
-        </select>
+        </select> */}
       </Container>
-      <Table hover responsive="xl" className="table_container"> {/* responsive = "sm" */}
+      <Table hover responsive="xl" className="table_container">
         <tbody className="table_body">
           <tr>
             <th>Order #</th>
@@ -40,8 +41,7 @@ const OrderList = ({ data, handleChange }) => {
               <td>$ {item.subtotal}</td>
               <td>{item.status}</td>
               <td className="buttons_container">
-                <button className="view_order_btn">View</button>
-                <button className="shipped_order_btn">Shipped</button>
+                <OrdenAdminView />
               </td>
             </tr>
           ))}
@@ -52,3 +52,7 @@ const OrderList = ({ data, handleChange }) => {
 };
 
 export default OrderList;
+
+{
+  /* <button className="view_order_btn">View</button> */
+}

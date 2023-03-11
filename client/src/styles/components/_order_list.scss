@@ -25,7 +25,8 @@
 }
 
 //Table_styles
-.table_container {
+.table_container,
+.modal_header_date {
     font-size: 0.75rem;
 }
 
@@ -35,23 +36,64 @@ tbody.table_body {
 }
 
 //Buttons
-.view_order_btn,
-.shipped_order_btn {
+button.view_order_btn {
     width: 100%;
     border: none;
     border-radius: 4px;
     margin: 0.313rem 0;
     padding: 5px;
     color: $main_background;
-}
-
-.view_order_btn {
+    font-size: 0.75rem;
     background-color: $secondary_background;
 }
 
-.shipped_order_btn {
-    background-color: #AAC456;
-    color: #fff;
+
+//Modal styles
+.modal-dialog.modal-dialog-centered {
+    justify-content: center;
+}
+.modal-content {
+    width: 80%;
+}
+tr.table_header {
+    background-color: $third_background;
+}
+//order_product_sumary
+th.item_sumary,
+.order_label_detail {
+    text-align: -webkit-auto;
+}
+
+td.order_image_container,
+td.order_item_container {
+    border: none;
+    padding: 0;
+}
+
+.order_image_container {
+    display: flex;
+    align-items: center;
+}
+.image_order_detail { 
+    width: 40%;
+    height: auto;
+}
+.order_item_name {
+    padding: 0.625rem;
+}
+
+//customer_detail_sumary
+table.table_container.customer_details.table.table-hover {
+    margin-top: 2rem;
+}
+td.order_label_detail {
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-footer {
+    border: none;
+    justify-content: center;
 }
 
 //Desktop
@@ -81,5 +123,23 @@ tbody.table_body {
     .view_order_btn,
     .shipped_order_btn {
         width: 30%;
+    }
+
+    //modal
+    .modal-content {
+        width: 100%;
+    }
+    .modal-title.h4{
+        display: flex;
+        flex-direction: column;
+    }
+    td.order_label_detail {
+        font-size: 0.875rem;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .order_address_label{ 
+        width: 44%;
     }
 }
