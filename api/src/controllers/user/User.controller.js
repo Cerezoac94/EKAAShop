@@ -4,7 +4,7 @@ import {
   Cart,
   Wish,
 } from "../../models/index.js";
-
+import { generateToken } from "../../config/token.js";
 class UserController {
   // FIXME: Al haber error de no encontrar "state" existente, aún así incrementa el id
   static async createUser(req, res) {
@@ -32,7 +32,13 @@ class UserController {
         idCart: cart.id,
         idWish: wish.id,
       });
-
+      const payload = {
+        id: results.id,
+        userName: results.userName,
+        role: results.idRole
+      }
+      const token = generateToken(payload)
+      res.cookie("token", token)
       res.status(201).send({
         success: true,
         message: "User created succesfully",
