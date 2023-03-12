@@ -4,9 +4,8 @@ import CategoryOption from "./CategoryOption";
 
 const CategoryMap = ({ select }) => {
 	const { data: results = [], isLoading, error } = useGetAllCategoryQuery();
-	return error ? (
-		<h3>{error?.data?.message}</h3>
-	) : !select ? (
+ if(!error) {
+	return !select ? (
 		isLoading ? (
 			<h3>Cargando...</h3>
 		) : (
@@ -21,7 +20,8 @@ const CategoryMap = ({ select }) => {
 			<CategoryOption category={category} key={category.id} />
 		))
 
-	);
+	)
+}
 };
 
 export default CategoryMap;

@@ -41,7 +41,6 @@ export const products = createApi({
       })
     }),
     invalidatesTags: ['Products']
-
   })
 })
 

@@ -4,6 +4,7 @@ import Product from "./Product";
 const ProductMap = () => {
   const { data: results = [], isLoading, error } = useGetAllProductsQuery();
 
+  if(!error) {
   return isLoading ? (
     <h3>Cargando...</h3>
   ) : (
@@ -12,7 +13,8 @@ const ProductMap = () => {
         <Product product={product} key={product.id} />
       ))
     
-  );
+  )
+    }
 };
 
 export default ProductMap;

@@ -15,7 +15,7 @@ const CreateCategory = () => {
    if(data) Swal.fire({
     position: 'top',
     icon: 'success',
-    title: 'Categoría creada con éxito',
+    title: 'Category successfully created',
     showConfirmButton: false,
     timer: 1000
   })

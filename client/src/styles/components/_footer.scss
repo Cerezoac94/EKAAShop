@@ -2,7 +2,6 @@
 @use '../abstracts/mixins';
 .footer {
     background-color: $main_fonts;
-    margin-top: auto;
     height: 200px;
     display: flex;
     justify-content: space-between;

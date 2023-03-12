@@ -31,27 +31,25 @@ console.log(category);
   }, [handleDelete]);
 
   return (
-    <section className="mutation">
-      <div className="mutation__container">
-        <section className="mutation__title">
-          <h1>Eliminar Categoria</h1>
-        </section>
-        <div>
-          <section className="mutation__name">
-            <h3>Category</h3>
+      <section className="mutation__container">
+        	<section className="mutation__title">
+					<h1>Eliminar Categoria</h1>
+				</section>
+				<section>
+					<section className="mutation__name">
             <li>{category?.name}</li>
-          </section>
-        </div>
-        <section className="mutation__delete">
+					</section>
+				</section>
+        	
+       <section className="mutation__submit">
           <button
             onClick={() => handleDelete(category.id)}
             className="mutation__button"
           >
             Eliminar
           </button>
-        </section>
-      </div>
-    </section>
+          </section>
+      </section>
   );
 }
 export default DeleteCategory
