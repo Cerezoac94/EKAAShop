@@ -1,34 +1,41 @@
 import { useEffect } from "react";
-import CategoryMap from "../category/CategoryMap";
-import { useCreateProductMutation } from "../../../../redux/service/product.service";
+import { useNavigate } from "react-router-dom";
+import CategoryMap from "../../category/CategoryMap";
+import { useUpdateProductMutation } from "../../../../../redux/service/product.service";
 import { useForm } from "react-hook-form";
-import ErrorForm from "../../../../components/errorsForms/ErrorForm";
-import Swal from 'sweetalert2'
+import ErrorForm from "../../../../../components/errorsForms/ErrorForm";
+import Swal from "sweetalert2";
 
-const CreateProduct = () => {
-  const [create,  { error, data }] = useCreateProductMutation()
-  
-  const { register, handleSubmit, watch, formState: { errors } } = useForm();
+const UpdateProduct = ({ product }) => {
+  const [update,  { error, data }] = useUpdateProductMutation()
+  const { register, handleSubmit, watch, reset, formState: { errors } } = useForm();
+const submit = (data) => update({id:product.id,...data});
+const navigate = useNavigate()
 
-  const submit = (data) => create(data);
-
-  useEffect(() => {
-   if(data) Swal.fire({
+// console.log(product)
+useEffect(()=>{
+  if(data) {
+    Swal.fire({
     position: 'top',
     icon: 'success',
-    title: 'Producto creado con éxito',
+    title: 'Product successfully upgraded',
     showConfirmButton: false,
     timer: 1000
   })
-  }, [data])
+  setTimeout(() => {
+    navigate("/admin");
+  }, 1200);
+}
+},[data])
 
-
+useEffect(() => {
+  reset(product);
+}, [product, reset]);
 
   return (
-    <section className="createProduct">
-      <h1>Productos</h1>
-        <form onSubmit={handleSubmit(submit)} className="formAdminProduct">
-        
+    <section className="updateProduct">
+    <form onSubmit={handleSubmit(submit)} className="formAdminProduct">
+      
           <section className="form-group">
           <h3 className="prop__title">Crear Producto</h3>
             <label>Nombre:</label>
@@ -37,7 +44,7 @@ const CreateProduct = () => {
             minLength: 3,
             maxLength: 100,
             pattern: /^[a-zA-Z0-9\sáéíóúüñÁÉÍÓÚÜÑ,.]+$/ 
-           })} type="text" className="form-control" />
+           })} type="text" className="form-control" defaultValue={product.name}/>
            {errors.name?.type === 'required' && <ErrorForm message={"Campo obligatorio"}/>
           }
           {errors.name?.type === 'minLength' && <ErrorForm message={"Mínimo 3 caracteres"}/>
@@ -53,7 +60,7 @@ const CreateProduct = () => {
             required: true,
             minLength: 15,
             pattern: /^[^<>'\"%&;()=+]*$/
-           })} type="text" className="form-control" />
+           })} type="text" className="form-control" defaultValue={product.description}/>
            {errors.description?.type === 'required' && <ErrorForm message={"Campo obligatorio"}/>
           }
           {errors.description?.type === 'minLength' && <ErrorForm message={"Descripcitón demasiado corta"}/>
@@ -67,8 +74,7 @@ const CreateProduct = () => {
             required: true,
             pattern: /^[0-9]+(?:\.[0-9]+)?$/ 
            })}
-              type="text" className="form-control"
-            />
+              type="text" className="form-control" defaultValue={product.price}/>
              {errors.price?.type === 'required' && <ErrorForm message={"Campo obligatorio"}/>
           }
           {errors.price?.type === 'pattern' && <ErrorForm message={"Solo caracteres númericos"}/>
@@ -80,7 +86,7 @@ const CreateProduct = () => {
             <input {...register("stock", {
             required: true,
             pattern: /^[0-9]+$/
-           })} type="text" className="form-control" />
+           })} type="text" className="form-control" defaultValue={product.stock}/>
            {errors.stock?.type === 'required' && <ErrorForm message={"Campo obligatorio"}/>
           }
           {errors.stock?.type === 'pattern' && <ErrorForm message={"Solo caracteres númericos"}/>
@@ -96,26 +102,27 @@ const CreateProduct = () => {
             <label>Imagen url:</label>
             <input {...register("image", {
             required: true
-           })} type="text" className="form-control" />
-           {errors.stock?.type === 'required' && <ErrorForm message={"Campo obligatorio"}/>
+           })} type="text" className="form-control" defaultValue={product.image}/>
+           {errors.image?.type === 'required' && <ErrorForm message={"Campo obligatorio"}/>
           }
           </div>
           <section className="form-group">
             <label>Category:</label>
             <select {...register("idCategory",{
             required: true}
-            )} className="form-select" id="category" title="Seleccionar">
+            )} className="form-select" id="category" title="Seleccionar" defaultValue={product.Category.id} >
             <option>Selecciona una categoría</option>
             <CategoryMap select={1}/>
+            
             </select>
-            {errors.stock?.type === 'required' && <ErrorForm message={"Campo obligatorio"}/>
+            {errors.idCategory?.type === 'required' && <ErrorForm message={"Campo obligatorio"}/>
           }
           </section>
-          <button className="btn">Crear</button>
+          <button className="btn">Actualizar</button>
+       
         </form>
-        {error &&  <ErrorForm message = {error.data.message}/>}
-      </section>
-  );
-};
-
-export default CreateProduct;
+        </section >
+        
+  )
+}
+export default UpdateProduct
