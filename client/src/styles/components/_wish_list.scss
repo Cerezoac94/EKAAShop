@@ -1,0 +1,51 @@
+@use "../base/variables";
+@use "../abstracts/mixins";
+
+.wish_list_container.container {
+    padding: 1.25rem;
+}
+
+//items section
+section.wish_item_section {
+    padding: 0.625rem;
+    border: 1px solid $color1;
+    border-radius: 8px;
+}
+
+//link
+a.wish_item_container {
+    display: flex;
+    align-items: center;
+    padding: 0.625rem;
+}
+
+.wish_product_image_section {
+    width: 65%;
+}
+
+.wish_image {
+    width: 100%;
+}
+
+h6 {
+    margin-bottom: 0.25rem;
+    text-align: justify;
+}
+
+.product_delivery {
+    font-size: 0.75rem;
+}
+
+//buttons
+.wish_btns_container {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-top: 0.938rem;
+    
+}
+a.add_to_cart_btn.btn.btn-primary,
+a.delete_product_btn.btn.btn-primary {
+    @include mixins.button($secondary_fonts, unset, 8px, $main_background, 40%, unset, 0.75rem);
+    padding: 0.313rem;
+}
