@@ -11,6 +11,7 @@
         @include mixins.display(flex, column, space-between, unset);
         width: 75%;
         margin-top: 5rem;
+        z-index: 1;
     }
     &__title{
         margin-bottom: 2rem;
