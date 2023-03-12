@@ -26,13 +26,12 @@ const CreateProduct = () => {
 
 
   return (
-    <div className="createProduct">
-      <div className="card-header">
-        <div className="text-header">Crear Producto</div>
-      </div>
-      <div className="card-body">
-        <form onSubmit={handleSubmit(submit)}>
-          <div className="form-group">
+    <section className="createProduct">
+      <h1>Productos</h1>
+        <form onSubmit={handleSubmit(submit)} className="formAdminProduct">
+        
+          <section className="form-group">
+          <h3 className="prop__title">Crear Producto</h3>
             <label>Nombre:</label>
             <input {...register("name", {
             required: true,
@@ -48,7 +47,7 @@ const CreateProduct = () => {
           }
           {errors.name?.type === 'pattern' && <ErrorForm message={"Solo números y letras y no más de un espacio entre palabra"}/>
           }
-          </div>
+          </section>
           <div className="form-group">
             <label>Descripción:</label>
             <input {...register("description", {
@@ -115,8 +114,7 @@ const CreateProduct = () => {
           <button className="btn">Crear</button>
         </form>
         {error &&  <ErrorForm message = {error.data.message}/>}
-      </div>
-    </div>
+      </section>
   );
 };
 

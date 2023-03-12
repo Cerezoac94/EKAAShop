@@ -9,7 +9,7 @@ import StateMap from "./components/state/StateMap";
 import Dropdown from "react-bootstrap/Dropdown";
 import DropdownButton from "react-bootstrap/DropdownButton";
 
-const AdminPanelContainer = () => {
+const AdminContainer = () => {
   return (
     <Accordion className="acordeon" defaultActiveKey={0}>
       <Accordion.Item className="panel__item" eventKey="0">
@@ -38,11 +38,7 @@ const AdminPanelContainer = () => {
           <Product />
           <section>
             <h3>Productos</h3>
-            <DropdownButton title="Lista de Productos">
-              <Dropdown.Item>
                 <ProductMap />
-              </Dropdown.Item>
-            </DropdownButton>
           </section>
         </Accordion.Body>
       </Accordion.Item>
@@ -50,4 +46,4 @@ const AdminPanelContainer = () => {
   );
 };
 
-export default AdminPanelContainer;
+export default AdminContainer;

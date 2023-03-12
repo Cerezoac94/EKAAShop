@@ -3,31 +3,6 @@ import { useGetCategoryByIdQuery } from "../../../../redux/service/category.serv
 // import Detail from "../../../../pages/Detail"
 //importar el useGetCategoryById()
 
-export const CategoryMutationContainer = () => {
-  const {id} = useParams()
-  const results = useGetCategoryByIdQuery(id)
-  console.log("🚀 ~ file: MutationsContainer.jsx:9 ~ CategoryMutationContainer ~ results:", results)
-  //Const {is}= useGetCategoryById(id)
-  return (
-    //Category
-    <h1>hola</h1>
-    // <Detail category={id}/>
-    //Delete
-    //<Category.id> 
-  )
-}
-
-export const ProductMutationContainer = () => {
-  const {id} = useParams()
-  //Const {is}= useGetCategoryById(id)
-  return (
-    //Category
-    <h1>holaproduct</h1>
-    // <Detail category={id}/>
-    //Delete
-    //<Category.id> 
-  )
-}
 
 // export const StateMutationContainer = () => {
 //   const {id} = useParams()
