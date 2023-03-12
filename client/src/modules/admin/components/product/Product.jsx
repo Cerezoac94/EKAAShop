@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 const Product = ({product}) => {
   return (
     <Link to= {`product_mutation/${product.id}`}>
-        {product.name}
+        <li>{product.name}</li>
     </Link>
   )
 }
