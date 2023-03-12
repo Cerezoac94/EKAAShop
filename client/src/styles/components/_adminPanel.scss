@@ -67,13 +67,17 @@
 .createProduct {
     
     // width: 60%;
-    border: 1px solid #ccc;
+    // border: 1px solid #ccc;
     border-radius: 4px;
     box-shadow:#3C99BA;
     // overflow: hidden;
     margin: 10px;
   }
   
+.formAdminProduct {
+    margin: 2rem 0 2rem 0;
+}
+
   .card-header {
     background-color: #3C99BA;
     padding: 16px;
@@ -91,7 +95,8 @@
   }
   
   .form-group {
-    margin-bottom: 10px;
+    gap: 1rem;
+    margin: 2rem 0 2rem 0;
   }
   
   .form-group label {

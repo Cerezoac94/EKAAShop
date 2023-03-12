@@ -9,16 +9,15 @@ import OrderList from "../pages/OrderList";
 import AboutUs from "../pages/AboutUs";
 import UserProfile from "../pages/UserProfile";
 import IsAdmin from "../components/isAdmin/IsAdmin";
-import AdminPanel from "../pages/AdminPanel";
+import Admin from "../pages/Admin";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
 import AllProducts from "../pages/AllProducts";
 import Cooler from "../pages/Cooler";
 import Accessories from "../pages/Accessories";
-import {
-  CategoryMutationContainer,
-  ProductMutationContainer,
-} from "../modules/adminPanel/components/mutationContainer/MutationsContainer";
+import CategoryMutationContainer from "../modules/admin/components/category/mutationCategory/MutationCategoryContainer";
+import ProductMutationContainer from "../modules/admin/components/product/mutationProduct/ProductMutationContainer";
+
 
 const router = createBrowserRouter([
   {
@@ -83,15 +82,15 @@ const router = createBrowserRouter([
         children: [
           {
             path: "",
-            element: <AdminPanel />,
+            element: <Admin/>,
           },
           {
             path: "category_mutation/:id/",
-            element: <CategoryMutationContainer />,
+            element: <CategoryMutationContainer/>
           },
           {
             path: "product_mutation/:id",
-            element: <ProductMutationContainer />,
+            element: <ProductMutationContainer/>
           },
           // {
           // 	path: "update_product",
