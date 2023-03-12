@@ -1,0 +1,34 @@
+@use '../base/variables';
+@use '../abstracts/mixins';
+
+
+.mutation{
+    @include mixins.display(flex, column,unset, center);
+    width: 100vw;
+    height: 100vh; 
+    
+    &__container{
+        @include mixins.display(flex, column, space-between, unset);
+        width: 75%;
+        height: 40%;
+        margin-top: 5rem;
+    }
+    &__title{
+        @include mixins.display(flex, row, center,unset)
+    }
+    &__name{
+        margin-left: 2rem;
+    }
+    &__delete{
+        @include mixins.button(unset, unset, unset, white, unset, unset, unset);
+        @include mixins.display(flex, center, center, unset);
+    }
+    &__button{
+        min-width: 100px;
+        height: 2.5rem;
+        border: none;
+        border-radius: 8px;
+        background: $secondary_background;
+        color: $main_background;
+    }
+}
