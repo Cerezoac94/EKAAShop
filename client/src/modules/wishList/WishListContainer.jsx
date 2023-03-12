@@ -6,8 +6,8 @@ import WishProductsListMap from './components/wishProductsList/WishProductsListM
 const WishListContainer = () => {
   return (
     <>
-      <CreateModal/>
-      <WishListNameMap/>
+      {/* <CreateModal/>
+      <WishListNameMap/> */}
       <WishProductsListMap/>
     </>
   )
