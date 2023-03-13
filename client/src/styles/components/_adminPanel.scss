@@ -1,6 +1,7 @@
 @use "../abstracts/mixins";
 
 .adminPage{
+  position: relative;
     @include mixins.display(flex,unset, center,unset);
     height: 100vh;
 }
@@ -66,7 +67,7 @@
 
 .createProduct {
     
-    // width: 60%;
+    // width: 90%;
     // border: 1px solid #ccc;
     border-radius: 4px;
     box-shadow:#3C99BA;
@@ -76,6 +77,12 @@
   
 .formAdminProduct {
     margin: 2rem 0 2rem 0;
+    
+  border-radius: 4px;
+    box-shadow:#3C99BA;
+}
+.updateProduct {
+
 }
 
   .card-header {
@@ -96,7 +103,7 @@
   
   .form-group {
     gap: 1rem;
-    margin: 2rem 0 2rem 0;
+    margin: 1rem 0 1rem 0;
   }
   
   .form-group label {
@@ -122,7 +129,13 @@
     box-shadow: 0px 0px 20px -18px;
     height: 3rem;
   }
-
+  .form-select{
+    border: 1.5px solid lightgrey;
+    outline: none;
+    // transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+    box-shadow: 0px 0px 20px -18px;
+    // height: 3rem;
+  }
   .form-control:hover {
     border: 2px solid lightgrey;
     box-shadow: 0px 0px 20px -17px;

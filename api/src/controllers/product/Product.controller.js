@@ -56,8 +56,8 @@ class ProductController {
         where: {
           id: id,
         },
-        include: { model: Category, attributes: ["name"] },
-        attributes: ["name", "description", "price", "stock", "image"],
+        include: { model: Category, attributes: ["id","name"] },
+        attributes: ["id","name", "description", "price", "stock", "image"],
       });
       if (!results) throw "No product found";
       res.status(200).send({

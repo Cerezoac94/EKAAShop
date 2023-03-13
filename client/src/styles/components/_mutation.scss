@@ -5,23 +5,26 @@
 .mutation{
     @include mixins.display(flex, column,unset, center);
     width: 100vw;
-    height: 100vh; 
+    height: 80vh; 
     
     &__container{
         @include mixins.display(flex, column, space-between, unset);
         width: 75%;
-        height: 40%;
         margin-top: 5rem;
+        z-index: 1;
     }
     &__title{
-        @include mixins.display(flex, row, center,unset)
+        margin-bottom: 2rem;
+        @include mixins.display(flex, row,unset)
     }
     &__name{
-        margin-left: 2rem;
+
+        margin: 2rem;
     }
-    &__delete{
+    &__submit{
+        margin: 2rem;
         @include mixins.button(unset, unset, unset, white, unset, unset, unset);
-        @include mixins.display(flex, center, center, unset);
+        @include mixins.display(flex, center, unset);
     }
     &__button{
         min-width: 100px;
@@ -31,4 +34,5 @@
         background: $secondary_background;
         color: $main_background;
     }
+    
 }

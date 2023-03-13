@@ -1,5 +1,4 @@
 import { useEffect } from "react";
-import FormSelect from "react-bootstrap/esm/FormSelect";
 import CategoryMap from "../category/CategoryMap";
 import { useCreateProductMutation } from "../../../../redux/service/product.service";
 import { useForm } from "react-hook-form";
@@ -37,7 +36,7 @@ const CreateProduct = () => {
             required: true,
             minLength: 3,
             maxLength: 100,
-            pattern: /^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚüÜ]+([ ][a-zA-Z0-9ñÑáéíóúÁÉÍÓÚüÜ]+){0,2}$/
+            pattern: /^[a-zA-Z0-9\sáéíóúüñÁÉÍÓÚÜÑ,.]+$/ 
            })} type="text" className="form-control" />
            {errors.name?.type === 'required' && <ErrorForm message={"Campo obligatorio"}/>
           }
@@ -66,7 +65,7 @@ const CreateProduct = () => {
             <label>Precio:</label>
             <input  {...register("price", {
             required: true,
-            pattern: /^[0-9]+$/
+            pattern: /^[0-9]+(?:\.[0-9]+)?$/ 
            })}
               type="text" className="form-control"
             />
@@ -101,16 +100,17 @@ const CreateProduct = () => {
            {errors.stock?.type === 'required' && <ErrorForm message={"Campo obligatorio"}/>
           }
           </div>
-          <div className="form-group">
+          <section className="form-group">
             <label>Category:</label>
-            <FormSelect {...register("idCategory",{
+            <select {...register("idCategory",{
             required: true}
-            )} className="mb-3" id="category" title="Seleccionar">
+            )} className="form-select" id="category" title="Seleccionar">
+            <option>Selecciona una categoría</option>
             <CategoryMap select={1}/>
-            </FormSelect>
+            </select>
             {errors.stock?.type === 'required' && <ErrorForm message={"Campo obligatorio"}/>
           }
-          </div>
+          </section>
           <button className="btn">Crear</button>
         </form>
         {error &&  <ErrorForm message = {error.data.message}/>}

@@ -18,17 +18,18 @@ const Header = () => {
         <Container fluid className="navbar_style">
           <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-md`} />
           <Link to="/" className="logo_link_home">
-            <Image src={logo} alt="logo_home" thumbnail="true" className="logo_home"/>
+            <Image
+              src={logo}
+              alt="logo_home"
+              thumbnail="true"
+              className="logo_home"
+            />
           </Link>
-{/*           <section className="section_search_header_desktop" >
-            <Search/>
-          </section> */}
-          <div className="user_actions_container">
+          <div className="user_actions_container_mobile">
             <Button href="/cart" className="user_menu_btn">
               <ion-icon name="cart-outline"></ion-icon>
             </Button>
             <UserMenu />
-            {/* <UserLoginMenu /> */}
           </div>
           <Navbar.Offcanvas
             id={`offcanvasNavbar-expand-md`}
@@ -37,7 +38,9 @@ const Header = () => {
           >
             <Offcanvas.Header closeButton>
               <Offcanvas.Title id={`offcanvasNavbarLabel-expand-md`}>
-                <img src={logo} alt="logo_home" className="logo" />
+                <Link to='/'>
+                  <img src={logo} alt="logo_home" className="logo" />
+                </Link>
               </Offcanvas.Title>
             </Offcanvas.Header>
             <Offcanvas.Body>
@@ -46,28 +49,28 @@ const Header = () => {
                   All Products
                 </Link>
 
-                <Link to='/drinkware' className="nav_menu_links">
+                <Link to="/drinkware" className="nav_menu_links">
                   Drinkware
                 </Link>
-                <Link to='/cooler' className="nav_menu_links">
+                <Link to="/cooler" className="nav_menu_links">
                   Cooler
                 </Link>
-                <Link to='/accessories' className="nav_menu_links">
+                <Link to="/accessories" className="nav_menu_links">
                   Accessories
                 </Link>
                 <Link to="/get_help" className="nav_menu_links">
                   Get help
                 </Link>
-                <Link to="/login" className="nav_menu_links login_link">
-                  login / register
-                </Link>
+                <div className="user_actions_container_desktop">
+                  <Button href="/cart" className="user_menu_btn">
+                    <ion-icon name="cart-outline"></ion-icon>
+                  </Button>
+                  <UserMenu />
+                </div>
               </Nav>
             </Offcanvas.Body>
           </Navbar.Offcanvas>
         </Container>
-{/* <section className="section_search_header">
-  <Search/>
-</section> */}
       </Navbar>
     </header>
   );
