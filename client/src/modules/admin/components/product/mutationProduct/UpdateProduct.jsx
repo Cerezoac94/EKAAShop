@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import CategoryMap from "../../category/CategoryMap";
 import { useUpdateProductMutation } from "../../../../../redux/service/product.service";
 import { useForm } from "react-hook-form";
-import ErrorForm from "../../../../../components/errorsForms/ErrorForm";
+import ErrorForm from "../../../../../components/errors/ErrorForm";
 import Swal from "sweetalert2";
 
 const UpdateProduct = ({ product }) => {
