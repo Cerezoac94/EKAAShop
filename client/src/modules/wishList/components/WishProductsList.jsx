@@ -12,7 +12,7 @@ const WishProductsList = ( {w} ) => {
     <Container className="wish_list_container">
       <section className="wish_header_section"></section>
       <section className="wish_item_section">
-        <Link to="/product_detail" className="wish_item_container">
+        <Link to={`/product_detail/${w.id}`} className="wish_item_container">
           <section className="wish_product_image_section">
             <Image src={w.image} alt={w.name} className="wish_image"/>
           </section>
@@ -22,9 +22,6 @@ const WishProductsList = ( {w} ) => {
           </section>
         </Link>
         <section className="wish_btns_container">
-          <Button href="/" className="add_to_cart_btn">
-            Add to Cart
-          </Button>
           <Button href="/" className="delete_product_btn">
             Delete
           </Button>
