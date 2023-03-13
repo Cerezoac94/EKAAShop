@@ -10,8 +10,8 @@ export const carts = createApi({
       providesTags: ['Carts']
     }),
     addProductCart: builder.mutation({
-      query: ({ params, ...body }) => ({
-        url: `/${ params.idUser }/${ params.idProduct }`,
+      query: ({id, ...body }) => ({
+        url: `/${ id }`,
         method: 'POST',
         body
       }),
