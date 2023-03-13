@@ -1,0 +1,126 @@
+.user_orders_container {
+    padding: 1.25rem;
+}
+
+label.status_label {
+    font-size: 1.25rem;
+}
+
+label.date_label {
+    font-size: 0.75rem;
+}
+
+//order_item_container
+.order_item_header.container {
+    display: flex;
+    flex-direction: column;
+}
+
+section.status_section {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+}
+
+section.user_orders_item {
+    margin-top: 15px;
+    border: 1px solid $color1;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+section.order_date {
+    display: flex;
+    align-items: center;
+}
+
+ion-icon.status_icon.md.hydrated {
+    color: $color8;
+    margin-right: 0.313rem;
+    font-size: 0.625rem;
+}
+
+//Details
+.orden_detail_section.container {
+    display: flex;
+    align-items: center;
+}
+
+section.item_details_section,
+section.price_item_section {
+    padding: 0 1.25rem;
+}
+
+//image_item
+section.photo_item {
+    width: 100%;
+}
+
+img.user_order_image {
+    width: 100%;
+    height: auto;
+}
+
+//details
+label.item_name {
+    text-align: justify;
+    //margin-bottom: 0.625rem;
+    font-weight: 600;
+    font-size: 0.75rem;
+}
+
+label.item_qty {
+    font-size: 0.75rem;
+}
+
+//cancel button
+section.cancel_order_button {
+    display: flex;
+    justify-content: center;
+    margin-top: 1.25rem;
+}
+
+.cancel_user_order {
+    @include mixins.button($secondary_fonts, unset, 8px, $main_background, unset, unset, unset);
+}
+
+@media only screen and (min-width: 768px) {
+    .user_orders_container {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    section.user_orders_header {
+        display: flex;
+        width: 100%;
+    }
+
+    //details
+    section.user_orders_item{
+        width: 80%;
+    }
+    .orden_detail_section.container {
+        justify-content: space-between;
+    }
+
+    section.item_details_section {
+        display: flex;
+        flex-direction: column;
+    }
+
+    //image
+    section.photo_item {
+        width: 20%;
+    }
+
+    label.item_name,
+    label.price_item_label {
+        font-size: 1.25rem;
+    }
+
+    label.item_qty {
+        font-size: 1rem;
+    }
+}

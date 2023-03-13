@@ -32,7 +32,7 @@ const ListCart = () => {
               <div className="listCart__labels">
               <h2 className="listCart__confirmation">Added to cart</h2>
               <span className="listCart__desc">
-                Vaso Térmico de Acero Inoxidable, Taza Termica Frio y Caliente
+                Vaso Termico de Acero Inoxidable, Taza Termica Frio y Caliente
               </span>
               <span className="listCart__price">$950.00</span>
               <small className="listCart__stock">In stock</small>
@@ -46,11 +46,8 @@ const ListCart = () => {
             <div className="listCart__contBtnThird">
                 <button className="listCart__btnThird">Delete</button>
               </div>
-           
-             
             </div>
           </article>
-   {/*      </section> */}
       </section>
     </section>
   );

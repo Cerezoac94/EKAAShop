@@ -14,8 +14,7 @@ const UserMenu = () => {
           <Popover id={`popover-positioned-bottom`}>
             <Popover.Header className="user_menu_header">
               <Button href="/login" className="user_menu_login_btn">
-                {" "}
-                Login{" "}
+                Login
               </Button>
               <label>
                 New Client?

@@ -17,6 +17,7 @@ import Cooler from "../pages/Cooler";
 import Accessories from "../pages/Accessories";
 import CategoryMutationContainer from "../modules/admin/components/category/mutationCategory/MutationCategoryContainer";
 import ProductMutationContainer from "../modules/admin/components/product/mutationProduct/ProductMutationContainer";
+import UserOrders from "../pages/UserOrders";
 import BuyNow from "../pages/BuyNow";
 
 
@@ -72,6 +73,10 @@ const router = createBrowserRouter([
       {
         path: "/about_us",
         element: <AboutUs />,
+      },
+      {
+        path: "/orders",
+        element: <UserOrders/>
       },
 
       //Admin routes

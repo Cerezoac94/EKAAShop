@@ -47,10 +47,9 @@ const ProductDetailDesktop = () => {
           </div>
           <section className="action_products_btns_container">
             <button className="add_product_btn">Add to Cart</button>
-            <button className="buy_product_btn">Buy now</button>
           </section>
-          <hr class="solid"></hr>
-          <button className="buy_product_btn">Wish List</button>
+{/*           <hr class="solid"></hr>
+          <button className="buy_product_btn">Wish List</button> */}
       </section>
     </Container>
   );
