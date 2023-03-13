@@ -1,0 +1,99 @@
+@use '../base/variables';
+@use '../abstracts/mixins';
+.BuyNow {
+    margin-top: 2rem;
+    @include mixins.order-desktop(flex, row-reverse, unset, center);
+    &__pay {
+        padding: 3rem;
+        align-items: center;
+        flex-direction: column;
+        display: flex;
+        width: 32rem;
+        margin: 2rem auto;
+        @include mixins.media-up(sm) {
+            width: 32rem;
+        }
+        @include mixins.media-up(md) {
+            width: 40rem;
+        }
+        @include mixins.media-up(lg) {
+            width: 45rem;
+            border: 1px solid variables.$color8;
+            border-radius: 10px;
+        }
+        @include mixins.media-up(xl) {
+            width: 28rem;
+        }
+        h2 {
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+    }
+    &__containerTwo {
+        @include mixins.order-desktop(unset, unset, unset, unset, 0 2rem);
+    }
+    &__btn {
+        @include mixins.button(variables.$color7, unset, 10px, variables.$color10, 90%, unset, 2em) //crear mixins para buttons en laptop,desktop
+    }
+    &__firtsCard {
+        background-color: variables.$card-bg;
+        margin: 2rem 0;
+        display: flex;
+        width: 30rem;
+        margin: 2rem auto;
+        border-radius: 10px;
+        @include mixins.media-up(sm) {
+            width: 32rem;
+        }
+        @include mixins.media-up(md) {
+            width: 40rem;
+        }
+        @include mixins.media-up(lg) {
+            width: 55rem;
+        }
+        @include mixins.media-up(xl) {
+            width: 45rem;
+        }
+        @include mixins.media-up(xxl) {
+            width: 60rem;
+        }
+    }
+    &__twoCard {
+        border: 1px solid black;
+        margin: 2rem 0;
+        display: flex;
+        width: 30rem;
+        margin: 2rem auto;
+        border-radius: 10px;
+        @include mixins.media-up(sm) {
+            width: 32rem;
+        }
+        @include mixins.media-up(md) {
+            width: 40rem;
+        }
+        @include mixins.media-up(lg) {
+            width: 55rem;
+        }
+        @include mixins.media-up(xl) {
+            width: 45rem;
+        }
+        @include mixins.media-up(xxl) {
+            width: 60rem;
+        }
+    }
+    &__icon {
+        padding: 3rem;
+        font-size: 2em;
+        color: variables.$color7;
+    }
+    &__iconT {
+        padding: 2rem;
+        font-size: 2em;
+        color: variables.$color7;
+    }
+    &__desc {
+        padding: 2rem;
+        align-items: center;
+        display: inline-grid;
+    }
+}

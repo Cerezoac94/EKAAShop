@@ -1,19 +1,49 @@
 @use '../base/variables';
 @use '../abstracts/mixins';
 .listCart {
-    // border: 2px solid blue;
+    border: 2px solid blue;
     @include mixins.order-desktop(flex, row-reverse);
+    &__card {
+        /*      border: 2px solid variables.$secondary_background; */
+        padding: 3rem;
+        align-items: center;
+        flex-direction: column;
+        display: flex;
+        width: 32rem;
+        margin: 2rem auto;
+        @include mixins.media-up(sm) {
+            width: 32rem;
+        }
+        @include mixins.media-up(md) {
+            width: 40rem;
+        }
+        @include mixins.media-up(lg) {
+            width: 45rem;
+            border: 1px solid variables.$color8;
+            border-radius: 10px;
+        }
+        @include mixins.media-up(xl) {
+            width: 28rem;
+        }
+        h2 {
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+    }
     &__h2 {
         color: variables.$main_fonts;
         margin-bottom: 2rem;
         @include mixins.desktop-text(center, unset)
     }
+    /*    &__contText {
+        padding: 1rem;
+    } */
+    /*  &__div {
+        display: flex;
+    } */
     &__span {
         font-weight: bolder;
         margin-bottom: 2rem;
-    }
-    &__div {
-        display: flex;
     }
     &__btn {
         @include mixins.button(variables.$secondary_background, unset, 10px, variables.$color10, 100%, 2.5rem, 15px);
@@ -21,41 +51,45 @@
         @include mixins.button-hover( variables.$main_background, variables.$secondary_fonts);
         @include mixins.desktop-view(200px, 2.5rem, unset, 3rem)
     }
-    &__card {
-        margin-top: 2rem;
-        border: 2px solid variables.$secondary_background;
-        height: 300px;
-        border-radius: 5px;
-    }
-    &__cardTwo {
-        border: 1px solid variables.$secondary_background;
-        margin-top: 2rem;
-        height: 245px;
-        @include mixins.order-desktop(unset, unset, 280px);
-        @include mixins.desktop-text(unset, variables.$secondary_background);
-        /*  width: 320px; */
-    }
-    &__contText {
-        padding: 1rem;
-    }
-    &__contenedorTxt {
+    /* ******************* */
+    &__containerProd {
         display: flex;
         justify-content: center;
+        background-color: variables.$card-bg;
+        margin: 2rem 0;
+        display: flex;
+        width: 30rem;
+        margin: 2rem auto;
+        border-radius: 10px;
+        @include mixins.media-up(sm) {
+            width: 32rem;
+        }
+        @include mixins.media-up(md) {
+            width: 40rem;
+        }
+        @include mixins.media-up(lg) {
+            width: 55rem;
+        }
+        @include mixins.media-up(xl) {
+            width: 45rem;
+        }
+        @include mixins.media-up(xxl) {
+            width: 60rem;
+        }
     }
     &__contimg {
+        position: relative;
+        display: block;
         width: 50%;
-        align-self: center;
-        @include mixins.order-desktop(flex, unset, unset, center)
     }
     &__img {
         width: 100%;
-        @include mixins.laptop-view(50%, unset, unset, unset);
-        @include mixins.desktop-view(33%, unset, unset, unset);
     }
     &__text {
+        position: relative;
         flex-direction: column;
         display: flex;
-        width: 50%;
+        /*     width: 50%; */
         @include mixins.desktop-view(unset, unset, 1.3rem, unset)
     }
     &__confirmation {
@@ -80,17 +114,21 @@
     &__color {
         color: variables.$secondary_fonts;
     }
-    &__footer {
+    /*    &__footer {
         display: flex;
         // justify-self: flex-start;
         justify-content: space-between;
-    }
+    } */
     &__contBtn {
         /*  justify-self: flex-start; */
         display: flex;
         /*  margin: auto; */
-        width: 50%;
-        justify-content: center;
+        /* width: 50%; */
+        margin: auto;
+        padding: 1rem;
+    }
+    &__contBtnThird {
+        padding: 1.5rem 0;
     }
     &__btnIcon {
         @include mixins.button(variables.$secondary_background, variables.$secondary_background, 1px, variables.$color10, 36px, 36px);
@@ -101,21 +139,21 @@
         height: 36px;
         @include mixins.desktop-view(70px, 40px, 2rem, unset);
     }
-    &__contBtnTwo {
+    /*    &__contBtnTwo {
         display: flex;
         gap: 1.3rem;
         width: 50%;
         justify-content: center;
         @include mixins.order-desktop(flex, unset, unset, unset)
-    }
+    } */
     &__btnThird {
         @include mixins.button(variables.$secondary_background, variables.$secondary_background, 4px, variables.$color10, 52px, 36px);
         @include mixins.desktop-view(120px, 40px, unset, unset);
     }
-    &__btnThirdA {
+    /*    &__btnThirdA {
         @include mixins.button(variables.$secondary_background, variables.$secondary_background, 4px, variables.$color10, 92px, 36px);
         @include mixins.desktop-view(120px, 40px, unset, unset);
-    }
+    } */
     &__h3condicional {
         color: variables.$confirmation;
         font-weight: bold;
@@ -123,13 +161,5 @@
         text-align: center;
         margin-top: 1rem;
     }
-    /*    &__btn {
-        display: flex;
-        justify-content: space-around;
-        width: 100%;
-        @include mixins.button(variables.$secondary, variables.$main_fonts, variables.$main_background, 75px, 35px);
-        @include mixins.desktop-view(150px, 60px);
-        @include mixins.button-hover( variables.$main_background, $secondary_fonts);
-    }
-*/
+    &__allContainer {}
 }
