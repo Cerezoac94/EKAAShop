@@ -150,10 +150,6 @@
         @include mixins.button(variables.$secondary_background, variables.$secondary_background, 4px, variables.$color10, 52px, 36px);
         @include mixins.desktop-view(120px, 40px, unset, unset);
     }
-    /*    &__btnThirdA {
-        @include mixins.button(variables.$secondary_background, variables.$secondary_background, 4px, variables.$color10, 92px, 36px);
-        @include mixins.desktop-view(120px, 40px, unset, unset);
-    } */
     &__h3condicional {
         color: variables.$confirmation;
         font-weight: bold;
