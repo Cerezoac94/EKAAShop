@@ -17,6 +17,7 @@ import Cooler from "../pages/Cooler";
 import Accessories from "../pages/Accessories";
 import CategoryMutationContainer from "../modules/admin/components/category/mutationCategory/MutationCategoryContainer";
 import ProductMutationContainer from "../modules/admin/components/product/mutationProduct/ProductMutationContainer";
+import BuyNow from "../pages/BuyNow";
 
 
 const router = createBrowserRouter([
@@ -60,6 +61,10 @@ const router = createBrowserRouter([
         path: "/cart",
         element: <ShoppingCart />,
       },
+      {
+      path: "/buynow",
+      element: < BuyNow/>,
+    },
       {
         path: "/wish_list",
         element: <WishList />,
