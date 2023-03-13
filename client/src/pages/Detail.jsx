@@ -1,8 +1,11 @@
-import React from 'react'
+import { useParams } from 'react-router-dom'
+
 import DetailContainer from '../modules/detail/DetailContainer.jsx'
 const Detail = () => {
+  const {id}=useParams()
+  
   return (
-    <DetailContainer/>
+    <DetailContainer id={id}/>
   )
 }
 
