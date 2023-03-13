@@ -1,4 +1,4 @@
-import React from "react";
+import { useNavigate } from "react-router-dom";
 import CreateProduct from "./components/product/CreateProduct";
 import CategoryMap from "./components/category/CategoryMap";
 import Accordion from "react-bootstrap/Accordion";
@@ -8,13 +8,15 @@ import ProductMap from "./components/product/ProductMap";
 import StateMap from "./components/state/StateMap";
 
 const AdminContainer = () => {
+  const navigate = useNavigate()
   return (
+    <section>
     <Accordion className="acordeon" defaultActiveKey={0}>
       <Accordion.Item className="panel__item" eventKey="0">
         <Accordion.Header>Categorias</Accordion.Header>
         <Accordion.Body>
           <CreateCategory />
-          <section>
+          <section className="formAdminProduct">
             <h3>Todas las Categorias</h3>
             <CategoryMap />
           </section>
@@ -24,7 +26,7 @@ const AdminContainer = () => {
         <Accordion.Header>Estados</Accordion.Header>
         <Accordion.Body>
           <CreateState />
-          <section>
+          <section className="formAdminProduct">
             <h3>Estados de la Republica</h3>
             <StateMap />
           </section>
@@ -34,13 +36,15 @@ const AdminContainer = () => {
         <Accordion.Header>Productos</Accordion.Header>
         <Accordion.Body>
           <CreateProduct />
-          <section>
+          <section className="formAdminProduct">
             <h3>Productos</h3>
                 <ProductMap />
           </section>
         </Accordion.Body>
       </Accordion.Item>
     </Accordion>
+    <button className="prop__button" onClick={() => {navigate("orders_list")}}>View orders</button>
+    </section>
   );
 };
 

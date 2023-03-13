@@ -8,7 +8,7 @@ orderRoutes.get('/:idUser', OrderController.getOrderByUser);
 orderRoutes.get('/detail/:idOrder', OrderController.getOrderById);
 orderRoutes.get('/product/:idProduct', OrderController.getOrdersByProduct);
 orderRoutes.post("/", OrderController.createOrder);
-orderRoutes.put("/:id", OrderController.updateOrder);
+orderRoutes.put("/:idOrder", OrderController.updateOrder);
 orderRoutes.delete("/:idOrder", OrderController.deleteOrder);
 orderRoutes.delete("/:idOrder/:idProduct", OrderController.deleteProductOrder);
 

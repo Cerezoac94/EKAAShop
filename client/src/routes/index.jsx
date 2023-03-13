@@ -5,7 +5,6 @@ import Home from "../pages/Home";
 import Detail from "../pages/Detail";
 import ShoppingCart from "../pages/ShoppingCart";
 import WishList from "../pages/WishList";
-import OrderList from "../pages/OrderList";
 import AboutUs from "../pages/AboutUs";
 import UserProfile from "../pages/UserProfile";
 import IsAdmin from "../components/isAdmin/IsAdmin";
@@ -17,6 +16,9 @@ import Cooler from "../pages/Cooler";
 import Accessories from "../pages/Accessories";
 import CategoryMutationContainer from "../modules/admin/components/category/mutationCategory/MutationCategoryContainer";
 import ProductMutationContainer from "../modules/admin/components/product/mutationProduct/ProductMutationContainer";
+
+import OrdersListMap from "../modules/admin/components/order/OrdersListMap";
+import OrderDetail from "../modules/admin/components/order/orderDetail/OrderDetail";
 import UserOrders from "../pages/UserOrders";
 import BuyNow from "../pages/BuyNow";
 
@@ -78,13 +80,7 @@ const router = createBrowserRouter([
         path: "/orders",
         element: <UserOrders/>
       },
-
-      //Admin routes
-      {
-        path: "/orders_list",
-        element: <OrderList />,
-      },
-
+      
       // TODO: RUTAS PARA ADMIN
       {
         path: "admin",
@@ -102,10 +98,14 @@ const router = createBrowserRouter([
             path: "product_mutation/:id",
             element: <ProductMutationContainer/>
           },
-          // {
-          // 	path: "update_product",
-          // 	element: "component",
-          // },
+          {
+          	path: "orders_list",
+          	element: <OrdersListMap/>
+          },
+          {
+            path:"orders_list/detail/:id",
+            element: <OrderDetail/>
+          }
         ],
       },
     ],
