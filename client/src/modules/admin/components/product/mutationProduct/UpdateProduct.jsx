@@ -40,7 +40,7 @@ const UpdateProduct = ({ product }) => {
 
 	return (
 		<section className="mutation__container">
-			<h3 className="prop__title">Crear Producto</h3>
+			<h3 className="prop__title">Actualizar Producto</h3>
 			<form onSubmit={handleSubmit(submit)} className="formAdminProduct">
 				<section className="form-group">
 					<label>Nombre:</label>

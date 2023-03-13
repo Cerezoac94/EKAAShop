@@ -38,9 +38,10 @@ export const products = createApi({
       query: (id) => ({
         url: `/${ id }`,
         method: 'DELETE'
-      })
-    }),
-    invalidatesTags: ['Products']
+      }),
+      invalidatesTags: ['Products']
+    })
+   
   })
 })
 

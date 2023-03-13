@@ -4,21 +4,18 @@ import { useEffect } from "react";
 import Swal from "sweetalert2";
 
 const DeleteCategory = ({ category }) => {
-	const [deleteCategory, { isSuccess }] = useDeleteCategoryMutation();
+	const [deleteCategory, { error, data }] = useDeleteCategoryMutation();
 	const navigate = useNavigate();
-	console.log(category);
-	// refactorizar
-	const handleDelete = (id) => {
-		deleteCategory(id);
-	};
+  
+	const handleDelete = (id) => deleteCategory(id);
 
 	useEffect(() => {
 		let timeout = null;
-		if (isSuccess) {
+		if (data) {
 			Swal.fire({
 				position: "top",
 				icon: "success",
-				title: "Categoria eliminada con exito",
+				title: "Category successfully removed",
 				showConfirmButton: false,
 				timer: 1000,
 			});
@@ -28,7 +25,7 @@ const DeleteCategory = ({ category }) => {
 			}, 1200);
 		}
 		return () => clearTimeout(timeout);
-	}, [handleDelete]);
+	}, [data]);
 
 	return (
 		<section className="mutation__container">
