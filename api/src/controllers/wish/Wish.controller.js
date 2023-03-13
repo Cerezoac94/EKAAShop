@@ -13,7 +13,7 @@ class WishController {
           attributes: ['id','name', 'description', 'price', 'stock', 'image'] }
         ]
       });
-      if (!results) throw "No wish found";
+      if (results.Products.length ===0) throw "No product wish ";
       res.status(201).send({
         success: true,
         message: "Wish",
