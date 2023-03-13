@@ -161,5 +161,7 @@
         text-align: center;
         margin-top: 1rem;
     }
-    &__allContainer {}
+    &__allContainer {
+        @include mixins.order-desktop(unset, unset, unset, unset, 0 2rem);
+    }
 }
