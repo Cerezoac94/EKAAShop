@@ -4,6 +4,7 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import logo from "../../assets/LOGO.svg";
+import new_logo from "../../assets/new_logo.svg";
 import { Link } from "react-router-dom";
 import UserMenu from "./UserMenu";
 import UserLoginMenu from "./UserLoginMenu";
@@ -18,12 +19,7 @@ const Header = () => {
         <Container fluid className="navbar_style">
           <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-md`} />
           <Link to="/" className="logo_link_home">
-            <Image
-              src={logo}
-              alt="logo_home"
-              thumbnail="true"
-              className="logo_home"
-            />
+            <Image src={new_logo} alt="logo_home" className="logo_home" />
           </Link>
           <div className="user_actions_container_mobile">
             <Button href="/cart" className="user_menu_btn">
@@ -38,7 +34,7 @@ const Header = () => {
           >
             <Offcanvas.Header closeButton>
               <Offcanvas.Title id={`offcanvasNavbarLabel-expand-md`}>
-                <Link to='/'>
+                <Link to="/">
                   <img src={logo} alt="logo_home" className="logo" />
                 </Link>
               </Offcanvas.Title>
@@ -62,10 +58,13 @@ const Header = () => {
                   Get help
                 </Link>
                 <div className="user_actions_container_desktop">
+                <Button href="/wish_list" className="user_menu_btn">
+                    <ion-icon name="heart-outline"></ion-icon>
+                  </Button>
                   <Button href="/cart" className="user_menu_btn">
                     <ion-icon name="cart-outline"></ion-icon>
                   </Button>
-                  <UserMenu />
+                  <UserLoginMenu />
                 </div>
               </Nav>
             </Offcanvas.Body>

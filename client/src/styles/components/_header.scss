@@ -1,6 +1,6 @@
 //Mobile
 header {
-  height: 20vh;
+  height: 10vh;
   display: flex;
 
   flex-direction: column;
@@ -24,9 +24,8 @@ button.navbar-toggler.collapsed {
   color: $color8;
 }
 
-//Logo
+//Logo mobile
 a.logo_link_home {
-  width: 30%;
   display: none;
 }
 
@@ -130,12 +129,22 @@ a.nav_menu_links {
 }
 
 @media only screen and (min-width: 768px) {
-
-    
-  a.logo_link_home {
-    width: 20%;
-    display: flex;
+  //Offcanvas
+  .offcanvas-body{
+    justify-content: flex-end;
   }
+
+  .navbar-nav {
+    width: 100%;
+    justify-content: space-evenly;
+}
+
+    a.logo_link_home {
+      display: flex;
+    }
+    img.logo_home {
+      width: 35%;
+    }
   // mobile actions
   .user_actions_container_mobile {
     display: none;
@@ -149,16 +158,10 @@ a.nav_menu_links {
   }
 
   //navbar
-  .navbar_style.container-fluid {
-    flex-direction: column;
-  }
   .nav_menu_container.navbar-nav {
     width: 100%;
   }
-  //logo
-  a.logo_link_home {
-    width: 10%;
-  }
+
   //Search
   //Desktop
   .section_search_header_desktop {
