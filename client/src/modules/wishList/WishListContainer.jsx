@@ -4,7 +4,7 @@ import WishProductsListMap from './components/WishProductsListMap.jsx'
 const WishListContainer = () => {
   return (
     
-      <WishProductsListMap me={15}/>
+      <WishProductsListMap me={1}/>
   )
 }
 
