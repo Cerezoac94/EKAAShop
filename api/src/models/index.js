@@ -103,7 +103,8 @@ WishProduct.belongsTo(Wish,{
   onDelete: 'CASCADE'
 })
 WishProduct.belongsTo(Product, { 
-  foreignKey: 'idProduct'
+  foreignKey: 'idProduct',
+  onDelete: 'CASCADE'
 })
 Wish.hasMany(WishProduct,{
   foreignKey:'idWish'
@@ -113,7 +114,7 @@ Wish.hasMany(WishProduct,{
 // Product.belongsToMany(Wish, { through: WishProduct, foreignKey:'idProduct' })
 
 // product (wish & cart)
-Product.belongsToMany(Cart,  {
+Product.belongsToMany(Cart, {
   through: CartProduct,
   foreignKey: 'idProduct',
   // onDelete: 'NO ACTION' 
