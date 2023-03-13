@@ -18,6 +18,7 @@ import Accessories from "../pages/Accessories";
 import CategoryMutationContainer from "../modules/admin/components/category/mutationCategory/MutationCategoryContainer";
 import ProductMutationContainer from "../modules/admin/components/product/mutationProduct/ProductMutationContainer";
 import UserOrders from "../pages/UserOrders";
+import BuyNow from "../pages/BuyNow";
 
 
 const router = createBrowserRouter([
@@ -54,13 +55,17 @@ const router = createBrowserRouter([
       // 	element:<ProductsByCategory/>
       // }
       {
-        path: "/product_detail",
-        element: <Detail />,
+        path: "/product_detail/:id",
+        element: <Detail/>,
       },
       {
         path: "/cart",
         element: <ShoppingCart />,
       },
+      {
+      path: "/buynow",
+      element: < BuyNow/>,
+    },
       {
         path: "/wish_list",
         element: <WishList />,

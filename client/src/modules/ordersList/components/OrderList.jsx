@@ -51,7 +51,7 @@ const OrderList = ({ data, handleSearch, handleSelect }) => {
 							<td>{item.shipmentState}</td>
 							<td>{`$${item.total}`}</td>
 							<td className="buttons_container">
-                <OrdenAdminView />
+                <OrdenAdminView order={item} />
               </td>
 						</tr>
 					))}

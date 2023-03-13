@@ -9,12 +9,13 @@
 }
 
 //mixin para cambiar orden de sections en desktop (GRID,COLUMNAS)
-@mixin order-desktop($display:unset, $flex:unset, $heigth:unset, $justify:unset) {
-    @media (min-width: 1280px) {
+@mixin order-desktop($display:unset, $flex:unset, $heigth:unset, $justify:unset, $margin:unset) {
+    @media (min-width: 1040px) {
         display: $display;
         flex-direction: $flex;
         height: $heigth;
         justify-content: $justify;
+        margin: $margin;
     }
 }
 
@@ -98,14 +99,14 @@
 //  @include mixins.button(variables.$secondary_background, unset, 10px, variables.$color10, 100%, 2.5rem, 15px)
 //  el metodo map-has-ke() se utilizo para realizar una validacion con if para que al momento de agregar una variable del //
 //breakpoint este incorrecta (sm,md,lg,xl,xxl) te mande un alert de error ya que sass no  cuenta con este tipo de deteccion de errores
-$breakpoints:( sm:540px, md:768px, lg:1024px, xl:1280px, xxl:1400px);
+$breakpoints:( sm:540px, md:768px, lg:1024px, xl:1280px, xxl:1800px);
 @mixin media-up($breakpoint) {
     @if map-has-key($breakpoints, $breakpoint) {
         @media screen and (min-width: map-get($breakpoints, $breakpoint)) {
             @content;
         }
     }
-    else {
+    @else {
         @warn "elvalor de '#{$breakpoint}' no ah sido declarado como breakpoint "
     }
 }
