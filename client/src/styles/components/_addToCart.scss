@@ -1,0 +1,61 @@
+@use "../base/variables";
+@use "../abstracts/mixins";
+
+.add {
+  @include mixins.display(flex, column, center, flex-start);
+  width: 97vh;
+  height: 10vh;
+
+  &__container {
+    display: flex;
+    width: 25%;
+    justify-content: flex-start;
+  }
+
+  &__containSubmit {
+    width: 100%;
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+  &__input {
+    text-align: center;
+    width: 45%;
+    font-size: 1.5rem;
+    border: none;
+  }
+  &__submit {
+    padding: 12px 24px;
+    // margin-left: 13px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    background-color: #224f63;
+    color: #fff;
+    text-transform: uppercase;
+    transition: background-color .1s ease-in-out;
+    cursor: pointer;    
+  }
+
+  &__submit:active{    
+    background-color:$secondary_background;    
+  }
+  &__plusMenus{
+    width: 5vw;
+    // padding: 12px 24px;
+    // margin-left: 13px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    background-color: $secondary_background;
+    color: #fff;
+    text-transform: uppercase;
+    transition: background-color .1s ease-in-out;
+    cursor: pointer;  
+  }
+
+  &__plusMenus:active{
+    background-color: #224f63;
+  }
+}
