@@ -31,6 +31,8 @@ const UserLoginMenu = () => {
                 <li className="user_menu_item"><Link to="/">Wish List</Link></li>
                 <hr/>
                 <li className="user_menu_item"><Link to="/">My Orders</Link></li>
+                <hr/>
+                <li className="user_menu_item"><Link to="/">Log out</Link></li>
               </ul>
             </Popover.Body>
           </Popover>

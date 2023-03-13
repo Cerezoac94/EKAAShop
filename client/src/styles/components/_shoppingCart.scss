@@ -1,10 +1,8 @@
 @use '../base/variables';
 @use '../abstracts/mixins';
 .listCart {
-    border: 2px solid blue;
-    @include mixins.order-desktop(flex, row-reverse);
+    @include mixins.order-desktop(flex, row-reverse, unset, center, unset);
     &__card {
-        /*      border: 2px solid variables.$secondary_background; */
         padding: 3rem;
         align-items: center;
         flex-direction: column;
@@ -35,12 +33,6 @@
         margin-bottom: 2rem;
         @include mixins.desktop-text(center, unset)
     }
-    /*    &__contText {
-        padding: 1rem;
-    } */
-    /*  &__div {
-        display: flex;
-    } */
     &__span {
         font-weight: bolder;
         margin-bottom: 2rem;
@@ -81,6 +73,8 @@
         position: relative;
         display: block;
         width: 50%;
+        display: flex;
+        flex-direction: column;
     }
     &__img {
         width: 100%;
@@ -90,12 +84,21 @@
         flex-direction: column;
         display: flex;
         /*     width: 50%; */
-        @include mixins.desktop-view(unset, unset, 1.3rem, unset)
+        @include mixins.desktop-view(unset, unset, 1.3rem, unset);
+        justify-content: space-between;
+    }
+    &__labels {
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        @include mixins.media-up(xxl) {
+            font-size: 1.8rem;
+        }
     }
     &__confirmation {
         color: variables.$confirmation;
         font-weight: bold;
-        font-size: 1rem;
+        font-size: 1.5rem;
         @include mixins.desktop-view(unset, unset, 1.5rem, unset)
     }
     &__desc {
@@ -114,21 +117,14 @@
     &__color {
         color: variables.$secondary_fonts;
     }
-    /*    &__footer {
-        display: flex;
-        // justify-self: flex-start;
-        justify-content: space-between;
-    } */
     &__contBtn {
-        /*  justify-self: flex-start; */
         display: flex;
-        /*  margin: auto; */
-        /* width: 50%; */
         margin: auto;
         padding: 1rem;
     }
     &__contBtnThird {
-        padding: 1.5rem 0;
+        padding: 1em 0;
+        justify-content: end
     }
     &__btnIcon {
         @include mixins.button(variables.$secondary_background, variables.$secondary_background, 1px, variables.$color10, 36px, 36px);
@@ -139,13 +135,6 @@
         height: 36px;
         @include mixins.desktop-view(70px, 40px, 2rem, unset);
     }
-    /*    &__contBtnTwo {
-        display: flex;
-        gap: 1.3rem;
-        width: 50%;
-        justify-content: center;
-        @include mixins.order-desktop(flex, unset, unset, unset)
-    } */
     &__btnThird {
         @include mixins.button(variables.$secondary_background, variables.$secondary_background, 4px, variables.$color10, 52px, 36px);
         @include mixins.desktop-view(120px, 40px, unset, unset);
