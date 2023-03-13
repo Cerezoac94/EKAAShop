@@ -43,9 +43,6 @@ const ListCart = () => {
             <div>
               <button className="listCart__btnThird">Delete</button>
             </div>
-            <div>
-              <button className="listCart__btnThirdA">Safe for later</button>
-            </div>
           </div>
         </article>
 
@@ -75,9 +72,6 @@ const ListCart = () => {
           <div className="listCart__contBtnTwo">
             <div>
               <button className="listCart__btnThird">Delete</button>
-            </div>
-            <div>
-              <button className="listCart__btnThirdA">Safe for later</button>
             </div>
           </div>
         </article>

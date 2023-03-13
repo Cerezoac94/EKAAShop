@@ -48,7 +48,6 @@ const ProductDetail = () => {
         </span>
         <section className="action_products_btns_container">
         <button className="add_product_btn">Add to Cart</button>
-        <button className="buy_product_btn">Buy now</button>
       </section>
       </section>
     </Container>
