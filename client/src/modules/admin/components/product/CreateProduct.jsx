@@ -111,7 +111,7 @@ const CreateProduct = () => {
             {errors.stock?.type === 'required' && <ErrorForm message={"Campo obligatorio"}/>
           }
           </section>
-          <button className="btn">Crear</button>
+          <button className="prop__button">Crear</button>
         </form>
         {error &&  <ErrorForm message = {error.data.message}/>}
       </section>

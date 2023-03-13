@@ -1,9 +1,10 @@
+import { useNavigate } from "react-router-dom";
 import Table from "react-bootstrap/Table";
 import Container from "react-bootstrap/Container";
 import Form from "react-bootstrap/Form";
-import OrdenAdminView from "./order_admin_view/OrdernAdminView";
 
 const OrderList = ({ data, handleSearch, handleSelect }) => {
+	const navigate = useNavigate()
 	return (
 		<Container fluid className="orders_list_container">
 			<Container fluid className="list_header_container">
@@ -51,7 +52,7 @@ const OrderList = ({ data, handleSearch, handleSelect }) => {
 							<td>{item.shipmentState}</td>
 							<td>{`$${item.total}`}</td>
 							<td className="buttons_container">
-                <OrdenAdminView order={item} />
+							<button onClick={() => navigate(`detail/${item.id}`)} className="view_order_btn">View</button>
               </td>
 						</tr>
 					))}

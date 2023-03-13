@@ -230,7 +230,7 @@ class OrderController {
         where: {
           id: idOrder,
         },
-        attributes: ["orderDate"],
+        attributes: ["id","orderDate","shipmentState"],
         include: [{
           model: User,
           attributes: ["firstName", "lastName", "phone", "adress"]
@@ -270,14 +270,14 @@ class OrderController {
   static async updateOrder(req, res) {
     try {
       const { shipmentState } = req.body;
-      const { id } = req.params;
+      const { idOrder } = req.params;
       const results = await Order.update(
         {
           shipmentState,
         },
         {
           where: {
-            id: id,
+            id: idOrder,
           },
         }
       );

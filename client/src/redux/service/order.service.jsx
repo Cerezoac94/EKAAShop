@@ -32,8 +32,8 @@ export const orders = createApi({
 		}),
 		// admin, actualizar estado del envío
 		updateOrder: builder.mutation({
-			query: ({ id, ...body }) => ({
-				url: `/${ id }`,
+			query: ({ idOrder, ...body }) => ({
+				url: `/${ idOrder }`,
 				method: 'PUT',
 				body,
 			}),

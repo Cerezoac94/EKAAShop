@@ -25,7 +25,7 @@
     width: 50%;
     height: 100%;
     gap: 1rem;
-    margin: 2rem 0 2rem 0;
+    margin: 2rem 0 0 0;
 
 
     &__input{
@@ -56,12 +56,14 @@
 
     &__button{
 
-        min-width: 100px;
-        height: 2.5rem;
+        min-width: 150px;
+        height: 3rem;
         border: none;
         border-radius: 8px;
         background: $secondary;
         color: $main_background;
+        margin-top: 2rem;
+        padding: .8rem;
     }
 }
 
@@ -76,7 +78,7 @@
   }
   
 .formAdminProduct {
-    margin: 2rem 0 2rem 0;
+    margin: 2rem 0 0 0;
     
   border-radius: 4px;
     box-shadow:#3C99BA;
