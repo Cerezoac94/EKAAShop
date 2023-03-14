@@ -1,3 +1,4 @@
+
 import { useEffect } from "react";
 import { useUpdateUserMutation } from "../../../redux/service/user.service";
 import Container from "react-bootstrap/esm/Container";
@@ -199,3 +200,4 @@ const BasicUserInfo = ({ user }) => {
 };
 
 export default BasicUserInfo;
+

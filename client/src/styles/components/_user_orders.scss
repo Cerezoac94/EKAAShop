@@ -58,8 +58,7 @@ section.photo_item {
 }
 
 img.user_order_image {
-    width: 100%;
-    height: auto;
+    @include mixins.images(100%,auto)
 }
 
 //details

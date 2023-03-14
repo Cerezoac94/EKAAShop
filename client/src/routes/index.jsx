@@ -22,7 +22,6 @@ import OrderDetail from "../modules/admin/components/order/orderDetail/OrderDeta
 import UserOrders from "../pages/UserOrders";
 import BuyNow from "../pages/BuyNow";
 
-
 const router = createBrowserRouter([
   {
     path: "/",
@@ -58,16 +57,16 @@ const router = createBrowserRouter([
       // }
       {
         path: "/product_detail/:id",
-        element: <Detail/>,
+        element: <Detail />,
       },
       {
         path: "/cart",
         element: <ShoppingCart />,
       },
       {
-      path: "/buynow",
-      element: < BuyNow/>,
-    },
+        path: "/buynow",
+        element: <BuyNow />,
+      },
       {
         path: "/wish_list",
         element: <WishList />,
@@ -78,9 +77,9 @@ const router = createBrowserRouter([
       },
       {
         path: "/orders",
-        element: <UserOrders/>
+        element: <UserOrders />,
       },
-      
+
       // TODO: RUTAS PARA ADMIN
       {
         path: "admin",
@@ -88,24 +87,24 @@ const router = createBrowserRouter([
         children: [
           {
             path: "",
-            element: <Admin/>,
+            element: <Admin />,
           },
           {
             path: "category_mutation/:id/",
-            element: <CategoryMutationContainer/>
+            element: <CategoryMutationContainer />,
           },
           {
             path: "product_mutation/:id",
-            element: <ProductMutationContainer/>
+            element: <ProductMutationContainer />,
           },
           {
-          	path: "orders_list",
-          	element: <OrdersListMap/>
+            path: "orders_list",
+            element: <OrdersListMap />,
           },
           {
-            path:"orders_list/detail/:id",
-            element: <OrderDetail/>
-          }
+            path: "orders_list/detail/:id",
+            element: <OrderDetail />,
+          },
         ],
       },
     ],

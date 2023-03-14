@@ -1,24 +1,25 @@
-import React from "react";
-import img_stanley from "../../../../assets/stanley_tumbler.jpg";
+import DeleteProductCart from "./DeleteProductCart";
 
-const ListCart = () => {
+const ListCart = ({p}) => {
+    
+  
   return (
     <section className="listCart">
       <section>
         <article className=" listCart__card">
           <h2 className="listCart__h2">
-            Subtotal: <span className="listCart__span">$980.00</span>
+            Subtotal: <span className="listCart__span">${parseInt(p.price)* p.Cart_Product.quantity}</span>
           </h2>
-          <button className="listCart__btn">Proceed to checkout </button>
+          {/* <button className="listCart__btn">Proceed to checkout </button> */}
         </article>
       </section>
-
       <section className="listCart__allContainer">
        {/*  <section> */}
           <article className="listCart__containerProd">
             <div className="listCart__contimg">
-              <img src={img_stanley} className="listCart__img" alt="" />
+              <img src={p.image} className="listCart__img" alt={p.name} />
               <div className="listCart__contBtn">
+
                 <button className="listCart__btnIcon">
                   <ion-icon name="remove-outline"></ion-icon>
                 </button>
@@ -26,25 +27,31 @@ const ListCart = () => {
                 <button className="listCart__btnIcon">
                   <ion-icon name="add-outline"></ion-icon>
                 </button>
+
               </div>
+
             </div>
             <div className="listCart__text">
               <div className="listCart__labels">
               <h2 className="listCart__confirmation">Added to cart</h2>
               <span className="listCart__desc">
-                Vaso Termico de Acero Inoxidable, Taza Termica Frio y Caliente
+                {p.name}
               </span>
-              <span className="listCart__price">$950.00</span>
-              <small className="listCart__stock">In stock</small>
-              <label className="listCart__price">
+              <span className="listCart__price">${p.price}</span>
+
+              <div>
+                {p.stock!=0? <small className="listCart__stock">In stock</small>: <small className="listCart__stock">Out stock</small> }
+              </div>           
+              
+              {/* <label className="listCart__price">
                 Color: <span className="listCart__color">Rosa Navy</span>
-              </label>
+              </label> */}
               <label className="listCart__price">
-                Size: <span className="listCart__color">1 count</span>
+                Stock: <span className="listCart__color">{p.stock}</span>
               </label>
               </div>
             <div className="listCart__contBtnThird">
-                <button className="listCart__btnThird">Delete</button>
+                <DeleteProductCart me={14} p={p}/>
               </div>
             </div>
           </article>

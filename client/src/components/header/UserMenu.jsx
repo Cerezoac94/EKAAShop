@@ -28,7 +28,7 @@ const UserMenu = () => {
               <li className="user_menu_item"><Link to="/profile">Profile</Link></li>
                 <li className="user_menu_item"><Link to="/orders_list">Pending Orders</Link></li>
                 <li className="user_menu_item"><Link to="/wish_list">Wish List</Link></li>
-                <li className="user_menu_item"><Link to="/">My Orders</Link></li>
+                <li className="user_menu_item"><Link to="/orders">My Orders</Link></li>
               </ul>
             </Popover.Body>
           </Popover>

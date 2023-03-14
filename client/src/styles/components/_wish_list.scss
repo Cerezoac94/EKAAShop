@@ -19,12 +19,12 @@ a.wish_item_container {
     padding: 0.625rem;
 }
 
-.wish_product_image_section {
+/* .wish_product_image_section {
     width: 65%;
 }
-
+ */
 .wish_image {
-    width: 100%;
+   @include mixins.images(100%,auto)
 }
 
 h6 {

@@ -10,6 +10,9 @@ header {
 }
 
 //navbar_styles
+nav.navbar.navbar-expand-md.navbar-light.sticky-top {
+  padding: 0;
+}
 .navbar_style.container-fluid {
   flex-wrap: nowrap;
   padding: 0 0.625rem;
@@ -117,7 +120,7 @@ a.nav_menu_links {
   margin: 0.625rem 0;
 }
 
-.search_header_container {
+/* .search_header_container {
   display: flex;
   align-items: center;
   justify-self: center;
@@ -127,7 +130,7 @@ a.nav_menu_links {
   border-radius: 10px;
   padding: 0.375rem 0.75rem;
 }
-
+ */
 @media only screen and (min-width: 768px) {
   //Offcanvas
   .offcanvas-body{
@@ -136,7 +139,9 @@ a.nav_menu_links {
 
   .navbar-nav {
     width: 100%;
+    align-items: center;
     justify-content: space-evenly;
+    font-size: 0.875rem;
 }
 
     a.logo_link_home {

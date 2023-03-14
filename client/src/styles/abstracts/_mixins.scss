@@ -93,6 +93,43 @@
     align-items: $align;
 }
 
+//images
+@mixin images($width:unset, $height:unset){
+    width:$width ;
+    height: $height;
+}
+
+/* Labels */
+
+@mixin labels($color,$fs:unset,$fw:unset,$margin:unset,$padding,$width:unset){
+    color: $color;
+    font-size: $fs;
+    font-weight: $fw;
+    margin: $margin;
+    padding: $padding;
+    width: $width;
+}
+
+//basic_fonts
+@mixin basic_fonts($color,$fs:unset,$margin:unset,$padding:unset,$txA:unset){
+    color: $color;
+    font-size: $fs;
+    margin: $margin;
+    padding: $padding;
+    text-align: $txA;
+}
+
+//sections
+@mixin sections($w:unset,$h:unset,$m:unset, $p:unset,$b:unset, $br:unset){
+    width: $w;
+    height: $h;
+    margin: $m;
+    padding: $p;
+    border: $b;
+    border-radius: $br;
+}
+
+
 // BREAKPOINTS usando SASS
 //uso del metodo  map-get() nos ayuda a optimizar el mixin ejemplos en Shoppingcart Y 
 //@include media-up(lg){ en estas llaves puedes agregar propiedades } en lugar de Pasarlo como parametros

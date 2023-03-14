@@ -2,8 +2,8 @@
 @use '../abstracts/mixins';
 .interestYou {
     &__img {
-        width: 90%;
-        /*   height: 150px; */
+        width: 100%;
+        height: auto;
     }
     &__description {
         width: 100%;
@@ -16,14 +16,14 @@
         padding: 0.5rem;
         margin-bottom: 0.5rem;
     }
-    &__label {}
+/*     &__label {}
     &__priceItem {}
     &__stockitem {}
 }
 
 .swiper {}
 
-
+ */
 /* .mySwiper {
     border: 1px solid red;
     width: 375px;
@@ -53,3 +53,4 @@
     color:$confirmation;
 }
  */
+}
