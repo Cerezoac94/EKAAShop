@@ -3,7 +3,7 @@
 
 .add {
   @include mixins.display(flex, column, center, flex-start);
-  height: 10vh;
+
 
   &__container {
     display: flex;
