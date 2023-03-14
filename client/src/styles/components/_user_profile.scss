@@ -1,5 +1,7 @@
+@use "../abstracts/mixins";
+
 .user_profile_container {
-    padding: 20px;
+	padding: 20px;
 }
 
 //Header_profile
@@ -50,13 +52,13 @@ small.basic_info_text.form-text {
     margin-bottom: 1.25rem;
 }
 .basic_info_text {
-    text-align: justify;
+	text-align: justify;
 }
 
 //Form group
 .profile_info {
-    border-bottom: 1px solid $main_dark;
-    margin-bottom: 0.938rem;
+	border-bottom: 1px solid $main_dark;
+	margin-bottom: 0.938rem;
 }
 
 //input group
@@ -79,8 +81,12 @@ label.input_label.form-label{
     align-items: center;
 }
 
+.section_container {
+	@include mixins.display(flex, row, center, center);
+}
 
 input.profile_input.form-control {
+
     border: none;
     border-radius: 0;
     box-shadow: none;
@@ -89,6 +95,7 @@ input.profile_input.form-control {
 
 //edit button
 button#button-addon2.edit_btn {
+
     @include mixins.button(unset,none,unset,$bg_btn1,20%,unset,2.5rem);
     padding: 0;
     @include mixins.media-up(md){
