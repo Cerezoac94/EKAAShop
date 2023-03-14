@@ -13,9 +13,7 @@
 }
 section.product_header_mobile {
     @include mixins.display(flex,column,unset,center);
-    @include mixins.media-up(md){
-        display: none
-    }
+   
 }
 
 //Product header
@@ -63,9 +61,7 @@ section.product_image_section {
 .product_detail_footer_section {
     @include mixins.display(flex,column,unset,unset);
     margin: 2rem 0;
-    @include mixins.media-up(md){
-        display: none
-    }
+    
 }
 
 

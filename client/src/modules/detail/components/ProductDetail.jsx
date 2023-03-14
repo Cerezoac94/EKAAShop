@@ -4,7 +4,6 @@ import Image from "react-bootstrap/Image";
 import { useAddProductWishMutation } from "../../../redux/service/wish.service";
 import AddToCart from "../../shoppinCart/components/Cart/AddToCart";
 import MightLikeMap from "./mightLike/MightLikeMap";
-import ProductDetailDesktop from "./ProductDetailDesktop";
 
 const ProductDetail = ({ p }) => {
   // TODO: useMeQuery
@@ -33,8 +32,26 @@ const ProductDetail = ({ p }) => {
             <button onClick= {() => clicked(p.id)}>heart</button>
           </section>
         </section>
-        <section className="product_detail_desktop">
-        <ProductDetailDesktop />
+        <section className="buying_info_section">
+        <label className="product_price">$350.00</label>
+        <label className="feeds_label">Import Feeds Included</label>
+        <label className="product_delivery_label">
+          <span className="product_free_ship_label">Entrega GRATIS</span> el
+          Domingo 4 de marzo. Realiza tu pedido ahora.
+        </label>
+        <label className="stock_item">In Stock</label>
+        <div className="quantity_dropdown">
+          <label for="quantity_item">Quantity:</label>
+          <select name="qty" id="qty" className="add_qty">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+          </select>
+        </div>
+        <section className="action_products_btns_section">
+          <button className="add_product_btn">Add to Cart</button>
+        </section>
       </section>
       {/* might like swiper */}
       <section className="might_like_swiper_section">
