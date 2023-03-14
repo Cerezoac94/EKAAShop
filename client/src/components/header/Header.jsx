@@ -64,7 +64,8 @@ const Header = () => {
                   <Button href="/cart" className="user_menu_btn">
                     <ion-icon name="cart-outline"></ion-icon>
                   </Button>
-                  <UserLoginMenu />
+                  {/* <UserLoginMenu /> */}
+                  <UserMenu />
                 </div>
               </Nav>
             </Offcanvas.Body>

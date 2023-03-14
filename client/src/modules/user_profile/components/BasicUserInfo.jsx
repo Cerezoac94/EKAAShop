@@ -9,7 +9,7 @@ const BasicUserInfo = () => {
   return (
           <Container className="basic_info_container">
         <Form.Group className="basic_info_header">
-        <h2>Basic Info</h2>
+        <h2 className='basic_label'>Basic Info</h2>
         <Form.Text className="basic_info_text">Certain information may be visible to other people using the Services</Form.Text>
         </Form.Group>
       <Form.Group className="profile_info">

@@ -1,7 +1,7 @@
 @use '../abstracts/mixins';
 html {
     font-family: var(--font-poppins);
-    font-size: 70%;
+    font-size: 62.5%;
     @include mixins.media-up( md) {
         font-size: 100%;
     }

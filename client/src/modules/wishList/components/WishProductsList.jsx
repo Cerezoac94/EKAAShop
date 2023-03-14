@@ -1,7 +1,6 @@
 import React from "react";
 import Container from "react-bootstrap/Container";
 import Button from "react-bootstrap/Button";
-// import stanley from "../../../../assets/stanley_tumbler.svg";
 import { Link } from "react-router-dom";
 import Image from "react-bootstrap/Image";
 
@@ -10,7 +9,8 @@ const WishProductsList = ( {w} ) => {
 
   return (
     <Container className="wish_list_container">
-      <section className="wish_header_section"></section>
+      <section className="wish_header_section">
+      </section>
       <section className="wish_item_section">
         <Link to={`/product_detail/${w.id}`} className="wish_item_container">
           <section className="wish_product_image_section">

@@ -9,9 +9,8 @@ const UserProfile = () => {
   return (
     <Container fluid className="user_profile_container">
       <section className="profile_header">
-        <label>Return</label>
-        <h1>Welcome {data.name} </h1>
-        <span>Admin</span>
+        <label className="welcome_label">Welcome {data.name} </label>
+        <label className="admin_label">Admin</label>
       </section>
       <section>
         <BasicUserInfo/>
