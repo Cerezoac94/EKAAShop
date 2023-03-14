@@ -3,12 +3,15 @@
 .reviews {
     /*   border: 2px solid red; */
     margin-top: 1rem;
+    width: 200px;
     @include mixins.laptop-view(unset, unset, unset, unset);
+    @include mixins.laptop-view(290px, 240px);
+    @include mixins.desktop-view(400px, 350px);
     &__container {
         border: 1px solid variables.$secondary_background;
-        height: 30rem;
-        width: 22.5rem;
-        @include mixins.laptop-view(unset, unset, unset, unset)
+        /*  height: 30rem;
+        width: 22.5rem; */
+        /*  @include mixins.laptop-view(unset, unset, unset, unset) */
     }
     &__descContainer {
         display: flex;

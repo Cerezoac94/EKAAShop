@@ -3,7 +3,7 @@ import ProductDetail from './components/ProductDetail'
 
 const DetailContainer = () => {
   return (
-    <ProductDetail/>
+    <ProductDetail me={15}/>
   )
 }
 

@@ -4,7 +4,7 @@ const WishListMap = ({ me }) => {
   const { data: results, isLoading, error } = useGetWishQuery(me); 
 
   return (
-      error ? (
+      error ? ( 
         <h1>{error?.data?.message}</h1>
       ) : isLoading ? (
         <h3>Cargando...</h3>

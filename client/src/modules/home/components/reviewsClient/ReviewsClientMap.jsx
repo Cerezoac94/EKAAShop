@@ -10,7 +10,9 @@ if(!error) {
     results.length != 0 &&(results?.results.slice(0,1).map(e  => (<ReviewsClient e={e} key={e.id}/>))
     )
   )
+
+  /*  ESTE ARCHIVO NO SE ESTA USANDO,  MAPIE TODO EN ReviewClient.jsx */
 }
-}
+} 
 
 export default ReviewsClientMap

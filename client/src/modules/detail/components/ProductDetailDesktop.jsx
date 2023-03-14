@@ -8,7 +8,7 @@ const ProductDetailDesktop = () => {
     <Container className="product_details_desktop_container">
       <section className="product_image_section">
         <Image fluid src={stanley_cup} />
-        <ion-icon name="heart-outline" class="add_product_icon"></ion-icon>
+        <ion-icon name="heart-outline" class="add_product_icon" ></ion-icon>
       </section>
       <section className="product_detail_header">
         <section className="product_rate_container">
