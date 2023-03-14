@@ -6,7 +6,7 @@ import MenusSvg from "./MenusSVG";
 import Swal from 'sweetalert2'
 
 const AddToCart = ({ p, me }) => {
-  const [addToCart] = useAddProductCartMutation();
+  const [addToCart, {data}] = useAddProductCartMutation();
   const [qty, setQty] = useState(1);
   const { register, handleSubmit, reset } = useForm();
 
@@ -28,10 +28,24 @@ const AddToCart = ({ p, me }) => {
       });
   };
 
+  const resetState = () => setQty(1)
+
   useEffect(() => {
     reset({ qty });
     // console.log("🚀 ~ file: AddToCart.jsx:31 ~ useEffect ~ reset:", reset)
   }, [qty, reset]);
+  
+  useEffect(() => {
+    if (data)
+      Swal.fire({
+        position: "top",
+        icon: "success",
+        title: "Producto Agregado con éxito",
+        showConfirmButton: false,
+        timer: 1000,
+      });
+    resetState()
+  }, [data]);
 
   
 
@@ -44,7 +58,7 @@ const AddToCart = ({ p, me }) => {
           </button>
         </section>
 
-        <input {...register("qty")} value={qty} className='add__input' />
+        <input {...register("quantity")} value={qty} className='add__input' />
 
         <section >
           <button className="add__plusMenus" type="button" onClick={increment}>
