@@ -1,44 +1,42 @@
 //display desktop view container
 .product_detail_desktop {
     display: none;
-    @include mixins.media-up(md){
+    @include mixins.media-up(md) {
         display: flex
     }
-    
 }
 
 //mobile view
 .product_detail_container {
     padding: 2rem;
 }
+
 section.product_header_mobile {
-    @include mixins.display(flex,column,unset,center);
-   
+    @include mixins.display(flex, column, unset, center);
 }
 
 //Product header
 .product_rate_section {
-    @include mixins.display(flex,row,unset,center);
+    @include mixins.display(flex, row, unset, center);
 }
 
 label.title_label,
 label.subtitle_label {
-    @include mixins.labels($main_dark,2rem,600,1rem 0, unset,100%);
-
-    @include mixins.media-up(md){
+    @include mixins.labels($main_dark, 2rem, 600, 1rem 0, unset, 100%);
+    @include mixins.media-up(md) {
         font-size: 1.4rem;
     }
-    @include mixins.media-up(lg){
+    @include mixins.media-up(lg) {
         font-size: 2rem;
     }
 }
 
 .product_description {
-    @include mixins.basic_fonts($main_fonts,1.4rem,0 0 2.4rem,unset,justify);
-    @include mixins.media-up(sm){
+    @include mixins.basic_fonts($main_fonts, 1.4rem, 0 0 2.4rem, unset, justify);
+    @include mixins.media-up(sm) {
         font-size: 1.2rem;
     }
-    @include mixins.media-up(md){
+    @include mixins.media-up(md) {
         font-size: 1rem;
     }
 }
@@ -47,81 +45,88 @@ label.subtitle_label {
 section.product_image_section {
     width: 60%;
 }
+
 .add_product_icon.md.hydrated {
     font-size: 2.4rem;
 }
 
-
 //might_like section
 .might_like_swiper_section {
-    margin:2rem 0;
+    margin: 2rem 0;
 }
 
 //footeer
 .product_detail_footer_section {
-    @include mixins.display(flex,column,unset,unset);
+    @include mixins.display(flex, column, unset, unset);
     margin: 2rem 0;
-    
 }
 
-
 label.product_price {
-/*     font-size: 2.188rem;
+    /*     font-size: 2.188rem;
     font-weight: 500; */
-    @include mixins.labels($main_dark,2.5rem,600,unset, unset,unset);
-    @include mixins.media-up(md){
+    @include mixins.labels($main_dark, 2.5rem, 600, unset, unset, unset);
+    @include mixins.media-up(md) {
         font-size: 1.4rem
     }
 }
+
 label.feeds_label {
-    @include mixins.labels($third_background,1rem,unset,unset,unset,unset)
+    @include mixins.labels($third_background, 1rem, unset, unset, unset, unset)
 }
 
 label.product_free_ship_label {
-    @include mixins.labels($confirmation,1.4rem,unset,unset, 0 1rem,unset)
+    @include mixins.labels($confirmation, 1.4rem, unset, unset, 0 1rem, unset)
 }
+
 label.product_delivery_label {
-    @include mixins.basic_fonts($main_fonts,0.8rem,unset,unset,justify)
+    @include mixins.basic_fonts($main_fonts, 0.8rem, unset, unset, justify)
 }
+
 span.product_free_ship_label {
     font-weight: 600;
 }
 
 //actions_buttons
 .action_products_btns_section {
-    @include mixins.display(flex,column,unset,center);
+    @include mixins.display(flex, column, unset, center);
     margin: 1.25rem 0;
 }
 
 button.add_product_btn {
-    @include mixins.button($bg_btn1,unset, 8px, #fff, 85%, 40px, 1.25rem);
+    @include mixins.button($bg_btn1, unset, 8px, #fff, 85%, 40px, 1.25rem);
     margin: 0.625rem 0;
 }
 
-
-
-
 //MediaQuery    
-    .product_details_desktop_container {
-        @include mixins.display(flex,row,unset,stretch);
-        
-    }
-    
-        section.product_image_section,
-        section.product_detail_header,
-        section.buying_info_section {
-            width: 100%;
-            margin: 0 10px;
-        }
-   
+.product_details_desktop_container {
+    @include mixins.display(flex, row, unset, stretch);
+}
 
-    
-    .buying_info_section {
-        @include mixins.display(flex,column,space-evenly,stretch);
-        @include mixins.sections(unset,unset,unset,2rem,2px solid $color1, 8px);
-    }
+section.product_image_section,
+section.product_detail_header {
+    width: 100%;
+    margin: 0 10px;
+}
 
-    select#qty {
-        margin-left: 1.5rem;
+.buying_info_section {
+    @include mixins.media-up(lg) {
+        width: 350px;
     }
+}
 
+.buying_info_section {
+    @include mixins.display(flex, column, flex-start, stretch);
+    @include mixins.sections(unset, unset, unset, 2rem, 2px solid $color1, 8px);
+}
+
+.Product__containerPadd {
+    @include mixins.order-desktop(flex, unset, unset, center, unset);
+}
+
+.btn_heart {
+    border-radius: 45%;
+}
+
+select#qty {
+    margin-left: 1.5rem;
+}

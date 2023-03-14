@@ -2,8 +2,9 @@ import React, { useEffect } from "react";
 import Container from "react-bootstrap/esm/Container";
 import Image from "react-bootstrap/Image";
 import { useAddProductWishMutation } from "../../../redux/service/wish.service";
+import InterestYouSwiper from "../../home/components/interestYou/InterestYouSwiper";
 import AddToCart from "../../shoppinCart/components/Cart/AddToCart";
-import MightLikeMap from "./mightLike/MightLikeMap";
+
 
 const ProductDetail = ({ p }) => {
 	// TODO: useMeQuery
@@ -16,8 +17,8 @@ const ProductDetail = ({ p }) => {
 		addProductWish({ idUser: me, idProduct: e });
 	};
 
-	return (
-		<Container fluid className="product_detail_container">
+    return (
+      <Container fluid className="product_detail_container">
 			<section className="product_header_mobile">
 				<section className="product_detail_header">
 					<label className="title_label">{p.name}</label>
@@ -72,7 +73,8 @@ const ProductDetail = ({ p }) => {
 				</section>
 			</section>
 		</Container>
-	);
-};
+    );
+  }
+
 
 export default ProductDetail;
