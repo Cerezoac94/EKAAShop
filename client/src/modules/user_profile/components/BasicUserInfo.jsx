@@ -1,12 +1,44 @@
-import React from "react";
+import { useEffect } from "react";
+import { useUpdateUserMutation } from "../../../redux/service/user.service";
 import Container from "react-bootstrap/esm/Container";
-import Button from "react-bootstrap/Button";
-import Form from "react-bootstrap/Form";
-import InputGroup from "react-bootstrap/InputGroup";
+import { Button, Form, InputGroup } from "react-bootstrap";
 import StateMap from "../../admin/components/state/StateMap";
+import { useForm } from "react-hook-form";
+import Swal from "sweetalert2";
+import ErrorForm from "../../../components/errors/ErrorForm";
 
-const BasicUserInfo = ({ data }) => {
-	console.log(data);
+const BasicUserInfo = ({ user }) => {
+  console.log('User', user?.State?.id);
+  console.log(user);
+	const [update, { error, data }] = useUpdateUserMutation();
+	const {
+		register,
+		handleSubmit,
+		watch,
+		reset,
+		formState: { errors },
+	} = useForm();
+
+	const submit = (data) => update({ id: user.id, ...data });
+
+	useEffect(() => {
+		reset(user);
+	}, [user, reset]);
+
+  // // format phone
+  // const tel = watch("phone"); 
+
+  // const formattedPhone = (tel) => {
+  //   return tel.replace(/^(\d{3})(\d{3})(\d{4})$/, "$1-$2-$3");
+  // };
+
+	const errorMessages = {
+		required: "Campo obligatorio",
+		minLength: "Muy pocos caracteres",
+		maxLength: "Demasiados caracteres",
+		pattern: "Caracteres no válidos",
+	};
+
 	return (
 		<>
 			<Container className="basic_info_container">
@@ -21,10 +53,19 @@ const BasicUserInfo = ({ data }) => {
 					<Form.Label className="input_label">First Name</Form.Label>
 					<InputGroup className="mb-3 profile_input_group">
 						<Form.Control
+							{...register("firstName", {
+								required: true,
+								minLength: 3,
+								maxLength: 100,
+								pattern: /^[a-zA-Z\sáéíóúüñÁÉÍÓÚÜÑ]+$/,
+							})}
 							type="text"
-							defaultValue={`${data.firstName}`}
+							defaultValue={`${user.firstName}`}
 							className="profile_input"
 						/>
+						{errors.firstName?.type && (
+							<ErrorForm message={errorMessages[errors.firstName.type]} />
+						)}
 					</InputGroup>
 				</Form.Group>
 
@@ -32,10 +73,19 @@ const BasicUserInfo = ({ data }) => {
 					<Form.Label className="input_label">Last Name</Form.Label>
 					<InputGroup className="mb-3 profile_input_group">
 						<Form.Control
+							{...register("lastName", {
+								required: true,
+								minLength: 3,
+								maxLength: 100,
+								pattern: /^[a-zA-Z\sáéíóúüñÁÉÍÓÚÜÑ]+$/,
+							})}
 							type="text"
-							defaultValue={`${data.lastName}`}
+							defaultValue={`${user.lastName}`}
 							className="profile_input"
 						/>
+						{errors.lastName?.type && (
+							<ErrorForm message={errorMessages[errors.lastName.type]} />
+						)}
 					</InputGroup>
 				</Form.Group>
 
@@ -43,10 +93,19 @@ const BasicUserInfo = ({ data }) => {
 					<Form.Label className="input_label">Email</Form.Label>
 					<InputGroup className="mb-3 profile_input_group">
 						<Form.Control
+							{...register("email", {
+								required: true,
+								minLength: 8,
+								maxLength: 120,
+								pattern: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
+							})}
 							type="email"
-							defaultValue={`${data.email}`}
+							defaultValue={`${user.email}`}
 							className="profile_input"
 						/>
+						{errors.email?.type && (
+							<ErrorForm message={errorMessages[errors.email.type]} />
+						)}
 					</InputGroup>
 				</Form.Group>
 
@@ -68,10 +127,10 @@ const BasicUserInfo = ({ data }) => {
 					<Form.Label className="input_label">Birthday</Form.Label>
 					<InputGroup className="mb-3 profile_input_group">
 						<Form.Control
-							type="text"
-							defaultValue={data.birthday ? `${data.birthday}` : ""}
+							{...register("birthday")}
+							type="date"
+							defaultValue={user.birthday ? `${user.birthday}` : ""}
 							className="profile_input"
-							placeholder="yyyy-mm-dd"
 						/>
 					</InputGroup>
 				</Form.Group>
@@ -79,14 +138,12 @@ const BasicUserInfo = ({ data }) => {
 				<Form.Group className="profile_info">
 					<Form.Label className="input_label">State</Form.Label>
 					<select
+						{...register("idState")}
 						className="form-select select"
-						id="state"
 						title="Selecciona un estado"
-						defaultValue={data.State ? `${data.State.id}` : ""}
+						defaultValue={user?.State?.id}
 					>
-						<option>
-							Selecciona un estado...
-						</option>
+						<option>Selecciona un estado...</option>
 						<StateMap select={1} />
 					</select>
 				</Form.Group>
@@ -94,32 +151,46 @@ const BasicUserInfo = ({ data }) => {
 				<Form.Group className="profile_info">
 					<Form.Label className="input_label">Phone</Form.Label>
 					<InputGroup className="mb-3 profile_input_group">
-						<Form.Control
+						<Form.Control {...register("phone", {
+              pattern: /^(\()?\d{3}(\))?(-|\s)?\d{3}(-|\s)\d{4}$/
+            })}
 							type="tel"
 							inputMode="tel"
-							pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
 							placeholder="123-456-7890"
-							defaultValue={data.phone ? `${data.phone}` : ""}
+							defaultValue={user.phone ? `${user.phone}` : ""}
 							className="profile_input"
 						/>
+            {errors.phone?.type && (
+							<ErrorForm message={errorMessages[errors.phone.type]} />
+						)}
 					</InputGroup>
 				</Form.Group>
 
 				<Form.Group className="profile_info">
 					<Form.Label className="input_label">Direction</Form.Label>
 					<InputGroup className="mb-3 profile_input_group">
-						<Form.Control
-							type="text"
-							defaultValue={data.adress ? `${data.adress}` : ""}
+						<Form.Control { ...register("adress", {
+              minLength: 10,
+              maxLength:100,
+							pattern: /^[^<>'\"%&;()=+]*$/,
+            })}type="text"
+							defaultValue={user.adress ? `${user.adress}` : ""}
 							className="profile_input"
 							placeholder="Ingresa tú dirección"
 						/>
+            {errors.adress?.type && (
+							<ErrorForm message={errorMessages[errors.adress.type]} />
+						)}
 					</InputGroup>
 				</Form.Group>
 			</Container>
 
 			<section className="section_container">
-				<Button variant="primary" type="submit" className="register_btn">
+				<Button
+					onClick={handleSubmit(submit)}
+					variant="primary"
+					className="register_btn"
+				>
 					Actualizar
 				</Button>
 			</section>

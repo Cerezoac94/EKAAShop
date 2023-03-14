@@ -83,6 +83,7 @@ class UserController {
           id: id,
         },
         attributes: [
+          "id",
           "userName",
           "firstName",
           "lastName",

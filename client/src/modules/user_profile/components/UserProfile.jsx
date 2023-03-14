@@ -6,7 +6,6 @@ import BasicUserInfo from "./BasicUserInfo";
 const UserProfile = ({ me }) => {
   const { data: results = [], isLoading, error } = useGetUserByIdQuery(me)
 
-  console.log(results);
   if(!error){
   return isLoading? (<h3>Cargando...</h3>
   ):(
@@ -15,7 +14,7 @@ const UserProfile = ({ me }) => {
         <h1>Welcome {`${results.results.firstName}`} </h1>
       </section>
       <section>
-        <BasicUserInfo data={results.results}/>
+        <BasicUserInfo user={results.results}/>
       </section>
 
 
