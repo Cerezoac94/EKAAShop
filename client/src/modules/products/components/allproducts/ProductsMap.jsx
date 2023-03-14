@@ -1,5 +1,6 @@
 import { useGetAllProductsQuery } from "../../../../redux/service/product.service";
 import Product from "../presentacional/Product";
+import Container from 'react-bootstrap/Container'
 
 
 const ProductsMap = () => {
@@ -11,9 +12,9 @@ const ProductsMap = () => {
 	) : isLoading ? (
 		<h3>Cargando...</h3>
 	) : (
-		<section className="productContainer">
+		<Container className="productContainer">
 		{results?.results?.map((product) => <Product product={product} key={product.id}/>)}
-		</section>
+		</Container>
 	);
 };
 

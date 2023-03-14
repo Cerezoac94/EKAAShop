@@ -13,14 +13,8 @@ body,
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    /*     width: 100vw; */
-    //font-size: 16px;
 }
 
 .main-container {
     display: block;
-    /*   margin: 0 100px; */
-    /*   border: 3px solid red */
-    /*    min-height: 100vh; */
-    //  @include mixins.desktop-view(1440px, 100vh);
 }

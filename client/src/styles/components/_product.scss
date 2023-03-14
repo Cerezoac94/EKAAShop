@@ -1,0 +1,47 @@
+/* Component Container */
+.productContainer{
+    @include mixins.display(flex,row,space-evenly,center);
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 2rem;
+    @include mixins.media-up(lg){
+        align-items: stretch;
+    }
+   
+
+}
+/* Category container */
+.product_drinkware_container { 
+    @include mixins.display(flex,row,unset,center);
+    flex-wrap: wrap;
+}
+
+a.product_item_container {
+    @include mixins.display(flex,column,unset,center);
+    width: 45%;
+    margin: 1rem 0;
+    @include mixins.media-up(md){
+        width: 30%;
+    }
+    @include mixins.media-up(lg){
+        width: 20%;
+    }
+    @include mixins.media-up(lg){
+        justify-content: space-evenly
+    }
+}
+
+img.product_image {
+    @include mixins.images(100%,auto)
+}
+label.product_item_name {
+    @include mixins.labels($main_dark,1.5rem,600,1rem 0 0,unset,unset);
+    @include mixins.media-up(lg){
+        font-size: 1rem;
+    }
+    text-align: center;
+}
+
+label.product_item_price {
+    @include mixins.basic_fonts($secondary_background,1.4rem,unset,1rem,unset);
+}
