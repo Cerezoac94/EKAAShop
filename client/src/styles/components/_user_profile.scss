@@ -4,23 +4,49 @@
 
 //Header_profile
 .profile_header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    @include mixins.display(flex,column,center,center);
     margin-bottom: 1.25rem;
+}
+label.welcome_label {
+    @include mixins.labels($main_dark,2.5rem,600,unset,unset,unset);
+    @include mixins.media-up(md){
+        font-size: 1.8rem
+    }
+}
+label.admin_label {
+    @include mixins.labels($third_background,1.5rem,unset,unset,unset,unset);
+    @include mixins.media-up(md){
+        font-size: 1.4rem
+    }
 }
 
 //basic_info section
 .basic_info_container {
     padding: 20px;
-    border: 2px solid $main_dark;
-    border-radius: 10px;
+    border: 2px solid $color8;
+    border-radius: 8px;
+    @include mixins.media-up(md){
+        width: 60vw;
+     }
+    @include mixins.media-up(xl){
+       width: 50vw;
+    }
+
+}
+h2.basic_label {
+    font-size: 2rem;
+    font-weight: 600;
+    margin: 0;
+    @include mixins.labels($main_fonts,2rem,600,0,unset,unset);
+}
+small.basic_info_text.form-text {
+    @include mixins.basic_fonts($color5,1.2rem,unset,unset,justify);
+    @include mixins.media-up(md){
+        font-size: 1rem
+    }
 }
 .basic_info_header {
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
+    @include mixins.display(flex,column,unset,stretch);
     margin-bottom: 1.25rem;
 }
 .basic_info_text {
@@ -36,7 +62,13 @@
 //input group
 label.input_label.form-label{
         margin: 0;
-        font-size: 1.25rem;
+        font-size: 1.2rem;
+        @include mixins.media-up(md){
+            font-size: 1rem;
+         }
+        @include mixins.media-up(xl){
+           font-size: 1.2rem;
+        }
 }
 
 /* TODO: remove margin from input group,
@@ -44,49 +76,22 @@ label.input_label.form-label{
 */
 .mb-3.profile_input_group.input-group {
     margin-bottom: 0.313rem !important;
+    align-items: center;
 }
 
 
 input.profile_input.form-control {
     border: none;
     border-radius: 0;
-    padding: 0.313rem 0;
-    font-size: 1.125rem;
-    font-weight: 100;
+    box-shadow: none;
+    @include mixins.basic_fonts($main_fonts,1.4rem,unset,0.313rem 0,-webkit-auto);
 }
 
 //edit button
 button#button-addon2.edit_btn {
-    border: none;
-    border-radius: 0;
-    font-size: 1.5rem;
-}
-
-//font color
-h2,
-.basic_info_text,
-label.input_label.form-label
-{
-    color: $main_fonts;
-}
-
-@media only screen and (min-width: 768px) {
-    .basic_info_container {
-        width: 60vw;
-    }
-
-    .basic_info_text.form-text {
-        font-size: 1rem;
-    }
-
-    label.input_label.form-label {
-        font-size: 1rem;
-    }
-    input.profile_input.form-control {
-        font-size: 1.5rem;
-    }
-    button#button-addon2.edit_btn {
-        font-size: 2rem;
-    }
-
+    @include mixins.button(unset,none,unset,$bg_btn1,20%,unset,2.5rem);
+    padding: 0;
+    @include mixins.media-up(md){
+        font-size: 1.8rem;
+     }
 }

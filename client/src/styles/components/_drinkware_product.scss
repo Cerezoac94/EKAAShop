@@ -16,8 +16,7 @@ a.product_item_container {
 
 
 img.product_image {
-    width: 80%;
-    height: auto;
+    @include mixins.images(100%,auto)
 }
 .product_item_name {
     font-size: 1.5rem;
