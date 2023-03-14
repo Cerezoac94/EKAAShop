@@ -38,10 +38,6 @@ const ProductDetail = ({ p }) => {
 
           <AddToCart p={p} me={14}/>
         </section>
-      </section>
-{/*       <section className="cart">
-        <AddToCart p={p} me={1} />
-      </section> */}
     </Container>
   );
 };
