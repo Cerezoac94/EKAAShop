@@ -4,7 +4,6 @@ import Product from "../presentacional/Product";
 
 const ProductsMap = () => {
 	const { data: results = [], isLoading, error } = useGetAllProductsQuery();	
-	console.log("🚀 ~ file: ProductsMap.jsx:7 ~ ProductsMap ~ error:", error)
 	
 	return error ? (
 		<h3>{error?.data?.message}</h3>

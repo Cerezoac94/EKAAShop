@@ -1,5 +1,4 @@
-
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useUpdateUserMutation } from "../../../redux/service/user.service";
 import Container from "react-bootstrap/esm/Container";
 import { Button, Form, InputGroup } from "react-bootstrap";
@@ -9,6 +8,8 @@ import Swal from "sweetalert2";
 import ErrorForm from "../../../components/errors/ErrorForm";
 
 const BasicUserInfo = ({ user }) => {
+	const [edit, setEdit] = useState(false);
+	const [disabled, setDisabled] = useState(true);
 	const [update, { error, isSuccess }] = useUpdateUserMutation();
 	const {
 		register,
@@ -18,23 +19,28 @@ const BasicUserInfo = ({ user }) => {
 		formState: { errors },
 	} = useForm();
 
+	const handleEdit = () => {
+		setEdit(!edit);
+		setDisabled(!disabled);
+	};
 	const submit = (data) => update({ id: user.id, ...data });
 
-useEffect(()=>{
-  if(isSuccess) {
-    Swal.fire({
-      position: "top",
-      icon: "success",
-      title: "User info successfully upgraded",
-      showConfirmButton: false,
-      timer: 1000,
-    });
-  }
-},[isSuccess])
+	useEffect(() => {
+		if (isSuccess) {
+			Swal.fire({
+				position: "top",
+				icon: "success",
+				title: "User info successfully upgraded",
+				showConfirmButton: false,
+				timer: 1000,
+			});
+      handleEdit()
+		}
+	}, [isSuccess]);
 
 	useEffect(() => {
 		reset(user);
-    watch(user)
+		watch(user);
 	}, [user, reset]);
 
 	const errorMessages = {
@@ -67,6 +73,7 @@ useEffect(()=>{
 							type="text"
 							defaultValue={`${user.firstName}`}
 							className="profile_input"
+							disabled={disabled}
 						/>
 						{errors.firstName?.type && (
 							<ErrorForm message={errorMessages[errors.firstName.type]} />
@@ -87,6 +94,7 @@ useEffect(()=>{
 							type="text"
 							defaultValue={`${user.lastName}`}
 							className="profile_input"
+							disabled={disabled}
 						/>
 						{errors.lastName?.type && (
 							<ErrorForm message={errorMessages[errors.lastName.type]} />
@@ -107,6 +115,7 @@ useEffect(()=>{
 							type="email"
 							defaultValue={`${user.email}`}
 							className="profile_input"
+							disabled={disabled}
 						/>
 						{errors.email?.type && (
 							<ErrorForm message={errorMessages[errors.email.type]} />
@@ -136,37 +145,55 @@ useEffect(()=>{
 							type="date"
 							defaultValue={user.birthday ? `${user.birthday}` : ""}
 							className="profile_input"
+							disabled={disabled}
 						/>
 					</InputGroup>
 				</Form.Group>
 
 				<section className="profile_info">
 					<Form.Label className="input_label">State</Form.Label>
-					<select
-						{...register("idState")}
-						className="form-select select"
-            id="state"
-						title="Selecciona un estado"
-						defaultValue={user?.State?.id}
-					>
-						<option value="">Selecciona un estado...</option>
-						<StateMap select={1} />
-					</select>
+					{edit ? (
+						<select
+							{...register("idState",{ 
+              required:true,
+            })}
+							className="form-select select"
+							id="state"
+							title="Selecciona un estado"
+							defaultValue={user?.State?.id}
+						>
+							<option>Selecciona un estado...</option>
+							<StateMap select={1} />
+						</select>
+            
+					) : (
+						<InputGroup className="mb-3 profile_input_group">
+							<Form.Control
+								type="text"
+								className="profile_input"
+								placeholder="Ingresa tú dirección"
+								defaultValue={user.State.name}
+								disabled
+							/>
+						</InputGroup>
+					)}
 				</section>
 
 				<Form.Group className="profile_info">
 					<Form.Label className="input_label">Phone</Form.Label>
 					<InputGroup className="mb-3 profile_input_group">
-						<Form.Control {...register("phone", {
-              pattern: /^(\()?\d{3}(\))?(-|\s)?\d{3}(-|\s)\d{4}$/
-            })}
+						<Form.Control
+							{...register("phone", {
+								pattern: /^(\()?\d{3}(\))?(-|\s)?\d{3}(-|\s)\d{4}$/,
+							})}
 							type="tel"
 							inputMode="tel"
 							placeholder="123-456-7890"
 							defaultValue={user.phone ? `${user.phone}` : ""}
 							className="profile_input"
+							disabled={disabled}
 						/>
-            {errors.phone?.type && (
+						{errors.phone?.type && (
 							<ErrorForm message={errorMessages[errors.phone.type]} />
 						)}
 					</InputGroup>
@@ -175,16 +202,19 @@ useEffect(()=>{
 				<Form.Group className="profile_info">
 					<Form.Label className="input_label">Direction</Form.Label>
 					<InputGroup className="mb-3 profile_input_group">
-						<Form.Control { ...register("adress", {
-              minLength: 10,
-              maxLength:100,
-							pattern: /^[^<>'\"%&;()=+]*$/,
-            })}type="text"
+						<Form.Control
+							{...register("adress", {
+								minLength: 10,
+								maxLength: 100,
+								pattern: /^[^<>'\"%&;()=+]*$/,
+							})}
+							type="text"
 							defaultValue={user.adress ? `${user.adress}` : ""}
 							className="profile_input"
 							placeholder="Ingresa tú dirección"
+							disabled={disabled}
 						/>
-            {errors.adress?.type && (
+						{errors.adress?.type && (
 							<ErrorForm message={errorMessages[errors.adress.type]} />
 						)}
 					</InputGroup>
@@ -192,17 +222,31 @@ useEffect(()=>{
 			</Container>
 
 			<section className="section_container">
-				<Button
-					onClick={handleSubmit(submit)}
-					variant="primary"
-					className="register_btn"
-				>
-					Actualizar
-				</Button>
+				{edit ? (<>
+						<Button
+							onClick={handleSubmit(submit)}
+							variant="primary"
+							className="register_btn">
+							Actualizar
+						</Button>
+						<Button
+							onClick={() => handleEdit()}
+							variant="primary"
+							className="register_btn">
+							Cancelar
+						</Button>
+					</>
+				) : (
+					<Button
+						onClick={() => handleEdit()}
+						variant="primary"
+						className="register_btn">
+						Editar info
+					</Button>
+				)}
 			</section>
 		</>
 	);
 };
 
 export default BasicUserInfo;
-
