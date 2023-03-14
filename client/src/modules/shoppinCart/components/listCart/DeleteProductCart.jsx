@@ -5,10 +5,10 @@ import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
 
 const DeleteProductCart = ({ me, p }) => {
-  console.log("🚀 ~ file: DeleteProductCart.jsx:8 ~ DeleteProductCart ~ p:", p)
+  // console.log("🚀 ~ file: DeleteProductCart.jsx:8 ~ DeleteProductCart ~ p:", p)
   const [deleteProductCart, { data }] = useDeleteProductCartMutation();
 
-  const { register, handleSubmit, reset } = useForm();
+  const { handleSubmit } = useForm();
 
   const submit = (e) => {
     deleteProductCart({

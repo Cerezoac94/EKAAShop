@@ -18,15 +18,15 @@ export const carts = createApi({
       invalidatesTags: ['Carts']
     }),
     incrementProductCart: builder.mutation({
-      query: (params) => ({
-        url: `/increase/${ params.idCart }/${ params.idProduct }`,
+      query: ({idCart,idProduct}) => ({
+        url: `/increment/${ idCart }/${ idProduct }`,
         method: 'PUT'
       }),
       invalidatesTags: ['Carts']
     }),
     decrementProductCart: builder.mutation({
-      query: (params) => ({
-        url: `/decrease/${ params.idCart }/${ params.idProduct }`,
+      query: ({idCart,idProduct}) => ({
+        url: `/decrement/${ idCart }/${ idProduct }`,
         method: 'PUT'
       }),
       invalidatesTags: ['Carts']
@@ -36,7 +36,7 @@ export const carts = createApi({
         url: `/${ idCart }/${idProduct}`,
         method: 'DELETE'
       }),
-      invalidatesTags:['Carts']
+      invalidatesTags:['Carts'] 
     })
   })
 })
