@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link,  useNavigate } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import Container from "react-bootstrap/Container";
@@ -125,9 +125,9 @@ const LoginForm = () => {
 					Login
 				</Button>
 				{/* <label className="login_footer">Forgotten your password? Reset password</label> */}
-				<label className="login_footer">
-					Don't have an account? Register here
-				</label>
+				<span className="login_footer">
+				Don't have an account?<Link to="/register"><span>Register here</span></Link>
+				</span>
 				{error && (
 					<Form.Text className="text-muted">
 						<ion-icon

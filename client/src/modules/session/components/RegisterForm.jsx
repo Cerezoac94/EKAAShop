@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import Container from "react-bootstrap/Container";
@@ -299,9 +299,11 @@ const RegisterForm = () => {
 				<Button variant="primary" type="submit" className="register_btn">
 					register
 				</Button>
-				<label className="register_footer">
-					Already have an account? Sign in here
-				</label>
+				
+				<span className="register_footer">
+					Already have an account?<Link to="/login"><span>Sign in here</span></Link>
+				</span>
+				
 				<Form.Group className="register_footer_container">
 					{error && (
 						<Form.Text className="text-muted">
