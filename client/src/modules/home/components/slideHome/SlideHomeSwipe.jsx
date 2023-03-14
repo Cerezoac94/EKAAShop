@@ -14,6 +14,7 @@ const SlideHomeSwipe = ({p}) => {
       // onSwiper={(swiper) => console.log(swiper)}
       pagination={true}
       modules={[Pagination]}
+      
       className="mySwiper"
     >
       <SwiperSlide>
