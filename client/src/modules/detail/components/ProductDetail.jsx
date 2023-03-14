@@ -2,8 +2,9 @@ import React, { useEffect } from "react";
 import Container from "react-bootstrap/esm/Container";
 import Image from "react-bootstrap/Image";
 import { useAddProductWishMutation } from "../../../redux/service/wish.service";
+import InterestYouSwiper from "../../home/components/interestYou/InterestYouSwiper";
 import AddToCart from "../../shoppinCart/components/Cart/AddToCart";
-import MightLikeMap from "./mightLike/MightLikeMap";
+
 
 const ProductDetail = ({ p }) => {
   // TODO: useMeQuery
@@ -17,21 +18,24 @@ const ProductDetail = ({ p }) => {
 
     return (
       <Container fluid className="product_detail_container">
-      <section className="product_header_mobile">
+        <section className="Product__containerPadd ">
+        <section className="product_header_mobile">
         <section className="product_detail_header">
           <label className="title_label">{p.name}</label>
           <p className="product_description">{p.description}</p>
         </section>
           <section className="product_image_section">
           <Image fluid src={p.image} alt={p.name}/>
-            <span onClick= {() => clicked(p.id)}
+          {/*   <span onClick= {() => clicked(p.id)}
             className="outline"
               style={{ zIndex: -1 }} >
               <ion-icon name="heart-outline" class="add_product_icon"></ion-icon>
-            </span>
-            <button onClick= {() => clicked(p.id)}>heart</button>
+            </span> */}
+            <button onClick= {() => clicked(p.id)} className="btn_heart"> 
+              <ion-icon name="heart-outline" class="add_product_icon"></ion-icon></button>
           </section>
         </section>
+        {/* here */}
         <section className="buying_info_section">
         <label className="product_price">$350.00</label>
         <label className="feeds_label">Import Feeds Included</label>
@@ -53,10 +57,12 @@ const ProductDetail = ({ p }) => {
           <button className="add_product_btn">Add to Cart</button>
         </section>
       </section>
-      {/* might like swiper */}
+        </section>
+      
+ 
       <section className="might_like_swiper_section">
         <label className="subtitle_label">You might also like</label>
-        <MightLikeMap />
+       <InterestYouSwiper />
       </section>
       {/* Footer product */}
       <section className="product_detail_footer_section">
