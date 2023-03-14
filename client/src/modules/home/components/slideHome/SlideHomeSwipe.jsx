@@ -5,7 +5,7 @@ import "swiper/css/pagination";
 import img_cup_3 from "../../../../assets/yetis_a1.png";;
 import { Pagination } from "swiper";
 
-const SlideHomeSwipe = () => {
+const SlideHomeSwipe = ({p}) => {
   return (
     <Swiper
       /* spaceBetween={50} */
