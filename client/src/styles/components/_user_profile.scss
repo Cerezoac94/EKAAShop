@@ -85,6 +85,10 @@ label.input_label.form-label{
 	@include mixins.display(flex, row, center, center);
 }
 
+.select {
+	border: none;
+}
+
 input.profile_input.form-control {
 
     border: none;

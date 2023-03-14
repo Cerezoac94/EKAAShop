@@ -113,7 +113,6 @@ class UserController {
   static async updateUser(req, res) {
     try {
       const {
-        userName,
         firstName,
         lastName,
         email,
@@ -121,14 +120,11 @@ class UserController {
         birthday,
         phone,
         adress,
-        memberSince,
-        idState,
-        idRole,
+        idState
       } = req.body;
       const { id } = req.params;
       const results = await User.update(
         {
-          userName,
           firstName,
           lastName,
           email,
@@ -136,9 +132,7 @@ class UserController {
           birthday,
           phone,
           adress,
-          memberSince,
           idState,
-          idRole,
         },
         {
           where: {
@@ -147,7 +141,11 @@ class UserController {
         }
       );
       if (results[0] === 0) throw "No user was updated";
-      res.status(204).send();
+      res.status(204).send({
+        success: true,
+        message: "User info successfully upgraded",
+        results,
+      });
     } catch (err) {
       res.status(400).send({
         success: false,

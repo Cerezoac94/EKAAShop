@@ -9,9 +9,7 @@ import Swal from "sweetalert2";
 import ErrorForm from "../../../components/errors/ErrorForm";
 
 const BasicUserInfo = ({ user }) => {
-  console.log('User', user?.State?.id);
-  console.log(user);
-	const [update, { error, data }] = useUpdateUserMutation();
+	const [update, { error, isSuccess }] = useUpdateUserMutation();
 	const {
 		register,
 		handleSubmit,
@@ -22,16 +20,22 @@ const BasicUserInfo = ({ user }) => {
 
 	const submit = (data) => update({ id: user.id, ...data });
 
+useEffect(()=>{
+  if(isSuccess) {
+    Swal.fire({
+      position: "top",
+      icon: "success",
+      title: "User info successfully upgraded",
+      showConfirmButton: false,
+      timer: 1000,
+    });
+  }
+},[isSuccess])
+
 	useEffect(() => {
 		reset(user);
+    watch(user)
 	}, [user, reset]);
-
-  // // format phone
-  // const tel = watch("phone"); 
-
-  // const formattedPhone = (tel) => {
-  //   return tel.replace(/^(\d{3})(\d{3})(\d{4})$/, "$1-$2-$3");
-  // };
 
 	const errorMessages = {
 		required: "Campo obligatorio",
@@ -136,18 +140,19 @@ const BasicUserInfo = ({ user }) => {
 					</InputGroup>
 				</Form.Group>
 
-				<Form.Group className="profile_info">
+				<section className="profile_info">
 					<Form.Label className="input_label">State</Form.Label>
 					<select
 						{...register("idState")}
 						className="form-select select"
+            id="state"
 						title="Selecciona un estado"
 						defaultValue={user?.State?.id}
 					>
-						<option>Selecciona un estado...</option>
+						<option value="">Selecciona un estado...</option>
 						<StateMap select={1} />
 					</select>
-				</Form.Group>
+				</section>
 
 				<Form.Group className="profile_info">
 					<Form.Label className="input_label">Phone</Form.Label>
