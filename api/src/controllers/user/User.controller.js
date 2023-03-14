@@ -9,9 +9,11 @@ class UserController {
   // FIXME: Al haber error de no encontrar "state" existente, aún así incrementa el id
   static async createUser(req, res) {
     try {
-      const { userName, email, password } = req.body;
+      const { userName, firstName, lastName, email, password } = req.body;
       const results = await User.create({
         userName,
+        firstName,
+        lastName,
         email,
         password,
         idRole: 2,
@@ -81,6 +83,7 @@ class UserController {
           id: id,
         },
         attributes: [
+          "id",
           "userName",
           "firstName",
           "lastName",
@@ -89,7 +92,7 @@ class UserController {
           "phone",
           "adress",
         ],
-        include: { model: State, attributes: ["name"] },
+        include: { model: State, attributes: ["id","name"] },
       });
       if (!results) throw "No user found";
       res.status(200).send({
@@ -110,7 +113,6 @@ class UserController {
   static async updateUser(req, res) {
     try {
       const {
-        userName,
         firstName,
         lastName,
         email,
@@ -118,14 +120,11 @@ class UserController {
         birthday,
         phone,
         adress,
-        memberSince,
-        idState,
-        idRole,
+        idState
       } = req.body;
       const { id } = req.params;
       const results = await User.update(
         {
-          userName,
           firstName,
           lastName,
           email,
@@ -133,9 +132,7 @@ class UserController {
           birthday,
           phone,
           adress,
-          memberSince,
           idState,
-          idRole,
         },
         {
           where: {
@@ -144,7 +141,11 @@ class UserController {
         }
       );
       if (results[0] === 0) throw "No user was updated";
-      res.status(204).send();
+      res.status(204).send({
+        success: true,
+        message: "User info successfully upgraded",
+        results,
+      });
     } catch (err) {
       res.status(400).send({
         success: false,

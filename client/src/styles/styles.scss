@@ -1,8 +1,10 @@
 /* UI Settings */
 
 //abstracts
-@import './base/variables';
+@use "./abstracts/mixins";
 //base
+@import './base/variables';
+
 @import './base/base';
 @import './base/reset';
 //React-bootstrap
@@ -28,6 +30,8 @@
 @import './components/reviews';
 @import './components/user_menu';
 @import './components/mutation';
-@import './components/buyNow';
-@import './components/mutation';
 @import './components/wish_list';
+@import './components/user_orders';
+@import './components/buyNow';
+@import './components/addToCart';
+@import './components/presentacional';

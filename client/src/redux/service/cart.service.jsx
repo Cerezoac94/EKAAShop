@@ -10,8 +10,8 @@ export const carts = createApi({
       providesTags: ['Carts']
     }),
     addProductCart: builder.mutation({
-      query: ({ params, ...body }) => ({
-        url: `/${ params.idUser }/${ params.idProduct }`,
+      query: ({id, ...body }) => ({
+        url: `/${ id }`,
         method: 'POST',
         body
       }),
@@ -32,10 +32,11 @@ export const carts = createApi({
       invalidatesTags: ['Carts']
     }),
     deleteProductCart: builder.mutation({
-      query: (params) => ({
-        url: `/${ params.idCart }/${params.idProduct}`,
+      query: ({idCart, idProduct}) => ({
+        url: `/${ idCart }/${idProduct}`,
         method: 'DELETE'
-      })
+      }),
+      invalidatesTags:['Carts']
     })
   })
 })

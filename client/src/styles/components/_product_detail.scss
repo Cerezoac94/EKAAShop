@@ -1,122 +1,131 @@
-//desktop
+//display desktop view container
 .product_detail_desktop {
     display: none;
+    @include mixins.media-up(md){
+        display: flex
+    }
+    
 }
 
+//mobile view
 .product_detail_container {
-    padding: 0 1.25rem;
+    padding: 2rem;
+}
+section.product_header_mobile {
+    @include mixins.display(flex,column,unset,center);
+    @include mixins.media-up(md){
+        display: none
+    }
 }
 
 //Product header
-.product_rate_container {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+.product_rate_section {
+    @include mixins.display(flex,row,unset,center);
 }
 
-.rate_product_label {
-    width: 100%;
-    margin: 0.625rem 0;
+label.title_label,
+label.subtitle_label {
+    @include mixins.labels($main_dark,2rem,600,1rem 0, unset,100%);
+
+    @include mixins.media-up(md){
+        font-size: 1.4rem;
+    }
+    @include mixins.media-up(lg){
+        font-size: 2rem;
+    }
 }
 
 .product_description {
-    text-align: justify;
+    @include mixins.basic_fonts($main_fonts,1.4rem,0 0 2.4rem,unset,justify);
+    @include mixins.media-up(sm){
+        font-size: 1.2rem;
+    }
+    @include mixins.media-up(md){
+        font-size: 1rem;
+    }
 }
 
 //image_section
+section.product_image_section {
+    width: 60%;
+}
 .add_product_icon.md.hydrated {
-    font-size: 1.875rem;
+    font-size: 2.4rem;
 }
 
 
 //might_like section
-.might_like_swiper_container {
-    margin: 3.75rem 0 1.25rem;
+.might_like_swiper_section {
+    margin:2rem 0;
 }
 
 //footeer
-.product_detail_footer_container {
-    display: flex;
-    flex-direction: column;
-    margin: 1.25rem 0;
+.product_detail_footer_section {
+    @include mixins.display(flex,column,unset,unset);
+    margin: 2rem 0;
+    @include mixins.media-up(md){
+        display: none
+    }
 }
 
-.product_price,
-.product_delivery_label {
-    margin: 0.5rem 0;
-    color: $main_fonts;
+
+label.product_price {
+/*     font-size: 2.188rem;
+    font-weight: 500; */
+    @include mixins.labels($main_dark,2.5rem,600,unset, unset,unset);
+    @include mixins.media-up(md){
+        font-size: 1.4rem
+    }
+}
+label.feeds_label {
+    @include mixins.labels($third_background,1rem,unset,unset,unset,unset)
 }
 
-.product_price {
-    font-size: 2.188rem;
-    font-weight: 500;
+label.product_free_ship_label {
+    @include mixins.labels($confirmation,1.4rem,unset,unset, 0 1rem,unset)
 }
-
-.product_free_ship_label {
-    color: $color2;
+label.product_delivery_label {
+    @include mixins.basic_fonts($main_fonts,0.8rem,unset,unset,justify)
+}
+span.product_free_ship_label {
+    font-weight: 600;
 }
 
 //actions_buttons
-.action_products_btns_container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.action_products_btns_section {
+    @include mixins.display(flex,column,unset,center);
     margin: 1.25rem 0;
 }
 
-button.add_product_btn,
-button.buy_product_btn {
-    width: 100%;
+button.add_product_btn {
+    @include mixins.button($bg_btn1,unset, 8px, #fff, 85%, 40px, 1.25rem);
     margin: 0.625rem 0;
-    height: 56px;
-    font-size: 1.25rem;
-    border: none;
-    border-radius: 8px;
-    background: $secondary;
-    color: $main_background;
 }
 
-@media only screen and (min-width: 768px) {
 
-    //product_header
-    .product_header_mobile,
-    .product_detail_footer_container {
-        display: none;
-    }
 
-    /* Product Detail Desktop */
-    //section
-    .product_detail_desktop {
-        display: flex;
-    }
 
+//MediaQuery    
     .product_details_desktop_container {
-        display: flex;
-        align-items: center;
-        /* justify-content: space-evenly; */
-        margin: 0;
-        max-width: 100vw;
-    }
-
-    .product_image_section,
-    .product_detail_header,
-    .buying_info_container {
-       margin: 0 20px; 
-    }
-
-    .product_image_section,
-    .product_detail_header {
-        width: 60%;
+        @include mixins.display(flex,row,unset,stretch);
+        
     }
     
-    .buying_info_container {
-        display: flex;
-        flex-direction: column;
-        align-items: stretch;
-        border: 2px solid blue;
-        border-radius: 8px;
-        padding: 20px;
-        width: 40vw;
+        section.product_image_section,
+        section.product_detail_header,
+        section.buying_info_section {
+            width: 100%;
+            margin: 0 10px;
+        }
+   
+
+    
+    .buying_info_section {
+        @include mixins.display(flex,column,space-evenly,stretch);
+        @include mixins.sections(unset,unset,unset,2rem,2px solid $color1, 8px);
     }
 
-}
+    select#qty {
+        margin-left: 1.5rem;
+    }
+

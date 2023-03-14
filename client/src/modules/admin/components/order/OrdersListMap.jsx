@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
-import OrderList from './OrderList'
-import { useGetAllOrdersQuery } from '../../../redux/service/order.service';
+import OrderList from './OrdersList'
+import { useGetAllOrdersQuery } from '../../../../redux/service/order.service';
 
 
-const OrderListMap = () => {
+const OrdersListMap = () => {
   const { data:results = [], isLoading, error } = useGetAllOrdersQuery()
   const [query, setQuery] = useState("");
   const [select, setSelect] = useState("");
@@ -29,4 +29,4 @@ const OrderListMap = () => {
   }
 }
 
-export default OrderListMap
+export default OrdersListMap

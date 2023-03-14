@@ -13,7 +13,7 @@ class CartController {
           attributes: ['name', 'description', 'price', 'stock', 'image'] }
         ]
       });
-      if (results.length === 0) throw "No cart found";
+      if (results.Products.length === 0) throw "No products in Cart";
       res.status(201).send({
         success: true,
         message: "Cart",
@@ -31,8 +31,8 @@ class CartController {
     try {
       // REVIEW: idUser obtenerlo más adelante desde payload, desde cookie o metodo authMe, más adelante ver cómo!
       // Analizar si idProduct vendrá desde el body o como param
-      const { idUser, idProduct } = req.params;
-      const { quantity } = req.body;
+      const { idUser } = req.params;
+      const { quantity, idProduct } = req.body;
       const qtyInt = parseInt(quantity);
       // Se busca al usuario
       const user = await User.findByPk(idUser);

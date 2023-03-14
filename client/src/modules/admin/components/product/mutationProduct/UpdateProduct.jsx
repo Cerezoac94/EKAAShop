@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import CategoryMap from "../../category/CategoryMap";
 import { useUpdateProductMutation } from "../../../../../redux/service/product.service";
 import { useForm } from "react-hook-form";
-import ErrorForm from "../../../../../components/errorsForms/ErrorForm";
+import ErrorForm from "../../../../../components/errors/ErrorForm";
 import Swal from "sweetalert2";
 
 const UpdateProduct = ({ product }) => {
@@ -11,7 +11,6 @@ const UpdateProduct = ({ product }) => {
 	const {
 		register,
 		handleSubmit,
-		watch,
 		reset,
 		formState: { errors },
 	} = useForm();
@@ -159,7 +158,7 @@ const UpdateProduct = ({ product }) => {
 						})}
 						className="form-select"
 						id="category"
-						title="Seleccionar"
+						title="Selecciona una categoría"
 						defaultValue={product.Category.id}
 					>
 						<option>Selecciona una categoría</option>

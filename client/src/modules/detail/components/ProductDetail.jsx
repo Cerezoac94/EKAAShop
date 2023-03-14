@@ -5,6 +5,7 @@ import stanley_cup from "../../../assets/stanley_tumbler.jpg";
 import { useAddProductWishMutation } from "../../../redux/service/wish.service";
 import { useGetProductByIdQuery } from "../../../redux/service/product.service";
 //import MightLike from "./mightLike/MightLike.jsx"
+import AddToCart from "../../shoppinCart/components/Cart/AddToCart";
 import MightLikeMap from "./mightLike/MightLikeMap";
 import ProductDetailDesktop from "./ProductDetailDesktop";
 import { useParams } from "react-router-dom";

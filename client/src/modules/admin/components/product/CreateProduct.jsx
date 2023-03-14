@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import CategoryMap from "../category/CategoryMap";
 import { useCreateProductMutation } from "../../../../redux/service/product.service";
 import { useForm } from "react-hook-form";
-import ErrorForm from "../../../../components/errorsForms/ErrorForm";
+import ErrorForm from "../../../../components/errors/ErrorForm";
 import Swal from 'sweetalert2'
 
 const CreateProduct = () => {
@@ -111,7 +111,7 @@ const CreateProduct = () => {
             {errors.stock?.type === 'required' && <ErrorForm message={"Campo obligatorio"}/>
           }
           </section>
-          <button className="btn">Crear</button>
+          <button className="prop__button">Crear</button>
         </form>
         {error &&  <ErrorForm message = {error.data.message}/>}
       </section>

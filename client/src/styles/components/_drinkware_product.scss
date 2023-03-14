@@ -4,13 +4,7 @@
     align-items: center;
 }
 
-.productContainer{
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    margin-top: 1rem;
-    justify-content: center;
-}
+
 
 a.product_item_container {
     width: 50%;
@@ -22,8 +16,7 @@ a.product_item_container {
 
 
 img.product_image {
-    width: 80%;
-    height: auto;
+    @include mixins.images(100%,auto)
 }
 .product_item_name {
     font-size: 1.5rem;

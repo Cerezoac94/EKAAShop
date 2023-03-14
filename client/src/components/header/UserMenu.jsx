@@ -14,8 +14,7 @@ const UserMenu = () => {
           <Popover id={`popover-positioned-bottom`}>
             <Popover.Header className="user_menu_header">
               <Button href="/login" className="user_menu_login_btn">
-                {" "}
-                Login{" "}
+                Login
               </Button>
               <label>
                 New Client?
@@ -29,7 +28,7 @@ const UserMenu = () => {
               <li className="user_menu_item"><Link to="/profile">Profile</Link></li>
                 <li className="user_menu_item"><Link to="/orders_list">Pending Orders</Link></li>
                 <li className="user_menu_item"><Link to="/wish_list">Wish List</Link></li>
-                <li className="user_menu_item"><Link to="/">My Orders</Link></li>
+                <li className="user_menu_item"><Link to="/orders">My Orders</Link></li>
               </ul>
             </Popover.Body>
           </Popover>
