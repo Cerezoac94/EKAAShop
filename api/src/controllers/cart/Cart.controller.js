@@ -13,7 +13,7 @@ class CartController {
           attributes: ['name', 'description', 'price', 'stock', 'image'] }
         ]
       });
-      if (results.length === 0) throw "No cart found";
+      if (results.Products.length === 0) throw "No products in Cart";
       res.status(201).send({
         success: true,
         message: "Cart",

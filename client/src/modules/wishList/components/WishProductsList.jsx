@@ -4,7 +4,7 @@ import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
 import Image from "react-bootstrap/Image";
 
-const WishProductsList = ( {w} ) => {
+const WishProductsList = ( { w } ) => {
   // console.log("🚀 ~ file: WishProductsList.jsx:9 ~ WishProductsList ~ w:", w)
 
   return (

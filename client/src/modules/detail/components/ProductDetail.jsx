@@ -35,6 +35,9 @@ const ProductDetail = ({ p }) => {
       <section className="product_detail_footer_section">
         <label className="product_price">${p.price}</label>
         <label className="product_free_ship_label">Stock: {p.stock}</label>
+
+          <AddToCart p={p} me={14}/>
+        </section>
       </section>
 {/*       <section className="cart">
         <AddToCart p={p} me={1} />
