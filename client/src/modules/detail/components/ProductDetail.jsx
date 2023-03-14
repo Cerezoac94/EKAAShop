@@ -45,7 +45,7 @@ const ProductDetail = ({ p }) => {
         <span className="product_price">${p.price}</span>
         <span className="product_free_ship_label">Stock: {p.stock}</span>
         <section className="cart">
-          <AddToCart p={p} me={15}/>
+          <AddToCart p={p} me={14}/>
         </section>
         
       </section>
