@@ -104,6 +104,102 @@ const RegisterForm = () => {
 						</Form.Text>
 					)}
 				</Form.Group>
+				<Form.Group className="mb-3" controlId="formBasicName">
+					<Form.Control
+						{...register("firstName", {
+							required: true,
+							minLength: 3,
+							maxLength: 100,
+							pattern: /^[a-zA-Z0-9_]*$/,
+						})}
+						type="text"
+						placeholder="First name"
+					/>
+					{errors.firstName?.type === "required" && (
+						<Form.Text className="text-muted">
+							<ion-icon
+								name="information-circle-outline"
+								className="info_circle"
+							></ion-icon>
+							Campo requerido
+						</Form.Text>
+					)}
+					{errors.firstName?.type === "minLength" && (
+						<Form.Text className="text-muted">
+							<ion-icon
+								name="information-circle-outline"
+								className="info_circle"
+							></ion-icon>
+							Mínimo 3 caracteres
+						</Form.Text>
+					)}
+					{errors.firstName?.type === "maxLength" && (
+						<Form.Text className="text-muted">
+							<ion-icon
+								name="information-circle-outline"
+								className="info_circle"
+							></ion-icon>
+							Demasiados caracteres
+						</Form.Text>
+					)}
+					{errors.firstName?.type === "pattern" && (
+						<Form.Text className="text-muted">
+							<ion-icon
+								name="information-circle-outline"
+								className="info_circle"
+							></ion-icon>
+							Caracteres no válidos
+						</Form.Text>
+					)}
+				</Form.Group>
+				<Form.Group className="mb-3" controlId="formBasicLastName">
+					<Form.Control
+						{...register("lastName", {
+							required: true,
+							minLength: 3,
+							maxLength: 100,
+							pattern: /^[a-zA-Z0-9_]*$/,
+						})}
+						type="text"
+						placeholder="User name"
+					/>
+					{errors.lastName?.type === "required" && (
+						<Form.Text className="text-muted">
+							<ion-icon
+								name="information-circle-outline"
+								className="info_circle"
+							></ion-icon>
+							Campo requerido
+						</Form.Text>
+					)}
+					{errors.lastName?.type === "minLength" && (
+						<Form.Text className="text-muted">
+							<ion-icon
+								name="information-circle-outline"
+								className="info_circle"
+							></ion-icon>
+							Mínimo 3 caracteres
+						</Form.Text>
+					)}
+					{errors.lastName?.type === "maxLength" && (
+						<Form.Text className="text-muted">
+							<ion-icon
+								name="information-circle-outline"
+								className="info_circle"
+							></ion-icon>
+							Demasiados caracteres
+						</Form.Text>
+					)}
+					{errors.lastName?.type === "pattern" && (
+						<Form.Text className="text-muted">
+							<ion-icon
+								name="information-circle-outline"
+								className="info_circle"
+							></ion-icon>
+							Caracteres no válidos
+						</Form.Text>
+					)}
+				</Form.Group>
 				<Form.Group className="mb-3" controlId="formBasicEmail">
 					<Form.Control
 						{...register("email", {

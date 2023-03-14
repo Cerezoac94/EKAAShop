@@ -9,9 +9,11 @@ class UserController {
   // FIXME: Al haber error de no encontrar "state" existente, aún así incrementa el id
   static async createUser(req, res) {
     try {
-      const { userName, email, password } = req.body;
+      const { userName, firstName, lastName, email, password } = req.body;
       const results = await User.create({
         userName,
+        firstName,
+        lastName,
         email,
         password,
         idRole: 2,
@@ -89,7 +91,7 @@ class UserController {
           "phone",
           "adress",
         ],
-        include: { model: State, attributes: ["name"] },
+        include: { model: State, attributes: ["id","name"] },
       });
       if (!results) throw "No user found";
       res.status(200).send({

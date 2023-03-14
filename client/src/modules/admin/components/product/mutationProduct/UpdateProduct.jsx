@@ -159,7 +159,7 @@ const UpdateProduct = ({ product }) => {
 						})}
 						className="form-select"
 						id="category"
-						title="Seleccionar"
+						title="Selecciona una categoría"
 						defaultValue={product.Category.id}
 					>
 						<option>Selecciona una categoría</option>

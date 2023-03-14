@@ -1,25 +1,27 @@
-import React from "react";
-import { User } from "./user_info";
+import { useGetUserByIdQuery } from "../../../redux/service/user.service";
 import Container from "react-bootstrap/Container";
 import BasicUserInfo from "./BasicUserInfo";
 
 
-const UserProfile = () => {
-  const data = User;
-  return (
+const UserProfile = ({ me }) => {
+  const { data: results = [], isLoading, error } = useGetUserByIdQuery(me)
+
+  console.log(results);
+  if(!error){
+  return isLoading? (<h3>Cargando...</h3>
+  ):(
     <Container fluid className="user_profile_container">
       <section className="profile_header">
-        <label>Return</label>
-        <h1>Welcome {data.name} </h1>
-        <span>Admin</span>
+        <h1>Welcome {`${results.results.firstName}`} </h1>
       </section>
       <section>
-        <BasicUserInfo/>
+        <BasicUserInfo data={results.results}/>
       </section>
 
 
     </Container>
-  );
+  )
+}
 };
 
 export default UserProfile;
