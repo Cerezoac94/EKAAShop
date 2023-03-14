@@ -82,7 +82,7 @@ class CartController {
     }
   }
 
-  //Actualizar en uno el quantity del carritoncrementa su cantidad en 1 unidad utilizando el método increment()
+  //METODO INCREMENT, INCREMENTA EN UNO, EN ESTE CASO IRA AUMENTANDO EN UNO LA QUANTITY DEL CART
   static async incrementProductCart(req, res) {
     try {
       const { idCart, idProduct } = req.params;
