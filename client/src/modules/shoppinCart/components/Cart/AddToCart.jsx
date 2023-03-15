@@ -3,38 +3,42 @@ import { useForm } from "react-hook-form";
 import { useState, useEffect } from "react";
 import PlusSvg from "./plusSvg";
 import MenusSvg from "./MenusSVG";
-import Swal from 'sweetalert2'
+import Swal from "sweetalert2";
 
 const AddToCart = ({ p, me }) => {
-  const [addToCart, {data}] = useAddProductCartMutation();
+  const [addToCart, { data }] = useAddProductCartMutation();
   const [qty, setQty] = useState(1);
   const { register, handleSubmit, reset } = useForm();
 
   const submit = (e) => {
-      return addToCart({ id: me, idProduct: p.id, ...e })
-  }
+    return addToCart({ id: me, idProduct: p.id, ...e });
+  };
   const increment = () => {
-    qty < p.stock ? setQty(qty + 1) : Swal.fire({
-        icon: 'error',
-        title: 'Oops...',
-        text: 'No hay producto en Stock',
-      });
+    qty < p.stock
+      ? setQty(qty + 1)
+      : Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: "No hay producto en Stock",
+        });
   };
   const decrement = () => {
-    qty > 1 ? setQty(qty - 1) : Swal.fire({
-        icon: 'error',
-        title: 'Oops...',
-        text: 'Cantidad tiene que ser mayor a 0',
-      });
+    qty > 1
+      ? setQty(qty - 1)
+      : Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: "Cantidad tiene que ser mayor a 0",
+        });
   };
 
-  const resetState = () => setQty(1)
+  const resetState = () => setQty(1);
 
   useEffect(() => {
     reset({ qty });
     // console.log("🚀 ~ file: AddToCart.jsx:31 ~ useEffect ~ reset:", reset)
   }, [qty, reset]);
-  
+
   useEffect(() => {
     if (data)
       Swal.fire({
@@ -44,33 +48,31 @@ const AddToCart = ({ p, me }) => {
         showConfirmButton: false,
         timer: 1000,
       });
-    resetState()
+    resetState();
   }, [data]);
-
-  
 
   return (
     <form className="add">
       <section className="add__container">
-        <section >
-          <button className="add__plusMenus" type="button" onClick={decrement}>
+        
+        <section>
+          <button className="add__plusAction" type="button" onClick={decrement}>
             <MenusSvg />
           </button>
         </section>
 
-        <input {...register("quantity")} value={qty} className='add__input' />
+        <input {...register("quantity")} value={qty} className="add__input" />
 
-        <section >
-          <button className="add__plusMenus" type="button" onClick={increment}>
+        <section>
+          <button className="add__plusAction" type="button" onClick={increment}>
             <PlusSvg />
           </button>
         </section>
-
       </section>
       <section className="add__containSubmit">
-        <section >
-          <button className="add__submit" onClick={handleSubmit(submit)}>Add To Cart</button>
-        </section>
+        <button className="add__submit" onClick={handleSubmit(submit)}>
+          Add To Cart
+        </button>
       </section>
     </form>
   );

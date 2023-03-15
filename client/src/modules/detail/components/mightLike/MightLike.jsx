@@ -18,7 +18,7 @@ const MightLike = ({ items }) => {
               <Card.Img variant="top" src={`${item?.image}`} />
               <Card.Body className="might_like_item_body">
                 <Card.Text className="might_like_item_details">
-                  <label htmlFor="name" className="name_item">{item.name}</label>
+                  <label className="name_item">{item.name}</label>
                   <span className="price_item">$ {item.price}</span>
                   <span className="stock_item">In Stock</span>
                 </Card.Text>
