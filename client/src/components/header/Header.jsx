@@ -22,6 +22,9 @@ const Header = () => {
             <Image src={new_logo} alt="logo_home" className="logo_home" />
           </Link>
           <div className="user_actions_container_mobile">
+          <Button href="/wish_list" className="user_menu_btn">
+                    <ion-icon name="heart-outline"></ion-icon>
+                  </Button>
             <Button href="/cart" className="user_menu_btn">
               <ion-icon name="cart-outline"></ion-icon>
             </Button>
@@ -32,7 +35,7 @@ const Header = () => {
             aria-labelledby={`offcanvasNavbarLabel-expand-md`}
             placement="start"
           >
-            <Offcanvas.Header closeButton>
+            <Offcanvas.Header >
               <Offcanvas.Title id={`offcanvasNavbarLabel-expand-md`}>
                 <Link to="/">
                   <img src={logo} alt="logo_home" className="logo" />
@@ -53,9 +56,6 @@ const Header = () => {
                 </Link>
                 <Link to="/accessories" className="nav_menu_links">
                   Accessories
-                </Link>
-                <Link to="/get_help" className="nav_menu_links">
-                  Get help
                 </Link>
                 <div className="user_actions_container_desktop">
                 <Button href="/wish_list" className="user_menu_btn">

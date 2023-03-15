@@ -35,6 +35,7 @@ const UserMenu = () => {
       <OverlayTrigger
         trigger="click"
         placement="bottom"
+        rootClose={true}
         
         overlay={
           <Popover id={`popover-positioned-bottom`}>

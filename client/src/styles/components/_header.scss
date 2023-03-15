@@ -70,12 +70,12 @@ button.user_menu_btn.btn.btn-primary {
 }
 
 .offcanvas.offcanvas-start.show {
-  width: 220px;
+  width: 170px;
   background-color: $secondary_background;
 }
 
 img.logo {
-  width: 100%;
+  width: 90%;
 }
 .offcanvas-backdrop {
   background-color: rgba(60, 153, 186, 0.55);
@@ -135,6 +135,10 @@ a.nav_menu_links {
   //Offcanvas
   .offcanvas-body{
     justify-content: flex-end;
+  }
+
+  .offcanvas-header{
+    width: 150px !important;
   }
 
   .navbar-nav {
