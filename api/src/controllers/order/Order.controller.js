@@ -293,7 +293,7 @@ class OrderController {
       });
     }
   }
-  //Desde vista de lista o general de las ordenes
+  //listado de ordenes, se cancela unicamente si el estatus es 'no enviado'
   static async deleteOrder(req, res) {
     try {
       const { idOrder } = req.params;
