@@ -6,7 +6,7 @@ import AddToCart from "../../shoppinCart/components/Cart/AddToCart";
 import MightLikeMap from "./mightLike/MightLikeMap";
 
 const ProductDetail = ({ p }) => {
-	// TODO: useMeQuery
+	// TODO: refactoriza useMeQuery
 	const me = 3;
 	const [addProductWish, { isSuccess, isLoading }] =
 		useAddProductWishMutation();
@@ -25,14 +25,8 @@ const ProductDetail = ({ p }) => {
 				</section>
 				<section className="product_image_section">
 					<Image fluid src={p.image} alt={p.name} />
-					<span
-						onClick={() => clicked(p.id)}
-						className="outline"
-						style={{ zIndex: -1 }}
-					>
-						<ion-icon name="heart-outline" class="add_product_icon"></ion-icon>
-					</span>
-					<button onClick={() => clicked(p.id)}>heart</button>
+					<button onClick= {() => clicked(p.id)} className="btn_heart"> 
+              <ion-icon name="heart-outline" class="add_product_icon"></ion-icon></button>
 				</section>
 			</section>
 
@@ -58,18 +52,18 @@ const ProductDetail = ({ p }) => {
 				</section>
 			</section>
 
-			{/* might like swiper */}
 			<section className="might_like_swiper_section">
-				<label className="subtitle_label">You might also like</label>
-				<MightLikeMap />
-			</section>
-			{/* Footer product */}
+        <label className="subtitle_label">You might also like</label>
+       <InterestYouSwiper />
+      </section>
+			
 			<section className="product_detail_footer_section">
 				<section>
 					<label className="product_price">${p.price}</label>
 					<label className="product_free_ship_label">Stock: {p.stock}</label>
 				</section>
 				<section>
+					{/* REVIEW */}
 					<AddToCart p={p} me={14} />
 				</section>
 			</section>
