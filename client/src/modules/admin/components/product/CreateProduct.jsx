@@ -16,7 +16,7 @@ const CreateProduct = () => {
    if(data) Swal.fire({
     position: 'top',
     icon: 'success',
-    title: 'Producto creado con éxito',
+    title: 'product created successfully',
     showConfirmButton: false,
     timer: 1000
   })
