@@ -184,3 +184,33 @@
     @include mixins.order-desktop(unset, unset, unset, unset, 0 2rem);
   }
 }
+
+.createOrderCont {
+  @include mixins.display(flex, row, center, unset);
+  padding: 1.5rem;
+
+  &__order {
+    width: 8vw;
+    height: 4vh;
+    border: none;
+    border-radius: .5rem;
+    background-color: #224f63;
+    color: #fff;
+    text-transform: uppercase;
+    transition: background-color 0.1s ease-in-out;
+    cursor: pointer;
+
+    // @include mixins.button(
+    //   variables.$secondary_background,
+    //   variables.$secondary_background,
+    //   4px,
+    //   variables.$color10,
+    //   100px,
+    //   36px
+    // );
+    // @include mixins.desktop-view(120px, 40px, unset, unset);
+  }
+  &__order:active {
+    background-color: $secondary_background;
+  }
+}

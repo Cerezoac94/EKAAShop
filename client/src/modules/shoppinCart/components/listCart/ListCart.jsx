@@ -1,10 +1,10 @@
-import CreateOrder from "./CreateOrder";
+// import CreateOrder from "./CreateOrder";
 import Decrement from "./Decrement";
 import DeleteProductCart from "./DeleteProductCart";
 import Increment from "./Increment";
 
 const ListCart = ({ p }) => {
-  // console.log("🚀 ~ file: ListCart.jsx:6 ~ ListCart ~ p:", p)
+  
   return (
     <>
       <section className="listCart">
@@ -16,7 +16,7 @@ const ListCart = ({ p }) => {
                 ${parseInt(p.price) * p.Cart_Product.quantity}
               </span>
             </h2>
-            {/* <button className="listCart__btn">Proceed to checkout </button> */}
+        
           </article>
         </section>
         <section className="listCart__allContainer">
@@ -44,9 +44,7 @@ const ListCart = ({ p }) => {
                   )}
                 </div>
 
-                {/* <label className="listCart__price">
-                Color: <span className="listCart__color">Rosa Navy</span>
-              </label> */}
+                
                 <label className="listCart__price">
                   Stock: <span className="listCart__color">{p.stock}</span>
                 </label>
@@ -58,9 +56,7 @@ const ListCart = ({ p }) => {
           </article>
         </section>
       </section>
-      <section>
-        <CreateOrder me={14} />
-      </section>
+      
     </>
   );
 };
