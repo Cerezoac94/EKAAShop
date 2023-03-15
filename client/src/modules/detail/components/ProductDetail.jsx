@@ -2,8 +2,8 @@ import React, { useEffect } from "react";
 import Container from "react-bootstrap/esm/Container";
 import Image from "react-bootstrap/Image";
 import { useAddProductWishMutation } from "../../../redux/service/wish.service";
+import InterestYouSwiper from "../../home/components/interestYou/InterestYouSwiper";
 import AddToCart from "../../shoppinCart/components/Cart/AddToCart";
-import MightLikeMap from "./mightLike/MightLikeMap";
 
 const ProductDetail = ({ p }) => {
 	// TODO: refactoriza useMeQuery
@@ -54,7 +54,7 @@ const ProductDetail = ({ p }) => {
 
 			<section className="might_like_swiper_section">
         <label className="subtitle_label">You might also like</label>
-       <InterestYouSwiper />
+       <InterestYouSwiper/>
       </section>
 			
 			<section className="product_detail_footer_section">

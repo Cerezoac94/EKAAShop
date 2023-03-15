@@ -1,9 +1,9 @@
 import React from 'react'
-import UserProfileMap from './components/UserProfileMap'
+import UserProfile from './components/UserProfile'
 
 const UserProfileContainer = () => {
   return (
-    <UserProfileMap/>
+    <UserProfile/>
   )
 }
 

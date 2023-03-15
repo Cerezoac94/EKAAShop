@@ -172,7 +172,7 @@ const BasicUserInfo = ({ user }) => {
 								type="text"
 								className="profile_input"
 								placeholder="Ingresa tú dirección"
-								defaultValue={user.State.name}
+								defaultValue={user.State ? user.State.name: ""}
 								disabled
 							/>
 						</InputGroup>

@@ -3,7 +3,9 @@ import Container from "react-bootstrap/Container";
 import BasicUserInfo from "./BasicUserInfo";
 
 
-const UserProfile = ({ me }) => {
+const UserProfile = () => {
+  // useMeQuery
+  const me = 15
   const { data: results = [], isLoading, error } = useGetUserByIdQuery(me)
 
   if(!error){
