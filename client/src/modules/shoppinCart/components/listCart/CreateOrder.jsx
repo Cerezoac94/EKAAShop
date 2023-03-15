@@ -38,8 +38,8 @@ const CreateOrder = ({me}) => {
 
     
   return (
-    <form onSubmit={handleSubmit(submit)}>
-        <input {...register("id")} className="listCart__btnThird" type="submit" value="Crear Order" />
+    <form className='createOrderCont'onSubmit={handleSubmit(submit)}>
+        <input {...register("id")} className="createOrderCont__order" type="submit" value="Crear Order" />
     </form>
     
   )

@@ -33,7 +33,7 @@
     // margin-left: 13px;
     font-size: 1rem;
     border: none;
-    border-radius: 1rem;
+    border-radius: .5rem;
     background-color: #224f63;
     color: #fff;
     text-transform: uppercase;
@@ -63,4 +63,5 @@
   &__plusAction:active{
     background-color: #224f63;
   }
+
 }

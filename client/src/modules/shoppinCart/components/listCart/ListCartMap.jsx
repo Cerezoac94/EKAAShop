@@ -1,6 +1,6 @@
 import { useGetCartQuery } from "../../../../redux/service/cart.service";
 import ErrorForm from "../../../../components/errors/ErrorForm";
-import ListCart from "./ListCart"
+import ListCart from "./ListCart";
 
 const ListCartMap = ({ me }) => {
   const { data: results = [], error, isLoading } = useGetCartQuery(me);
