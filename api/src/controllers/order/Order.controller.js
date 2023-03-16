@@ -306,7 +306,7 @@ class OrderController {
       });
       //Con la orden encontrada se valida el shipmentState
       if (order.shipmentState === "enviado") {
-        throw new Error("Only can cancel orders with a 'no enviado' status");
+        throw ("Only can cancel orders with a 'no enviado' status");
       }
 
       //Se busca el detalle de la orden
@@ -371,9 +371,7 @@ class OrderController {
         },
       });
       if (quantity > order.quantity) {
-        throw new Error(
-          "The quantity is greater than the one registered in the order"
-        );
+        throw("The quantity is greater than the one registered in the order");
       }
       const product = await Product.findOne({
         where: {

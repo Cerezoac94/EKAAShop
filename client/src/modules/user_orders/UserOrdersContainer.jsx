@@ -8,7 +8,10 @@ const UserOrdersContainer = () => {
       <section className="user_orders_header">
         <h1>My Orders</h1>
       </section>
+      <section className="order">
       <UserOrdersMap me={14} />
+
+      </section>
     </>
   );
 };
