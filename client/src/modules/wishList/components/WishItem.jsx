@@ -10,9 +10,9 @@ const WishItem = ({w}) => {
       <section className="wish_product_image_section">
         <Image src={w.image} alt={w.name} className="wish_image"/>
       </section>
-      <section>
-        <h6>{w.name}</h6>
-        <span className="product_delivery">{w.price}</span>
+      <section className='wish_description'>
+        <label className='item_name'>{w.name}</label>
+        <label className="item_price">{w.price}</label>
       </section>
     </Link>
     <section className="wish_btns_container">

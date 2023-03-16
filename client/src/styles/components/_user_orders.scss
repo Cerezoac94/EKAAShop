@@ -62,12 +62,12 @@ img.user_order_image {
 }
 
 //details
-label.item_name {
+/* label.item_name {
     text-align: justify;
     //margin-bottom: 0.625rem;
     font-weight: 600;
     font-size: 0.75rem;
-}
+} */
 
 label.item_qty {
     font-size: 0.75rem;
@@ -114,10 +114,10 @@ section.cancel_order_button {
         width: 20%;
     }
 
-    label.item_name,
+/*     label.item_name,
     label.price_item_label {
         font-size: 1.25rem;
-    }
+    } */
 
     label.item_qty {
         font-size: 1rem;
