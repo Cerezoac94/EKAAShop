@@ -24,7 +24,7 @@ const CreateOrder = ({me}) => {
         Swal.fire({
           position: "top",
           icon: "success",
-          title: "Category successfully removed",
+          title: "Order successfully created",
           showConfirmButton: false,
           timer: 1000,
         });

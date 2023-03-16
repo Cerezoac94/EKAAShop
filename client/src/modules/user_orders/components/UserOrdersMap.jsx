@@ -11,7 +11,7 @@ const UserOrdersMap = ({ me }) => {
   ) : isLoading ? (
     <h3>Cargando...</h3>
   ) : (
-    results.results.map((order) => <UserOrders order={order} key={order.id} />)
+    results.results.map((order, i) => <UserOrders order={order} key={order.id} i={i+1} />)
   );
 };
 

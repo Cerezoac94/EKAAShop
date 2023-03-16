@@ -17,10 +17,12 @@ export const orders = createApi({
     // orders from user
     getOrderByUser: builder.query({
       query: (idUser) => `/${idUser}`,
+      providesTags: ["Orders"],
     }),
     // all orders by product
     getOrderByProduct: builder.query({
       query: (idProduct) => `/product/${idProduct}`,
+      providesTags: ["Orders"],
     }),
     // revisar si será desde el body o params el idUser
     createOrder: builder.mutation({
@@ -40,11 +42,13 @@ export const orders = createApi({
       }),
       invalidatesTags: ["Orders"],
     }),
-    deleteProduct: builder.mutation({
+    deleteOrder: builder.mutation({
       query: (idOrder) => ({
         url: `/${idOrder}`,
         method: "DELETE",
+        providesTags: ["Orders"],
       }),
+      invalidatesTags: ["Orders"],
     }),
     deleteProductOrder: builder.mutation({
       query: ({ params, ...body }) => ({
@@ -63,6 +67,6 @@ export const {
   useGetOrderByProductQuery,
   useCreateOrderMutation,
   useUpdateOrderMutation,
-  useDeleteProductMutation,
+  useDeleteOrderMutation,
   useDeleteProductOrderMutation,
 } = orders;

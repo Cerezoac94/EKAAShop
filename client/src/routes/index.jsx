@@ -21,6 +21,7 @@ import OrdersListMap from "../modules/admin/components/order/OrdersListMap";
 import OrderDetail from "../modules/admin/components/order/orderDetail/OrderDetail";
 import UserOrders from "../pages/UserOrders";
 import BuyNow from "../pages/BuyNow";
+import OrderDetContainer from "../modules/user_orders/components/orderDetail/OrderDetContainer";
 
 const router = createBrowserRouter([
   {
@@ -78,6 +79,10 @@ const router = createBrowserRouter([
       {
         path: "/orders",
         element: <UserOrders />,
+      },
+      {
+        path:'/order_detail/:idOrder',
+        element: <OrderDetContainer/>
       },
 
       // TODO: RUTAS PARA ADMIN
