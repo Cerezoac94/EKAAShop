@@ -1,50 +1,80 @@
 //items section
 .wish_item_section.container {
+    @include mixins.display(flex,column,unset,center);
     padding: 2rem;
 }
 
 section.wish_item_section {
-    @include mixins.sections(unset,1rem 0,1rem, 1px solid $color1,8px);
-/*     padding: 0.625rem;
-    border: 1px solid $color1;
-    border-radius: 8px;
-    margin: 10px; */
+    @include mixins.sections(100%,0 0 2.5rem, 1rem, 1px solid $color1,8px);
+    @include mixins.media-up(sm){
+        width: 80%;
+    }
+    @include mixins.media-up(xl){
+        width: 65%;
+    }
 }
 
 //link
 a.wish_item_container {
     @include mixins.display(flex,row,space-evenly,center);
-    padding: 1rem;
+}
+
+label.wish_header {
+    @include mixins.labels($secondary_dark,3rem,unset, 0 0 1rem, unset,100%);
+    font-style: italic;
+    @include mixins.media-up(md){
+        font-size: 2rem;
+    }
 }
 
 section.wish_product_image_section {
-    width: 30%;
+    width: 40%;
 }
 .wish_image {
    @include mixins.images(100%,auto)
 }
 
-h6 {
-    margin-bottom: 0.25rem;
-    text-align: justify;
+section.wish_description {
+    @include mixins.display(flex,column,unset,unset);
+    @include mixins.media-up(sm){
+        width: 100%;
+    }
 }
 
-.product_delivery {
-    font-size: 0.75rem;
+label.item_name {
+    @include mixins.labels($main_dark,1.4rem,600,0,0.5rem);
+    text-align: justify;
+    @include mixins.media-up(sm){
+        font-size: 2rem
+    }
+    @include mixins.media-up(md){
+        font-size: 1.6rem
+    }
+}
+label.item_price {
+    @include mixins.basic_fonts($color2,1.2rem,0, 0.5rem,justify);
+    text-align: justify;
+    @include mixins.media-up(sm){
+        font-size: 1.8rem
+    }
+    @include mixins.media-up(md){
+        font-size: 1.4rem
+    }
 }
 
 //buttons
 .wish_btns_container {
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    margin-top: 0.938rem;
+    @include mixins.display(flex,row, center,center); 
     
 }
-a.add_to_cart_btn.btn.btn-primary,
 a.delete_product_btn.btn.btn-primary {
-    @include mixins.button($secondary_fonts, unset, 8px, $main_background, 40%, unset, 0.75rem);
-    padding: 0.313rem;
+    @include mixins.button($secondary_fonts, unset, 8px, #fff, 40%, unset, 1.2rem);
+    margin: 0;
+    padding: 0.5rem;
+    @include mixins.media-up(sm){
+        width: 25%;
+        margin-left: 4rem;
+    }
 }
 
 
