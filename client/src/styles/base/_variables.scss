@@ -1,3 +1,8 @@
+:root {
+    --gradient: (180deg, #21c8f6, #637bff);
+}
+
+
 /* Colors */
 
 $main_fonts:#224F63;
@@ -5,6 +10,7 @@ $secondary_fonts: #0B3F55;
 $bg_btn1: #355F72;
 $main_background: #D3F0F4;
 $secondary_background: #3C99BA;
+
 $third_background:#A9CAD1;//mini_legends
 $color1:#94B7C0;//borders
 $color2:#80A5B0;//legends2
@@ -13,7 +19,7 @@ $color4:#477081;
 $color5:#246688;
 /* $color6:#DB375A; */
 $color7: #C4C31D;
-$color8: #0A3F58;//borders2
+$color8: #0A3F58; //borders2
 $color9:#FED049;
 $color10:#ffffff;
 $color11:#FFAE11;
@@ -21,5 +27,13 @@ $text:#32ADF1;
 $card-bg:#E2F4FF;
 $btns_color:#5A8190;
 $confirmation: #327741;
-$main_dark:#0C2435;//title labeles
+$main_dark:#0C2435; //title labeles
 $secondary_dark:#00101C;
+.gradient {
+    /*     background: linear-gradient(180deg, #6edcc4, #1aab8b); */
+    background: linear-gradient(to right, #1a2980, #26d0ce);
+}
+
+.gradient2 {
+    background: linear-gradient(180deg, #21c8f6, #637bff);
+}
