@@ -1,11 +1,9 @@
 import React from "react";
-import Card from "react-bootstrap/Card";
 const Warranty = () => {
   return (
     <section className="warranty">
-      <Card>
-        <Card.Body>
-          <div className="warranty__options">
+     
+          <section className="warranty__options">
             <article className="warranty__join">
               <ion-icon
                 className="warranty__icons"
@@ -36,9 +34,8 @@ const Warranty = () => {
                 <span>La mejor calidad al mejor precio</span>
               </div>
             </article>
-          </div>
-        </Card.Body>
-      </Card>
+          </section>
+       
     </section>
   );
 };
