@@ -46,11 +46,11 @@ const ProductDetail = ({ p }) => {
       </section>
 
       <section className="buying_info_section">
-        <label className="product_price">${p.price}</label>
+        <label className="product_price"><sup className="currency">MXN</sup>${p.price}</label>
         {p.stock > 0 ? (
           <label className="stock_item">In Stock</label>
         ) : (
-          <label className="stock_item">Out Stock</label>
+          <label className="out_stock_item">Out Stock</label>
         )}
 
         <div className="quantity_dropdown">
