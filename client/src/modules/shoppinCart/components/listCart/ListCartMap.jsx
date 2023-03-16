@@ -1,6 +1,6 @@
 import { useGetCartQuery } from "../../../../redux/service/cart.service";
 import ErrorForm from "../../../../components/errors/ErrorForm";
-import ListCart from "./ListCart";
+import WishCart from "../../../../components/wishCart/WishCart";
 
 const ListCartMap = ({ me }) => {
   const { data: results = [], error, isLoading } = useGetCartQuery(me);
@@ -10,7 +10,7 @@ const ListCartMap = ({ me }) => {
   ) : isLoading ? (
     <h3>Cargando...</h3>
   ) : (
-    results?.results?.Products.map((p, i) => <ListCart p={p} key={i} />)
+    results?.results?.Products.map((p) => <WishCart p={p} title={"Cart"} key={p.id} />)
   );
 };
 
