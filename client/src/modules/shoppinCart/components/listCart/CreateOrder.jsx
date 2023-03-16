@@ -40,6 +40,7 @@ const CreateOrder = ({me}) => {
   return (
     <form className='createOrderCont'onSubmit={handleSubmit(submit)}>
         <input {...register("id")} className="createOrderCont__order" type="submit" value="Crear Order" />
+        <h2>Total</h2>
     </form>
     
   )

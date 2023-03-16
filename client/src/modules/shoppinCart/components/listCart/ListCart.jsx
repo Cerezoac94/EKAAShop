@@ -6,9 +6,8 @@ import Increment from "./Increment";
 const ListCart = ({ p }) => {
   return (
     <>
-      <section className="listCart"> 
-
-        <section>
+      <section className="listCart">
+    {/*     <section>
           <article className=" listCart__pay">
             <h2 className="listCart__h2">
               Subtotal:{" "}
@@ -17,9 +16,8 @@ const ListCart = ({ p }) => {
               </span>
             </h2>
           </article>
-        </section>
+        </section> */}
 
-        
         <section className="listCart__allContainer">
           {/*  <section> */}
           <article className="listCart__card">
@@ -31,7 +29,7 @@ const ListCart = ({ p }) => {
                 <Increment p={p} me={1} />
               </div>
             </div>
-            
+
             <div className="listCart__text">
               <div className="listCart__labels">
                 <h2 className="listCart__confirmation">Added to cart</h2>
@@ -50,12 +48,32 @@ const ListCart = ({ p }) => {
                   Stock: <span className="listCart__color">{p.stock}</span>
                 </label>
               </div>
-              <div className="listCart__contBtnThird">
-                <DeleteProductCart me={1} p={p} />
+
+            
+
+              <div className=" listCart__pay">
+                <div className="listCart__contBtnThird">
+                  <DeleteProductCart me={1} p={p} />
+                </div>
+                <div>
+                  <h4 className="listCart__h2">
+                    Subtotal:{" "}
+                    <span className="listCart__span">
+                      ${parseInt(p.price) * p.Cart_Product.quantity}
+                    </span>
+                  </h4>
+                </div>
               </div>
+          
             </div>
+     
           </article>
+         
         </section>
+
+        
+
+    
       </section>
     </>
   );
