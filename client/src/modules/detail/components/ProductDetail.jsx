@@ -9,7 +9,7 @@ import AddToCart from "../../shoppinCart/components/Cart/AddToCart";
 const ProductDetail = ({ p }) => {
   // console.log("🚀 ~ file: ProductDetail.jsx:9 ~ ProductDetail ~ p:", p);
   // TODO: refactoriza useMeQuery
-  const me = 3;
+  const me = 1;
   const [addProductWish, { data }] = useAddProductWishMutation();
 
 
@@ -46,17 +46,17 @@ const ProductDetail = ({ p }) => {
       </section>
 
       <section className="buying_info_section">
-        <label className="product_price">${p.price}</label>
+        <label className="product_price"><sup className="currency">MXN</sup>${p.price}</label>
         {p.stock > 0 ? (
           <label className="stock_item">In Stock</label>
         ) : (
-          <label className="stock_item">Out Stock</label>
+          <label className="out_stock_item">Out Stock</label>
         )}
 
         <div className="quantity_dropdown">
           <h3>Quantity:</h3>
           <section>
-            <AddToCart p={p} me={14} />
+            <AddToCart p={p} me={1} />
           </section>
         </div>
       </section>

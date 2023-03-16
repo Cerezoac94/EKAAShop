@@ -4,32 +4,34 @@ import DeleteProductCart from "./DeleteProductCart";
 import Increment from "./Increment";
 
 const ListCart = ({ p }) => {
-  
   return (
     <>
-      <section className="listCart">
+      <section className="listCart"> 
+
         <section>
-          <article className=" listCart__card">
+          <article className=" listCart__pay">
             <h2 className="listCart__h2">
               Subtotal:{" "}
               <span className="listCart__span">
                 ${parseInt(p.price) * p.Cart_Product.quantity}
               </span>
             </h2>
-        
           </article>
         </section>
+
+        
         <section className="listCart__allContainer">
           {/*  <section> */}
-          <article className="listCart__containerProd">
+          <article className="listCart__card">
             <div className="listCart__contimg">
               <img src={p.image} className="listCart__img" alt={p.name} />
               <div className="listCart__contBtn">
-                <Decrement p={p} me={14} />
+                <Decrement p={p} me={1} />
                 <p className="listCart__inputIcon">{p.Cart_Product.quantity}</p>
-                <Increment p={p} me={14} />
+                <Increment p={p} me={1} />
               </div>
             </div>
+            
             <div className="listCart__text">
               <div className="listCart__labels">
                 <h2 className="listCart__confirmation">Added to cart</h2>
@@ -44,19 +46,17 @@ const ListCart = ({ p }) => {
                   )}
                 </div>
 
-                
                 <label className="listCart__price">
                   Stock: <span className="listCart__color">{p.stock}</span>
                 </label>
               </div>
               <div className="listCart__contBtnThird">
-                <DeleteProductCart me={14} p={p} />
+                <DeleteProductCart me={1} p={p} />
               </div>
             </div>
           </article>
         </section>
       </section>
-      
     </>
   );
 };
