@@ -120,9 +120,8 @@
 }
 
 //sections
-@mixin sections($w:unset,$h:unset,$m:unset, $p:unset,$b:unset, $br:unset){
+@mixin sections($w:unset,$m:unset, $p:unset,$b:unset, $br:unset){
     width: $w;
-    height: $h;
     margin: $m;
     padding: $p;
     border: $b;

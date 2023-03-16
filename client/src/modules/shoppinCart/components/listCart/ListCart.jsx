@@ -25,9 +25,9 @@ const ListCart = ({ p }) => {
             <div className="listCart__contimg">
               <img src={p.image} className="listCart__img" alt={p.name} />
               <div className="listCart__contBtn">
-                <Decrement p={p} me={14} />
+                <Decrement p={p} me={1} />
                 <p className="listCart__inputIcon">{p.Cart_Product.quantity}</p>
-                <Increment p={p} me={14} />
+                <Increment p={p} me={1} />
               </div>
             </div>
             <div className="listCart__text">
@@ -50,7 +50,7 @@ const ListCart = ({ p }) => {
                 </label>
               </div>
               <div className="listCart__contBtnThird">
-                <DeleteProductCart me={14} p={p} />
+                <DeleteProductCart me={1} p={p} />
               </div>
             </div>
           </article>

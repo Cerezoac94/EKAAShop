@@ -4,8 +4,8 @@ import ListCartMap from "./components/listCart/ListCartMap";
 const ShoppingCartContainer = () => {
   return (
     <>
-      <ListCartMap me={14} />
-      <CreateOrder me={14} />
+      <ListCartMap me={1} />
+      <CreateOrder me={1} />
     </>
   );
 };
