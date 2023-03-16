@@ -1,7 +1,7 @@
 import { useGetWishQuery } from "../../../redux/service/wish.service.jsx";
-//import WishProductsList from "./WishProductsList.jsx";
+import WishProductsList from "./WishProductsList.jsx";
 import ErrorFetch from "../../../components/errors/ErrorFetch"
-import WishItem from "./WishItem.jsx";
+
 const WishListMap = ({ me }) => {
 	const { data: results, isLoading, error } = useGetWishQuery(me);
 	// console.log("results", results);
@@ -11,7 +11,7 @@ const WishListMap = ({ me }) => {
 			<h3>Cargando...</h3>
 		) : (
 			results?.results?.Products?.map((w) => (
-				<WishItem w={w} key={w.id} />
+				<WishListMap w={w} key={w.id} />
 			))
 		);
 	} else {
