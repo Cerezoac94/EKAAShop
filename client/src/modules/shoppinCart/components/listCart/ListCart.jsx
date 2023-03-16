@@ -6,7 +6,8 @@ import Increment from "./Increment";
 const ListCart = ({ p }) => {
   return (
     <>
-      <section className="listCart">
+      <section className="listCart"> 
+
         <section>
           <article className=" listCart__pay">
             <h2 className="listCart__h2">
@@ -17,6 +18,8 @@ const ListCart = ({ p }) => {
             </h2>
           </article>
         </section>
+
+        
         <section className="listCart__allContainer">
           {/*  <section> */}
           <article className="listCart__card">
@@ -28,6 +31,7 @@ const ListCart = ({ p }) => {
                 <Increment p={p} me={14} />
               </div>
             </div>
+            
             <div className="listCart__text">
               <div className="listCart__labels">
                 <h2 className="listCart__confirmation">Added to cart</h2>

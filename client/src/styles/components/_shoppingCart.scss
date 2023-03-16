@@ -1,11 +1,11 @@
 @use "../base/variables";
 @use "../abstracts/mixins";
 .listCart {
-    @include mixins.order-desktop(flex, row-reverse, unset, center, unset);
-    display: flex;
-    justify-content: center;
-    height: 100vh;
-    align-items: center;
+    /*     @include mixins.order-desktop(flex, row-reverse, unset, center, unset); */
+    /* display: flex; */
+    /*    justify-content: center; */
+    /*  height: 100vh; */
+    /*   align-items: center; */
     &__pay {
         padding: 3rem;
         align-items: center;
@@ -13,6 +13,7 @@
         display: flex;
         width: 32rem;
         margin: 2rem auto;
+        background-color: red;
         @include mixins.media-up(sm) {
             width: 32rem;
         }
@@ -60,6 +61,7 @@
         overflow: hidden;
         width: 30rem;
         height: 19rem;
+        justify-content: space-evenly;
         @include mixins.media-up(sm) {
             width: 32rem;
         }
@@ -78,13 +80,19 @@
     }
     &__contimg {
         position: relative;
-        display: block;
-        width: 50%;
+        /*   display: block; */
+        /*   width: 50%; */
         display: flex;
         flex-direction: column;
+        /*         background-color: #224f63; */
+        padding: 1rem;
+        max-width: 10rem;
+        align-items: center;
+        justify-content: space-between;
     }
     &__img {
-        width: 100%;
+        width: 13rem;
+        border-radius: 2rem;
     }
     &__text {
         position: relative;
@@ -127,8 +135,9 @@
     }
     &__contBtn {
         display: flex;
-        margin: auto;
-        padding: 1rem;
+        /*  margin: auto;
+        padding: 1rem */
+        ;
     }
     &__contBtnThird {
         text-align: center;
@@ -166,7 +175,7 @@
         @include mixins.order-desktop(unset, unset, unset, unset, 0 2rem);
         display: flex;
         justify-content: center;
-        height: 100vh;
+        /*  height: 100vh; */
         align-items: center;
     }
 }
@@ -175,7 +184,7 @@
     @include mixins.display(flex, row, center, unset);
     padding: 1.5rem;
     &__order {
-        width: 8vw;
+        width: 24vw;
         height: 4vh;
         border: none;
         border-radius: .5rem;
