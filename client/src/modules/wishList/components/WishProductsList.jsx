@@ -3,7 +3,6 @@ import Container from "react-bootstrap/Container";
 import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
 import Image from "react-bootstrap/Image";
-import WishItem from "./WishItem";
 
 const WishProductsList = ( { w } ) => {
   // console.log("🚀 ~ file: WishProductsList.jsx:9 ~ WishProductsList ~ w:", w)
@@ -13,7 +12,7 @@ const WishProductsList = ( { w } ) => {
       <section className="wish_header_section">
       </section>
       <section className="wish_item_section">
-{/*         <Link to={`/product_detail/${w.id}`} className="wish_item_container">
+        <Link to={`/product_detail/${w.id}`} className="wish_item_container">
           <section className="wish_product_image_section">
             <Image src={w.image} alt={w.name} className="wish_image"/>
           </section>
@@ -26,8 +25,7 @@ const WishProductsList = ( { w } ) => {
           <Button href="/" className="delete_product_btn">
             Delete
           </Button>
-        </section> */}
-        <WishItem/>
+        </section>
       </section>
     </Container>
   );

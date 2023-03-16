@@ -29,14 +29,10 @@
     border: none;
   }
   &__submit {
+    @include mixins.button($bg_btn1, none, 8px,#fff,100%,unset,1rem);
     padding: 12px 24px;
-    // margin-left: 13px;
     font-size: 1rem;
-    border: none;
-    border-radius: .5rem;
-    background-color: #224f63;
-    color: #fff;
-    text-transform: uppercase;
+   text-transform: uppercase;
     transition: background-color .1s ease-in-out;
     cursor: pointer;    
   }
