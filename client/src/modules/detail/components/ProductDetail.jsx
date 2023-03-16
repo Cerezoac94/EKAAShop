@@ -9,7 +9,7 @@ import AddToCart from "../../shoppinCart/components/Cart/AddToCart";
 const ProductDetail = ({ p }) => {
   // console.log("🚀 ~ file: ProductDetail.jsx:9 ~ ProductDetail ~ p:", p);
   // TODO: refactoriza useMeQuery
-  const me = 3;
+  const me = 1;
   const [addProductWish, { data }] = useAddProductWishMutation();
 
 
