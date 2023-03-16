@@ -1,216 +1,209 @@
 @use "../base/variables";
 @use "../abstracts/mixins";
 .listCart {
-  @include mixins.order-desktop(flex, row-reverse, unset, center, unset);
-  &__card {
-    padding: 3rem;
-    align-items: center;
-    flex-direction: column;
-    display: flex;
-    width: 32rem;
-    margin: 2rem auto;
-    @include mixins.media-up(sm) {
-      width: 32rem;
+    /*     @include mixins.order-desktop(flex, row-reverse, unset, center, unset); */
+    /* display: flex; */
+    /*    justify-content: center; */
+    /*  height: 100vh; */
+    /*   align-items: center; */
+    &__pay {
+        padding: 3rem;
+        align-items: center;
+        flex-direction: column;
+        display: flex;
+        width: 32rem;
+        margin: 2rem auto;
+        background-color: red;
+        @include mixins.media-up(sm) {
+            width: 32rem;
+        }
+        @include mixins.media-up(md) {
+            width: 40rem;
+        }
+        @include mixins.media-up(lg) {
+            width: 45rem;
+            border: 1px solid variables.$color8;
+            border-radius: 10px;
+        }
+        @include mixins.media-up(xl) {
+            width: 28rem;
+        }
+        h2 {
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
     }
-    @include mixins.media-up(md) {
-      width: 40rem;
+    &__h2 {
+        color: variables.$main_fonts;
+        margin-bottom: 2rem;
+        @include mixins.desktop-text(center, unset);
     }
-    @include mixins.media-up(lg) {
-      width: 45rem;
-      border: 1px solid variables.$color8;
-      border-radius: 10px;
+    &__span {
+        font-weight: bolder;
+        margin-bottom: 2rem;
     }
-    @include mixins.media-up(xl) {
-      width: 28rem;
+    &__btn {
+        @include mixins.button( variables.$secondary_background, unset, 10px, variables.$color10, 100%, 2.5rem, 15px);
+        margin: 10px 20px;
+        @include mixins.button-hover( variables.$main_background, variables.$secondary_fonts);
+        @include mixins.desktop-view(200px, 2.5rem, unset, 3rem);
     }
-    h2 {
-      margin-bottom: 1.5rem;
-      font-weight: 600;
+    /* ******************* */
+    &__card {
+        display: flex;
+        justify-content: center;
+        background-color: variables.$card-bg;
+        width: 30rem;
+        margin: 2rem auto;
+        border-radius: 1rem;
+        box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.2);
+        margin: 1.5rem;
+        overflow: hidden;
+        width: 30rem;
+        height: 19rem;
+        justify-content: space-evenly;
+        @include mixins.media-up(sm) {
+            width: 32rem;
+        }
+        @include mixins.media-up(md) {
+            width: 40rem;
+        }
+        @include mixins.media-up(lg) {
+            width: 55rem;
+        }
+        @include mixins.media-up(xl) {
+            width: 45rem;
+        }
+        @include mixins.media-up(xxl) {
+            width: 60rem;
+        }
     }
-  }
-  &__h2 {
-    color: variables.$main_fonts;
-    margin-bottom: 2rem;
-    @include mixins.desktop-text(center, unset);
-  }
-  &__span {
-    font-weight: bolder;
-    margin-bottom: 2rem;
-  }
-  &__btn {
-    @include mixins.button(
-      variables.$secondary_background,
-      unset,
-      10px,
-      variables.$color10,
-      100%,
-      2.5rem,
-      15px
-    );
-    margin: 10px 20px;
-    @include mixins.button-hover(
-      variables.$main_background,
-      variables.$secondary_fonts
-    );
-    @include mixins.desktop-view(200px, 2.5rem, unset, 3rem);
-  }
-  /* ******************* */
-  &__containerProd {
-    display: flex;
-    justify-content: center;
-    background-color: variables.$card-bg;
-    margin: 2rem 0;
-    display: flex;
-    width: 30rem;
-    margin: 2rem auto;
-    border-radius: 10px;
-    @include mixins.media-up(sm) {
-      width: 32rem;
+    &__contimg {
+        position: relative;
+        /*   display: block; */
+        /*   width: 50%; */
+        display: flex;
+        flex-direction: column;
+        /*         background-color: #224f63; */
+        padding: 1rem;
+        max-width: 10rem;
+        align-items: center;
+        justify-content: space-between;
     }
-    @include mixins.media-up(md) {
-      width: 40rem;
+    &__img {
+        width: 13rem;
+        border-radius: 2rem;
     }
-    @include mixins.media-up(lg) {
-      width: 55rem;
+    &__text {
+        position: relative;
+        flex-direction: column;
+        display: flex;
+        align-items: center;
+        /*     width: 50%; */
+        @include mixins.desktop-view(unset, unset, 1.3rem, unset);
+        justify-content: space-between;
     }
-    @include mixins.media-up(xl) {
-      width: 45rem;
+    &__labels {
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        @include mixins.media-up(xxl) {
+            font-size: 1.8rem;
+        }
     }
-    @include mixins.media-up(xxl) {
-      width: 60rem;
+    &__confirmation {
+        color: variables.$confirmation;
+        font-weight: bold;
+        font-size: 1.5rem;
+        @include mixins.desktop-view(unset, unset, 1.5rem, unset);
     }
-  }
-  &__contimg {
-    position: relative;
-    display: block;
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-  }
-  &__img {
-    width: 100%;
-  }
-  &__text {
-    position: relative;
-    flex-direction: column;
-    display: flex;
-    align-items: center;
-    /*     width: 50%; */
-    @include mixins.desktop-view(unset, unset, 1.3rem, unset);
-    justify-content: space-between;
-  }
-  &__labels {
-    padding: 1rem;
-    display: flex;
-    flex-direction: column;
-    @include mixins.media-up(xxl) {
-      font-size: 1.8rem;
+    &__desc {
+        color: variables.$secondary_fonts;
+        font-weight: 400;
+        line-height: initial;
     }
-  }
-  &__confirmation {
-    color: variables.$confirmation;
-    font-weight: bold;
-    font-size: 1.5rem;
-    @include mixins.desktop-view(unset, unset, 1.5rem, unset);
-  }
-  &__desc {
-    color: variables.$secondary_fonts;
-    font-weight: 400;
-    line-height: initial;
-  }
-  &__price {
-    color: variables.$secondary_fonts;
-    font-weight: 700;
-  }
-  &__stock {
-    color: variables.$confirmation;
-    font-weight: 600;
-  }
-  &__color {
-    color: variables.$secondary_fonts;
-  }
-  &__contBtn {
-    display: flex;
-    margin: auto;
-    padding: 1rem;
-  }
-  &__contBtnThird {
-    text-align: center;
-    width: 50%;
-    padding: 1em 0;
-    justify-content: end;
-  }
-  &__btnIcon {
-    @include mixins.button(
-      variables.$secondary_background,
-      variables.$secondary_background,
-      1px,
-      variables.$color10,
-      36px,
-      36px
-    );
-    @include mixins.desktop-view(70px, 40px, 2rem, unset);
-  }
-  &__inputIcon {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 36px;
-    height: 36px;
-    margin-bottom: 0;
-    @include mixins.desktop-view(70px, 40px, 2rem, unset);
-  }
-  &__btnThird {
-    width: 20%;
-    @include mixins.button(
-      variables.$secondary_background,
-      variables.$secondary_background,
-      4px,
-      variables.$color10,
-      52px,
-      36px
-    );
-    @include mixins.desktop-view(120px, 40px, unset, unset);
-  }
-  &__h3condicional {
-    color: variables.$confirmation;
-    font-weight: bold;
-    font-size: 1rem;
-    text-align: center;
-    margin-top: 1rem;
-  }
-  &__allContainer {
-    @include mixins.order-desktop(unset, unset, unset, unset, 0 2rem);
-  }
+    &__price {
+        color: variables.$secondary_fonts;
+        font-weight: 700;
+    }
+    &__stock {
+        color: variables.$confirmation;
+        font-weight: 600;
+    }
+    &__color {
+        color: variables.$secondary_fonts;
+    }
+    &__contBtn {
+        display: flex;
+        /*  margin: auto;
+        padding: 1rem */
+        ;
+    }
+    &__contBtnThird {
+        text-align: center;
+        width: 50%;
+        padding: 1em 0;
+        justify-content: end;
+    }
+    &__btnIcon {
+        @include mixins.button( variables.$secondary_background, variables.$secondary_background, 1px, variables.$color10, 36px, 36px);
+        @include mixins.desktop-view(70px, 40px, 2rem, unset);
+    }
+    &__inputIcon {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 36px;
+        height: 36px;
+        margin-bottom: 0;
+        @include mixins.desktop-view(70px, 40px, 2rem, unset);
+    }
+    &__btnThird {
+        width: 20%;
+        @include mixins.button( variables.$secondary_background, variables.$secondary_background, 4px, variables.$color10, 52px, 36px);
+        @include mixins.desktop-view(120px, 40px, unset, unset);
+    }
+    &__h3condicional {
+        color: variables.$confirmation;
+        font-weight: bold;
+        font-size: 1rem;
+        text-align: center;
+        margin-top: 1rem;
+    }
+    &__allContainer {
+        @include mixins.order-desktop(unset, unset, unset, unset, 0 2rem);
+        display: flex;
+        justify-content: center;
+        /*  height: 100vh; */
+        align-items: center;
+    }
 }
 
 .createOrderCont {
-  @include mixins.display(flex, row, center, unset);
-  padding: 1.5rem;
-
-  &__order {
-    width: 8vw;
-    height: 4vh;
-    border: none;
-    border-radius: .5rem;
-    background-color: #224f63;
-    color: #fff;
-    text-transform: uppercase;
-    transition: background-color 0.1s ease-in-out;
-    cursor: pointer;
-
-    // @include mixins.button(
-    //   variables.$secondary_background,
-    //   variables.$secondary_background,
-    //   4px,
-    //   variables.$color10,
-    //   100px,
-    //   36px
-    // );
-    // @include mixins.desktop-view(120px, 40px, unset, unset);
-  }
-  &__order:active {
-    background-color: $secondary_background;
-  }
+    @include mixins.display(flex, row, center, unset);
+    padding: 1.5rem;
+    &__order {
+        width: 24vw;
+        height: 4vh;
+        border: none;
+        border-radius: .5rem;
+        background-color: #224f63;
+        color: #fff;
+        text-transform: uppercase;
+        transition: background-color 0.1s ease-in-out;
+        cursor: pointer;
+        // @include mixins.button(
+        //   variables.$secondary_background,
+        //   variables.$secondary_background,
+        //   4px,
+        //   variables.$color10,
+        //   100px,
+        //   36px
+        // );
+        // @include mixins.desktop-view(120px, 40px, unset, unset);
+    }
+    &__order:active {
+        background-color: $secondary_background;
+    }
 }
