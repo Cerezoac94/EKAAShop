@@ -1,12 +1,14 @@
-.wish_list_container.container {
-    padding: 1.25rem;
+//items section
+.wish_item_section.container {
+    padding: 2rem;
 }
 
-//items section
 section.wish_item_section {
-    padding: 0.625rem;
+    @include mixins.sections(unset,1rem 0,1rem, 1px solid $color1,8px);
+/*     padding: 0.625rem;
     border: 1px solid $color1;
     border-radius: 8px;
+    margin: 10px; */
 }
 
 //link
@@ -44,3 +46,5 @@ a.delete_product_btn.btn.btn-primary {
     @include mixins.button($secondary_fonts, unset, 8px, $main_background, 40%, unset, 0.75rem);
     padding: 0.313rem;
 }
+
+

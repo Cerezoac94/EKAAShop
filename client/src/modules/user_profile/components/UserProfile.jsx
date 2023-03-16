@@ -5,7 +5,7 @@ import BasicUserInfo from "./BasicUserInfo";
 
 const UserProfile = () => {
   // useMeQuery
-  const me = 15
+  const me = 1
   const { data: results = [], isLoading, error } = useGetUserByIdQuery(me)
 
   if(!error){
