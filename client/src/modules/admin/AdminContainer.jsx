@@ -10,7 +10,7 @@ import StateMap from "./components/state/StateMap";
 const AdminContainer = () => {
   const navigate = useNavigate()
   return (
-    <section>
+    <section className="accordion_section">
     <Accordion className="acordeon" defaultActiveKey={0}>
       <Accordion.Item className="panel__item" eventKey="0">
         <Accordion.Header>Categorias</Accordion.Header>
@@ -38,7 +38,9 @@ const AdminContainer = () => {
           <CreateProduct />
           <section className="formAdminProduct">
             <h3>Productos</h3>
+                <section className="product_list">
                 <ProductMap />
+                </section>
           </section>
         </Accordion.Body>
       </Accordion.Item>

@@ -24,7 +24,6 @@ const CreateCategory = () => {
   return (
     <section className="section">
       <form onSubmit={handleSubmit(submit)} className="form">
-        <h1>Categorias</h1>
         <section className="prop">
           <h3 className="prop__title">Crear Categoria</h3>
           <input {...register("name", {
