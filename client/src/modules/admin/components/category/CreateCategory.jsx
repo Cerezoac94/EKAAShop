@@ -32,7 +32,7 @@ const CreateCategory = () => {
             minLength: 4,
             maxLength: 30,
             pattern: /^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚüÜ]+([ ][a-zA-Z0-9ñÑáéíóúÁÉÍÓÚüÜ]+){0,2}$/
-           })} className="prop__input" type="text" placeholder="Escribe un nombre" />
+           })} className="prop__category_input" type="text" placeholder="Escribe un nombre" />
            {errors.name?.type === 'required' && <ErrorForm message={"Campo obligatorio"}/>
           }
           {errors.name?.type === 'minLength' && <ErrorForm message={"Mínimo 4 caracteres"}/>

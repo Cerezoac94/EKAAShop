@@ -128,6 +128,17 @@
     border-radius: $br;
 }
 
+//Forms_inputs
+@mixin form-inputs($fs,$color,$w,$m,$p,$b,$br,$bxS,$bg){
+    font-size: $fs;
+    color: $color;
+    width: $w; 
+    margin: $m;
+    padding: $p;
+    border: $b;
+    border-radius: $br;
+    box-shadow: $bxS;
+}
 
 // BREAKPOINTS usando SASS
 //uso del metodo  map-get() nos ayuda a optimizar el mixin ejemplos en Shoppingcart Y 

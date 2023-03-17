@@ -37,7 +37,7 @@ const CreateProduct = () => {
             minLength: 3,
             maxLength: 100,
             pattern: /^[a-zA-Z0-9\sáéíóúüñÁÉÍÓÚÜÑ,.]+$/ 
-           })} type="text" className="form-control" />
+           })} type="text" className="product_input" />
            {errors.name?.type === 'required' && <ErrorForm message={"Campo obligatorio"}/>
           }
           {errors.name?.type === 'minLength' && <ErrorForm message={"Mínimo 3 caracteres"}/>
@@ -53,7 +53,7 @@ const CreateProduct = () => {
             required: true,
             minLength: 15,
             pattern: /^[^<>'\"%&;()=+]*$/
-           })} type="text" className="form-control" />
+           })} type="text" className="product_input" />
            {errors.description?.type === 'required' && <ErrorForm message={"Campo obligatorio"}/>
           }
           {errors.description?.type === 'minLength' && <ErrorForm message={"Descripcitón demasiado corta"}/>
@@ -67,7 +67,7 @@ const CreateProduct = () => {
             required: true,
             pattern: /^[0-9]+(?:\.[0-9]+)?$/ 
            })}
-              type="text" className="form-control"
+              type="text" className="product_input"
             />
              {errors.price?.type === 'required' && <ErrorForm message={"Campo obligatorio"}/>
           }
@@ -80,7 +80,7 @@ const CreateProduct = () => {
             <input {...register("stock", {
             required: true,
             pattern: /^[0-9]+$/
-           })} type="text" className="form-control" />
+           })} type="text" className="product_input" />
            {errors.stock?.type === 'required' && <ErrorForm message={"Campo obligatorio"}/>
           }
           {errors.stock?.type === 'pattern' && <ErrorForm message={"Solo caracteres númericos"}/>
@@ -90,13 +90,13 @@ const CreateProduct = () => {
           {/*cuando se implemente firebase
            <div className="form-group">
             <label>Imagen:</label>
-            <input type="file"  className="form-control" />
+            <input type="file"  className="product_input" />
           </div> */}
           <div className="form-group">
             <label>Imagen url:</label>
             <input {...register("image", {
             required: true
-           })} type="text" className="form-control" />
+           })} type="text" className="product_input" />
            {errors.stock?.type === 'required' && <ErrorForm message={"Campo obligatorio"}/>
           }
           </div>

@@ -54,7 +54,7 @@ const BasicUserInfo = ({ user }) => {
 		<>
 			<Container className="basic_info_container">
 				<Form.Group className="basic_info_header">
-					<h2>Basic Info</h2>
+					<h2 className="info_title_header">Basic Info</h2>
 					<Form.Text className="basic_info_text">
 						Certain information may be visible to other people using the
 						Services
