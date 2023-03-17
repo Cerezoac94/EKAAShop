@@ -4,11 +4,7 @@ import OrderDetMap from "./OrderDetMap";
 const OrderDetContainer = () => {
   const { idOrder } = useParams();
 
-  return (
-    <section className="detalle">
-      <OrderDetMap order={idOrder} />
-    </section>
-  );
+  return <OrderDetMap order={idOrder} />;
 };
 
 export default OrderDetContainer;
