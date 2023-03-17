@@ -1,9 +1,32 @@
 // import CreateOrder from "./CreateOrder";
+import {useEffect} from "react";
 import Decrement from "../../modules/shoppinCart/components/listCart/Decrement";
 import DeleteProductCart from "../../modules/shoppinCart/components/listCart/DeleteProductCart";
 import Increment from "../../modules/shoppinCart/components/listCart/Increment";
+import { useAddProductWishMutation }  from '../../redux/service/wish.service';
+import Swal from "sweetalert2";
+const WishCart = ({ p, title  }) => {
+	const me = 1;
+	const [addProductWish, { data }] = useAddProductWishMutation();
+  
+  
+	const handledelete= (e) => {
+	  addProductWish({ idUser: me, idProduct: e }); 
+	};
+  
 
-const WishCart = ({ p, title }) => {
+	useEffect(() => {
+		if (data)
+		  Swal.fire({
+			position: "top",
+			icon: "success",
+			title: "Producto eliminado con éxito",
+			showConfirmButton: false,
+			timer: 1000,
+		  });
+	  }, [data]);
+	 
+
 	return (
 		<>
 			<section className="listCart">
@@ -60,7 +83,7 @@ const WishCart = ({ p, title }) => {
 							{/* Este btn es para eliminar de wish */}
 							{title == "Wish" && (
 								<section className="listCart__contBtnThird">
-									<button href="/" className="delete_product_btn">
+									<button onClick={() => handledelete(p.id)}  href="/" className="listCart__btn3"> 
 										Delete
 									</button>
 								</section>
