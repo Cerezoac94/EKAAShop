@@ -7,14 +7,15 @@ const UserOrdersMap = ({ me }) => {
   const { data: results = [], isLoading, error } = useGetOrderByUserQuery(me);
 
   return error ? (
-    <ErrorForm message={error.data.message} />
+    <ErrorForm message={error?.data?.message} />
   ) : isLoading ? (
     <h3>Cargando...</h3>
   ) : (
+
     <section className="listCardOrder">
       {results.results.map((order, i) => <UserOrders order={order} key={order.id} i={i+1} />)}
     </section>
-    
+  
   );
 };
 

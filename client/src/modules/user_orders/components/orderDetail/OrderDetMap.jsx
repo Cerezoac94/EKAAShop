@@ -8,7 +8,11 @@ const OrderDetMap = ({ order }) => {
   const { data: results = [], isLoading, error } = useGetOrderByIdQuery(order);
   
 
-  return error ? <ErrorForm message={error.data.message}/>:isLoading ? (
+
+
+  return error ? (
+    <ErrorForm  message={error?.data?.message}/>
+  ) : isLoading ? (
     <h3>Cargando...</h3>
   ) : (
     <section className="orderDetalle">
