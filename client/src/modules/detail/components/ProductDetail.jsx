@@ -56,7 +56,7 @@ const ProductDetail = ({ p }) => {
         <div className="quantity_dropdown">
           <h3>Quantity:</h3>
           <section>
-            <AddToCart p={p} me={1} />
+            {p.stock>0&&<AddToCart p={p} me={1} />}
           </section>
         </div>
       </section>

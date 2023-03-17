@@ -45,14 +45,15 @@
 
   &__linkStyle{
     display: flex;
+    justify-content: space-around;
     height: 100%;
-    width: 100%;
+    width: 95%;
   }
 
   &__item {
     @include mixins.display(flex, column, space-around, center);
     height: 100%;
-    width: 35%;
+    width: 40%;
     text-align: center;
   }
 
@@ -80,9 +81,15 @@
   @include mixins.display(flex, row, space-evenly, center);
   width: 75vw;
   max-width: 750px;
-  height: 30vh;
+  height: 20vh;
+  min-height: 100px;
   margin: 1rem;
   gap: 1rem;
+  background-color: variables.$card-bg;
+  border-radius: 1rem;
+  box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.2);
+  //   margin: 1.5rem;
+  overflow: hidden;
 
   &__imgCont {
     width: 70%;
@@ -93,6 +100,7 @@
 
   &__img {
     width: 100%;
+    min-width: 90px;
     border-radius: 1rem;
   }
 

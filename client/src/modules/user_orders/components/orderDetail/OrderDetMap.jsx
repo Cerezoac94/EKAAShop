@@ -16,6 +16,7 @@ const OrderDetMap = ({ order }) => {
     <h3>Cargando...</h3>
   ) : (
     <section className="orderDetalle">
+      <label className="wish_header">#Order Detail</label>
       {results.results.Order_Details.map((p, i) => (
         <OrderDetail p={p} key={i} />
       ))}
