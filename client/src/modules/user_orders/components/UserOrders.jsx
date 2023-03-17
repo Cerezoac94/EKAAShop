@@ -5,17 +5,16 @@ import { Link } from "react-router-dom";
 import CancelOrder from "./CancelOrder";
 
 const UserOrders = ({ order, i }) => {
+  // console.log("🚀 ~ file: UserOrders.jsx:8 ~ UserOrders ~ order:", order);
   // console.log("🚀 ~ file: UserOrders.jsx:8 ~ UserOrders ~ order:", order)
-  
 
   return (
-    <Link to={`/order_detail/${order.id}`}>
-      <section className="cardOrder">
+    <section className="cardOrder">
+      <Link className="cardOrder__linkStyle" to={`/order_detail/${order.id}`}>
         <section className="cardOrder__item">
           {/* <div className="cardOrder__data"> */}
           <h5>Order no: {i}</h5>
           <span>{order.orderDate.slice(0, 10)}</span>
-          {/* </div> */}
         </section>
         <section className="cardOrder__item">
           <span>{order.shipmentState}</span>
@@ -23,11 +22,10 @@ const UserOrders = ({ order, i }) => {
         <section className="cardOrder__item">
           {/* <div  className="cardOrder__data"> */}
           <h5>Total: ${order.total}</h5>
-          <button>View</button>
-          {/* </div> */}
         </section>
-      </section>
-    </Link>
+      </Link>
+      {order.shipmentState != "enviado" && <CancelOrder me={1} />}
+    </section>
   );
 
   // return (
