@@ -5,7 +5,6 @@ const ShoppingCartContainer = () => {
   return (
     <>
       <ListCartMap me={1} />
-      {/* <CreateOrder me={1} /> */}
     </>
   );
 };

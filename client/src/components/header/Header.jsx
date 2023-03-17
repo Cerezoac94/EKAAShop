@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 import UserMenu from "./UserMenu";
 import Image from "react-bootstrap/esm/Image";
 import { useMeQuery } from "../../redux/service/session.service";
-// import CategoryContainer from "./Categories/CategoryContainer";
 
 const Header = () => {
   const { data:results=[], isLoading, error } = useMeQuery()

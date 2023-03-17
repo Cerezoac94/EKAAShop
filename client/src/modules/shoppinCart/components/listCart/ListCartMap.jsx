@@ -5,7 +5,6 @@ import CreateOrder from "./CreateOrder";
 
 const ListCartMap = ({ me }) => {
   const { data: results = [], error, isLoading } = useGetCartQuery(me);
-console.log(results);
   return error ? (
     <ErrorForm message={error.data.message} />
   ) : isLoading ? (
