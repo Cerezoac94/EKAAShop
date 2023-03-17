@@ -10,7 +10,7 @@ class CartController {
 
         include: [
           { model: Product,
-          attributes: ['name', 'description', 'price', 'stock', 'image'] }
+          attributes: ['id','name', 'description', 'price', 'stock', 'image'] }
         ]
       });
       if (results.Products.length === 0) throw "No products in Cart";

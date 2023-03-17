@@ -1,19 +1,16 @@
-import Button from "react-bootstrap/Button";
-import Container from "react-bootstrap/Container";
-import Nav from "react-bootstrap/Nav";
-import Navbar from "react-bootstrap/Navbar";
-import Offcanvas from "react-bootstrap/Offcanvas";
+import { Nav, Navbar, Offcanvas, Container, Button} from "react-bootstrap";
 import logo from "../../assets/LOGO.svg";
 import new_logo from "../../assets/new_logo.svg";
 import { Link } from "react-router-dom";
 import UserMenu from "./UserMenu";
-import UserLoginMenu from "./UserLoginMenu";
 import Image from "react-bootstrap/esm/Image";
-import Search from "./Search";
+import { useMeQuery } from "../../redux/service/session.service";
 // import CategoryContainer from "./Categories/CategoryContainer";
 
 const Header = () => {
-  return (
+  const { data:results=[], isLoading, error } = useMeQuery()
+  return isLoading ? ( <h3>Cargando...</h3> 
+  ) : (
     <header>
       <Navbar expand="md" sticky="top">
         <Container fluid className="navbar_style">
@@ -21,15 +18,20 @@ const Header = () => {
           <Link to="/" className="logo_link_home">
             <Image src={new_logo} alt="logo_home" className="logo_home" />
           </Link>
-          <div className="user_actions_container_mobile">
+           {!error ? 
+           (<section className="user_actions_container_mobile">
+          
           <Button href="/wish_list" className="user_menu_btn">
                     <ion-icon name="heart-outline"></ion-icon>
                   </Button>
             <Button href="/cart" className="user_menu_btn">
               <ion-icon name="cart-outline"></ion-icon>
             </Button>
-            <UserMenu />
-          </div>
+            <UserMenu me={results.result} />
+          </section>
+          ): (
+            <UserMenu/>
+          )}
           <Navbar.Offcanvas
             id={`offcanvasNavbar-expand-md`}
             aria-labelledby={`offcanvasNavbarLabel-expand-md`}
@@ -57,16 +59,19 @@ const Header = () => {
                 <Link to="/accessories" className="nav_menu_links">
                   Accessories
                 </Link>
-                <div className="user_actions_container_desktop">
+                {!error ? (
+                <section className="user_actions_container_desktop">
                 <Button href="/wish_list" className="user_menu_btn">
                     <ion-icon name="heart-outline"></ion-icon>
                   </Button>
                   <Button href="/cart" className="user_menu_btn">
                     <ion-icon name="cart-outline"></ion-icon>
                   </Button>
-                  {/* <UserLoginMenu /> */}
-                  <UserMenu />
-                </div>
+                   <UserMenu me={results.result}/>
+                </section> 
+                ): (
+                  <UserMenu/>
+                )}
               </Nav>
             </Offcanvas.Body>
           </Navbar.Offcanvas>
