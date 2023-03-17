@@ -11,9 +11,9 @@ const ProductsMap = () => {
 	) : isLoading ? (
 		<h3>Cargando...</h3>
 	) : (
-		<Container className="productContainer">
+		<section className="productContainer">
 		{results?.results?.map((product) => <Product product={product} key={product.id}/>)}
-		</Container>
+		</section>
 	);
 };
 
