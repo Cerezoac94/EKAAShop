@@ -5,9 +5,6 @@ import { Link } from "react-router-dom";
 import CancelOrder from "./CancelOrder";
 
 const UserOrders = ({ order, i }) => {
-  // console.log("🚀 ~ file: UserOrders.jsx:8 ~ UserOrders ~ order:", order);
-  // console.log("🚀 ~ file: UserOrders.jsx:8 ~ UserOrders ~ order:", order)
-
   return (
     <section className="cardOrder">
       <Link className="cardOrder__linkStyle" to={`/order_detail/${order.id}`}>
@@ -19,12 +16,11 @@ const UserOrders = ({ order, i }) => {
         <section className="cardOrder__item">
           <span>{order.shipmentState}</span>
         </section>
-        <section className="cardOrder__item">
-          {/* <div  className="cardOrder__data"> */}
-          <h5>Total: ${order.total}</h5>
-        </section>
       </Link>
-      {order.shipmentState != "enviado" && <CancelOrder me={1} />}
+      <section className="cardOrder__item">
+        <h5>Total: ${order.total}</h5>
+        {order.shipmentState != "enviado" && <CancelOrder me={1} />}
+      </section>
     </section>
   );
 

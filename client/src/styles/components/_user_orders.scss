@@ -81,7 +81,7 @@ section.cancel_order_button {
 }
 
 .cancel_user_order {
-    @include mixins.button($secondary_fonts, unset, 8px, $main_background, unset, unset, unset);
+    @include mixins.button($secondary_fonts, unset,1rem, $main_background, unset, unset, unset);
 }
 
 @media only screen and (min-width: 768px) {

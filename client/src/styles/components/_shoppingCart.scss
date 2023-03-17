@@ -31,10 +31,9 @@
         justify-content: center;
         background-color: variables.$card-bg;
         width: 30rem;
-        margin: 2rem auto;
         border-radius: 1rem;
         box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.2);
-        margin: 1.5rem;
+        margin: 1.5rem 0;
         overflow: hidden;
         width: 30rem;
         height: 19rem;
@@ -164,6 +163,8 @@
     &__order {
         width: 24vw;
         height: 4vh;
+        min-width: 95px;
+        min-height: 28px;
         border: none;
         border-radius: .5rem;
         background-color: #224f63;

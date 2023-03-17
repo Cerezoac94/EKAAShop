@@ -2,14 +2,9 @@ import { useEffect } from "react"
 import { useForm } from "react-hook-form"
 import { useNavigate } from "react-router-dom"
 import Swal from "sweetalert2"
-import { useCreateOrderMutation } from "../../../../redux/service/order.service"
-
-
-
-
+import { useCreateOrderMutation } from "../../redux/service/order.service"
 
 const CreateOrder = ({me}) => {
-    // console.log("🚀 ~ file: CreateOrder.jsx:6 ~ CreateOrder ~ me:", me)
     const [createOrder, {data}]= useCreateOrderMutation()
     const {handleSubmit,register}= useForm()
     const navigate = useNavigate();
@@ -30,7 +25,7 @@ const CreateOrder = ({me}) => {
         });
   
         timeout = setTimeout(() => {
-          navigate("/");
+          navigate("/orders");
         }, 1200);
       }
       return () => clearTimeout(timeout);
@@ -40,7 +35,6 @@ const CreateOrder = ({me}) => {
   return (
     <form className='createOrderCont'onSubmit={handleSubmit(submit)}>
         <input {...register("id")} className="createOrderCont__order" type="submit" value="Crear Order" />
-        <h2>Total</h2>
     </form>
     
   )
