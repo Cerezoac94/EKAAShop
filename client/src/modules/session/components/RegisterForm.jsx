@@ -303,7 +303,7 @@ const RegisterForm = () => {
         <label className="session_footer">
           Already have an account?  
           <Link to="/login" className="to_session">
-            <span> Sign in here</span>
+            <span> Sign in here!</span>
           </Link>
         </label>
 

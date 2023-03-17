@@ -26,7 +26,7 @@ const CreateProduct = () => {
 
   return (
     <section className="createProduct">
-      <h1>Productos</h1>
+      <h1>Productos.</h1>
         <form onSubmit={handleSubmit(submit)} className="formAdminProduct">
         
           <section className="form-group">
@@ -101,11 +101,11 @@ const CreateProduct = () => {
           }
           </div>
           <section className="form-group">
-            <label>Category:</label>
+            <label>Category: </label>
             <select {...register("idCategory",{
             required: true}
             )} className="form-select" id="category" title="Seleccionar">
-            <option>Selecciona una categoría</option>
+            <option>Selecciona una categoría </option>
             <CategoryMap select={1}/>
             </select>
             {errors.stock?.type === 'required' && <ErrorForm message={"Campo obligatorio"}/>

@@ -51,7 +51,8 @@
     transform: scale(0.95);
   }
 
-  &__input:focus {
+  &__category_input:focus,
+  &__state_input:focus {
     border: 2px solid grey;
   }
 

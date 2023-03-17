@@ -116,7 +116,7 @@ const LoginForm = () => {
 								name="information-circle-outline"
 								className="info_circle"
 							></ion-icon>
-							Mínimo 8 caracteres
+							Mínimo 8 caracteres.
 						</Form.Text>
 					)}
 				</Form.Group>
