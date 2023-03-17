@@ -14,17 +14,17 @@ import sessionRoutes from "./session/session.routes.js";
 
 const routes = Router();
 
-routes.use("/product", productRoutes);
 routes.use("/user", userRoutes);
-routes.use("/wish", wishRoutes);
-routes.use("/state", stateRoutes);
-routes.use("/role", roleRoutes);
+routes.use("/product", productRoutes);
 routes.use("/category", categoryRoutes);
-routes.use("/order", orderRoutes);
 routes.use('/cart', cartRoutes);
+routes.use("/order", orderRoutes);
+routes.use("/wish", wishRoutes);
+routes.use('/discount', discountRoutes);
 routes.use('/review', reviewRoutes);
 routes.use('/card', cardRoutes);
-routes.use('/discount', discountRoutes);
+routes.use("/state", stateRoutes);
+routes.use("/role", roleRoutes);
 routes.use('/session', sessionRoutes)
 
 export default routes;
