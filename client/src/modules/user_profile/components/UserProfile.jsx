@@ -13,7 +13,7 @@ const UserProfile = () => {
   ):(
     <Container fluid className="user_profile_container">
       <section className="profile_header">
-        <h1>Welcome {`${results.results.firstName}`} </h1>
+        <label className="profile_welcome_label">¡Welcome {`${results.results.firstName}`}!</label>
       </section>
       <section>
         <BasicUserInfo user={results.results}/>

@@ -49,7 +49,7 @@ const RegisterForm = () => {
     >
       <Form onSubmit={handleSubmit(submit)} className="session_form">
         <Form.Group className="session_form_header">
-          <Form.Label className="session_header_title">
+          <Form.Label className="session_header_title register_header">
             Welcome to EKAAShop
           </Form.Label>
           <Form.Label className="session_header_legend">

@@ -41,11 +41,10 @@ label.admin_label {
     }
 
 }
-
+label.profile_welcome_label{
+    @include mixins.labels($secondary_dark,2.5rem,600, 0 0 0.5rem, unset,unset)
+}
 h2.basic_label {
-    font-size: 2rem;
-    font-weight: 600;
-    margin: 0;
     @include mixins.labels($main_fonts, 2rem, 600, 0, unset, unset);
 }
 
@@ -98,8 +97,9 @@ label.input_label.form-label {
     align-items: center;
 }
 
-.section_container {
+.btn_section_container {
     @include mixins.display(flex, row, center, center);
+    margin-top: 2rem;
 }
 
 .select {
@@ -120,13 +120,27 @@ input.profile_input.form-control {
 }
 
 //edit button
-button#button-addon2.edit_btn {
-
-    @include mixins.button(unset, none, unset, $bg_btn1, 20%, unset, 2.5rem);
-    padding: 0;
-    /* @include mixins.button-hover(); */
+button.update_btn.btn.btn-primary,
+button.cancel_btn.btn.btn-primary,
+button.edit_btn.btn.btn-primary {
+    @include mixins.button($main_fonts, none, 8px, #fff, 50%, unset, 1.5rem);
+    padding: 1.2rem 2.4rem;
+    text-transform: uppercase;
+    transition: background-color 0.2s ease-in-out;
+    @include mixins.button-hover($secondary_background, #fff);
 
     @include mixins.media-up(md) {
-        font-size: 1.8rem;
+        width: 25%;
+        font-size: 1rem;
+    }
+    @include mixins.media-up(xl) {
+        width: 20%;
+        font-size: 1.2rem;
+    }
+}
+button.edit_btn.btn.btn-primary{
+    @include mixins.media-up(md) {
+        width: 30%;
+        font-size: 1.2rem;
     }
 }

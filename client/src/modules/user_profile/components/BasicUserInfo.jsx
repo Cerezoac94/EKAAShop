@@ -221,18 +221,18 @@ const BasicUserInfo = ({ user }) => {
 				</Form.Group>
 			</Container>
 
-			<section className="section_container">
+			<section className="btn_section_container">
 				{edit ? (<>
 						<Button
 							onClick={handleSubmit(submit)}
 							variant="primary"
-							className="register_btn">
+							className="update_btn">
 							Actualizar
 						</Button>
 						<Button
 							onClick={() => handleEdit()}
 							variant="primary"
-							className="register_btn">
+							className="cancel_btn">
 							Cancelar
 						</Button>
 					</>
@@ -240,7 +240,7 @@ const BasicUserInfo = ({ user }) => {
 					<Button
 						onClick={() => handleEdit()}
 						variant="primary"
-						className="register_btn">
+						className="edit_btn">
 						Editar info
 					</Button>
 				)}

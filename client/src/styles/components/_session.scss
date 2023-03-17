@@ -3,38 +3,76 @@
     min-height: 100vh;
 }
 
-.session_form {
+form.session_form {
     @include mixins.display(flex,column,unset,stretch);
-    width: 81vw;
+    width: 80vw;
     background: #fff;
     border-radius: 8px;
     padding: 24px 16px;
+    @include mixins.media-up(sm){
+        width:70vw;
+    }
+    @include mixins.media-up(md){
+        width:55vw;
+    }
+    @include mixins.media-up(lg){
+        width:50vw;
+    }
+    @include mixins.media-up(xl){
+        width:35vw;
+    }
+   
 }
 
 .session_form_header {
 @include mixins.display(flex,column,center,center);   
-margin-bottom: 2.5rem;
+margin: 3rem 0;
 }
 
 label.session_header_title.form-label {
     @include mixins.labels($secondary_fonts,2.4rem,600,0,0,unset);
 }
+
+//register
+label.session_header_title.register_header.form-label {
+    @include mixins.media-up(sm){
+        font-size: 3rem;
+    }
+    @include mixins.media-up(md){
+        font-size: 2rem;
+    }
+}
+
+//login_header
 label.session_header_title.login_title.form-label {
     @include mixins.labels($secondary_fonts,4.5rem,600,0,0,unset);
-
+    @include mixins.media-up(md){
+        font-size: 3.5rem;
+    }
 }
 
 label.session_header_legend.form-label {
-    @include mixins.labels($color2,1.2rem,100,0,0,unset);    
+    @include mixins.labels($color2,1.2rem,100,0,0,unset); 
+    @include mixins.media-up(sm){
+        font-size: 1.4rem;
+    }   
+    @include mixins.media-up(md){
+        font-size: 1rem;
+    }  
 }
 label.loggin_inputs_label.form-label {
-    @include mixins.basic_fonts($main_dark,1.4rem,0.5rem,0 1rem,unset);
+    @include mixins.basic_fonts($main_dark,1.4rem,unset,0 1rem,unset);
 }
 
 input#formBasicUser,input#formBasicName,
 input#formBasicLastName,input#formBasicEmail,
 input#formBasicPassword {
-    @include mixins.form-inputs(1.5rem,$secondary_dark,100%,0,1rem,1px solid $color8,8px,unset,unset );
+    @include mixins.form-inputs(1.5rem,$secondary_dark,100%,0.5rem 0,1rem,1px solid $color8,8px,unset,unset );
+    @include mixins.media-up(md){
+        font-size: 1.2rem;
+        padding: 0.5rem;
+        margin: 0;
+    }  
 }
 
 .session_header_legend {
@@ -60,15 +98,25 @@ input#formBasicPassword {
 
 button.session_btn.btn.btn-primary {
     @include mixins.button($color8,none,8px,#fff,100%,unset,1.6rem);
-    margin: 0.938rem 0;
+    margin: 1rem 0;
     padding: 1rem 0;
     text-transform: uppercase;
     transition: background-color 0.2s ease-in-out;
-    @include mixins.button-hover($secondary_background,#fff)
+    @include mixins.button-hover($secondary_background,#fff);
+    @include mixins.media-up(md){
+        font-size: 1.2rem;
+        margin: 2.5rem 0 1rem;
+        padding: 0.5rem 0;
+    }
+    
 }
 
 label.session_footer {
     @include mixins.basic_fonts($color2,1.4rem,unset,unset,center);
+    @include mixins.media-up(md){
+        font-size: 1.2rem;
+    }  
+
 }
 a.to_session{
     color: $secondary_dark;
