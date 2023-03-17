@@ -3,7 +3,6 @@ import { Link,  useNavigate } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import Container from "react-bootstrap/Container";
-//import logo from "../../assets/LOGO.svg";
 import bg_mobile from "../../../assets/low-poly-grid-haikei_desktop.svg";
 import { useForm } from "react-hook-form";
 import { useLoginMutation } from "../../../redux/service/session.service";
@@ -44,17 +43,17 @@ const LoginForm = () => {
 				backgroundRepeat: "no-repeat",
 				backgroundSize: "cover",
 			}}
-			className="login_form_container"
+			className="session_form_container"
 		>
-			<Form onSubmit={handleSubmit(submit)} className="login_form">
-				<Form.Group className="login_form_header">
-					<Form.Label className="login_header_title">Login</Form.Label>
-					<Form.Label className="login_header_legend">
+			<Form onSubmit={handleSubmit(submit)} className="session_form">
+				<Form.Group className="session_form_header">
+					<Form.Label className="session_header_title login_title">Login</Form.Label>
+					<Form.Label className="session_header_legend">
 						Enter your credentials
 					</Form.Label>
 				</Form.Group>
 				<Form.Group className="mb-3" controlId="formBasicEmail">
-					<Form.Label>Username or email</Form.Label>
+					<Form.Label className="loggin_inputs_label">Username or email</Form.Label>
 					<Form.Control
 						{...register("userEmail", {
 							required: true,
@@ -93,7 +92,7 @@ const LoginForm = () => {
 					)}
 				</Form.Group>
 				<Form.Group className="mb-3" controlId="formBasicPassword">
-					<Form.Label>Password</Form.Label>
+					<Form.Label className="loggin_inputs_label">Password</Form.Label>
 					<Form.Control
 						{...register("password", {
 							required: true,
@@ -117,17 +116,17 @@ const LoginForm = () => {
 								name="information-circle-outline"
 								className="info_circle"
 							></ion-icon>
-							Mínimo 8 caracteres
+							Mínimo 8 caracteres.
 						</Form.Text>
 					)}
 				</Form.Group>
-				<Button variant="primary" type="submit" className="login_btn">
+				<Button variant="primary" type="submit" className="session_btn">
 					Login
 				</Button>
-				{/* <label className="login_footer">Forgotten your password? Reset password</label> */}
-				<span className="login_footer">
-				Don't have an account?<Link to="/register"><span>Register here</span></Link>
-				</span>
+				{/* <label className="session_footer">Forgotten your password? Reset password</label> */}
+				<label className="session_footer">
+				Don't have an account?<Link to="/register"><span> Register here</span></Link>
+				</label>
 				{error && (
 					<Form.Text className="text-muted">
 						<ion-icon

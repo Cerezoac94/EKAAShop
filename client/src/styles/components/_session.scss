@@ -1,0 +1,85 @@
+.session_form_container {
+    @include mixins.display(flex,column,center,center);
+    min-height: 100vh;
+}
+
+.session_form {
+    @include mixins.display(flex,column,unset,stretch);
+    width: 81vw;
+    background: #fff;
+    border-radius: 8px;
+    padding: 24px 16px;
+}
+
+.session_form_header {
+@include mixins.display(flex,column,center,center);   
+margin-bottom: 2.5rem;
+}
+
+label.session_header_title.form-label {
+    @include mixins.labels($secondary_fonts,2.4rem,600,0,0,unset);
+}
+label.session_header_title.login_title.form-label {
+    @include mixins.labels($secondary_fonts,4.5rem,600,0,0,unset);
+
+}
+
+label.session_header_legend.form-label {
+    @include mixins.labels($color2,1.2rem,100,0,0,unset);    
+}
+label.loggin_inputs_label.form-label {
+    @include mixins.basic_fonts($main_dark,1.4rem,0.5rem,0 1rem,unset);
+}
+
+input#formBasicUser,input#formBasicName,
+input#formBasicLastName,input#formBasicEmail,
+input#formBasicPassword {
+    @include mixins.form-inputs(1.5rem,$secondary_dark,100%,0,1rem,1px solid $color8,8px,unset,unset );
+}
+
+.session_header_legend {
+    font-size: 1.2rem;
+}
+
+/* .form-control{
+    padding: .5rem 0.5rem;
+    height: 2.5rem  !important;
+}
+ */
+.text-muted.form-text {
+    display: inline-flex;
+    align-items: center;
+    color: $color6 !important;
+    font-size: 1.2rem;
+}
+.info_circle.md.hydrated {
+    color: $main_dark;
+    margin-right: 0.313rem;
+    font-size: 1.25rem;
+}
+
+button.session_btn.btn.btn-primary {
+    @include mixins.button($color8,none,8px,#fff,100%,unset,1.6rem);
+    margin: 0.938rem 0;
+    padding: 1rem 0;
+    text-transform: uppercase;
+    transition: background-color 0.2s ease-in-out;
+    @include mixins.button-hover($secondary_background,#fff)
+}
+
+label.session_footer {
+    @include mixins.basic_fonts($color2,1.4rem,unset,unset,center);
+}
+a.to_session{
+    color: $secondary_dark;
+    font-style: italic;
+}
+
+.session_footer_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 1.875rem 0;
+}
+

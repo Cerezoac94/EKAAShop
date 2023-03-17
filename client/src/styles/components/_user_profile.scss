@@ -1,23 +1,27 @@
 @use "../abstracts/mixins";
 
 .user_profile_container {
-	padding: 20px;
+    padding: 20px;
 }
 
 //Header_profile
 .profile_header {
-    @include mixins.display(flex,column,center,center);
+    @include mixins.display(flex, column, center, center);
     margin-bottom: 1.25rem;
 }
+
 label.welcome_label {
-    @include mixins.labels($main_dark,2.5rem,600,unset,unset,unset);
-    @include mixins.media-up(md){
+    @include mixins.labels($main_dark, 2.5rem, 600, unset, unset, unset);
+
+    @include mixins.media-up(md) {
         font-size: 1.8rem
     }
 }
+
 label.admin_label {
-    @include mixins.labels($third_background,1.5rem,unset,unset,unset,unset);
-    @include mixins.media-up(md){
+    @include mixins.labels($third_background, 1.5rem, unset, unset, unset, unset);
+
+    @include mixins.media-up(md) {
         font-size: 1.4rem
     }
 }
@@ -27,50 +31,63 @@ label.admin_label {
     padding: 20px;
     border: 2px solid $color8;
     border-radius: 8px;
-    @include mixins.media-up(md){
+
+    @include mixins.media-up(md) {
         width: 60vw;
-     }
-    @include mixins.media-up(xl){
-       width: 50vw;
+    }
+
+    @include mixins.media-up(xl) {
+        width: 50vw;
     }
 
 }
+
 h2.basic_label {
     font-size: 2rem;
     font-weight: 600;
     margin: 0;
-    @include mixins.labels($main_fonts,2rem,600,0,unset,unset);
+    @include mixins.labels($main_fonts, 2rem, 600, 0, unset, unset);
 }
+
 small.basic_info_text.form-text {
-    @include mixins.basic_fonts($color5,1.2rem,unset,unset,justify);
-    @include mixins.media-up(md){
+    @include mixins.basic_fonts($color5, 1.2rem, unset, unset, justify);
+
+    @include mixins.media-up(md) {
         font-size: 1rem
     }
 }
+
 .basic_info_header {
-    @include mixins.display(flex,column,unset,stretch);
+    @include mixins.display(flex, column, unset, stretch);
     margin-bottom: 1.25rem;
 }
+
+h2.info_title_header {
+    color: $main_dark;
+}
+
 .basic_info_text {
-	text-align: justify;
+    text-align: justify;
 }
 
 //Form group
 .profile_info {
-	border-bottom: 1px solid $main_dark;
-	margin-bottom: 0.938rem;
+    border-bottom: 1px solid $main_dark;
+    margin-bottom: 0.938rem;
 }
 
 //input group
-label.input_label.form-label{
-        margin: 0;
+label.input_label.form-label {
+    margin: 0;
+    font-size: 1rem;
+
+    @include mixins.media-up(md) {
+        font-size: 1rem;
+    }
+
+    @include mixins.media-up(xl) {
         font-size: 1.2rem;
-        @include mixins.media-up(md){
-            font-size: 1rem;
-         }
-        @include mixins.media-up(xl){
-           font-size: 1.2rem;
-        }
+    }
 }
 
 /* TODO: remove margin from input group,
@@ -82,27 +99,34 @@ label.input_label.form-label{
 }
 
 .section_container {
-	@include mixins.display(flex, row, center, center);
+    @include mixins.display(flex, row, center, center);
 }
 
 .select {
-	border: none;
+    border: none;
 }
 
 input.profile_input.form-control {
-
+    @include mixins.basic_fonts($main_fonts, 1.4rem, unset, 0.313rem 0, -webkit-auto);
+    background: none;
     border: none;
     border-radius: 0;
     box-shadow: none;
-    @include mixins.basic_fonts($main_fonts,1.4rem,unset,0.313rem 0,-webkit-auto);
+
+    @include mixins.media-up(md) {
+        font-size: 1.6rem;
+    }
+
 }
 
 //edit button
 button#button-addon2.edit_btn {
 
-    @include mixins.button(unset,none,unset,$bg_btn1,20%,unset,2.5rem);
+    @include mixins.button(unset, none, unset, $bg_btn1, 20%, unset, 2.5rem);
     padding: 0;
-    @include mixins.media-up(md){
+    /* @include mixins.button-hover(); */
+
+    @include mixins.media-up(md) {
         font-size: 1.8rem;
-     }
+    }
 }
