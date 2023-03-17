@@ -17,9 +17,10 @@ const Header = () => {
           <Link to="/" className="logo_link_home">
             <Image src={new_logo} alt="logo_home" className="logo_home" />
           </Link>
-           {!error ? 
-           (<section className="user_actions_container_mobile">
-          
+           <section className="user_actions_container_mobile">
+            {!error ? 
+           (
+          <>
           <Button href="/wish_list" className="user_menu_btn">
                     <ion-icon name="heart-outline"></ion-icon>
                   </Button>
@@ -27,10 +28,11 @@ const Header = () => {
               <ion-icon name="cart-outline"></ion-icon>
             </Button>
             <UserMenu me={results.result} />
-          </section>
+          </>
           ): (
             <UserMenu/>
           )}
+          </section>
           <Navbar.Offcanvas
             id={`offcanvasNavbar-expand-md`}
             aria-labelledby={`offcanvasNavbarLabel-expand-md`}
@@ -58,8 +60,9 @@ const Header = () => {
                 <Link to="/accessories" className="nav_menu_links">
                   Accessories
                 </Link>
-                {!error ? (
-                <section className="user_actions_container_desktop">
+                 <section className="user_actions_container_desktop">
+                  {!error ? (
+               <>
                 <Button href="/wish_list" className="user_menu_btn">
                     <ion-icon name="heart-outline"></ion-icon>
                   </Button>
@@ -67,10 +70,11 @@ const Header = () => {
                     <ion-icon name="cart-outline"></ion-icon>
                   </Button>
                    <UserMenu me={results.result}/>
-                </section> 
+                </>
                 ): (
                   <UserMenu/>
                 )}
+                </section> 
               </Nav>
             </Offcanvas.Body>
           </Navbar.Offcanvas>
