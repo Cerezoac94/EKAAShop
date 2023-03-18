@@ -5,9 +5,9 @@ import authMe from "../../middleware/authMe.js";
 
 const stateRoutes = Router();
 
-// stateRoutes.use(authMe);
+stateRoutes.use(authMe);
 stateRoutes.get("/", StateController.getAllStates);
-// stateRoutes.use(authAdmin);
+stateRoutes.use(authAdmin);
 stateRoutes.post("/", StateController.createState);
 stateRoutes.put("/:id", StateController.updateState);
 stateRoutes.delete("/:id", StateController.deleteState);

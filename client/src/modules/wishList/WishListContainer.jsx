@@ -1,10 +1,20 @@
-import React from 'react'
-import WishProductsListMap from './components/WishProductsListMap.jsx'
+import WishProductsListMap from "./components/WishProductsListMap.jsx";
+import { useMeQuery } from "../../redux/service/session.service.jsx";
+import { useNavigate } from "react-router-dom";
 
 const WishListContainer = () => {
-  return (
-    <WishProductsListMap me={1}/>
-  )
-}
+	const { data: me, isLoading, error } = useMeQuery();
+	const navigate = useNavigate();
 
-export default WishListContainer
+	if (!error) {
+		return isLoading ? (
+			<h3>Cargando...</h3>
+		) : (
+			<WishProductsListMap me={me.result.id} />
+		);
+	}else{
+    navigate("/")
+  }
+};
+
+export default WishListContainer;

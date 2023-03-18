@@ -7,8 +7,8 @@ const IsAdmin = () => {
   return isLoading ? (
     <h3>Cargando...</h3>
   ) : (
-    // data?.result.role == 1 ? <Outlet />: <Navigate to="/" replace={true}  />
-    data && <Outlet />
+    data?.result.role == 1 ? <Outlet />: <Navigate to="/" replace={true}  />
+    // data && <Outlet />
   );
 }
 

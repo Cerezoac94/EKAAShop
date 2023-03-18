@@ -1,5 +1,4 @@
 import { useGetWishQuery } from "../../../redux/service/wish.service.jsx";
-//import WishProductsList from "./WishProductsList.jsx";
 import ErrorFetch from "../../../components/errors/ErrorFetch";
 import WishCart from "../../../components/wishCart/WishCart.jsx";
 import Container from "react-bootstrap/Container";
@@ -12,7 +11,7 @@ const WishListMap = ({ me }) => {
       <Container className="wish_item_section">
 		<label className="wish_header">#WishList</label>
         {results?.results?.Products?.map((p) => (
-          <WishCart p={p} title={"Wish"} key={p.id} />
+          <WishCart p={p} title={"Wish"} me={me} key={p.id} />
         ))}
       </Container>
     );

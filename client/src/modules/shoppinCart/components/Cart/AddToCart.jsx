@@ -11,7 +11,15 @@ const AddToCart = ({ p, me }) => {
   const { register, handleSubmit, reset } = useForm();
 
   const submit = (e) => {
-    return addToCart({ id: me, idProduct: p.id, ...e });
+    me ?  (addToCart({ id: me, idProduct: p.id, ...e })
+    ) : (
+      Swal.fire({
+        position: "top",
+        icon: "error",
+        title: "You must register to add products to your cart",
+        showConfirmButton: true
+      })
+    )
   };
   const increment = () => {
     qty < p.stock
@@ -36,7 +44,6 @@ const AddToCart = ({ p, me }) => {
 
   useEffect(() => {
     reset({ qty });
-    // console.log("🚀 ~ file: AddToCart.jsx:31 ~ useEffect ~ reset:", reset)
   }, [qty, reset]);
 
   useEffect(() => {

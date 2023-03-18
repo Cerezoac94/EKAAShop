@@ -10,7 +10,6 @@ const Increment = ({ p, me }) => {
   const submit = (e) => {
     if (p.Cart_Product.quantity < p.stock) {
         increment({ idCart: me, idProduct: p.Cart_Product.idProduct, ...e });
-        
       } else {
         Swal.fire({
           icon: "error",

@@ -1,6 +1,5 @@
 import React from "react";
 import Container from "react-bootstrap/Container";
-import about_background from '../../assets/blob-scene-haikei_about.svg'
 const About = () => {
   return (
     <Container fluid className="about_us_container">

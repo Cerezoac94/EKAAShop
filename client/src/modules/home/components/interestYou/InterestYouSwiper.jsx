@@ -1,7 +1,5 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import "swiper/css/pagination";
 import { Pagination, Navigation } from "swiper";
 import { useGetAllProductsQuery } from "../../../../redux/service/product.service";
 

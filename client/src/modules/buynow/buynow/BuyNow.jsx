@@ -16,7 +16,7 @@ const Buynow = () => {
         </div>
         <div className="BuyNow__desc">
           <h3>Visa****9495</h3>
-          <label htmlFor="">Eugenia Ramirez Salinas</label>
+          <label>Eugenia Ramirez Salinas</label>
           <span> Vence el 07/26</span>
         </div>
       </article>
@@ -26,7 +26,7 @@ const Buynow = () => {
         </div>
         <div className="BuyNow__desc">
           <h3>Pago en efectivo</h3>
-          <label htmlFor="">Paga antes de las 72 horas</label>
+          <label>Paga antes de las 72 horas</label>
           <span> Paga en OXX0, 7-Eleven, +5 tiendas</span>
         </div>
       </article>

@@ -16,17 +16,16 @@ import Cooler from "../pages/Cooler";
 import Accessories from "../pages/Accessories";
 import CategoryMutationContainer from "../modules/admin/components/category/mutationCategory/MutationCategoryContainer";
 import ProductMutationContainer from "../modules/admin/components/product/mutationProduct/ProductMutationContainer";
-
 import OrdersListMap from "../modules/admin/components/order/OrdersListMap";
 import OrderDetail from "../modules/admin/components/order/orderDetail/OrderDetail";
 import UserOrders from "../pages/UserOrders";
-import BuyNow from "../pages/BuyNow";
-import OrderDetContainer from "../modules/user_orders/components/orderDetail/OrderDetContainer";
+import OrderDetailMap from "../modules/user_orders/components/orderDetail/OrderDetailMap";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
+    errorElement: <h1>error</h1> ,
     children: [
       {
         path: "/",
@@ -64,10 +63,10 @@ const router = createBrowserRouter([
         path: "/cart",
         element: <ShoppingCart />,
       },
-      {
-        path: "/buynow",
-        element: <BuyNow />,
-      },
+      // {
+      //   path: "/buynow",
+      //   element: <BuyNow />,
+      // },
       {
         path: "/wish_list",
         element: <WishList />,
@@ -82,7 +81,7 @@ const router = createBrowserRouter([
       },
       {
         path:'/order_detail/:idOrder',
-        element: <OrderDetContainer/>
+        element: <OrderDetailMap/>
       },
 
       // TODO: RUTAS PARA ADMIN

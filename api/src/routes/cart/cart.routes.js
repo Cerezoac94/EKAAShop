@@ -4,7 +4,7 @@ import authMe from "../../middleware/authMe.js";
 
 const cartRoutes = Router()
 
-// cartRoutes.use(authMe)
+cartRoutes.use(authMe)
 cartRoutes.get('/:id', CartController.getCart)
 cartRoutes.post('/:idUser', CartController.addProductCart)
 cartRoutes.put('/increment/:idCart/:idProduct', CartController.incrementProductCart)

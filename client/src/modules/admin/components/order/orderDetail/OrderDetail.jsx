@@ -1,9 +1,8 @@
 import { useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import Button from "react-bootstrap/Button";
-import Table from "react-bootstrap/Table";
+import { Button, Table }from "react-bootstrap";
 import { useGetOrderByIdQuery } from "../../../../../redux/service/order.service";
-import OrderProductsDetailMap from "./OrderProductsDetailMap";
+import OrderProductsDetail from "./OrderProductsDetail";
 import { useUpdateOrderMutation } from "../../../../../redux/service/order.service";
 import Swal from "sweetalert2";
 
@@ -11,7 +10,7 @@ const OrderDetail = () => {
 	const { id } = useParams();
 	const { data: results = [], isLoading, error } = useGetOrderByIdQuery(id);
 	const [update, { isLoading: loading, isSuccess }] = useUpdateOrderMutation();
-	const navigate = useNavigate()
+	const navigate = useNavigate();
 	const handleClick = (idOrder) => {
 		update({ idOrder, shipmentState: "enviado" });
 	};
@@ -54,7 +53,7 @@ const OrderDetail = () => {
 								<th>Price</th>
 							</tr>
 							{results.results.Order_Details.map((product, key) => (
-								<OrderProductsDetailMap product={product} key={key} />
+								<OrderProductsDetail product={product} key={key} />
 							))}
 						</tbody>
 					</Table>
