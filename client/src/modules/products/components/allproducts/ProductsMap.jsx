@@ -1,6 +1,5 @@
 import { useGetAllProductsQuery } from "../../../../redux/service/product.service";
 import Product from "../presentacional/Product";
-import Container from 'react-bootstrap/Container'
 
 
 const ProductsMap = () => {

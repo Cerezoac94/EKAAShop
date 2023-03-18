@@ -19,7 +19,7 @@ const UserOrders = ({ order, i }) => {
       </Link>
       <section className="cardOrder__item">
         <h5>Total: ${order.total}</h5>
-        {order.shipmentState != "enviado" && <CancelOrder me={1} />}
+        {order.shipmentState != "enviado" && <CancelOrder idOrder={order.id} />}
       </section>
     </section>
   );
