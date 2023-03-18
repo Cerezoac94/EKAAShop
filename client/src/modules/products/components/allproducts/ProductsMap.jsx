@@ -1,7 +1,6 @@
 import { useGetAllProductsQuery } from "../../../../redux/service/product.service";
 import Product from "../presentacional/Product";
 
-
 const ProductsMap = () => {
 	const { data: results = [], isLoading, error } = useGetAllProductsQuery();	
 	

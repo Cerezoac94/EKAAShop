@@ -14,7 +14,7 @@ const UserOrdersMap = ({ me }) => {
 
     <section className="listCardOrder">
       <label className="wish_header">#My Orders</label>
-      {results.results.map((order, i) => <UserOrders order={order} key={order.id} i={i+1} />)}
+      {results.results.map((order, i) => <UserOrders order={ order } key={ order.id } i={ i+1 } />)}
     </section>
   
   );
