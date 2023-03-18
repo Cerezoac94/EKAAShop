@@ -1,4 +1,3 @@
-import React from 'react'
 import AdminContainer from '../modules/admin/AdminContainer'
 
 const Admin = () => {
