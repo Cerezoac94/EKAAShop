@@ -7,11 +7,11 @@ html {
     }
 }
 
-body,
- :root {
+body, #root {
     font-family: var(--font-poppins);
     display: flex;
     flex-direction: column;
+    width: 100vw;
     min-height: 100vh;
 }
 

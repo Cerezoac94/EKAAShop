@@ -2,7 +2,9 @@ import BannerOffersMap from "./components/bannerOffers/BannerOffersMap"
 import InterestYouSwiper from "./components/interestYou/InterestYouSwiper"
 import KeepBuyingMap from "./components/keepBuying/KeepBuyingMap"
 import ReviewsClient from "./components/reviewsClient/ReviewsClient"
-import SlideHomeMap from "./components/slideHome/SlideHomeMap" 
+import ReviewsClientMap from "./components/reviewsClient/ReviewsClientMap"
+import SlideHomeSwipe from "./components/slideHome/SlideHomeSwipe"
+// import SlideHomeMap from "./components/slideHome/SlideHomeMap" 
 import Warranty from "./components/warranty/Warranty"
 import { useMeQuery } from "../../redux/service/session.service"
 
@@ -11,7 +13,8 @@ const HomeContainer = () => {
   return (
 
     <>
-      <SlideHomeMap/>
+      {/* <SlideHomeMap/> */}
+      <SlideHomeSwipe/>
       <Warranty/>
       <InterestYouSwiper/>
       <BannerOffersMap/>

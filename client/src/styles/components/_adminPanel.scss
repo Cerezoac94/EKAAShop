@@ -2,16 +2,32 @@
 
 .adminPage {
   position: relative;
-  @include mixins.display(flex, unset, center, unset);
-  height: 100vh;
+  @include mixins.display(flex, unset, center, flex-start);
+  padding: 2rem;
 }
 
+//Acordeon
+section.accordion_section {
+  @include mixins.display(flex,column,unset,center)
+}
 .acordeon {
   @include mixins.display(flex, column, unset, stretch);
   z-index: 1;
   width: 80vw;
   margin-top: 2rem;
 }
+
+button.accordion-button.collapsed{
+  font-size: 1.5rem;
+  color: $secondary_dark;
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: $secondary_background;
+  font-size: 1.5rem;
+  color: #fff;
+}
+
 
 .section {
   @include mixins.display(flex, column, space-between, stretch);
@@ -22,13 +38,16 @@
   @include mixins.display(flex, column, space-between, flex-start);
   height: 60%;
 }
+label.admin_title{
+  @include mixins.labels($secondary_dark,3rem,600,unset,unset,unset);
+}
 
 .prop {
   @include mixins.display(flex, column, center, flex-start);
-  width: 50%;
+  width: 100%;
   height: 100%;
   gap: 1rem;
-  margin: 2rem 0 0 0;
+
 
 
   &__category_input,
@@ -57,14 +76,14 @@
   }
 
   &__button {
-
+/* @include mixins.button($secondary, ) */
     min-width: 150px;
     height: 3rem;
     border: none;
     border-radius: 8px;
     background: $secondary;
     color: $main_background;
-    margin-top: 2rem;
+    margin-top: 1rem;
     padding: .8rem;
   }
 }
@@ -85,7 +104,15 @@
   border-radius: 4px;
   box-shadow: #3C99BA;
 }
-
+a.product_name_list{
+  text-align: justify;
+}
+a.product_name_list:hover{
+  color:$color6;
+}
+section.product_list{
+  column-count: 2;
+}
 /* .updateProduct {} */
 
 .card-header {
