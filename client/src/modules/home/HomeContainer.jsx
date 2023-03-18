@@ -2,7 +2,6 @@ import BannerOffersMap from "./components/bannerOffers/BannerOffersMap"
 import InterestYouSwiper from "./components/interestYou/InterestYouSwiper"
 import KeepBuyingMap from "./components/keepBuying/KeepBuyingMap"
 import ReviewsClient from "./components/reviewsClient/ReviewsClient"
-import SlideHomeSwipe from "./components/slideHome/SlideHomeSwipe"
 import Warranty from "./components/warranty/Warranty"
 import { useMeQuery } from "../../redux/service/session.service"
 

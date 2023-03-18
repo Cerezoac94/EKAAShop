@@ -1,72 +1,92 @@
 @use "../base/variables";
 @use "../abstracts/mixins";
 
-
+.swiper {
+  justify-content: center;
+}
 
 .slide {
   display: flex;
-  justify-content: space-around;
+  width: 100vw;
+  justify-content: space-evenly;
   align-items: center;
+  @media (min-width:978px) {
+    justify-content: center;
+}
 
-
-  &__nameProduct{
-    // display: flex;
-    // flex-direction: column;
-    // justify-content: center;
-    // align-items: center;
-    // height: 100%;
-  }
-  &__name{
+  &__nameProduct {
     display: flex;
     flex-direction: column;
     width: 35vw;
-    font-size: 3rem;
-    font-weight: 500;
-  }
-  &__font{
-    // font-size: x-large;
-  }
-  &__btn {
-    // @include mixins.button(variables.$color9, variables.$color10, 10px,  variables.$color10, 55px, 30px, 12px);
-    // @include mixins.button-hover(variables.$color10, variables.$color9);
-    // @include mixins.desktop-view(85px, 37px, 1rem);
+    height: 10vh;
+    justify-content: space-evenly;
+
+    @media (min-width:978px) {
+        display: flex;
+        width: 30vw;
+        height: 10vh;
     }
-}
-.imgSlide{
-    width: 35%;
-    // min-width: 100px;
-    max-width: 470px;
-    // min-width: 150px;
-}
 
+    
+  }
+  &__name {
+    display: flex;
+    flex-direction: column;
+    width: 35vw;
+    font-size: 1.2rem;
+    font-weight: 600;
+    @media (min-width:978px) {
+      font-size: 2.0rem;
+  }
+  }
+  &__botons {
+    display: flex;
+    // flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: 5vh;
+    gap: 1rem;
+  }
 
-// .slideHome {
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-//     &__img {
-//         height: 150px;
-//         width: 150px;
-//         @include mixins.desktop-view(250px, 250px)
-//     }
-//     &__btn {
-//         @include mixins.button(variables.$color9, variables.$color10, 10px,  variables.$color10, 55px, 30px, 12px);
-//         @include mixins.button-hover(variables.$color10, variables.$color9);
-//         @include mixins.desktop-view(85px, 37px, 1rem)
-//     }
-//     &__btn2 {
-//         @include mixins.button(variables.$color9, variables.$color10, 10px, variables.$color10, 55px, 30px, 12px);
-//         @include mixins.button-hover(variables.$color9, variables.$color10);
-//         @include mixins.desktop-view(85px, 37px, 1rem)
-//     }
-//     &__text {
-//         display: flex;
-//         flex-direction: column;
-//         width: 180px;
-//         font-weight: bold;
-//         font-size: 1em;
-//         @include mixins.desktop-view(1010px, unset, 2.98em);
-//         margin-bottom: 1rem;
-//         @include mixins.margins-desk(2rem, unset);
-//     }
-// }
+  &__btn {
+    @include mixins.button(
+      variables.$color9,
+      variables.$color10,
+      .5rem,
+      variables.$color10,
+      5rem,
+      30px,
+      9px
+    );
+    @include mixins.button-hover(variables.$color9, variables.$color10);
+    @include mixins.desktop-view(130px, 45px, 1rem);
+    
+  }
+  &__btn:active{
+    border: 1px solid black;
+    color: black;
+  }
+
+  &__btn2 {
+    @include mixins.button(
+      variables.$color9,
+      variables.$color10,
+      .5rem,
+      variables.$color10,
+      5rem,
+      30px,
+      9px
+    );
+    @include mixins.button-hover(variables.$color9, variables.$color10);
+    @include mixins.desktop-view(130px, 45px, 1rem);
+  }
+  &__btn2:active{
+    border: 1px solid black;
+    color: black;
+  }
+  &__imgSlide {
+    width: 30%;
+    max-width: 420px;
+    
+  }
+}
