@@ -5,8 +5,8 @@ import authMe from "../../middleware/authMe.js";
 
 const roleRoutes = Router();
 
-// roleRoutes.use(authMe);
-// roleRoutes.use(authAdmin);
+roleRoutes.use(authMe);
+roleRoutes.use(authAdmin);
 roleRoutes.post("/", RoleController.createRole);
 roleRoutes.get("/", RoleController.getAllRoles);
 roleRoutes.put("/:id", RoleController.updateRole);
