@@ -1,20 +1,25 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import Container from "react-bootstrap/esm/Container";
 import Image from "react-bootstrap/Image";
 import Swal from "sweetalert2";
+import { useMeQuery } from "../../../redux/service/session.service";
 import { useAddProductWishMutation } from "../../../redux/service/wish.service";
 import InterestYouSwiper from "../../home/components/interestYou/InterestYouSwiper";
 import AddToCart from "../../shoppinCart/components/Cart/AddToCart";
 
 const ProductDetail = ({ p }) => {
-  // console.log("🚀 ~ file: ProductDetail.jsx:9 ~ ProductDetail ~ p:", p);
-  // TODO: refactoriza useMeQuery
-  const me = 1;
+  const { data:me, error} = useMeQuery();
   const [addProductWish, { data }] = useAddProductWishMutation();
-
-
   const clicked = (e) => {
-    addProductWish({ idUser: me, idProduct: e });
+    !error ? (addProductWish({ idUser: me.result.id, idProduct: e })
+    ) : (
+      Swal.fire({
+        position: "top",
+        icon: "error",
+        title: "You must register to add products to your wish",
+        showConfirmButton: true
+      })
+    )
   };
 
   useEffect(() => {
@@ -56,7 +61,7 @@ const ProductDetail = ({ p }) => {
         <div className="quantity_dropdown">
           <h3>Quantity:</h3>
           <section>
-            {p.stock>0&&<AddToCart p={p} me={1} />}
+            {p.stock > 0 && !error ? (<AddToCart p={p} me={me.result.id} />) : (<AddToCart p={p} />)}
           </section>
         </div>
       </section>

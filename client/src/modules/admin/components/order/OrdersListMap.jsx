@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import OrderList from './OrdersList'
 import { useGetAllOrdersQuery } from '../../../../redux/service/order.service';
 

@@ -1,4 +1,3 @@
-import React from 'react'
 import ShoppingCartContainer from '../modules/shoppinCart/ShoppingCartContainer'
 
 const ShoppingCart = () => {

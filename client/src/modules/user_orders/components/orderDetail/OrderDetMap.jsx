@@ -1,28 +1,26 @@
-import ErrorForm from "../../../../components/errors/ErrorForm";
-import { useGetOrderByIdQuery } from "../../../../redux/service/order.service";
+// import ErrorForm from "../../../../components/errors/ErrorForm";
+// import { useGetOrderByIdQuery } from "../../../../redux/service/order.service";
+// import OrderDetail from "./OrderDetail";
 
-import CancelOrder from "../CancelOrder";
-import OrderDetail from "./OrderDetail";
-
-const OrderDetMap = ({ order }) => {
-  const { data: results = [], isLoading, error } = useGetOrderByIdQuery(order);
+// const OrderDetMap = ({ order }) => {
+//   const { data: results = [], isLoading, error } = useGetOrderByIdQuery(order);
   
 
 
 
-  return error ? (
-    <ErrorForm  message={error?.data?.message}/>
-  ) : isLoading ? (
-    <h3>Cargando...</h3>
-  ) : (
-    <section className="orderDetalle">
-      <label className="wish_header">#Order Detail</label>
-      {results.results.Order_Details.map((p, i) => (
-        <OrderDetail p={p} key={i} />
-      ))}
+//   return error ? (
+//     <ErrorForm  message={error?.data?.message}/>
+//   ) : isLoading ? (
+//     <h3>Cargando...</h3>
+//   ) : (
+//     <section className="orderDetalle">
+//       <label className="wish_header">#Order Detail</label>
+//       {results.results.Order_Details.map((p, i) => (
+//         <OrderDetail p={p} key={i} />
+//       ))}
             
-    </section>
-  );
-};
+//     </section>
+//   );
+// };
 
-export default OrderDetMap;
+// export default OrderDetMap;

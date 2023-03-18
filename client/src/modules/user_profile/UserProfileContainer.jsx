@@ -1,10 +1,16 @@
-import React from 'react'
-import UserProfile from './components/UserProfile'
+import UserProfile from "./components/UserProfile";
+import { useMeQuery } from "../../redux/service/session.service";
+import { useNavigate } from "react-router-dom";
 
 const UserProfileContainer = () => {
-  return (
-    <UserProfile/>
-  )
-}
+	const { data: me, isLoading, error } = useMeQuery();
+	const navigate = useNavigate();
 
-export default UserProfileContainer
+	if (!error) {
+		return isLoading ? <h3>Cargando...</h3> : <UserProfile me={me.result.id} />;
+	}else{
+    navigate("/")
+  }
+};
+
+export default UserProfileContainer;

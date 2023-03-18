@@ -20,8 +20,6 @@ const RegisterForm = () => {
   } = useForm();
 
   const submit = (data) => create(data);
-  // console.log(data);
-  console.log(error);
   useEffect(() => {
     if (data) {
       Swal.fire({

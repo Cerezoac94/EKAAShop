@@ -5,8 +5,7 @@ import DeleteProductCart from "../../modules/shoppinCart/components/listCart/Del
 import Increment from "../../modules/shoppinCart/components/listCart/Increment";
 import { useAddProductWishMutation }  from '../../redux/service/wish.service';
 import Swal from "sweetalert2";
-const WishCart = ({ p, title  }) => {
-	const me = 1;
+const WishCart = ({ p, title, me  }) => {
 	const [addProductWish, { data }] = useAddProductWishMutation();
   
   
@@ -37,11 +36,11 @@ const WishCart = ({ p, title  }) => {
 							<img src={p.image} className="listCart__img" alt={p.name} />
 							{title == "Cart" && (
 								<div className="listCart__contBtn">
-									<Decrement p={p} me={1} />
+									<Decrement p={p} me={me} />
 									<p className="listCart__inputIcon">
 										{p.Cart_Product.quantity}
 									</p>
-									<Increment p={p} me={1} />
+									<Increment p={p} me={me} />
 								</div>
 							)}
 						</div>
@@ -68,7 +67,7 @@ const WishCart = ({ p, title  }) => {
 							{title == "Cart" && (
 								<div className=" listCart__pay">
 									<div className="listCart__contBtnThird">
-										<DeleteProductCart me={1} p={p} />
+										<DeleteProductCart me={me} p={p} />
 									</div>
 									<div>
 										<h4 className="listCart__h2">
@@ -83,7 +82,7 @@ const WishCart = ({ p, title  }) => {
 							{/* Este btn es para eliminar de wish */}
 							{title == "Wish" && (
 								<section className="listCart__contBtnThird">
-									<button onClick={() => handledelete(p.id)}  href="/" className="listCart__btn3"> 
+									<button onClick={() => handledelete(p.id)}className="listCart__btn3"> 
 										Delete
 									</button>
 								</section>

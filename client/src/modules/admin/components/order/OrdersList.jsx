@@ -27,9 +27,9 @@ const OrderList = ({ data, handleSearch, handleSelect }) => {
 						<th>Order #</th>
 						<th>Order date</th>
 						<th>Paid</th>
-						<th>Shipment</th>
-						<th>total</th>
-						<th>action</th>
+						<th>Shipment state</th>
+						<th>Total</th>
+						<th>Action</th>
 					</tr>
 
 					{data.map((item) => (

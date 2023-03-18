@@ -7,7 +7,7 @@ import Swal from 'sweetalert2'
 const CreateCategory = () => {
   const [create,  { error, data }] = useCreateCategoryMutation()
   
-  const { register, handleSubmit, watch, formState: { errors } } = useForm();
+  const { register, handleSubmit, formState: { errors } } = useForm();
 
   const submit = (data) => create(data)
 

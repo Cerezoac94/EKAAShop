@@ -6,14 +6,12 @@ import DrinkwareMap from "./components/categories/drinkware/DrinkwareMap";
 export const AllProductsContainer = () => {
   return (
     <ProductsMap />
-    // este llamará al componente Productsmap
   );
 };
 
 export const DrinkwareContainer = () => {
   return (
     <DrinkwareMap />
-    // este llamará al componente drinkwaremap
   );
 };
 
