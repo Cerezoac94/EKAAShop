@@ -10,7 +10,7 @@ const UserOrders = ({ order, i }) => {
       <Link className="cardOrder__linkStyle" to={`/order_detail/${order.id}`}>
         <section className="cardOrder__item">
           {/* <div className="cardOrder__data"> */}
-          <h5>Order no: {i}</h5>
+          <h5>Order no: { i }</h5>
           <span>{order.orderDate.slice(0, 10)}</span>
         </section>
         <section className="cardOrder__item">
