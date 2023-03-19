@@ -1,13 +1,14 @@
 import UserProfile from "./components/UserProfile";
 import { useMeQuery } from "../../redux/service/session.service";
 import { useNavigate } from "react-router-dom";
+import Loading from "../../components/loading/Loading";
 
 const UserProfileContainer = () => {
 	const { data: me, isLoading, error } = useMeQuery();
 	const navigate = useNavigate();
 
 	if (!error) {
-		return isLoading ? <h3>Cargando...</h3> : <UserProfile me={me.result.id} />;
+		return isLoading ? <Loading/> : <UserProfile me={me.result.id} />;
 	}else{
     navigate("/")
   }

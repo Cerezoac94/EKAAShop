@@ -1,3 +1,4 @@
+import Loading from "../../../../components/loading/Loading";
 import { useGetWishQuery } from "../../../../redux/service/wish.service";
 import KeepBuying from "./KeepBuying";
 
@@ -5,7 +6,7 @@ const KeepBuyingMap = ({ me }) => {
 	const { data: results = [], isLoading, error } = useGetWishQuery(me);
   if(!error) {
     return isLoading ? (
-      <h3>Cargando...</h3>
+      <Loading/>
     ) : (
       results?.results.Products.length > 0 && (
         <section>

@@ -1,8 +1,6 @@
 import { useAddProductCartMutation } from "../../../../redux/service/cart.service";
 import { useForm } from "react-hook-form";
 import { useState, useEffect } from "react";
-import PlusSvg from "./plusSvg";
-import MenusSvg from "./MenusSVG";
 import Swal from "sweetalert2";
 
 const AddToCart = ({ p, me }) => {
@@ -11,15 +9,14 @@ const AddToCart = ({ p, me }) => {
   const { register, handleSubmit, reset } = useForm();
 
   const submit = (e) => {
-    me ?  (addToCart({ id: me, idProduct: p.id, ...e })
-    ) : (
-      Swal.fire({
-        position: "top",
-        icon: "error",
-        title: "You must register to add products to your cart",
-        showConfirmButton: true
-      })
-    )
+    me
+      ? addToCart({ id: me, idProduct: p.id, ...e })
+      : Swal.fire({
+          position: "top",
+          icon: "error",
+          title: "You must register to add products to your cart",
+          showConfirmButton: true,
+        });
   };
   const increment = () => {
     qty < p.stock
@@ -27,7 +24,7 @@ const AddToCart = ({ p, me }) => {
       : Swal.fire({
           icon: "error",
           title: "Oops...",
-          text: "No hay producto en Stock",
+          text: "No hay suficiente producto en Stock",
         });
   };
   const decrement = () => {
@@ -61,10 +58,9 @@ const AddToCart = ({ p, me }) => {
   return (
     <form className="add">
       <section className="add__container">
-        
         <section>
           <button className="add__plusAction" type="button" onClick={decrement}>
-            <MenusSvg />
+            <ion-icon name="remove-outline"></ion-icon>
           </button>
         </section>
 
@@ -72,7 +68,7 @@ const AddToCart = ({ p, me }) => {
 
         <section>
           <button className="add__plusAction" type="button" onClick={increment}>
-            <PlusSvg />
+            <ion-icon name="add-outline"></ion-icon>
           </button>
         </section>
       </section>

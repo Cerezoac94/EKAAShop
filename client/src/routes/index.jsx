@@ -20,6 +20,7 @@ import OrdersListMap from "../modules/admin/components/order/OrdersListMap";
 import OrderDetail from "../modules/admin/components/order/orderDetail/OrderDetail";
 import UserOrders from "../pages/UserOrders";
 import OrderDetailMap from "../modules/user_orders/components/orderDetail/OrderDetailMap";
+import Loading from "../components/loading/Loading";
 
 const router = createBrowserRouter([
   {

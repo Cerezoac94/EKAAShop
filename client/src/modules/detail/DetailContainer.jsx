@@ -1,3 +1,4 @@
+import Loading from "../../components/loading/Loading";
 import { useGetProductByIdQuery } from "../../redux/service/product.service";
 import ProductDetail from "./components/ProductDetail";
 
@@ -7,7 +8,7 @@ const DetailContainer = ({ id }) => {
   return error ? (
     <h3>{error.data.message}</h3>
   ) : isLoading ? (
-    <h3>Cargando</h3>
+    <Loading/>
   ) : (
    <ProductDetail p={results.results}/>
   );

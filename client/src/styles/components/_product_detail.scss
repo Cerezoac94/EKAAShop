@@ -136,6 +136,18 @@ label.stock_item {
         margin-bottom: 1.5rem;
     }
 }
+label.out_stock_item{
+    font-size: 2rem;
+    color: red;
+    @include mixins.media-up(md) {
+        font-size: 1.2rem;
+        margin: 0;
+    }
+    @include mixins.media-up(xl) {
+        font-size: 1.8rem;
+        margin-bottom: 1.5rem;
+    }    
+}
 
 //actions_buttons
 .action_products_btns_section {
