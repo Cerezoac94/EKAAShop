@@ -1,3 +1,4 @@
+import Loading from "../../../../components/loading/Loading";
 import { useGetAllCategoryQuery } from "../../../../redux/service/category.service";
 import Category from "./Category";
 import CategoryOption from "./CategoryOption";
@@ -7,7 +8,7 @@ const CategoryMap = ({ select }) => {
  if(!error) {
 	return !select ? (
 		isLoading ? (
-			<h3>Cargando...</h3>
+			<Loading/>
 		) : (
 			results.length != 0 &&
 			results.results.map((category) => (

@@ -1,3 +1,4 @@
+import Loading from "../../../../../components/loading/Loading";
 import { useGetProductByCategoryQuery } from "../../../../../redux/service/product.service";
 import Product from "../../presentacional/Product";
 
@@ -6,7 +7,7 @@ const AccessoriesMap = () => {
   return error ? (
     <h3>{error?.data?.message}</h3>
   ) : isLoading ? (
-    <h3>Cargando...</h3>
+    <Loading/>
   ) : (
     <section className="productContainer">
       {results?.results[0]?.Products?.map((p) => <Product product={p} key={p.id} />)}

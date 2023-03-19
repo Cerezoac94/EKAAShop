@@ -1,0 +1,27 @@
+@use "../base/variables";
+@use "../abstracts/mixins";
+
+
+.loading{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+
+    &__figure{
+        width: 252px;
+        height: 252px;
+        border: 28px solid $secondary_background;
+        border-radius: 270px;
+        border-top-color: $color6;
+        animation: load 1s infinite;
+    }
+}
+
+@keyframes load {
+    to{
+        transform:rotate(360deg);
+    }
+    
+}

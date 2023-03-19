@@ -1,3 +1,4 @@
+import Loading from "../../../../components/loading/Loading";
 import { useGetAllProductsQuery } from "../../../../redux/service/product.service";
 import Product from "./Product";
 
@@ -6,7 +7,7 @@ const ProductMap = () => {
 
   if(!error) {
   return isLoading ? (
-    <h3>Cargando...</h3>
+    <Loading/>
   ) : (
     
     results.results.map((product) => (

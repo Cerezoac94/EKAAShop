@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { useGetAllProductsQuery} from "../../../../redux/service/product.service";
 import "swiper/scss";
 import AddtoCartHome from "./AddtoCartHome";
+import Loading from "../../../../components/loading/Loading";
 
 const SlideHomeSwipe = () => {
   const { data: results = [], isLoading, error } = useGetAllProductsQuery();
@@ -12,7 +13,7 @@ const SlideHomeSwipe = () => {
   return error ? (
     error?.message
   ) : isLoading ? (
-    <h3>Cargando...</h3>
+    <Loading/>
   ) : (
     <Swiper
       className="myswiper"

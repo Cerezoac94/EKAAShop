@@ -1,3 +1,4 @@
+import Loading from "../../../../components/loading/Loading";
 import { useGetAllStatesQuery } from "../../../../redux/service/state.service";
 import State from "./State";
 import StateOption from "./StateOption";
@@ -7,7 +8,7 @@ const StateMap = ({ select }) => {
 	if (!error) {
 		return !select ? (
 			isLoading ? (
-				<h3>Cargando...</h3>
+				<Loading/>
 			) : (
 				results.length != 0 &&
 				results?.results?.map((state) => <State state={state} key={state.id} />)

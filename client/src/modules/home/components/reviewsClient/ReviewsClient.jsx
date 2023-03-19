@@ -1,11 +1,12 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Navigation } from "swiper";
 import { useGetAllReviewsQuery } from "../../../../redux/service/review.service";
+import Loading from "../../../../components/loading/Loading";
 const ReviewsClient = ({ e }) => {
 	const { data: results = [], isLoading, error } = useGetAllReviewsQuery();
 	if (!error) {
 		return isLoading ? (
-			<h3>cargandoo.</h3>
+			<Loading/>
 		) : (
 			results.length != 0 && (
 				<Swiper

@@ -2,11 +2,12 @@ import { useGetWishQuery } from "../../../redux/service/wish.service.jsx";
 import ErrorFetch from "../../../components/errors/ErrorFetch";
 import WishCart from "../../../components/wishCart/WishCart.jsx";
 import Container from "react-bootstrap/Container";
+import Loading from "../../../components/loading/Loading.jsx";
 const WishListMap = ({ me }) => {
   const { data: results, isLoading, error } = useGetWishQuery(me);
   if (!error) {
     return isLoading ? (
-      <h3>Cargando...</h3>
+      <Loading/>
     ) : (
       <Container className="wish_item_section">
 		<label className="wish_header">#WishList</label>
