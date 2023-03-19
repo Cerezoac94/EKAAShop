@@ -8,18 +8,19 @@ import InterestYouSwiper from "../../home/components/interestYou/InterestYouSwip
 import AddToCart from "../../shoppinCart/components/Cart/AddToCart";
 
 const ProductDetail = ({ p }) => {
-  const { data:me, error} = useMeQuery();
+  const { data: me, error } = useMeQuery();
+  
   const [addProductWish, { data }] = useAddProductWishMutation();
+
   const clicked = (e) => {
-    !error ? (addProductWish({ idUser: me.result.id, idProduct: e })
-    ) : (
-      Swal.fire({
-        position: "top",
-        icon: "error",
-        title: "You must register to add products to your wish",
-        showConfirmButton: true
-      })
-    )
+    !error
+      ? addProductWish({ idUser: me.result.id, idProduct: e })
+      : Swal.fire({
+          position: "top",
+          icon: "error",
+          title: "You must register to add products to your wish",
+          showConfirmButton: true,
+        });
   };
 
   useEffect(() => {
@@ -51,7 +52,9 @@ const ProductDetail = ({ p }) => {
       </section>
 
       <section className="buying_info_section">
-        <label className="product_price"><sup className="currency">MXN</sup>${p.price}</label>
+        <label className="product_price">
+          <sup className="currency">MXN</sup>${p.price}
+        </label>
         {p.stock > 0 ? (
           <label className="stock_item">In Stock</label>
         ) : (
@@ -59,9 +62,13 @@ const ProductDetail = ({ p }) => {
         )}
 
         <div className="quantity_dropdown">
-          <h3>Quantity:</h3>
+          <h5>Quantity aviable: {p.stock}</h5>
           <section>
-            {p.stock > 0 && !error ? (<AddToCart p={p} me={me.result.id} />) : (<AddToCart p={p} />)}
+            {p.stock === 0 ? undefined :p.stock > 0 && !error ? (
+              <AddToCart p={p} me={me.result.id} />
+            ) : (
+              <AddToCart p={p} />
+            )}
           </section>
         </div>
       </section>

@@ -1,4 +1,5 @@
 import { useAddProductCartMutation } from "../../../../redux/service/cart.service";
+
 import { useForm } from "react-hook-form";
 import { useState, useEffect } from "react";
 import PlusSvg from "./plusSvg";
@@ -27,7 +28,7 @@ const AddToCart = ({ p, me }) => {
       : Swal.fire({
           icon: "error",
           title: "Oops...",
-          text: "No hay producto en Stock",
+          text: "No hay suficiente producto en Stock",
         });
   };
   const decrement = () => {
