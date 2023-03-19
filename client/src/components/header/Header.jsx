@@ -5,10 +5,11 @@ import { Link } from "react-router-dom";
 import UserMenu from "./UserMenu";
 import Image from "react-bootstrap/esm/Image";
 import { useMeQuery } from "../../redux/service/session.service";
+import Loading from "../loading/Loading";
 
 const Header = () => {
   const { data:results=[], isLoading, error } = useMeQuery()
-  return isLoading ? ( <h3>Cargando...</h3> 
+  return isLoading ? ( <Loading/> 
   ) : (
     <header>
       <Navbar expand="md" sticky="top">

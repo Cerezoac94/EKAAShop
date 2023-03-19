@@ -5,6 +5,7 @@ import ReviewsClient from "./components/reviewsClient/ReviewsClient"
 import Warranty from "./components/warranty/Warranty"
 import { useMeQuery } from "../../redux/service/session.service"
 import SlideHomeSwipe from "./components/slideHome/SlideHomeSwipe"
+import Loading from "../../components/loading/Loading"
 
 const HomeContainer = () => {
   const { data: me, isLoading, error } = useMeQuery()
@@ -17,7 +18,7 @@ const HomeContainer = () => {
       <InterestYouSwiper/>
       <BannerOffersMap/>
       <ReviewsClient/>
-     { isLoading ? ( <h3>Cargando...</h3>
+     { isLoading ? ( <Loading/>
      ) : ( !error && <KeepBuyingMap me={me.result.id}/> ) }
 </>
   )

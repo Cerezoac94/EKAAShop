@@ -2,12 +2,13 @@ import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Navigation } from "swiper";
 import { useGetAllProductsQuery } from "../../../../redux/service/product.service";
+import Loading from "../../../../components/loading/Loading";
 
 const InterestYouSwiper = () => {
   const  {data:results= [], isLoading, error } = useGetAllProductsQuery();
   if(!error){
     return isLoading ? (
-      <h3>Cargando...</h3>
+      <Loading/>
     ) : ( results.length != 0 && ( 	<Swiper
 			slidesPerView={3}
 			spaceBetween={30}

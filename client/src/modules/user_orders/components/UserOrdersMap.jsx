@@ -2,6 +2,7 @@ import React from "react";
 import UserOrders from "./UserOrders";
 import { useGetOrderByUserQuery } from "../../../redux/service/order.service";
 import ErrorForm from "../../../components/errors/ErrorForm";
+import Loading from "../../../components/loading/Loading";
 
 const UserOrdersMap = ({ me }) => {
   const { data: results = [], isLoading, error } = useGetOrderByUserQuery(me);
@@ -9,7 +10,7 @@ const UserOrdersMap = ({ me }) => {
   return error ? (
     <ErrorForm message={error?.data?.message} />
   ) : isLoading ? (
-    <h3>Cargando...</h3>
+    <Loading/>
   ) : (
 
     <section className="listCardOrder">
