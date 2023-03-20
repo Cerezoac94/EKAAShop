@@ -1,19 +1,20 @@
-*{
+/* *{
     box-sizing: border-box;
     margin: 0;
     padding: 0;
     font-family: 'Poppins', sans-serif;
 }
+ */
 
-li{
+li {
     list-style: none;
 }
 
-a{
+a {
     text-decoration: none;
 }
 
-buttons{
+buttons {
     border: none;
     background-color: none;
     font-family: var(--font-poppins);

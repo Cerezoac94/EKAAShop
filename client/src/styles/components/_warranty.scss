@@ -1,7 +1,10 @@
 @use '../base/variables';
 @use '../abstracts/mixins';
 .warranty {
-    margin-top: 1rem;
+    margin: 2rem 2rem;
+    padding: 1rem;
+    background-color: variables.$card-bg;
+    border-radius: 3rem;
     &__options {
         display: flex;
         justify-content: space-evenly;
