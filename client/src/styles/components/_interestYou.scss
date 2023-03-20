@@ -1,49 +1,83 @@
 @use '../base/variables';
 @use '../abstracts/mixins';
 .interestYou {
-    &__img {
+    &__productsContainer {
         width: 100%;
-        height: auto;
+        height: 70%;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 40px;
     }
-    &__description {
+    &__product {
+        position: relative;
+        /*  background-color: variables.$card-bg; */
+        /*  border: 3px solid #0A3F58; */
+        border: 2px solid #3C99BA;
+        width: 300px;
+        height: 100%;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, .3);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 20px, 20px, 40px;
+        border-radius: 10px;
+        transition: .3s;
+        @include mixins.media-up(lg) {
+            width: 30rem;
+        }
+        p {
+            font-size: 1.5em;
+            line-height: 25px;
+            padding: .5em;
+        }
+        span {
+            margin: 0 2em;
+        }
+    }
+    &__imagen {
         width: 100%;
-    }
-    &__text {
-        background-color: variables.$main_background;
-        /* height: 170px; */
-        text-align: left;
+        height: 60%;
         display: grid;
-        padding: 0.8rem 0.8rem;
-        margin-bottom: 0.5rem;
+        place-items: center;
+        padding: 2em 2em;
     }
-/*     &__label {}
-    &__priceItem {}
-    &__stockitem {}
-}
-
-.swiper {}
-
- */
-/* .mySwiper {
-    border: 1px solid red;
-    width: 375px;
-    @include mixins.desktop-swiperTwo(1000px);
-}
- */
-
-
-/* .might_like_item_body {
-    background-color: $main_background;
-    padding: 1rem 0.625rem;
-    color: $main_fonts;
-}
-.might_like_item_details {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-
- */
+    &__img {
+        width: 15rem;
+        border-radius: 2rem;
+    }
+    &__namePrice {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        padding: 2em;
+        h3 {
+            font-size: 2em;
+            text-transform: capitalize;
+            color: variables.$main_dark;
+            @include mixins.media-up(lg) {
+                font-size: 1.3em;
+            }
+        }
+        span {
+            font-size: 1.5em;
+            color: $color6;
+        }
+    }
+    &__start {
+        font-size: 1.7em;
+        color: variables.$color11;
+        margin: 0 1em;
+    }
+    &__buy {
+        position: absolute;
+        bottom: 10px;
+        right: 20px;
+        button {
+            @include mixins.button(variables.$main_dark, unset, 7px, variables.$color10, 8em, unset, 1.2em);
+            text-transform: capitalize;
+            cursor: pointer;
+            transition: .5s;
+        }
+    }
 }

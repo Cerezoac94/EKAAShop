@@ -12,19 +12,15 @@ html {
     @include mixins.media-up( md) {
         font-size: 100%;
     }
-    height: 100%;
+    height: 100vh;
 }
 
-//, #root
-body {
+body,
+#root {
     font-family: var(--font-poppins);
-    /*    width: 100vw; */
-    /*     min-height: 100vh; */
 }
 
 .main-container {
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-    overflow: auto;
+    min-height: 100vh;
+    margin-bottom: 5rem;
 }

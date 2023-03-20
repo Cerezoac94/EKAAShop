@@ -40,28 +40,33 @@ const InterestYouSwiper = () => {
       {results?.results?.slice(0,10).map(e => {
 					return (
 			<SwiperSlide key={e.id}>
-				<section className="interestYou">
-					<article className="interestYou__description">
-						<div>
+				<section className="interestYou"> 
+				<div className="interestYou__productsContainer">
+					<div className="interestYou__product">
+						<figure className="interestYou__imagen">
 							<img className="interestYou__img" src={e.image} alt={e.name}/>
-						</div>
+						</figure>
 
-						<div className="interestYou__text">
-							<label htmlFor="name" className="interestYou__label">
-								{e.name}
-							</label>
-							{""}
+                            <div className="interestYou__namePrice">
+								<h3>{e.name}</h3>
+								<span>{`$${e.price}`}</span>
+							</div>
 
-							<span className="interestYou__priceItem">{`$${e.price}`}</span>
-							<span className="interestYou__stockitem">{`stock: ${e.stock}`}</span>
-							<div>
-								<ion-icon name="star"></ion-icon>
+                              <p>{e.description}</p>
+							  <span>{`stock: ${e.stock}`}</span>
+							<div className="interestYou__start">
+								<ion-icon className="interestYou__start"  name="star"></ion-icon>
 								<ion-icon name="star"></ion-icon>
 								<ion-icon name="star"></ion-icon>
 								<ion-icon name="star"></ion-icon>
 							</div>
-						</div>
-					</article>
+							<div className="interestYou__buy">
+							<button> Buy now</button>
+							</div>
+							
+						
+				</div>
+					</div>
 				</section>
 			</SwiperSlide>)})}
 		</Swiper>))}
