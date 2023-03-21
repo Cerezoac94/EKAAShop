@@ -1,7 +1,5 @@
 import ProductsMap from "./components/allproducts/ProductsMap";
-import AccessoriesMap from "./components/categories/accesories/AccessoriesMap";
-import CoolerMap from "./components/categories/cooler/CoolerMap";
-import DrinkwareMap from "./components/categories/drinkware/DrinkwareMap";
+import ProductsByCategoryMap from "./components/productsByCategoryMap/ProductsByCategoryMap";
 
 export const AllProductsContainer = () => {
   return (
@@ -11,14 +9,14 @@ export const AllProductsContainer = () => {
 
 export const DrinkwareContainer = () => {
   return (
-    <DrinkwareMap />
+    <ProductsByCategoryMap category={ 1 } />
   );
 };
 
 export const CoolerContainer = () => {
-  return <CoolerMap />;
+  return <ProductsByCategoryMap  category={ 2 } />;
 };
 
 export const AccessoriesContainer = () => {
-  return <AccessoriesMap />;
+  return <ProductsByCategoryMap  category={ 3 } />;
 };

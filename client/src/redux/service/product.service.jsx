@@ -21,7 +21,7 @@ export const products = createApi({
       query: (id) => `${id}`
     }),
     getProductByCategory: builder.query({
-      query: (id) => `/filter/category/${ id }`
+      query: (idCategory) => `/filter/category/${ idCategory }`
     }),
     getProductsWithDiscount: builder.query({
       query: () => ``
