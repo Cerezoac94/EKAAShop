@@ -52,18 +52,8 @@ const InterestYouSwiper = () => {
 								<span>{`$${e.price}`}</span>
 							</div>
 
-                              <p>{e.description}</p>
-							  <span>{`stock: ${e.stock}`}</span>
-							<div className="interestYou__start">
-								<ion-icon className="interestYou__start"  name="star"></ion-icon>
-								<ion-icon name="star"></ion-icon>
-								<ion-icon name="star"></ion-icon>
-								<ion-icon name="star"></ion-icon>
-							</div>
-							<div className="interestYou__buy">
-							<button> Buy now</button>
-							</div>
-							
+					
+					
 						
 				</div>
 					</div>
