@@ -2,7 +2,7 @@
 @use '../abstracts/mixins';
 .interestYou {
     &__productsContainer {
-        width: 100%;
+        width: 20rem;
         height: 70%;
         display: flex;
         justify-content: center;
@@ -15,7 +15,7 @@
         /*  border: 3px solid #0A3F58; */
         border: 2px solid #3C99BA;
         /*    width: 300px; */
-        width: 90%;
+        width: 70%;
         height: 100%;
         box-shadow: 0 5px 20px rgba(0, 0, 0, .3);
         display: flex;
@@ -24,9 +24,9 @@
         padding: 20px, 20px, 40px;
         border-radius: 10px;
         transition: .3s;
-        @include mixins.media-up(lg) {
+        /*   @include mixins.media-up(lg) {
             width: 30rem;
-        }
+        } */
         p {
             font-size: 1.5em;
             line-height: 25px;
@@ -46,7 +46,7 @@
     &__img {
         /*         width: 15rem;
         border-radius: 2rem; */
-        width: 70%;
+        width: 55%;
         height: auto;
         padding: 1em;
     }
@@ -90,4 +90,8 @@
             transition: .5s;
         }
     }
+}
+
+.mySwiper {
+    margin: 2rem 2rem;
 }

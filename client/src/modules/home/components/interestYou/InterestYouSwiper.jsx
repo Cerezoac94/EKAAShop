@@ -9,57 +9,77 @@ const InterestYouSwiper = () => {
   if(!error){
     return isLoading ? (
       <Loading/>
-    ) : ( results.length != 0 && ( 	<Swiper
-			slidesPerView={3}
-			spaceBetween={30}
-			pagination={{
-				clickable: true,
-			}}
-			navigation={true}
-			breakpoints={{
-				200: {
-					slidesPerView: 1,
-					spaceBetween: 10,
-				},
-				490: {
-					slidesPerView: 2,
-					spaceBetween: 20,
-				},
-				700: {
-					slidesPerView: 3,
-					spaceBetween: 40,
-				},
-				1400: {
-					slidesPerView: 4,
-					spaceBetween: 50,
-				},
-			}}
-			modules={[Navigation, Pagination]}
-			className="mySwiper"
-		>
+    ) : ( results.length != 0 && (  <Swiper
+        
+        slidesPerView={2}
+            spaceBetween={10}
+            breakpoints={{
+                
+                700: {
+                    slidesPerView: 3,
+                    spaceBetween: 10,
+                },
+                1400: {
+                    slidesPerView: 4,
+                    spaceBetween: 5,
+                },
+
+            }}
+            pagination={{
+                clickable: true,
+            }}
+            navigation={true}
+        
+            modules={[Navigation, Pagination]}
+            className="mySwiper"
+        >
       {results?.results?.slice(0,10).map(e => {
-					return (
-			<SwiperSlide key={e.id}>
-				<section className="interestYou"> 
-				<div className="interestYou__productsContainer">
-					<div className="interestYou__product">
-						<figure className="interestYou__imagen">
-							<img className="interestYou__img" src={e.image} alt={e.name}/>
-						</figure>
+                    return (
+            <SwiperSlide key={e.id}>
+                <section className="interestYou"> 
+                <div className="interestYou__productsContainer">
+                    <div className="interestYou__product">
+                        <figure className="interestYou__imagen">
+                            <img className="interestYou__img" src={e.image} alt={e.name}/>
+                        </figure>
 
                             <div className="interestYou__namePrice">
-								<h3>{e.name}</h3>
-								<span>{`$${e.price}`}</span>
-							</div>
+                                <h3>{e.name}</h3>
+                                <span>{`$${e.price}`}</span>
+                            </div>
 
-					
-					
-						
-				</div>
-					</div>
-				</section>
-			</SwiperSlide>)})}
-		</Swiper>))}
+                    
+                    
+                        
+                </div>
+                    </div>
+                </section>
+            </SwiperSlide>)})}
+        </Swiper>))}
+
+        /*  breakpoints={{
+                200: {
+                    slidesPerView: 1,
+                    spaceBetween: 10,
+                },
+                490: {
+                    slidesPerView: 2,
+                    spaceBetween: 20,
+                },
+                700: {
+                    slidesPerView: 3,
+                    spaceBetween: 40,
+                },
+                1400: {
+                    slidesPerView: 4,
+                    spaceBetween: 50,
+                },
+
+            }}
+                slidesPerView={3}
+            spaceBetween={30}
+            
+            */
 };
 
 export default InterestYouSwiper;
