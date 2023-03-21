@@ -1,17 +1,21 @@
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay } from "swiper";
 import { useMeQuery } from "../../../../redux/service/session.service";
 import { Link } from "react-router-dom";
 import "swiper/scss";
+import 'swiper/css/autoplay';
 import AddtoCartHome from "./AddtoCartHome";
 
 const SlideHomeSwipe = ({ products }) => {
   const { data: me=[], error:err} = useMeQuery();
 
   return <Swiper
+      modules={[Autoplay]}
       className="myswiper"
       spaceBetween={30}
       loop={true}
       centeredSlides={true}
+      autoplay={{delay:5000}}
     >
       {products.slice(0, 6).map((p) => {
         return (
