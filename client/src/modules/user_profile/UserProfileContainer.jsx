@@ -8,7 +8,7 @@ const UserProfileContainer = () => {
 	const navigate = useNavigate();
 
 	if (!error) {
-		return isLoading ? <Loading/> : <UserProfile me={me.result.id} />;
+		return isLoading ? <Loading/> : <UserProfile me={me} />;
 	}else{
     navigate("/")
   }
