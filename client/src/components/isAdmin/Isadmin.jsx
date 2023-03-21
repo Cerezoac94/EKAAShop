@@ -8,7 +8,6 @@ const IsAdmin = () => {
     <Navigate to="/" replace={true}  />
   ) : (
     data?.result.role == 1 ? <Outlet />: <Navigate to="/" replace={true}  />
-    // data && <Outlet />
   )
 }else{
   <h3>Cargando...</h3>

@@ -1,13 +1,16 @@
 @use "../base/variables";
 @use "../abstracts/mixins";
 .listCart {
-    justify-content: center;
+    
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
     &__pay {
         display: flex;
         gap: 3rem;
         align-items: baseline;
-        flex-direction: row-reverse;
     }
     &__h2 {
         color: variables.$main_fonts;
@@ -28,12 +31,12 @@
     /* ******************* */
     &__card {
         display: flex;
-        justify-content: center;
+        flex-direction: column;
         background-color: variables.$card-bg;
         width: 30rem;
         border-radius: 1rem;
         box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.2);
-        margin: 1.5rem 0;
+        // margin: 1.5rem 0;
         overflow: hidden;
         width: 30rem;
         height: 19rem;
@@ -55,7 +58,6 @@
         }
     }
     &__contimg {
-        position: relative;
         display: flex;
         flex-direction: column;
         padding: 1rem;
@@ -67,14 +69,11 @@
         width: 13rem;
         border-radius: 2rem;
     }
-    &__text {
-        position: relative;
-        flex-direction: column;
+    &__info {
         display: flex;
-        align-items: center;
         /*     width: 50%; */
         @include mixins.desktop-view(unset, unset, 1.3rem, unset);
-        justify-content: space-between;
+        justify-content: space-around;
     }
     &__labels {
         padding: 1rem;
@@ -105,6 +104,12 @@
     }
     &__color {
         color: variables.$secondary_fonts;
+    }
+    &__containerBtn {
+        display: flex;
+        justify-content: center;
+        bottom: .5rem;
+        // @include mixins.desktop-view(200px, 100px, 1rem, unset);
     }
     &__contBtn {
         display: flex;
