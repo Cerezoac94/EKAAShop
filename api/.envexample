@@ -8,6 +8,9 @@ DB_HOST=urlhost
 
 SECRET = secret
 
+MAILER_PASS = passheredasaksdf
+MAILER_USER = 'correo@correo.com'
+
 // this is from firebase
 API_KEY = apikey
 AUTH_DOMAIN = authdomain.firebase.com
