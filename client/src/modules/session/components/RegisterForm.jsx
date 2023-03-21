@@ -1,9 +1,6 @@
 import { useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import Button from "react-bootstrap/Button";
-import Form from "react-bootstrap/Form";
-import Container from "react-bootstrap/Container";
-//import logo from "../../assets/LOGO.svg";
+import {  Form, Button, Container } from "react-bootstrap";
 import bg_mobile from "../../../assets/low-poly-grid-haikei_desktop.svg";
 import { useForm } from "react-hook-form";
 import { useCreateUserMutation } from "../../../redux/service/user.service";
