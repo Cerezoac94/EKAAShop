@@ -14,7 +14,8 @@
         /*  background-color: variables.$card-bg; */
         /*  border: 3px solid #0A3F58; */
         border: 2px solid #3C99BA;
-        width: 300px;
+        /*    width: 300px; */
+        width: 90%;
         height: 100%;
         box-shadow: 0 5px 20px rgba(0, 0, 0, .3);
         display: flex;
@@ -40,21 +41,30 @@
         height: 60%;
         display: grid;
         place-items: center;
-        padding: 2em 2em;
+        /*    padding: 2em 2em; */
     }
     &__img {
-        width: 15rem;
-        border-radius: 2rem;
+        /*         width: 15rem;
+        border-radius: 2rem; */
+        width: 70%;
+        height: auto;
+        padding: 1em;
     }
     &__namePrice {
         width: 100%;
-        display: flex;
+        /* display: flex; */
         justify-content: space-between;
         padding: 2em;
+        text-align: center;
         h3 {
             font-size: 2em;
             text-transform: capitalize;
             color: variables.$main_dark;
+            width: 90%;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            -webkit-line-clamp: 1;
             @include mixins.media-up(lg) {
                 font-size: 1.3em;
             }
