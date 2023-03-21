@@ -4,8 +4,8 @@ import KeepBuyingMap from "./components/keepBuying/KeepBuyingMap"
 import ReviewsClient from "./components/reviewsClient/ReviewsClient"
 import Warranty from "./components/warranty/Warranty"
 import { useMeQuery } from "../../redux/service/session.service"
-import SlideHomeSwipe from "./components/slideHome/SlideHomeSwipe"
 import Loading from "../../components/loading/Loading"
+import SlideHomeSwipeMap from "./components/slideHome/SlideHomeSwipeMap"
 
 const HomeContainer = () => {
   const { data: me, isLoading, error } = useMeQuery()
@@ -13,7 +13,7 @@ const HomeContainer = () => {
 
     <>
       {/* <SlideHomeMap/> */}
-      <SlideHomeSwipe/>
+      <SlideHomeSwipeMap/>
       <Warranty/>
       <InterestYouSwiper/>
       <BannerOffersMap/>

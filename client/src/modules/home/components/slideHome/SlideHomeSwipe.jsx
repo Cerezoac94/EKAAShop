@@ -1,27 +1,19 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { useMeQuery } from "../../../../redux/service/session.service";
 import { Link } from "react-router-dom";
-import { useGetAllProductsQuery} from "../../../../redux/service/product.service";
 import "swiper/scss";
 import AddtoCartHome from "./AddtoCartHome";
-import Loading from "../../../../components/loading/Loading";
 
-const SlideHomeSwipe = () => {
-  const { data: results = [], isLoading, error } = useGetAllProductsQuery();
+const SlideHomeSwipe = ({ products }) => {
   const { data: me=[], error:err} = useMeQuery();
 
-  return error ? (
-    error?.message
-  ) : isLoading ? (
-    <Loading/>
-  ) : (
-    <Swiper
+  return <Swiper
       className="myswiper"
       spaceBetween={30}
       loop={true}
       centeredSlides={true}
     >
-      {results?.results?.slice(0, 6).map((p) => {
+      {products.slice(0, 6).map((p) => {
         return (
           
           <SwiperSlide className="swiper" key={p.id}>
@@ -45,7 +37,6 @@ const SlideHomeSwipe = () => {
         );
       })}
     </Swiper>
-  );
 };
 
 export default SlideHomeSwipe;
