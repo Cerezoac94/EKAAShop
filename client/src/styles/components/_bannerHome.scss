@@ -4,16 +4,13 @@
 .ofertaContainer {
   @include mixins.display(flex, unset, center, center);
   width: 100vw;
-  height: 15vh;
+  height: 20vh;
 
-  @media (min-width:698px) {
-    height: 20vh;    
-  }
   @media (min-width:1048px) {
     height: 25vh;    
   }
-  @media (min-width:1350px) {
-    height: 30vh;    
+  @media (min-width:1114px) {
+    height: 35vh;    
   }
 
   &__cont {
@@ -73,15 +70,15 @@
   align-items: center;
   justify-content: center;
   width: 30vw;
-  height: 35vh;
+  // height: 35vh;
   // background-size: contain;
 
   &__img {
     // object-fit: cover;
-    width: 90%;
+    width: 100%;
     max-width: 450px;
     @media (min-width:542px) {
-      width: 60%;
+      width: 70%;
       
     }
   }
