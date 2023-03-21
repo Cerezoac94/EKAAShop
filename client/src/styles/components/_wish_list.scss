@@ -2,6 +2,7 @@
 .wish_item_section.container {
     @include mixins.display(flex,column,unset,center);
     padding: 2rem;
+    gap: 2rem;
 }
 
 section.wish_item_section {
@@ -20,6 +21,7 @@ a.wish_item_container {
 }
 
 label.wish_header {
+    
     @include mixins.labels($secondary_dark,3rem,unset, 0 0 1rem, unset,100%);
     font-style: italic;
     @include mixins.media-up(md){
