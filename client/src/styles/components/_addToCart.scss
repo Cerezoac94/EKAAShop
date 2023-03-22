@@ -28,11 +28,14 @@
     font-size: 1.5rem;
     border: none;
   }
-  &__submit {
+  &__addSubmit {
     @include mixins.primary-btn;
+    @include mixins.media-up(md){
+      padding: 0.5rem 2.4rem;
+    }
   }
 
-  &__submit:active{    
+  &__addSubmit:active{    
     background-color:$secondary_background;    
   }
   &__plusAction{

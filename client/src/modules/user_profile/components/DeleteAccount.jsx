@@ -41,7 +41,7 @@ const DeleteAccount = ({ me }) => {
 	}, [isSuccess]);
 
 	return (
-		<Button className="edit_btn" onClick={handleDelete}>
+		<Button className="delete_btn" onClick={handleDelete}>
 			Eliminar cuenta
 		</Button>
 	);

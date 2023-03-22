@@ -124,7 +124,9 @@
         /*       justify-content: end; */
     }
     &__deleteWishBtn {
-        @include mixins.secondary-btn
+        @include mixins.secondary-btn;
+        font-size:1rem;
+        @include mixins.button-hover($main_fonts,$color10)
     }
     &__btnIcon {
         @include mixins.button( variables.$secondary_background, variables.$secondary_background, 1px, variables.$color10, 36px, 36px);
@@ -165,26 +167,7 @@
     @include mixins.display(flex, row, center, unset);
     padding: 1.5rem;
     &__order {
-        width: 24vw;
-        height: 4vh;
-        min-width: 95px;
-        min-height: 28px;
-        border: none;
-        border-radius: .5rem;
-        background-color: #224f63;
-        color: #fff;
-        text-transform: uppercase;
-        transition: background-color 0.1s ease-in-out;
-        cursor: pointer;
-        // @include mixins.button(
-        //   variables.$secondary_background,
-        //   variables.$secondary_background,
-        //   4px,
-        //   variables.$color10,
-        //   100px,
-        //   36px
-        // );
-        // @include mixins.desktop-view(120px, 40px, unset, unset);
+        @include mixins.primary-btn;
     }
     &__order:active {
         background-color: $secondary_background;
