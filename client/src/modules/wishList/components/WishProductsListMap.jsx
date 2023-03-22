@@ -20,7 +20,7 @@ const WishListMap = ({ me }) => {
     return isLoading ? (
       <h3>Cargando...</h3>
     ) : (
-      <ErrorFetch title="Wish list" message={error?.data?.message} />
+      <ErrorFetch title="#WishList" message={error?.data?.message} />
     );
   }
 };

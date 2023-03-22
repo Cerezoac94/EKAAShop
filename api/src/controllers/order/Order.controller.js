@@ -207,7 +207,7 @@ class OrderController {
         ],
       });
 
-      if (results.length === 0) throw "no products with orders";
+      if (results.length === 0) throw "No order exists";
       res.status(201).send({
         success: true,
         message: "Orders",
