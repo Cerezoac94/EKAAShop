@@ -4,7 +4,7 @@ import { useGetAllReviewsQuery } from "../../../../redux/service/review.service"
 // import "swiper/scss";
 import Loading from "../../../../components/loading/Loading";
 import ReviewsClient from "./ReviewsClient";
-const ReviewsClientMap = ({ e }) => {
+const ReviewsClientMap = () => {
   const { data: results = [], isLoading, error } = useGetAllReviewsQuery();
 
   if (!error) {
