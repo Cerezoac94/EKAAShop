@@ -45,13 +45,13 @@ const ProductDetail = ({ p }) => {
         </section>
         <section className="product_image_section">
           <Image fluid src={p.image} alt={p.name} />
-          <span onClick={() => clicked(p.id)} className="btn_heart">
-            <ion-icon name="heart-outline" class="add_product_icon"></ion-icon>
-          </span>
         </section>
       </section>
 
-      <section className="buying_info_section">
+      <section className="buying_info_section"> 
+      <span onClick={() => clicked(p.id)} className="btn_heart">
+            <ion-icon name="heart-outline" class="add_product_icon"></ion-icon>
+          </span>
         <label className="product_price">
           <sup className="currency">MXN</sup>${p.price}
         </label>
