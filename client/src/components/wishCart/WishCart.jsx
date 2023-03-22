@@ -48,7 +48,7 @@ const WishCart = ({ p, title, me }) => {
 							<span className="listCart__color">Stock: {p.stock}</span>
 					</section>
 					</section>
-				</Link>
+				</Link> 
 
 				<section className="listCart__containerBtn">
 					{title == "Cart" && (
