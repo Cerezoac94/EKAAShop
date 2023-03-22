@@ -1,7 +1,6 @@
 @use "../base/variables";
 @use "../abstracts/mixins";
 .listCart {
-    
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -9,8 +8,11 @@
     gap: 2rem;
     &__pay {
         display: flex;
-        gap: 3rem;
+        justify-content: space-evenly;
         align-items: baseline;
+        @include mixins.media-up(lg) {
+            gap: 4rem;
+        }
     }
     &__h2 {
         color: variables.$main_fonts;
@@ -79,8 +81,11 @@
         padding: 1rem;
         display: flex;
         flex-direction: column;
+        align-self: center;
+        line-height: 2em;
         @include mixins.media-up(xxl) {
             font-size: 1.8rem;
+            line-height: 1.2em;
         }
     }
     &__confirmation {
@@ -106,9 +111,9 @@
         color: variables.$secondary_fonts;
     }
     &__containerBtn {
-        display: flex;
+        /*         display: flex;
         justify-content: center;
-        bottom: .5rem;
+        bottom: .5rem; */
         // @include mixins.desktop-view(200px, 100px, 1rem, unset);
     }
     &__contBtn {
@@ -128,7 +133,15 @@
         @include mixins.desktop-view(9rem, 3rem, 2rem, unset);
     }
     &__btnIcon {
-        @include mixins.button( variables.$secondary_background, variables.$secondary_background, 1px, variables.$color10, 36px, 36px);
+        /*    border-start-end-radius: 10px;
+        border-start-end-radius: 10px; */
+        //36px, 36px, 2em
+        @include mixins.button( variables.$secondary_background, variables.$secondary_background, 1px, variables.$color10, 30px, 30px, 2em);
+        @include mixins.media-up(sm) {
+            width: 36px;
+            height: 36px;
+            font-size: 1em;
+        }
         @include mixins.desktop-view(70px, 40px, 2rem, unset);
     }
     &__inputIcon {
@@ -136,9 +149,17 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        width: 36px;
-        height: 36px;
+        width: 30px;
+        height: 30px;
         margin-bottom: 0;
+        border-top: 1px solid variables.$secondary_background;
+        border-bottom: 1px solid variables.$secondary_background;
+        background: white;
+        @include mixins.media-up(sm) {
+            width: 36px;
+            height: 36px;
+            font-size: 1em;
+        }
         @include mixins.desktop-view(70px, 40px, 2rem, unset);
     }
     &__btnThird {
