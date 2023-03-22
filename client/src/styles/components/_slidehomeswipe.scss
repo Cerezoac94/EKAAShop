@@ -54,41 +54,27 @@
     align-items: center;
     height: 5vh;
     gap: 1rem;
+    margin-top: 0.2rem
   }
 
-  &__btn {
-    @include mixins.button(
-      variables.$color9,
-      variables.$color10,
-      .5rem,
-      variables.$color10,
-      5rem,
-      30px,
-      9px
-    );
+  &__addBtn {
+    @include mixins.banners-btns;
     @include mixins.button-hover(variables.$color9, variables.$color10);
-    @include mixins.desktop-view(130px, 45px, 1rem);
+    //@include mixins.desktop-view(130px, 45px, 1rem);
     
   }
-  &__btn:active{
+  &__addBtn:active{
     border: 1px solid black;
     color: black;
   }
 
-  &__btn2 {
-    @include mixins.button(
-      variables.$color9,
-      variables.$color10,
-      .5rem,
-      variables.$color10,
-      5rem,
-      30px,
-      9px
-    );
+  &__seeBtn {
+    @include mixins.banners-btns;
     @include mixins.button-hover(variables.$color9, variables.$color10);
-    @include mixins.desktop-view(130px, 45px, 1rem);
+    //@include mixins.desktop-view(130px, 45px, 1rem);
+    /* @include mixins.media-up() */
   }
-  &__btn2:active{
+  &__seeBtn:active{
     border: 1px solid black;
     color: black;
   }

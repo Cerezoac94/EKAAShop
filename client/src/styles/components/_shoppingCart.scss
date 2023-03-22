@@ -123,9 +123,8 @@
         padding: 1em 0;
         /*       justify-content: end; */
     }
-    &__btn3 {
-        @include mixins.button( variables.$secondary_background, variables.$secondary_background, 1px, variables.$color10, 36px, 36px);
-        @include mixins.desktop-view(9rem, 3rem, 2rem, unset);
+    &__deleteWishBtn {
+        @include mixins.secondary-btn
     }
     &__btnIcon {
         @include mixins.button( variables.$secondary_background, variables.$secondary_background, 1px, variables.$color10, 36px, 36px);

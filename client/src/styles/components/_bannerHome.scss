@@ -29,22 +29,19 @@
   &__des {
     font-size: 1.5rem;
   }
-  &__btn {
-    @include mixins.button(
-      variables.$color11,
-      unset,
-      5px,
-      variables.$color10,
-      90px,
-      30px,
-      14px
-    );
-    @include mixins.laptop-view(155px, 50px, 2rem, 2rem);
-    display: block;
+  &__offerBtn {
+    @include mixins.banners-btns;
+    width: 50%;
+    font-size: 1rem;
+   /*  @include mixins.laptop-view(155px, 50px, 2rem, 2rem); */
+   @include mixins.media-up(xl) {
+    width: 25%;
+   }
+   display: block;
     margin: 0 auto;
   }
   &__h2 {
-    color: variables.$text;
+    color: $text;
     font-size: 1rem;
     text-align: center;
     @include mixins.center(unset, unset, 3rem);
@@ -53,7 +50,7 @@
   &__span {
     display: block;
     margin: auto;
-    color: variables.$color10;
+    color: $color10;
     font-size: 1rem;
     text-align: center;
     @include mixins.center(block, 0 auto, 1.4rem);

@@ -14,7 +14,7 @@ const BannerOffers = ({ descuentos }) => {
 
             <section className="ofertaContainer__oferta">
               <Link to={`/product_detail/${p.idProduct}`}>
-              <button className="ofertaContainer__btn">Ver mas</button>
+              <button className="ofertaContainer__offerBtn">Ver mas</button>
               </Link>
               <section>
                 <h2 className="ofertaContainer__h2">
@@ -24,7 +24,7 @@ const BannerOffers = ({ descuentos }) => {
                   {p.Product.name}
                 </span>
               </section>
-              <button className="ofertaContainer__btn">Add to Cart</button>
+              <button className="ofertaContainer__offerBtn">Add to Cart</button>
             </section>
           </section>
         </article>
