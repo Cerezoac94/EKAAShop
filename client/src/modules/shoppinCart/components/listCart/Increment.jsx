@@ -21,7 +21,7 @@ const Increment = ({ p, me }) => {
 
   return (
     <form onSubmit={handleSubmit(submit)}>
-      <input className="listCart__btnIcon" type="submit" value='+'/>
+      <input className="addmenus__btnIconPlus" type="submit" value='+'/>
     </form>
   );
 };
