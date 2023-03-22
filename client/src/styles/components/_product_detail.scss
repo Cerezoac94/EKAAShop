@@ -39,12 +39,6 @@ section.product_detail_header {
     }
 }
 
-
-/* //Product header
-.product_rate_section {
-    @include mixins.display(flex, row, unset, center);
-} */
-
 label.title_label,
 label.subtitle_label {
     @include mixins.labels($main_dark, 2.2rem, 600, 1rem 0, unset, 100%);

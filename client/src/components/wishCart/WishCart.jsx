@@ -70,7 +70,7 @@ const WishCart = ({ p, title, me }) => {
 								<DeleteProductCart me={me} p={p} />
 							</div>
 						</div>
-					)}
+					)}  
 
 					{/* Este btn es para eliminar de wish */}
 					{title == "Wish" && (
