@@ -3,7 +3,6 @@
 
 .listCardOrder {
   width: 100vw;
-  height: 100vh;
   padding: 2rem
 }
 
@@ -16,8 +15,6 @@
 
 .cardOrder {
   @include mixins.display(flex, row, space-between, center);
-  //   width: 80vw;
-  height: 15vh;
   padding: 1rem;
   background-color: variables.$card-bg;
   width: 30rem;
@@ -73,7 +70,7 @@
 }
 
 .orderDetalle {
-  @include mixins.display(flex, column, unset, center);
+  @include mixins.display(flex, column, center, center);
   width: 100vw;
   height: 100vh;
 }

@@ -1,6 +1,9 @@
+import { useMeQuery } from "../../../../redux/service/session.service";
 import { Link } from "react-router-dom";
+import AddtoCartHome from "../slideHome/AddtoCartHome";
 
 const BannerOffers = ({ descuentos }) => {
+  const { data: me=[], error:err} = useMeQuery();
 
   return descuentos.slice(0, 1).map((p) => {
     
@@ -24,7 +27,7 @@ const BannerOffers = ({ descuentos }) => {
                   {p.Product.name}
                 </span>
               </section>
-              <button className="ofertaContainer__offerBtn">Add to Cart</button>
+              {!err?(<AddtoCartHome p={p.id} me={me.result.id}/>):<AddtoCartHome p={p.id}/>}
             </section>
           </section>
         </article>
