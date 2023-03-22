@@ -13,7 +13,7 @@ const BannerOffers = () => {
           </picture>
 
           <section className="ofertaContainer__oferta">
-            <button className="ofertaContainer__btn">Ver mas</button>
+            <button className="ofertaContainer__offerBtn">Ver mas</button>
             <section >
               <h2 className="ofertaContainer__h2">
                 Obténlo con un 20% de descuento
@@ -22,7 +22,7 @@ const BannerOffers = () => {
                 TUNDRA 65 HARD COOLER
               </span>
             </section>
-            <button className="ofertaContainer__btn">Comprar</button>
+            <button className="ofertaContainer__offerBtn">Comprar</button>
           </section>
         </section>
       </section>

@@ -29,12 +29,7 @@
     border: none;
   }
   &__submit {
-    @include mixins.button($bg_btn1, none, 8px,#fff,100%,unset,1rem);
-    padding: 12px 24px;
-    font-size: 1rem;
-   text-transform: uppercase;
-    transition: background-color .1s ease-in-out;
-    cursor: pointer;    
+    @include mixins.primary-btn;
   }
 
   &__submit:active{    
