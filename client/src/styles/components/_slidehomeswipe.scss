@@ -69,7 +69,12 @@
   &__addBtn {
     @include mixins.banners-btns;
     @include mixins.button-hover(variables.$color9, variables.$color10);
-    //@include mixins.desktop-view(130px, 45px, 1rem);
+    @include mixins.media-up(lg){
+      font-size: 0.8rem;
+    }
+    @include mixins.media-up(xl){
+      font-size: 1rem;
+    }
   }
   &__addBtn:active {
     border: 1px solid black;
@@ -79,8 +84,12 @@
   &__seeBtn {
     @include mixins.banners-btns;
     @include mixins.button-hover(variables.$color9, variables.$color10);
-    //@include mixins.desktop-view(130px, 45px, 1rem);
-    /* @include mixins.media-up() */
+    @include mixins.media-up(lg){
+      font-size: 0.8rem;
+    }
+    @include mixins.media-up(xl){
+      font-size: 1rem;
+    }
   }
   &__seeBtn:active {
     border: 1px solid black;

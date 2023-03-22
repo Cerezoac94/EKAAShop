@@ -100,6 +100,7 @@ label.input_label.form-label {
 .btn_section_container {
     @include mixins.display(flex, row, center, center);
     margin-top: 2rem;
+    gap: 1.5rem;
 }
 
 .select {
@@ -119,28 +120,22 @@ input.profile_input.form-control {
 
 }
 
-//edit button
-button.update_btn.btn.btn-primary,
-button.cancel_btn.btn.btn-primary,
-button.edit_btn.btn.btn-primary {
-    @include mixins.button($main_fonts, none, 8px, #fff, 50%, unset, 1.5rem);
-    padding: 1.2rem 2.4rem;
-    text-transform: uppercase;
-    transition: background-color 0.2s ease-in-out;
-    @include mixins.button-hover($secondary_background, #fff);
-
-    @include mixins.media-up(md) {
-        width: 25%;
-        font-size: 1rem;
+//profile actions button
+button.edit_btn.btn.btn-primary,
+button.delete_btn.btn.btn-primary {
+    @include mixins.primary-btn;
+    width: 70%;
+    @include mixins.media-up(md){
+        width: 50%;
     }
-    @include mixins.media-up(xl) {
-        width: 20%;
-        font-size: 1.2rem;
-    }
+    @include mixins.button-hover($secondary_background,$color10);
 }
-button.edit_btn.btn.btn-primary{
-    @include mixins.media-up(md) {
+button.update_btn.btn.btn-primary,
+button.cancel_btn.btn.btn-primary{
+    @include mixins.primary-btn;
+    width: 40%;
+    @include mixins.media-up(md){
         width: 30%;
-        font-size: 1.2rem;
     }
+    @include mixins.button-hover($secondary_background,$color10);
 }
