@@ -1,7 +1,6 @@
 @use "../base/variables";
 @use "../abstracts/mixins";
 .listCart {
-    
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -120,6 +119,10 @@
     &__contBtnThird {
         /*  text-align: center;
         width: 50%; */
+        /*   @include mixins.media-up(lg) {
+            display: flex;
+            justify-content: end;
+        } */
         padding: 1em 0;
         /*       justify-content: end; */
     }

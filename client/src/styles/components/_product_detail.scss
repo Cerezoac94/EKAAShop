@@ -8,19 +8,18 @@
 
 //mobile view
 .product_detail_container {
-    @include mixins.display(flex,column,unset,unset);
+    @include mixins.display(flex, column, unset, unset);
     padding: 2rem;
-        @include mixins.media-up(md){
+    @include mixins.media-up(md) {
         flex-direction: row;
         justify-content: space-between;
         flex-wrap: wrap
     }
-
 }
 
 section.product_header_mobile {
     @include mixins.display(flex, column, unset, center);
-    @include mixins.media-up(md){
+    @include mixins.media-up(md) {
         width: 60%;
         flex-direction: row-reverse;
         align-items: stretch;
@@ -29,17 +28,16 @@ section.product_header_mobile {
 
 section.product_image_section,
 section.product_detail_header {
-    @include mixins.media-up(md){
-        @include mixins.display(flex,column,space-evenly,unset)
+    @include mixins.media-up(md) {
+        @include mixins.display(flex, column, space-evenly, unset)
     }
 }
 
 section.product_detail_header {
-    @include mixins.media-up(xl){
+    @include mixins.media-up(xl) {
         justify-content: center;
     }
 }
-
 
 
 /* //Product header
@@ -52,7 +50,7 @@ label.subtitle_label {
     @include mixins.labels($main_dark, 2.2rem, 600, 1rem 0, unset, 100%);
     text-align: justify;
     @include mixins.media-up(md) {
-        font-size: 1.4rem;  
+        font-size: 1.4rem;
     }
     @include mixins.media-up(lg) {
         font-size: 1.8rem;
@@ -64,7 +62,7 @@ label.subtitle_label {
 
 .product_description {
     @include mixins.basic_fonts($main_fonts, 1.5rem, 0 0 2.4rem, unset, justify);
-/*     @include mixins.media-up(sm) {
+    /*     @include mixins.media-up(sm) {
         font-size: 1.2rem;
     } */
     @include mixins.media-up(md) {
@@ -74,15 +72,15 @@ label.subtitle_label {
         font-size: 1.4rem;
     }
 }
+
 //image_section
 section.product_image_section {
-    @include mixins.media-up(md){
+    @include mixins.media-up(md) {
         width: 100%;
     }
-    @include mixins.media-up(xl){
+    @include mixins.media-up(xl) {
         width: 50%;
     }
-
 }
 
 .add_product_icon.md.hydrated {
@@ -92,7 +90,7 @@ section.product_image_section {
 //might_like section
 .might_like_swiper_section {
     margin: 2rem 0;
-    @include mixins.media-up(md){
+    @include mixins.media-up(md) {
         width: 100%;
     }
 }
@@ -112,6 +110,7 @@ label.product_price {
         font-size: 3rem
     }
 }
+
 sup.currency {
     font-size: 1.8rem;
     font-weight: normal;
@@ -125,6 +124,7 @@ sup.currency {
         top: -1.2rem;
     }
 }
+
 label.stock_item {
     font-size: 2rem;
     @include mixins.media-up(md) {
@@ -136,7 +136,8 @@ label.stock_item {
         margin-bottom: 1.5rem;
     }
 }
-label.out_stock_item{
+
+label.out_stock_item {
     font-size: 2rem;
     color: red;
     @include mixins.media-up(md) {
@@ -146,7 +147,7 @@ label.out_stock_item{
     @include mixins.media-up(xl) {
         font-size: 1.8rem;
         margin-bottom: 1.5rem;
-    }    
+    }
 }
 
 //actions_buttons
@@ -164,6 +165,7 @@ button.add_product_btn {
     @include mixins.display(flex, row, unset, stretch);
 }
 
+
 /* .buying_info_section {
     @include mixins.media-up(lg) {
         width: 350px;
@@ -174,9 +176,9 @@ button.add_product_btn {
     @include mixins.display(flex, column, flex-start, stretch);
     @include mixins.media-up(md) {
         width: 35%;
-    justify-content: unset;
-    align-items: unset;
-    padding: 1rem;
+        justify-content: unset;
+        align-items: unset;
+        padding: 1rem;
     }
     @include mixins.media-up(lg) {
         justify-content: space-evenly;
@@ -188,8 +190,10 @@ button.add_product_btn {
 }
 
 .btn_heart {
+    display: flex;
+    justify-content: end;
     border-radius: 45%;
-    cursor:pointer;
+    cursor: pointer;
 }
 
 select#qty {
