@@ -26,9 +26,7 @@ const CreateProduct = () => {
 
   return (
     <section className="createProduct">
-      <h1>Productos.</h1>
         <form onSubmit={handleSubmit(submit)} className="formAdminProduct">
-        
           <section className="form-group">
           <h3 className="prop__title">Crear Producto</h3>
             <label>Nombre:</label>
