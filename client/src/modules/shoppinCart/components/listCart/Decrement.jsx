@@ -22,7 +22,7 @@ const Decrement = ({ p, me }) => {
 
   return (
     <form onSubmit={handleSubmit(submit)}>
-      <input className="listCart__btnIcon" type="submit" value="-" />
+      <input className="addmenus__btnIconMenus" type="submit" value="-" />
     </form>
   );
 };
