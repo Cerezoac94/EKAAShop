@@ -25,7 +25,6 @@ const CreateState = () => {
   return (
     <section className="section">
       <form onSubmit={handleSubmit(submit)} className="form">
-        <h1>Estados</h1>
         <section className="prop">
           <h3 className="prop__title">Crear estado</h3>
           <input {...register("name", {

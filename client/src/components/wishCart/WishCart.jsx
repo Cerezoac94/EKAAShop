@@ -77,7 +77,7 @@ const WishCart = ({ p, title, me }) => {
 						<section className="listCart__contBtnThird">
 							<button
 								onClick={() => handledelete(p.id)}
-								className="listCart__btn3"
+								className="listCart__deleteWishBtn"
 							>
 								Delete
 							</button>

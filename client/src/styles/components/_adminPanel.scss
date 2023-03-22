@@ -8,7 +8,7 @@
 
 //Acordeon
 section.accordion_section {
-  @include mixins.display(flex,column,unset,center)
+  @include mixins.display(flex,column,unset,flex-start)
 }
 .acordeon {
   @include mixins.display(flex, column, unset, stretch);

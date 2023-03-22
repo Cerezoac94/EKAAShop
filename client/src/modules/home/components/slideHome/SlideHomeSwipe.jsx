@@ -15,7 +15,7 @@ const SlideHomeSwipe = ({ products }) => {
       spaceBetween={30}
       loop={true}
       centeredSlides={true}
-      autoplay={{delay:5000}}
+      autoplay={{delay:5000}} 
     >
       {products.slice(0, 6).map((p) => {
         return (
@@ -25,13 +25,12 @@ const SlideHomeSwipe = ({ products }) => {
               <section className="slide__nameProduct">
                 <section className="slide__name">
                   <label className="slide__font">{p.name}</label>
-                  {/* <label className="slide__font">Rambler colster 12 Oz</label> */}
                 </section>
 
                 <section className="slide__botons">
                   {!err?(<AddtoCartHome p={p.id} me={me.result.id}/>):<AddtoCartHome p={p.id}/>}
                   <Link to={`/product_detail/${p.id}`}>
-                    <button className="slide__btn2">Ver mas</button>
+                    <button className="slide__seeBtn">Ver mas</button>
                   </Link>
                 </section>
               </section>

@@ -3,7 +3,7 @@
 
 .myswiper {
   justify-content: center;
-  width: 70%;
+  width: 90%;
 }
 
 .slide {
@@ -11,41 +11,50 @@
   width: 100%;
   justify-content: space-evenly;
   align-items: center;
-  @media (min-width:978px) {
+
+  @media (min-width: 978px) {
     justify-content: center;
     width: 100%;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-}
+  }
+
+  @media (min-width: 2560px) {
+    display: flex;
+    justify-content: center;
+  }
 
   &__nameProduct {
     display: flex;
     flex-direction: column;
-    width: 30vw;
+    // width: 30vw;
     height: 5vh;
     justify-content: space-evenly;
 
-    @media (min-width:978px) {
-        display: flex;
-        width: 25vw;
-        height: 10vh;
+    @media (min-width: 978px) {
+      display: flex;
+      width: 35vw;
+      height: 10vh;
     }
-
-    
   }
   &__name {
     display: flex;
     flex-direction: column;
-    width: 20vw;
+    // width: 20vw;
     font-size: 1rem;
     font-weight: 600;
-    @media (min-width:978px) {
-      font-size: 2.0rem;
+    @media (min-width: 2560px) {
+      font-size: 2rem;
+    }
   }
-  }
-  &__{
+  &__font {
+    font-size: 1.4rem;
     width: 100%;
+
+    @media (min-width: 978px) {
+      font-size: 2rem;
+    }
   }
   &__botons {
     display: flex;
@@ -54,53 +63,37 @@
     align-items: center;
     height: 5vh;
     gap: 1rem;
+    margin-top: 0.2rem;
   }
 
-  &__btn {
-    @include mixins.button(
-      variables.$color9,
-      variables.$color10,
-      .5rem,
-      variables.$color10,
-      5rem,
-      30px,
-      9px
-    );
+  &__addBtn {
+    @include mixins.banners-btns;
     @include mixins.button-hover(variables.$color9, variables.$color10);
-    @include mixins.desktop-view(130px, 45px, 1rem);
-    
+    //@include mixins.desktop-view(130px, 45px, 1rem);
   }
-  &__btn:active{
+  &__addBtn:active {
     border: 1px solid black;
     color: black;
   }
 
-  &__btn2 {
-    @include mixins.button(
-      variables.$color9,
-      variables.$color10,
-      .5rem,
-      variables.$color10,
-      5rem,
-      30px,
-      9px
-    );
+  &__seeBtn {
+    @include mixins.banners-btns;
     @include mixins.button-hover(variables.$color9, variables.$color10);
-    @include mixins.desktop-view(130px, 45px, 1rem);
+    //@include mixins.desktop-view(130px, 45px, 1rem);
+    /* @include mixins.media-up() */
   }
-  &__btn2:active{
+  &__seeBtn:active {
     border: 1px solid black;
     color: black;
   }
   &__imgSlide {
     width: 30%;
     max-width: 420px;
-    
   }
 }
 
-.addtoCartHome{
-  &__input{
+.addtoCartHome {
+  &__input {
     display: none;
   }
 }

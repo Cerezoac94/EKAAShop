@@ -37,7 +37,7 @@ const AddtoCartHome = ({ p, me }) => {
         className="addtoCartHome__input"
       />
 
-      <button className="slide__btn" onClick={handleSubmit(submit)}>
+      <button className="slide__addBtn" onClick={handleSubmit(submit)}>
         Add To Cart
       </button>
     </form>
