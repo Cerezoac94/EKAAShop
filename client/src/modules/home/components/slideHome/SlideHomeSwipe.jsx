@@ -3,7 +3,7 @@ import { Autoplay } from "swiper";
 import { useMeQuery } from "../../../../redux/service/session.service";
 import { Link } from "react-router-dom";
 import "swiper/scss";
-//import 'swiper/css/autoplay';
+import 'swiper/css/autoplay';
 import AddtoCartHome from "./AddtoCartHome";
 
 const SlideHomeSwipe = ({ products }) => {
@@ -15,7 +15,7 @@ const SlideHomeSwipe = ({ products }) => {
       spaceBetween={30}
       loop={true}
       centeredSlides={true}
-/*       autoplay={{delay:5000}} */
+      autoplay={{delay:5000}} 
     >
       {products.slice(0, 6).map((p) => {
         return (
@@ -25,7 +25,6 @@ const SlideHomeSwipe = ({ products }) => {
               <section className="slide__nameProduct">
                 <section className="slide__name">
                   <label className="slide__font">{p.name}</label>
-                  {/* <label className="slide__font">Rambler colster 12 Oz</label> */}
                 </section>
 
                 <section className="slide__botons">
