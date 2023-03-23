@@ -31,7 +31,7 @@ const Header = () => {
             <UserMenu me={results.result} />
           </>
           ): (
-            <UserMenu/>
+            <UserMenu/>    
           )}
           </section>
           <Navbar.Offcanvas
@@ -70,7 +70,7 @@ const Header = () => {
                   <Button href="/cart" className="user_menu_btn">
                     <ion-icon name="cart-outline"></ion-icon>
                   </Button>
-                   <UserMenu me={results.result}/>
+                   <UserMenu me={results.result}/>  
                 </>
                 ): (
                   <UserMenu/>
