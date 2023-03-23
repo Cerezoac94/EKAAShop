@@ -8,8 +8,8 @@
         margin: auto;
         display: grid;
         grid-template-columns: repeat(1, 1fr);
-        grid-gap: 30px;
-        padding: 35px 0px;
+        grid-gap: 10px;
+        /*   padding: 35px 0px; */
         text-align: center;
         @include mixins.media-up(lg) {
             width: 100%;
@@ -33,6 +33,7 @@
             color: white;
             margin-bottom: 2rem;
             font-size: 1.5rem;
+            font-weight: 700;
         }
         p {
             color: #efefef;
@@ -70,5 +71,24 @@
         small {
             font-size: 0.938rem;
         }
+    }
+    &__options {
+        a {
+            /* color: white; */
+            color: #D5D8DC;
+            /*    color: #AEB6BF; */
+            opacity: 0.5;
+            font-size: 1.3rem;
+        }
+        a:hover {
+            color: #48C9B0;
+        }
+    }
+    hr {
+        color: white !important;
+        width: 100%;
+    }
+    ul {
+        padding: 0em;
     }
 }
