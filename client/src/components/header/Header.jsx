@@ -49,7 +49,7 @@ const Header = () => {
             <Offcanvas.Body>
               <Nav>
                 <Link to="/all_products" className="nav_menu_links">
-                  All Products
+                  Productos
                 </Link>
 
                 <Link to="/drinkware" className="nav_menu_links">
@@ -59,7 +59,7 @@ const Header = () => {
                   Cooler
                 </Link>
                 <Link to="/accessories" className="nav_menu_links">
-                  Accessories
+                  Accesorios
                 </Link>
                  <section className="user_actions_container_desktop">
                   {!error ? (

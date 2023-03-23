@@ -45,9 +45,9 @@ const UserMenu = ({ me }) => {
 										Login
 									</Button>
 									<label>
-										New Client?
+										Quieres Registrarte?
 										<a href="/register" className="user_menu_register">
-											Click here!
+											Clic aqui!
 										</a>
 									</label>
 								</section>
@@ -58,17 +58,17 @@ const UserMenu = ({ me }) => {
 								<Popover.Body>
 									<ul className="user_menu_links">
 										<li className="user_menu_item">
-											<Link to="/profile">Profile</Link>
+											<Link to="/profile">Perfil</Link>
 										</li>
 										<li className="user_menu_item">
-											<Link to="/orders">My Orders</Link>
+											<Link to="/orders">Mis Ordenes</Link>
 										</li>
 										<li className="user_menu_item">
-											<Link to="/wish_list">Wish List</Link>
+											<Link to="/wish_list">Lista de Deseos</Link>
 										</li>
 										{me.role == 1 && (
 											<li className="user_menu_item">
-												<Link to="/admin">Administration</Link>
+												<Link to="/admin">Administracion</Link>
 											</li>
 										)}
 									</ul>
@@ -76,7 +76,7 @@ const UserMenu = ({ me }) => {
 
 								<section className="user_menu_links">
 									<span onClick={handleLogout} className="user_menu_item">
-										Log Out
+										Salir
 									</span>
 								</section>
 							</>

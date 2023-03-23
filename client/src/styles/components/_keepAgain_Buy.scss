@@ -9,6 +9,9 @@
   align-items: center;
   border: 1px solid variables.$color1;
   border-radius: 10px;
+  &__label{
+    @include mixins.labels($main_dark, 2.2rem, 600, 3rem, unset, 100%);
+  }
 
   @include mixins.laptop-view(290px, 240px);
     @include mixins.desktop-view(400px, 350px);

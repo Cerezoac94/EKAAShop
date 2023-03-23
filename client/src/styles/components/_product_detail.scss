@@ -41,6 +41,7 @@ section.product_detail_header {
 
 label.title_label,
 label.subtitle_label {
+    margin-left: 3rem;
     @include mixins.labels($main_dark, 2.2rem, 600, 1rem 0, unset, 100%);
     text-align: justify;
     @include mixins.media-up(md) {
