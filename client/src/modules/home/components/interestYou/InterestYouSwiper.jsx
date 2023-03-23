@@ -1,9 +1,7 @@
 import { Link } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination} from "swiper";
 import { useGetAllProductsQuery } from "../../../../redux/service/product.service";
 import Loading from "../../../../components/loading/Loading";
-import "swiper/css/pagination";
 
 const InterestYouSwiper = () => {
   const { data: results = [], isLoading, error } = useGetAllProductsQuery();
@@ -13,9 +11,8 @@ const InterestYouSwiper = () => {
     ) : (
       results.length != 0 && (
         <Swiper
-          slidesPerView={4}
-          spaceBetween={30}
-          centeredSlides={true}
+          slidesPerView={2}
+          spaceBetween={10}
           breakpoints={{
             200: {
               slidesPerView: 1,
@@ -33,7 +30,6 @@ const InterestYouSwiper = () => {
           pagination={{
             clickable: true,
           }}
-          modules={[Pagination]}
           className="mySwiper"
         >
           {results?.results?.slice(0, 10).map((e) => {
