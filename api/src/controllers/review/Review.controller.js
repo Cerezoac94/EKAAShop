@@ -1,12 +1,11 @@
 import { Review, Product, User, Order, OrderDetail } from "../../models/index.js";
 
 class ReviewController {
-  // CREATE
-  // VALIDAR QUE EL USER PUEDA CREAR REVIEW, SOLO A PRODUCTOS QUE HA ORDENADO
+  
   static async createReview(req, res) {
     try {
 
-      // console.log(0);
+      
       const { idUser, idProduct } = req.params
       const { title, description, rating } = req.body
       const reviewDate = new Date()
@@ -25,7 +24,7 @@ class ReviewController {
       if (!ProductInOrder) {
         throw 'You cannot create a review for a product that has not been purchased'
       }
-      // console.log(1);
+      
       const results = await Review.create({ rating, title, description, reviewDate, idUser, idProduct })
       console.log(2);
       if (!results) throw "The Review is not created"
@@ -34,7 +33,7 @@ class ReviewController {
         message: "Review created succesfully",
         results
       })
-      // console.log(3);
+      
 
     } catch (err) {
       res.status(400).send({
@@ -44,7 +43,7 @@ class ReviewController {
     }
   }
 
-  // GET ALL
+  
   static async getAllReview(req, res) {
     try {
       const results = await Review.findAll({
@@ -74,10 +73,7 @@ class ReviewController {
     }
   }
 
-  // GET BY ID will not be used
-
-  // UPDATE
-  // REVIEW: check if only indicated fields can be updated
+  
   static async updateReview(req, res) {
     try {
       const {id} =req.params
@@ -109,7 +105,7 @@ class ReviewController {
     }
   }
 
-  // DELETE inly admin be used
+  
   static async deleteReview(req, res) {
     try {
       const {id} = req.params

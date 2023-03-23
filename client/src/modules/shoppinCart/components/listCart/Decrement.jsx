@@ -4,7 +4,6 @@ import { useDecrementProductCartMutation } from "../../../../redux/service/cart.
 
 
 const Decrement = ({ p, me }) => {
-  // console.log("🚀 ~ file: Decrement.jsx:5 ~ Decrement ~ p:", p);
   const [decrement] = useDecrementProductCartMutation();
   const { handleSubmit } = useForm();
 

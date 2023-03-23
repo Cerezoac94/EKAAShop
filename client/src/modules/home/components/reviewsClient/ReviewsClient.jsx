@@ -1,5 +1,6 @@
-import React from "react";
+import { Navigation } from "swiper";
 import "swiper/scss";
+import "swiper/css/navigation";
 
 const ReviewsClient = ({ r }) => {
   const maxRating = 5;

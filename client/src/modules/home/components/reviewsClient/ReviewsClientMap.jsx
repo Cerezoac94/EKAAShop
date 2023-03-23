@@ -3,6 +3,10 @@ import { Pagination, Navigation } from "swiper";
 import { useGetAllReviewsQuery } from "../../../../redux/service/review.service";
 import Loading from "../../../../components/loading/Loading";
 import ReviewsClient from "./ReviewsClient";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+
+
 const ReviewsClientMap = () => {
   const { data: results = [], isLoading, error } = useGetAllReviewsQuery();
 
@@ -19,10 +23,9 @@ const ReviewsClientMap = () => {
               slidesPerView:2
             }}
           }
-          pagination={true}
           navigation={true}
+          pagination={true}
           modules={[Navigation, Pagination]}
-          // centeredSlides={true}
         >
           {results?.results?.slice(0, 10).map((e) => {
             return (

@@ -18,13 +18,14 @@
     gap: 1rem;
     width: 95%;
     height: 100%;
+    margin-top: 1rem;
     border-radius: 1rem;
     background-color: $secondary_fonts;
   }
 
   &__oferta {
     @include mixins.display(flex, column, space-evenly, center);
-    height: 60%;
+    height: 95%;
   }
   &__des {
     font-size: 1.5rem;

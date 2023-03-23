@@ -1,10 +1,10 @@
 import { Card, User } from "../../models/index.js";
 
 class CardController {
-  // CREATE
+  
   static async createCard(req, res) {
     try {
-      // desestrcutura campos idUser, cardNumber, expirationDate, cvv
+      
       const { cardNumber, expirationDate, cvv, idUser } = req.body;
       const results = await Card.create({
         idUser,
@@ -26,7 +26,7 @@ class CardController {
     }
   }
 
-  // GET BY IDUSER
+  
   static async getCardById(req, res) {
     try {
       const { id } = req.params;
@@ -54,9 +54,7 @@ class CardController {
     }
   }
 
-  // NOTE: No se permitirá update, simplemente eliminar
-
-  // DELETE
+  
   static async deleteCard(req, res) {
     try {
       const { id } = req.params;

@@ -41,6 +41,7 @@ section.product_detail_header {
 
 label.title_label,
 label.subtitle_label {
+    margin-left: 3rem;
     @include mixins.labels($main_dark, 2.2rem, 600, 1rem 0, unset, 100%);
     text-align: justify;
     @include mixins.media-up(md) {
@@ -56,9 +57,7 @@ label.subtitle_label {
 
 .product_description {
     @include mixins.basic_fonts($main_fonts, 1.5rem, 0 0 2.4rem, unset, justify);
-    /*     @include mixins.media-up(sm) {
-        font-size: 1.2rem;
-    } */
+    
     @include mixins.media-up(md) {
         font-size: 1rem;
     }
@@ -158,13 +157,6 @@ button.add_product_btn {
 .product_details_desktop_container {
     @include mixins.display(flex, row, unset, stretch);
 }
-
-
-/* .buying_info_section {
-    @include mixins.media-up(lg) {
-        width: 350px;
-    }
-} */
 
 .buying_info_section {
     @include mixins.display(flex, column, flex-start, stretch);

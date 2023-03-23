@@ -1,11 +1,10 @@
 //Mobile
 header {
-    // height: 10vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    //background: $secondary_background;
-    background-color: $secondary_background;
+  display: flex;
+
+  flex-direction: column;
+  justify-content: center;
+  background-color: $secondary_background;
 }
 
 //navbar_styles
@@ -95,9 +94,9 @@ img.logo {
 //Links
 a,
 a:visited {
-    text-decoration: none;
-    color: $main_fonts;
-    //margin: 1rem;
+
+  text-decoration: none;
+  color: $main_fonts;
 }
 
 a.nav_menu_links {
@@ -127,18 +126,22 @@ a.nav_menu_links {
     margin: 0.625rem 0;
 }
 
+@media only screen and (min-width: 768px) {
+  //Offcanvas
+  .offcanvas-body{
+    justify-content: flex-end;
+  }
 
-/* .search_header_container {
-  display: flex;
-  align-items: center;
-  justify-self: center;
-  //width: 90%;
-  font-size: 1.563rem;
-  border: 1px solid $color7;
-  border-radius: 10px;
-  padding: 0.375rem 0.75rem;
+  .offcanvas-header{
+    width: 150px !important;
+  }
+
+  .navbar-nav {
+    width: 100%;
+    align-items: center;
+    justify-content: space-evenly;
+    font-size: 0.875rem;
 }
- */
 
 @media only screen and (min-width: 768px) {
     //Offcanvas

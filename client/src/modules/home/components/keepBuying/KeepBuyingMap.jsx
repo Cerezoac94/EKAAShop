@@ -10,7 +10,7 @@ const KeepBuyingMap = ({ me }) => {
     ) : (
       results?.results.Products.length > 0 && (
         <section>
-          <h1>KeepBuying</h1>
+          <label className="keepBuying__label">Seguir Comprando</label>
   
           <section className="keepBuyingContainer">
             {results?.results.Products.slice(0, 4).map((product) => (

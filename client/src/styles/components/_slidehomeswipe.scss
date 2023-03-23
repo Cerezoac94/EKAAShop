@@ -9,10 +9,10 @@
 .slide {
   display: flex;
   width: 100%;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
 
-  @media (min-width: 978px) {
+  @media (min-width: 768px) {
     justify-content: center;
     width: 100%;
     display: flex;
@@ -28,20 +28,18 @@
   &__nameProduct {
     display: flex;
     flex-direction: column;
-    // width: 30vw;
     height: 5vh;
     justify-content: space-evenly;
 
     @media (min-width: 978px) {
       display: flex;
       width: 35vw;
-      height: 10vh;
+      height: 15vh;
     }
   }
   &__name {
     display: flex;
     flex-direction: column;
-    // width: 20vw;
     font-size: 1rem;
     font-weight: 600;
     @media (min-width: 2560px) {
@@ -50,7 +48,6 @@
   }
   &__font {
     font-size: 1.4rem;
-    width: 100%;
 
     @media (min-width: 978px) {
       font-size: 2rem;
@@ -58,7 +55,6 @@
   }
   &__botons {
     display: flex;
-    // flex-direction: column;
     justify-content: flex-start;
     align-items: center;
     height: 5vh;

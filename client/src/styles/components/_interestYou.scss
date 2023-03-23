@@ -1,101 +1,77 @@
-@use '../base/variables';
-@use '../abstracts/mixins';
-.interestYou {
-    &__productsContainer {
-        width: 20rem;
-        height: 70%;
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 40px;
-    }
-    &__product {
-        position: relative;
-        /*  background-color: variables.$card-bg; */
-        /*  border: 3px solid #0A3F58; */
-        border: 2px solid #3C99BA;
-        /*    width: 300px; */
-        width: 70%;
-        height: 100%;
-        box-shadow: 0 5px 20px rgba(0, 0, 0, .3);
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        padding: 20px, 20px, 40px;
-        border-radius: 10px;
-        transition: .3s;
-        /*   @include mixins.media-up(lg) {
-            width: 30rem;
-        } */
-        p {
-            font-size: 1.5em;
-            line-height: 25px;
-            padding: .5em;
-        }
-        span {
-            margin: 0 2em;
-        }
-    }
-    &__imagen {
-        width: 100%;
-        height: 60%;
-        display: grid;
-        place-items: center;
-        /*    padding: 2em 2em; */
-    }
-    &__img {
-        /*         width: 15rem;
-        border-radius: 2rem; */
-        width: 80%;
-        height: auto;
-        padding: 1em;
-    }
-    &__namePrice {
-        width: 100%;
-        /* display: flex; */
-        justify-content: space-between;
-        padding: 2em;
-        text-align: center;
-        h3 {
-            font-size: 2em;
-            text-transform: capitalize;
-            color: variables.$main_dark;
-            width: 90%;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            -webkit-line-clamp: 1;
-            @include mixins.media-up(lg) {
-                font-size: 1.3em;
-            }
-        }
-        span {
-            font-size: 1.5em;
-            color: $color6;
-        }
-    }
-    &__start {
-        font-size: 1.7em;
-        color: variables.$color11;
-        margin: 0 1em;
-    }
-    &__buy {
-        position: absolute;
-        bottom: 10px;
-        right: 20px;
-        button {
-            @include mixins.button(variables.$main_dark, unset, 7px, variables.$color10, 8em, unset, 1.2em);
-            text-transform: capitalize;
-            cursor: pointer;
-            transition: .5s;
-        }
-    }
+@use "../base/variables";
+@use "../abstracts/mixins";
+
+.interestSection {
+  width: 95vw;
+  margin: 0 auto;
 }
 
-.mySwiper {
-    margin: 2rem 2rem;
+.interestCont {
+  display: flex;
+  width: 95%;
+  max-width: 320px;
+  flex-direction: column;
+  margin: 0 auto;
+  box-shadow: 5px 5px 20px 5px rgba(0, 0, 0, 0.3);
+  padding: 20px, 20px, 40px;
+  transition: 0.3s;
+  border-radius: 1rem;
+
+  div {
+    text-align: center;
+  }
+  &__name{
+    width: 230px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+  &__Card {
+    display: flex;
+    // max-width: 320px;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 35vh;
+  }
+  &__img {
+    width: 35%;
+    max-width: 156px;
+    max-height: 156px;
+  }
+
+  &__price{
+    display: flex;
+    align-items: center;
+  }
+
+  &__span{
+    margin: 0;
+    color: rgba(128, 128, 128, 0.811);
+    font-size: 1rem;
+    padding-left: .5rem ;
+  }
+  &__stock{
+    display: flex;
+    width: 100%;
+  }
+
+  &__valores{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    // gap: 1rem;
+    width: 100%;
+  }
+
+
 }
 
 .swiper-wrapper {
-    gap: 0 !important;
+  gap: 0;
+  margin-bottom: 2rem !important;
+}
+.swiper-pagination{
+  margin-bottom: -1rem;
 }

@@ -80,23 +80,32 @@ label.admin_title{
     width: 35%;
     margin-left: 6rem;
     @include mixins.button-hover($main_fonts,$color10);
+    @include mixins.media-up(md){
+      width: 20%;
+      margin-left: 3rem;
+    }
+    @include mixins.media-up(md){
+      margin-left: 2rem;
+    }
   }
   &__ordersViewBtn{
     @include mixins.secondary-btn;
     width: 35%;
     margin-top: 2rem;
     @include mixins.button-hover($main_fonts,$color10);
+    @include mixins.media-up(md){
+      width: 25%;
+    }
+    @include mixins.media-up(lg){
+      font-size: 1rem;
+    }
   }
 }
 
 
 .createProduct {
-
-  // width: 90%;
-  // border: 1px solid #ccc;
   border-radius: 4px;
   box-shadow: #3C99BA;
-  // overflow: hidden;
   margin: 10px;
 }
 

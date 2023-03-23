@@ -74,7 +74,7 @@ const AddToCart = ({ p, me }) => {
       </section>
       <section className="add__containSubmit">
         <button className="add__addSubmit" onClick={handleSubmit(submit)}>
-          Add To Cart
+          Agregar al carrito
         </button>
       </section>
     </form>

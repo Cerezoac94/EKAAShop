@@ -5,10 +5,12 @@
   width: 220px;
   height: 100px;
 	display: flex;
-	// justify-content: space-between;
   align-items: center;
   border: 1px solid variables.$color1;
   border-radius: 10px;
+  &__label{
+    @include mixins.labels($main_dark, 2.2rem, 600, 0 0 2rem 2rem, unset, 90%);
+  }
 
   @include mixins.laptop-view(290px, 240px);
     @include mixins.desktop-view(400px, 350px);
