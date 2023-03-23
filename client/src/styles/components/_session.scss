@@ -97,16 +97,12 @@ input#formBasicPassword {
 }
 
 button.session_btn.btn.btn-primary {
-    @include mixins.button($color8,none,8px,#fff,100%,unset,1.6rem);
+    @include mixins.primary-btn;
+    font-size: 1.4rem;
     margin: 1rem 0;
-    padding: 1rem 0;
-    text-transform: uppercase;
-    transition: background-color 0.2s ease-in-out;
     @include mixins.button-hover($secondary_background,#fff);
     @include mixins.media-up(md){
-        font-size: 1.2rem;
-        margin: 2.5rem 0 1rem;
-        padding: 0.5rem 0;
+        padding: 0.5rem 1rem;
     }
     
 }
