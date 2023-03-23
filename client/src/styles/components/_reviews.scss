@@ -1,12 +1,28 @@
 @use '../base/variables';
 @use '../abstracts/mixins';
+
+.swiperReview{
+    width: 70vw;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+
+    @media (min-width:2560px) {
+        width: 50vw;
+        
+    }
+
+}
+
+
 .reviews {
-    /*   border: 2px solid red; */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
     margin-top: 1rem;
-    width: 200px;
-    @include mixins.laptop-view(unset, unset, unset, unset);
-    @include mixins.laptop-view(290px, 240px);
-    @include mixins.desktop-view(400px, 350px);
+    // width: 200px;
+    // @include mixins.laptop-view(unset, unset, unset, unset);
+    // @include mixins.laptop-view(290px, 240px);
+    // @include mixins.desktop-view(400px, 350px);
     &__container {
         border: 1px solid variables.$secondary_background;
         /*  height: 30rem;
@@ -17,26 +33,29 @@
         display: flex;
         align-items: center;
     }
-    &__icons {
-        color: variables.$color9;
-        font-size: 2rem;
-        display: flex;
-    }
     &__img {
         width: 11rem;
         height: 13rem;
     }
-    &__h3 {
-        text-align: center;
-        margin-bottom: 1rem;
-    }
-    &__reiting {
+    &__desc{
         display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: flex-start;
+    }
+    &__user {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
     }
     &__text {
-        margin-top: 1rem;
-        text-align: center;
-        line-height: .3rem;
-        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        // margin-top: 1rem;
+        // text-align: center;
+        // line-height: .3rem;
+        // padding: 1rem;
     }
 }
+
