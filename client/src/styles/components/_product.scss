@@ -44,6 +44,9 @@ label.product_item_name {
 	@include mixins.media-up(md) {
 		font-size: 1rem;
 	}
+    @include mixins.media-up(xl) {
+		font-size: 1.4rem;
+	}
     color: $main_dark;
     font-weight: 600;
 	font-size: 1.6rem;
