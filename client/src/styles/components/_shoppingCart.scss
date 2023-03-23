@@ -8,7 +8,6 @@
     gap: 2rem;
     &__pay {
         display: flex;
-        justify-content: space-evenly;
         align-items: baseline;
         @include mixins.media-up(lg) {
             gap: 4rem;
@@ -23,12 +22,6 @@
     &__span {
         font-weight: bolder;
         margin-bottom: 2rem;
-    }
-    &__btn {
-        @include mixins.button( variables.$secondary_background, unset, 10px, variables.$color10, 100%, 2.5rem, 15px);
-        margin: 10px 20px;
-        @include mixins.button-hover( variables.$main_background, variables.$secondary_fonts);
-        @include mixins.desktop-view(200px, 2.5rem, unset, 3rem);
     }
     &__info {
         display: flex;
@@ -92,29 +85,21 @@
         background: white;
         @include mixins.media-up(sm) {
             width: 36px;
-            height: 30px;
-            font-size: 1em;
+            height: 25px;
         }
-        @include mixins.desktop-view(70px, 40px, 2rem, unset);
+        @include mixins.media-up(md) {
+            width: 36px;
+            height: 40px;
+        }
+        @include mixins.media-up(lg) {
+            height: 31px;
+        }
+        @include mixins.desktop-view(70px, 33px, 1.5rem, unset);
     }
     &__btnThird {
         width: 20%;
         @include mixins.button( variables.$secondary_background, variables.$secondary_background, 4px, variables.$color10, 5rem, 36px);
         @include mixins.desktop-view(120px, 40px, unset, unset);
-    }
-    &__h3condicional {
-        color: variables.$confirmation;
-        font-weight: bold;
-        font-size: 1rem;
-        text-align: center;
-        margin-top: 1rem;
-    }
-    &__allContainer {
-        @include mixins.order-desktop(unset, unset, unset, unset, 0 2rem);
-        display: flex;
-        justify-content: center;
-        /*  height: 100vh; */
-        align-items: center;
     }
 }
 
@@ -137,12 +122,13 @@
     width: 90vw;
     border-radius: 1rem;
     box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.2);
-    height: 19rem;
+    height: 30vh;
     @include mixins.media-up(sm) {
-        height: 16vh;
+        height: 18vh;
     }
     @include mixins.media-up(md) {
         width: 50vw;
+        height: 25vh;
     }
     @include mixins.media-up(xxl) {
         height: 24rem;
@@ -174,6 +160,9 @@
         border: none;
         font-size: 2rem;
         color: white;
+        @include mixins.media-up(lg) {
+            height: 2rem
+        }
     }
     &__btnIconMenus {
         @include mixins.display(flex, column, center, center);
@@ -185,5 +174,8 @@
         border: none;
         font-size: 2rem;
         color: white;
+        @include mixins.media-up(lg) {
+            height: 2rem
+        }
     }
 }
