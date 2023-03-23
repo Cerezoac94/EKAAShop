@@ -120,6 +120,18 @@
     cursor: pointer;
 }
 
+@mixin four-btn {
+    background-color: #C4C31D;
+    border: none;
+    border-radius: 4px;
+    color: variables.$color10;
+    padding: 0.5rem 2rem;
+    font-size: 0.6rem;
+    text-transform: uppercase;
+    transition: background-color 0.1s ease-in-out;
+    cursor: pointer;
+}
+
 @mixin banners-btns {
     background-color: variables.$color11;
     border: none;
@@ -195,6 +207,7 @@
     border-radius: $br;
     box-shadow: $bxS;
 }
+
 $breakpoints:( sm:540px, md:768px, lg:1024px, xl:1280px, xxl:1800px);
 @mixin media-up($breakpoint) {
     @if map-has-key($breakpoints, $breakpoint) {

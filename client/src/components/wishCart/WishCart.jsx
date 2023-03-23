@@ -43,14 +43,14 @@ const WishCart = ({ p, title, me }) => {
         <div>
           <Link to={`/product_detail/${p.id}`}>
             <section className="listCart__labels">
-              <h2 className="listCart__confirmation">{`Add to ${title}`}</h2>
+              <h2 className="listCart__confirmation">{`Se añadio ${title}`}</h2>
               <span className="listCart__desc">{p.name}</span>
               <span className="listCart__price">${p.price}</span>
 
               {p.stock != 0 ? (
-                <span className="listCart__stock">In stock</span>
+                <span className="listCart__stock">Disponible</span>
               ) : (
-                <span className="listCart__stock">Out stock</span>
+                <span className="listCart__stock"> No disponible </span>
               )}
               <span className="listCart__color">Stock: {p.stock}</span>
             </section>

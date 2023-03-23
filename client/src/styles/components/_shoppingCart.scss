@@ -124,14 +124,24 @@
     box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.2);
     height: 30vh;
     @include mixins.media-up(sm) {
-        height: 18vh;
+        height: 26vh;
+        width: 75vw;
     }
     @include mixins.media-up(md) {
-        width: 50vw;
-        height: 25vh;
+        width: 80vw;
+        height: 37vh;
+    }
+    @include mixins.media-up(lg) {
+        width: 75vw;
+        height: 35vh;
+    }
+    @include mixins.media-up(xl) {
+        width: 75vw;
+        height: 40vh;
     }
     @include mixins.media-up(xxl) {
-        height: 24rem;
+        width: 70vw;
+        height: 34vh;
     }
     &__contImg {
         @include mixins.display(flex, column, space-around, center);
