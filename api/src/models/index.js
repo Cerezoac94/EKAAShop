@@ -21,7 +21,7 @@ User.belongsTo(State, {
 
 State.hasMany(User, {
     foreignKey: 'idState',
-        // allowNull: false
+    
 })
 
 // user-role
@@ -31,7 +31,7 @@ User.belongsTo(Role, {
 })
 Role.hasMany(User, {
   foreignKey: 'idRole',
-      // allowNull: false
+  
 })
 
 // card-user
@@ -94,7 +94,6 @@ Wish.hasMany(WishProduct,{
 })
 User.hasOne(Wish, {
   foreignKey: 'idUser',
-      // allowNull: false
 })
 
 // wish-wish_product
@@ -109,28 +108,24 @@ WishProduct.belongsTo(Product, {
 Wish.hasMany(WishProduct,{
   foreignKey:'idWish'
 })
-// wishProduct (wish & product)
-// Wish.belongsToMany(Product, { through: WishProduct, foreignKey:'idWish' })
-// Product.belongsToMany(Wish, { through: WishProduct, foreignKey:'idProduct' })
+
 
 // product (wish & cart)
 Product.belongsToMany(Cart, {
   through: CartProduct,
   foreignKey: 'idProduct',
-  // onDelete: 'NO ACTION' 
+   
 })
 Product.belongsToMany(Wish,  {
   through: WishProduct,
   foreignKey: 'idProduct',
-  // onDelete: 'NO ACTION' 
+   
 })
-// Cart.belongsToMany(Product, { through: CartProduct })
-// Wish.belongsToMany(Product, { through: WishProduct })
+
 
 // product-category
 Product.belongsTo(Category,{
   foreignKey: 'idCategory',
-  // onDelete:'set null', Esto me marca un error
   onDelete:'SET NULL',
   onUpdate:'CASCADE'
 })
@@ -148,13 +143,6 @@ Product.hasMany(Discount, {
   foreignKey: 'idProduct',
 });
 
-// //Product-cart_Product
-// CartProduct.belongsTo(Product,{
-//   foreignKey:'idProduct',
-// })
-// Product.hasMany(CartProduct,{
-//   foreignKey:'idProduct'
-// })
 
 // Product-review
 Review.belongsTo(Product,{
@@ -165,7 +153,7 @@ Product.hasMany(Review,{
   foreignKey:'idProduct',  
 })
 
-//Product-order_details
+
 OrderDetail.belongsTo(Product,{
   foreignKey:'idProduct',
   onDelete: 'SET NULL'

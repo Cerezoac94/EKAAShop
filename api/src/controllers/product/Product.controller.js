@@ -7,7 +7,7 @@ initializeApp(firebaseConfig)
 const storage = getStorage()
 
 class ProductController {
-  // CREATE
+  
   static async createProduct(req, res) {
     try {
       const { name, description, price, stock, idCategory } = req.body;
@@ -61,8 +61,7 @@ class ProductController {
     }
   }
 
-  // GET BY ID
-  // faltan los include
+  
   static async getProductById(req, res) {
     try {
       const {id} =req.params
@@ -86,7 +85,7 @@ class ProductController {
       });
     }
   }
-  //Filtrar productos por categoria
+  
   static async getProductByCategory(req, res) {
     try {
       const { idCategory } = req.params;
@@ -102,7 +101,7 @@ class ProductController {
       res.status(404).send(err);
     }
   }
-  //Filtrar productos con descuento
+  
   static async getProductsWithDiscount(req, res) {
     try {
       let now = new Date();

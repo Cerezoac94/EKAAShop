@@ -30,20 +30,20 @@ class WishController {
   static async addProductWish(req, res) {
     try {
       const { idUser, idProduct } = req.params
-      // Se busca al usuario
+    
       const user = await User.findByPk(idUser)
       if (!user) throw 'Problem with finding the user'
 
-      // Target wish para el usuario correspondinte
+      
       const wish = await Wish.findOne({ where: { idUser: user.id } });
       if (!wish) throw 'Problem with finding the wish'
 
-      // Validate product
+      
       const product = await Product.findByPk(idProduct);
       if (!product) throw 'No product found'
 
 
-      //  add to wish
+      
       const wishProduct = await WishProduct.findOne({
         where:
         {
@@ -51,7 +51,7 @@ class WishController {
           idProduct: product.id
         }
       });
-      // Si no hay ningún registro en wishProduct relacionado a la wish del usuario o en los registros que existen, o no existe el producto que se desea agregar, crea un nuevo registro en wishProduct
+      
       if (!wishProduct) {
         const results = await WishProduct.create({
           idWish: wish.id,
@@ -63,7 +63,7 @@ class WishController {
         });
         if (!results) throw "Not added to wish"
       }
-      // Si hay registro en wishProduct y el producto es el mismo, elimina el registro
+      
       else {
         const results = await WishProduct.destroy({
           where: {

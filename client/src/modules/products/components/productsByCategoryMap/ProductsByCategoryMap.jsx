@@ -9,7 +9,6 @@ const ProductsByCategoryMap = ({ category }) => {
     error,
   } = useGetProductByCategoryQuery(category);
 
-  // return <h3>drinkware</h3>
   return error ? (
     <h3>{error?.data?.message}</h3>
   ) : isLoading ? (

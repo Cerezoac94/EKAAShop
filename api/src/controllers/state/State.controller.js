@@ -19,7 +19,7 @@ class StateController {
     }
   }
   
-  // GET ALL
+ 
   static async getAllStates(req, res) {
     try {
       const results = await State.findAll()
@@ -37,7 +37,7 @@ class StateController {
     }
   }
 
-  // UPDATE
+  
   static async updateState(req, res){
     try {
       const {id} = req.params
@@ -58,7 +58,7 @@ class StateController {
   }
 
 
-  // DELETE
+  
   static async deleteState(req, res){
     try {
       const {id} = req.params
@@ -76,7 +76,7 @@ class StateController {
       })
     }
   }
-  //TODO metodos de clase
+  
 }
 
 export default StateController;

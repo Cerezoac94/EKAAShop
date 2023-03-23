@@ -13,9 +13,6 @@ const SlideHomeSwipeMap = () => {
   products = structuredClone(results.results)
   products.sort(random)
   }
-
-  // return <h3>prueba</h3>
-
   return error ? (
     error?.message
   ) : isLoading ? (

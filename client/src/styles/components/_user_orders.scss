@@ -61,13 +61,6 @@ img.user_order_image {
     @include mixins.images(100%,auto)
 }
 
-//details
-/* label.item_name {
-    text-align: justify;
-    //margin-bottom: 0.625rem;
-    font-weight: 600;
-    font-size: 0.75rem;
-} */
 
 label.item_qty {
     font-size: 0.75rem;
@@ -81,7 +74,6 @@ section.cancel_order_button {
 }
 
 .cancel_user_order {
-    /* @include mixins.button($secondary_fonts, unset,1rem, $main_background, unset, unset, unset); */
     @include mixins.primary-btn;
     padding: 0.5rem 1rem;
     font-size: 0.8rem;
@@ -117,12 +109,7 @@ section.cancel_order_button {
     section.photo_item {
         width: 20%;
     }
-
-/*     label.item_name,
-    label.price_item_label {
-        font-size: 1.25rem;
-    } */
-
+    
     label.item_qty {
         font-size: 1rem;
     }

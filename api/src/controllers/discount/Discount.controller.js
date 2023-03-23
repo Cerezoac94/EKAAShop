@@ -47,28 +47,6 @@ class DiscountController {
     }
   }
 
-  // static async getDiscountById(req, res) {
-  //   // includes
-  //   try {
-  //     const results = await Discount.findOne({
-  //       where: {
-  //         id: req.params.id,
-  //       },
-  //       attributes: ["code", "startDate", "endDate", "discount"],
-  //     });
-  //     if (!results) throw "No discount found";
-  //     res.status(200).send({
-  //       success: true,
-  //       message: "Discount found",
-  //       results,
-  //     });
-  //   } catch (err) {
-  //     res.status(404).send({
-  //       success: false,
-  //       message: err,
-  //     });
-  //   }
-  // }
 
   static async updateDiscount(req, res) {
     try {

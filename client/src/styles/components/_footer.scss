@@ -1,94 +1,93 @@
-@use '../base/variables';
-@use '../abstracts/mixins';
+@use "../base/variables";
+@use "../abstracts/mixins";
 .footer {
+  width: 100%;
+  background-color: $main_fonts;
+  &__grupo1 {
+    width: 90%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 10px;
+    text-align: center;
+    
+    @include mixins.media-up(lg) {
+      width: 100%;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 50px;
+      padding: 45px 0px;
+    }
+  }
+  &__box {
+    figure {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    h2 {
+      color: white;
+      margin-bottom: 2rem;
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+    p {
+      color: #efefef;
+      margin-bottom: inline-block;
+      font-size: 1.2em;
+    }
+  }
+  &__logo {
+    width: 14rem;
+    height: 8rem;
+  }
+  &__redSocial {
+    color: white;
+    ion-icon {
+      color: white;
+      display: inline-block;
+      text-decoration: none;
+      width: 2.813rem;
+      height: 2.813rem;
+      line-height: 2.813rem;
+      margin-right: 0.625rem;
+      background-color: #34495e;
+      text-align: center;
+      transition: all 300ms ease;
+    }
+    ion-icon:hover {
+      color: #48c9b0;
+    }
+  }
+  &__grupo2 {
+    background-color: #0a1a2a;
+    padding: 0.938rem, 0.625rem;
+    text-align: center;
+    color: white;
+    small {
+      font-size: 0.938rem;
+    }
+  }
+  &__options {
+    a {
+      /* color: white; */
+      color: #d5d8dc;
+      /*    color: #AEB6BF; */
+      opacity: 0.5;
+      font-size: 1.3rem;
+    }
+    a:hover {
+      color: #48c9b0;
+    }
+  }
+  hr {
+    color: white !important;
     width: 100%;
-    background-color: $main_fonts;
-    &__grupo1 {
-        width: 90%;
-        margin: auto;
-        display: grid;
-        grid-template-columns: repeat(1, 1fr);
-        grid-gap: 10px;
-        /*   padding: 35px 0px; */
-        text-align: center;
-        @include mixins.media-up(lg) {
-            width: 100%;
-            /*       max-width: 1200px; */
-            margin: auto;
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            grid-gap: 50px;
-            padding: 45px 0px;
-        }
-    }
-    &__box {
-        figure {
-            width: 100%;
-            height: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        h2 {
-            color: white;
-            margin-bottom: 2rem;
-            font-size: 1.5rem;
-            font-weight: 700;
-        }
-        p {
-            color: #efefef;
-            margin-bottom: inline-block;
-            font-size: 1.2em;
-        }
-    }
-    &__logo {
-        width: 14rem;
-        height: 8rem;
-    }
-    &__redSocial {
-        color: white;
-        ion-icon {
-            color: white;
-            display: inline-block;
-            text-decoration: none;
-            width: 2.813rem;
-            height: 2.813rem;
-            line-height: 2.813rem;
-            margin-right: 0.625rem;
-            background-color: #34495E;
-            text-align: center;
-            transition: all 300ms ease;
-        }
-        ion-icon:hover {
-            color: #48C9B0;
-        }
-    }
-    &__grupo2 {
-        background-color: #0a1a2a;
-        padding: 0.938rem, 0.625rem;
-        text-align: center;
-        color: white;
-        small {
-            font-size: 0.938rem;
-        }
-    }
-    &__options {
-        a {
-            /* color: white; */
-            color: #D5D8DC;
-            /*    color: #AEB6BF; */
-            opacity: 0.5;
-            font-size: 1.3rem;
-        }
-        a:hover {
-            color: #48C9B0;
-        }
-    }
-    hr {
-        color: white !important;
-        width: 100%;
-    }
-    ul {
-        padding: 0em;
-    }
+  }
+  ul {
+    padding: 0em;
+  }
 }
