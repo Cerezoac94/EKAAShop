@@ -9,8 +9,18 @@ const CreateProduct = () => {
   const [create,  { error, data }] = useCreateProductMutation()
   
   const { register, handleSubmit, watch, formState: { errors } } = useForm();
-
-  const submit = (data) => create(data);
+  const formData = new FormData();
+  const submit = (data) => {
+    console.log(data);
+    console.log(data.image[0]);
+    formData.append("name", data.name);
+    formData.append("description", data.description);
+    formData.append("price", data.price);
+    formData.append("stock", data.stock);
+    formData.append("idCategory", data.idCategory);
+    formData.append("image", data.image[0]);
+    create(formData)
+  }
 
   useEffect(() => {
    if(data) Swal.fire({
@@ -91,11 +101,11 @@ const CreateProduct = () => {
             <input type="file"  className="product_input" />
           </div> */}
           <div className="form-group">
-            <label>Imagen url:</label>
+            <label>Image</label>
             <input {...register("image", {
             required: true
-           })} type="text" className="product_input" />
-           {errors.stock?.type === 'required' && <ErrorForm message={"Campo obligatorio"}/>
+           })} type="file" className="product_input" accept="image/png, image/jpeg"/>
+           {errors.stock?.type === 'required' && <ErrorForm message={"Imagen de producto obligatoria"}/>
           }
           </div>
           <section className="form-group">

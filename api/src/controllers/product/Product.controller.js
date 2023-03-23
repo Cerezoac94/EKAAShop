@@ -1,17 +1,31 @@
 import { Op } from "sequelize";
 import { Category, Product, Discount } from "../../models/index.js";
+import { initializeApp } from "firebase/app";
+import { firebaseConfig } from "../../config/firebase.js";
+import { getDownloadURL, getStorage, ref, uploadBytesResumable } from 'firebase/storage'
+initializeApp(firebaseConfig)
+const storage = getStorage()
 
 class ProductController {
   // CREATE
   static async createProduct(req, res) {
     try {
-      const { name, description, price, stock, image, idCategory } = req.body;
+      const { name, description, price, stock, idCategory } = req.body;
+      const image = req.file
+
+      const metaData = {
+        contentType:image.mimetype
+      }
+      const storageRef = ref(storage, `product/${name}/${image.originalname}`)
+      const resUploadImg = await uploadBytesResumable(storageRef, image.buffer, metaData)
+      const imageUrl = await getDownloadURL(resUploadImg.ref)
+      req.body.image = imageUrl
       const results = await Product.create({
         name,
         description,
         price,
         stock,
-        image,
+        image:imageUrl,
         idCategory,
       });
       if (!results) throw "The product is not created";
