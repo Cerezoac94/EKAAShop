@@ -75,18 +75,20 @@ label.admin_title{
     border: 2px solid grey;
   }
 
-  &__button {
-/* @include mixins.button($secondary, ) */
-    min-width: 150px;
-    height: 3rem;
-    border: none;
-    border-radius: 8px;
-    background: $secondary;
-    color: $main_background;
-    margin-top: 1rem;
-    padding: .8rem;
+  &__adminBtn {
+    @include mixins.secondary-btn;
+    width: 35%;
+    margin-left: 6rem;
+    @include mixins.button-hover($main_fonts,$color10);
+  }
+  &__ordersViewBtn{
+    @include mixins.secondary-btn;
+    width: 35%;
+    margin-top: 2rem;
+    @include mixins.button-hover($main_fonts,$color10);
   }
 }
+
 
 .createProduct {
 

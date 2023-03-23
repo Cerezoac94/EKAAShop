@@ -41,7 +41,7 @@ const CreateCategory = () => {
           {errors.name?.type === 'pattern' && <ErrorForm message={"Solo números y letras y no más de un espacio entre palabra"}/>
           }
            
-          <button className="prop__button">Crear</button>
+          <button className="prop__adminBtn">Crear</button>
         </section>
         {error &&  <ErrorForm message = {error.data.message}/>}
       </form>

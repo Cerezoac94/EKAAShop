@@ -45,7 +45,7 @@ const AdminContainer = () => {
         </Accordion.Body>
       </Accordion.Item>
     </Accordion>
-    <button className="prop__button" onClick={() => {navigate("orders_list")}}>View orders</button>
+    <button className="prop__ordersViewBtn" onClick={() => {navigate("orders_list")}}>View orders</button>
     </section>
   );
 };
