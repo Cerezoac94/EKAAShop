@@ -14,7 +14,6 @@ Role.init({
   timestamps: false
 })
 
-// Creación de roles Admin y User al sincronizarse los modelos y si no existen, si ya existen en la base no los creará
 Role.afterSync(async role => {
   const roles = await Role.findAll({
     where: {

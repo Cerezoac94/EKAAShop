@@ -18,11 +18,6 @@
     background: none;
 }
 a.user_menu_login_btn.btn.btn-primary {
-/*     width: 100%;
-    background-color: $secondary_background;
-    border: none;
-    margin: 0.5rem 0;
-    font-size: 1.125rem; */
     @include mixins.secondary-btn;
     margin: 1rem 0;
     @include mixins.button-hover($main_fonts,$color10);

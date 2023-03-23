@@ -8,7 +8,7 @@ import { generateToken } from "../../config/token.js";
 import newAccount from "../../utils/mails/newAccount.js";
 
 class UserController {
-  // FIXME: Al haber error de no encontrar "state" existente, aún así incrementa el id
+  
   static async createUser(req, res) {
     try {
       const { userName, firstName, lastName, email, password } = req.body;
@@ -28,7 +28,7 @@ class UserController {
       const wish = await Wish.create({
         idUser: results.id,
       });
-      // send email new account
+      
       await newAccount(email, userName)
 
       await results.update({

@@ -9,22 +9,22 @@ export const orders = createApi({
       query: () => "",
       providesTags: ["Orders"],
     }),
-    // detail
+    
     getOrderById: builder.query({
       query: (idOrder) => `/detail/${idOrder}`,
       providesTags: ["Orders"],
     }),
-    // orders from user
+    
     getOrderByUser: builder.query({
       query: (idUser) => `/${idUser}`,
       providesTags: ["Orders"],
     }),
-    // all orders by product
+    
     getOrderByProduct: builder.query({
       query: (idProduct) => `/product/${idProduct}`,
       providesTags: ["Orders"],
     }),
-    // revisar si será desde el body o params el idUser
+    
     createOrder: builder.mutation({
       query: (body) => ({
         url: "",
@@ -33,7 +33,7 @@ export const orders = createApi({
       }),
       invalidatesTags: ["Orders"],
     }),
-    // admin, actualizar estado del envío
+  
     updateOrder: builder.mutation({
       query: ({ idOrder, ...body }) => ({
         url: `/${idOrder}`,

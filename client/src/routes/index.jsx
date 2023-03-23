@@ -20,7 +20,6 @@ import OrdersListMap from "../modules/admin/components/order/OrdersListMap";
 import OrderDetail from "../modules/admin/components/order/orderDetail/OrderDetail";
 import UserOrders from "../pages/UserOrders";
 import OrderDetailMap from "../modules/user_orders/components/orderDetail/OrderDetailMap";
-import Loading from "../components/loading/Loading";
 
 const router = createBrowserRouter([
   {
@@ -52,10 +51,6 @@ const router = createBrowserRouter([
         path: "/accessories",
         element: <Accessories />,
       },
-      // {
-      // 	path:'/product_by_category',
-      // 	element:<ProductsByCategory/>
-      // }
       {
         path: "/product_detail/:id",
         element: <Detail />,
@@ -64,10 +59,6 @@ const router = createBrowserRouter([
         path: "/cart",
         element: <ShoppingCart />,
       },
-      // {
-      //   path: "/buynow",
-      //   element: <BuyNow />,
-      // },
       {
         path: "/wish_list",
         element: <WishList />,
@@ -84,8 +75,6 @@ const router = createBrowserRouter([
         path:'/order_detail/:idOrder',
         element: <OrderDetailMap/>
       },
-
-      // TODO: RUTAS PARA ADMIN
       {
         path: "admin",
         element: <IsAdmin />,
@@ -122,6 +111,6 @@ const router = createBrowserRouter([
     path: "/register",
     element: <Register />,
   },
-]); // va treer las rutas, es un array de rutas(obbjets)
+]);
 
 export default router;

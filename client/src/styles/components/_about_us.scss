@@ -10,7 +10,6 @@
 .about_text_para {
     text-align: justify;
     font-size: 1.25rem;
-    /*  padding: 0 15.6rem; */
     @include mixins.media-up(lg) {
         padding: 0 15.6rem;
     }
