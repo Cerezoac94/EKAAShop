@@ -1,74 +1,68 @@
 /* Component Container */
 
 .productContainer {
-    @include mixins.display(flex, row, space-evenly, center);
-    flex-wrap: wrap;
-    gap: 1rem;
-    padding: 2rem;
-    @include mixins.media-up(lg) {
-        align-items: stretch;
-    }
+	@include mixins.display(flex, row, space-evenly, center);
+	flex-wrap: wrap;
+	gap: 1rem;
+	padding: 2rem;
+	@include mixins.media-up(lg) {
+		align-items: stretch;
+	}
 }
-
 
 /* Category container */
 
 .product_drinkware_container {
-    @include mixins.display(flex, row, unset, center);
-    flex-wrap: wrap;
+	@include mixins.display(flex, row, unset, center);
+	flex-wrap: wrap;
 }
 
 a.product_item_container {
-    /*     background-color: red;  */
-    box-shadow: 0 5px 20px rgba(0, 0, 0, .3);
-    border-radius: 1rem;
-    @include mixins.display(flex, column, unset, center);
-    width: 45%;
-    margin: 1rem 0;
-    @include mixins.media-up(md) {
-        width: 30%;
-    }
-    @include mixins.media-up(lg) {
-        width: 20%;
-    }
-    @include mixins.media-up(lg) {
-        justify-content: space-evenly
-    }
+	/*     background-color: red;  */
+	box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+	border-radius: 1rem;
+	@include mixins.display(flex, column, unset, center);
+	width: 45%;
+	margin: 1rem 0;
+	@include mixins.media-up(md) {
+		width: 30%;
+	}
+	@include mixins.media-up(lg) {
+		width: 20%;
+	}
+	@include mixins.media-up(lg) {
+		justify-content: space-evenly;
+	}
 }
 
 img.product_image {
-    @include mixins.images(80%, auto);
-    padding: 1em;
+	@include mixins.images(80%, auto);
+	padding: 1em;
 }
 
 label.product_item_name {
-    @include mixins.labels($main_dark, 1.5rem, 600, 1rem 0 0, unset, unset);
-    @include mixins.media-up(lg) {
-        font-size: 1rem;
-    }
-    /* text-align: center; */
-    /*   white-space: nowrap;
-    -webkit-line-clamp: 1; */
-    /*    white-space: nowrap;
-    overflow: hidden; */
-    /*   text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
-    -webkit-line-clamp: 1; */
-    /*   width: 100px;
-    display: -webkit-box;
-    -webkit-box-orient:horizontal;
-    -webkit-line-clamp: 1;
-    overflow: hidden; */
-    margin-right: 5rem;
-    text-align: start;
-    width: 45%;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    -webkit-line-clamp: 1;
+	@include mixins.media-up(md) {
+		font-size: 1rem;
+	}
+    color: $main_dark;
+    font-weight: 600;
+	font-size: 1.6rem;
+	margin-right: 1rem;
+	text-align: right;
+	width: 80%;
+    padding-top: 1rem;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	-webkit-line-clamp: 1;
 }
 
 label.product_item_price {
-    @include mixins.basic_fonts($secondary_background, 1.4rem, unset, 1rem, unset);
+	@include mixins.basic_fonts(
+		$secondary_background,
+		1.4rem,
+		unset,
+		1rem,
+		unset
+	);
 }
