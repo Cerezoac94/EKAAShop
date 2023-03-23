@@ -78,7 +78,9 @@
     font-size: $fn-size;
 }
 
+
 /* Refactor buttons */
+
 //primary_btn
 @mixin primary-btn {
     background-color: variables.$bg_btn1;
@@ -93,13 +95,24 @@
     cursor: pointer;
 }
 
-
 @mixin secondary-btn {
     background-color: variables.$secondary_background;
     border: none;
     border-radius: 4px;
     color: variables.$color10;
     width: 100%;
+    padding: 0.5rem 2rem;
+    font-size: 0.6rem;
+    text-transform: uppercase;
+    transition: background-color 0.1s ease-in-out;
+    cursor: pointer;
+}
+
+@mixin third-btn {
+    background-color: variables.$secondary_background;
+    border: none;
+    border-radius: 4px;
+    color: variables.$color10;
     padding: 0.5rem 2rem;
     font-size: 0.6rem;
     text-transform: uppercase;
@@ -120,7 +133,6 @@
     cursor: pointer;
 }
 
-
 @mixin button-hover($bg-color, $fn-color) {
     &:hover {
         cursor: pointer;
@@ -137,14 +149,15 @@
 }
 
 //images
-@mixin images($width:unset, $height:unset){
-    width:$width ;
+@mixin images($width:unset, $height:unset) {
+    width: $width;
     height: $height;
 }
 
+
 /* Labels */
 
-@mixin labels($color,$fs:unset,$fw:unset,$margin:unset,$padding,$width:unset){
+@mixin labels($color, $fs:unset, $fw:unset, $margin:unset, $padding, $width:unset) {
     color: $color;
     font-size: $fs;
     font-weight: $fw;
@@ -154,7 +167,7 @@
 }
 
 //basic_fonts
-@mixin basic_fonts($color,$fs:unset,$margin:unset,$padding:unset,$txA:unset){
+@mixin basic_fonts($color, $fs:unset, $margin:unset, $padding:unset, $txA:unset) {
     color: $color;
     font-size: $fs;
     margin: $margin;
@@ -163,7 +176,7 @@
 }
 
 //sections
-@mixin sections($w:unset,$m:unset, $p:unset,$b:unset, $br:unset){
+@mixin sections($w:unset, $m:unset, $p:unset, $b:unset, $br:unset) {
     width: $w;
     margin: $m;
     padding: $p;
@@ -172,10 +185,10 @@
 }
 
 //Forms_inputs
-@mixin form-inputs($fs,$color,$w,$m,$p,$b,$br,$bxS,$bg){
+@mixin form-inputs($fs, $color, $w, $m, $p, $b, $br, $bxS, $bg) {
     font-size: $fs;
     color: $color;
-    width: $w; 
+    width: $w;
     margin: $m;
     padding: $p;
     border: $b;
