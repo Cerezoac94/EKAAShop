@@ -10,7 +10,7 @@ const WishListMap = ({ me }) => {
       <Loading/>
     ) : (
       <Container className="wish_item_section">
-		<label className="wish_header">#WishList</label>
+		<label className="wish_header">#Lista de Deseos</label>
         {results?.results?.Products?.map((p) => (
           <WishCart p={p} title={"Wish"} me={me} key={p.id} />
         ))}

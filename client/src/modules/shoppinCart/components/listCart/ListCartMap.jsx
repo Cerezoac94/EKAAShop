@@ -19,7 +19,7 @@ const ListCartMap = ({ me }) => {
 		<Loading/>
 	) : (
 		<section className="listCart">
-			<label className="wish_header">#Cart</label>
+			<label className="wish_header">#Carrito</label>
 			{results?.results?.Products.map((p) => (
 				<WishCart p={p} title={"Cart"} me={me} key={p.id} />
 			))}

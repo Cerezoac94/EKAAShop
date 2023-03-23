@@ -24,7 +24,7 @@ const CancelOrder = ({ idOrder }) => {
   return (
     <section className="cancel_order_button">
       <Button onClick={() => submit(idOrder)} className="cancel_user_order">
-        Cancel order
+        Cancelar Orden
       </Button>
     </section>
   );

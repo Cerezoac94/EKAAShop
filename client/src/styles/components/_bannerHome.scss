@@ -24,7 +24,7 @@
 
   &__oferta {
     @include mixins.display(flex, column, space-evenly, center);
-    height: 60%;
+    height: 95%;
   }
   &__des {
     font-size: 1.5rem;

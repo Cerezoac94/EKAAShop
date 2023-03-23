@@ -62,7 +62,7 @@ const ProductDetail = ({ p }) => {
         )}
 
         <div className="quantity_dropdown">
-          <h5>Quantity aviable: {p.stock}</h5>
+          <h5>Cantidad disponible: {p.stock}</h5>
           <section>
             {p.stock <= 0 ? undefined : !error ? (
               <AddToCart p={p} me={me.result.id} />
@@ -74,7 +74,7 @@ const ProductDetail = ({ p }) => {
       </section>
 
       <section className="might_like_swiper_section">
-        <label className="subtitle_label">You might also like</label>
+        <label className="subtitle_label">Podría Gustarte!</label>
         <InterestYouSwiper />
       </section>
     </Container>
