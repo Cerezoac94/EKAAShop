@@ -11,10 +11,6 @@ const ProductsMap = () => {
 	) : isLoading ? (
 		<Loading/>
 	) : (
-		// <section className="productContainer">
-		// {results?.results?.map((product) => <Product product={product} key={product.id}/>)}
-		// </section>
-
 		<FilterProducts products={results?.results}/>
 	);
 };
