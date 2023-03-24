@@ -47,3 +47,7 @@
   @include mixins.laptop-view(602px, unset);
     @include mixins.desktop-view(950px, unset);
 }
+
+.keepBuyingSection {
+  margin-top: 5rem;
+}
