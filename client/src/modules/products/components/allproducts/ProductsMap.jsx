@@ -1,6 +1,7 @@
 import Loading from "../../../../components/loading/Loading";
 import { useGetAllProductsQuery } from "../../../../redux/service/product.service";
-import Product from "../presentacional/Product";
+import FilterProducts from "../filterProducts/FilterProducts";
+// import Product from "../presentacional/Product";
 
 const ProductsMap = () => {
 	const { data: results = [], isLoading, error } = useGetAllProductsQuery();
@@ -10,9 +11,11 @@ const ProductsMap = () => {
 	) : isLoading ? (
 		<Loading/>
 	) : (
-		<section className="productContainer">
-		{results?.results?.map((product) => <Product product={product} key={product.id}/>)}
-		</section>
+		// <section className="productContainer">
+		// {results?.results?.map((product) => <Product product={product} key={product.id}/>)}
+		// </section>
+
+		<FilterProducts products={results?.results}/>
 	);
 };
 

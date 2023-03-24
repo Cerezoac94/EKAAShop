@@ -5,7 +5,6 @@ import authMe from "../../middleware/authMe.js";
 const userRoutes = Router();
 
 userRoutes.post("/", UserController.createUser);
-// userRoutes.get("/all", UserController.getAllUser); //NO SE USARÁ ESTÉ ENDPOINT
 userRoutes.use(authMe);
 userRoutes.get("/:id", UserController.getUserById);
 userRoutes.put("/:id", UserController.updateUser);

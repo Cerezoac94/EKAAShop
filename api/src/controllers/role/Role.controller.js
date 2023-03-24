@@ -1,7 +1,7 @@
 import { Role } from "../../models/index.js";
 
 class RoleController {
-  // CREATE
+  
   static async createRole(req, res){
     try {
       const {name} = req.body
@@ -20,7 +20,7 @@ class RoleController {
     }
   }
 
-  // GET ALL
+  
   static async getAllRoles(req, res){
     try {
       const results = await Role.findAll()

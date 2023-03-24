@@ -1,6 +1,7 @@
 import Loading from "../../../../components/loading/Loading";
 import { useGetProductByCategoryQuery } from "../../../../redux/service/product.service";
-import Product from "../presentacional/Product";
+import FilterProducts from "../filterProducts/FilterProducts";
+// import Product from "../presentacional/Product";
 
 const ProductsByCategoryMap = ({ category }) => {
   const {
@@ -9,17 +10,18 @@ const ProductsByCategoryMap = ({ category }) => {
     error,
   } = useGetProductByCategoryQuery(category);
 
-  // return <h3>drinkware</h3>
   return error ? (
     <h3>{error?.data?.message}</h3>
   ) : isLoading ? (
     <Loading/>
   ) : (
-    <section className="productContainer">
-      {results?.results?.map((p) => (
-        <Product product={p} key={p.id} />
-      ))}
-    </section>
+    // <section className="productContainer">
+    //   {results?.results?.map((p) => (
+    //     <Product product={p} key={p.id} />
+    //   ))}
+    // </section>
+
+    <FilterProducts products={results?.results}/>
   );
 }
 export default ProductsByCategoryMap

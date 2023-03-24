@@ -1,10 +1,10 @@
 //login_false
-
 //user_menu_btn
 .user_menu_btn {
     background: none;
     border: none;
 }
+
 .btn.user_menu_btn:hover {
     background-color: $color5;
     border-color: none;
@@ -17,15 +17,15 @@
     justify-content: center;
     background: none;
 }
+
 a.user_menu_login_btn.btn.btn-primary {
-/*     width: 100%;
-    background-color: $secondary_background;
-    border: none;
-    margin: 0.5rem 0;
-    font-size: 1.125rem; */
     @include mixins.secondary-btn;
     margin: 1rem 0;
-    @include mixins.button-hover($main_fonts,$color10);
+    @include mixins.button-hover($main_fonts, $color10);
+}
+
+.login {
+    @include mixins.four-btn;
 }
 
 .user_menu_register {
@@ -35,40 +35,61 @@ a.user_menu_login_btn.btn.btn-primary {
 .popover-body {
     padding: 0.313rem;
     font-size: 1rem;
+    width: 14rem;
+    font-weight: 700;
 }
 
 .user_menu_links {
     padding-left: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    ion-icon {
+        color: #224F63;
+        font-size: 1.3rem;
+    }
+}
+
+a:hover {
+    color: #3C99BA;
+    ;
+}
+
+ion-icon:hover {
+    color: #3C99BA;
+    ;
 }
 
 .user_menu_item {
     margin: 1rem 0;
     cursor: pointer;
+    display: flex;
+    gap: 0.5rem;
+    color: #224F63;
 }
-
 
 //login_true
 .logged_user_menu_header {
     display: flex;
-    flex-direction:row;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
     background: none;
     padding: 0.938rem 0.625rem;
 }
+
 .user_menu_photo {
     width: 40%;
 }
 
 .user_greeting {
     display: flex;
-    flex-direction:column;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
 .user_name_label,
-.role_span { 
+.role_span {
     color: $main_fonts;
 }
 
@@ -76,6 +97,25 @@ a.user_menu_login_btn.btn.btn-primary {
     font-size: 1.125rem;
     font-weight: 600;
 }
+
 .role_span {
     font-size: 0.875rem;
+    flex-direction: column;
+    display: flex;
+    text-align: center;
+}
+
+.hr {
+    margin: 0 0;
+    color: #ABB2B9;
+}
+
+.hr:hover {
+    color: #3C99BA;
+}
+
+.logout {
+    margin: auto;
+    font-weight: 800;
+    color: #224F63;
 }

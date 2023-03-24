@@ -11,18 +11,17 @@ import {
 } from "../../models/index.js";
 
 class OrderController {
-  //CREATE ORDER
   static async createOrder(req, res) {
     try {
       const id = req.body.id;
-      // encontrar carrito del usuario
+
       const cart = await Cart.findOne({
         where: {
           idUser: id,
         },
       });
       if (!cart) throw "Error finding cart";
-      // guardar detalle del carrito
+
       const cartProducts = await CartProduct.findAll({
         where: {
           idCart: cart.id,
@@ -31,14 +30,13 @@ class OrderController {
       console.log("cartProduct", cartProducts);
       if (!cartProducts.length)
         throw "There are no products to add to the order";
-      // comprobar stock suficiente
-      // Verificamos si los productos tienen suficiente stock
+
       for (const cartProduct of cartProducts) {
         const product = await Product.findByPk(cartProduct.idProduct);
         if (parseInt(product.stock) < parseInt(cartProduct.quantity))
           throw "Uno o más productos no tienen suficiente stock";
       }
-      // Creamos la orden
+
       const order = await Order.create({
         idUser: cart.idUser,
         paid: true,
@@ -47,13 +45,11 @@ class OrderController {
       });
       if (!order) throw "The order is not created";
 
-      // Calcular total y creación del detalle de la orden
       let total = 0;
       for (const cartProduct of cartProducts) {
         const product = await Product.findByPk(cartProduct.idProduct);
         let productPrice = product.price;
 
-        // Buscar descuento y aplicarlo si existe
         const discount = await Discount.findOne({
           where: {
             idProduct: cartProduct.idProduct,
@@ -65,7 +61,7 @@ class OrderController {
             productPrice *= 1 - discount.discount / 100;
           }
         }
-        // crear detalle de orden
+
         await OrderDetail.create({
           idOrder: order.id,
           idProduct: cartProduct.idProduct,
@@ -79,17 +75,9 @@ class OrderController {
       }
 
       order.update({
-        total
-      })
+        total,
+      });
 
-      // const orderDetail = await OrderDetail.findOne({
-      //   where:{idOrder: order.id }
-      // })
-      // orderDetail.update({
-      //   total
-      // })
-
-      // Eliminar productos del carrito
       await CartProduct.destroy({
         where: {
           idCart: cart.id,
@@ -110,12 +98,12 @@ class OrderController {
     }
   }
 
-  //Esto es vista para el admin
+  
   static async getAllOrders(req, res) {
     try {
       const results = await Order.findAll({
         include: [
-          // NumOrden, Quien la hizo, fecha Orden, total de la order, status
+          
           {
             model: OrderDetail,
             attributes: ["idProduct", "quantity", "unitPrice"],
@@ -142,10 +130,10 @@ class OrderController {
     }
   }
 
-  //Filtrar todas las ordenes de un producto en especifico
+  
   static async getOrdersByProduct(req, res) {
     try {
-      //Se obtiene el id del producto para filtrar sus ordenes
+      
       const { idProduct } = req.params;
 
       const results = await OrderDetail.findAll({
@@ -184,7 +172,7 @@ class OrderController {
     }
   }
 
-  // GET ORDER BY IDUSER
+  
   static async getOrderByUser(req, res) {
     try {
       const { idUser } = req.params;
@@ -221,8 +209,7 @@ class OrderController {
     }
   }
 
-  // GET BY ID ORDER (detail order)
-  // REVIEW: analizar y corregir los atributos a devolver que verá el admin
+  
   static async getOrderById(req, res) {
     try {
       const { idOrder } = req.params;
@@ -230,27 +217,28 @@ class OrderController {
         where: {
           id: idOrder,
         },
-        attributes: ["id","orderDate","shipmentState"],
-        include: [{
-          model: User,
-          attributes: ["firstName", "lastName", "phone", "adress"]
-        },
-        {
-          model: OrderDetail,
-          attributes: ["quantity", "unitPrice"],
-          include: [
-            {
-              model: Product,
-              attributes: ["name", "image"],
-              include: [
-                {
-                  model: Category,
-                  attributes: ["name"],
-                },
-              ],
-            },
-          ],
-        },
+        attributes: ["id", "orderDate", "shipmentState"],
+        include: [
+          {
+            model: User,
+            attributes: ["firstName", "lastName", "phone", "adress"],
+          },
+          {
+            model: OrderDetail,
+            attributes: ["quantity", "unitPrice"],
+            include: [
+              {
+                model: Product,
+                attributes: ["name", "image"],
+                include: [
+                  {
+                    model: Category,
+                    attributes: ["name"],
+                  },
+                ],
+              },
+            ],
+          },
         ],
       });
       if (!results) throw "No order aviable";
@@ -266,7 +254,7 @@ class OrderController {
       });
     }
   }
-  //Esto puede que se quite
+  
   static async updateOrder(req, res) {
     try {
       const { shipmentState } = req.body;
@@ -293,7 +281,7 @@ class OrderController {
       });
     }
   }
-  //listado de ordenes, se cancela unicamente si el estatus es 'no enviado'
+  
   static async deleteOrder(req, res) {
     try {
       const { idOrder } = req.params;
@@ -304,27 +292,27 @@ class OrderController {
           id: idOrder,
         },
       });
-      //Con la orden encontrada se valida el shipmentState
+      
       if (order.shipmentState === "enviado") {
-        throw ("Only can cancel orders with a 'no enviado' status");
+        throw "Only can cancel orders with a 'no enviado' status";
       }
 
-      //Se busca el detalle de la orden
+      
       const orderDetail = await OrderDetail.findAll({
         where: {
           idOrder: idOrder,
         },
       });
 
-      //Se itera sobre la orderDetail
+      
       for (const detail of orderDetail) {
-        //En la ordenDetail se encuentra el producto a afectar
+        
         const producto = await Product.findOne({
           where: {
             id: detail.idProduct,
           },
         });
-        // se afecta el stock del producto
+        
         await Product.update(
           {
             stock: detail.quantity + producto.stock,
@@ -355,10 +343,9 @@ class OrderController {
     }
   }
 
-  // desde el detalle de la orden
+  
   static async deleteProductOrder(req, res) {
-    // idOrder y idProduct desde params
-    // quantity desde body
+    
     try {
       const { idOrder, idProduct } = req.params;
       const { quantity } = req.body;
@@ -371,7 +358,7 @@ class OrderController {
         },
       });
       if (quantity > order.quantity) {
-        throw("The quantity is greater than the one registered in the order");
+        throw "The quantity is greater than the one registered in the order";
       }
       const product = await Product.findOne({
         where: {

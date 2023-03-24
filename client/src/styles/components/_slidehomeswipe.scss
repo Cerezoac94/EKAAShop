@@ -9,7 +9,7 @@
 .slide {
   display: flex;
   width: 100%;
-  // justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
 
   @media (min-width: 768px) {
@@ -28,7 +28,6 @@
   &__nameProduct {
     display: flex;
     flex-direction: column;
-    // width: 30vw;
     height: 5vh;
     justify-content: space-evenly;
 

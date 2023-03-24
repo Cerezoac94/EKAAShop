@@ -123,20 +123,6 @@ const BasicUserInfo = ({ user }) => {
           </InputGroup>
         </Form.Group>
 
-        {/* REVIEW: actualizar contraseña */}
-        {/* <Form.Group className="profile_info">
-					<Form.Label className="input_label">
-						Password
-					</Form.Label>
-					<InputGroup className="mb-3 profile_input_group">
-						<Form.Control
-							type="password"
-							defaultValue={"4"}
-							className="profile_input"
-						/>
-					</InputGroup>
-				</Form.Group> */}
-
         <Form.Group className="profile_info">
           <Form.Label className="input_label">Birthday</Form.Label>
           <InputGroup className="mb-3 profile_input_group">

@@ -12,7 +12,6 @@ const HomeContainer = () => {
   return (
 
     <>
-      {/* <SlideHomeMap/> */}
       <SlideHomeSwipeMap/>
       <Warranty/>
       <InterestYouSwiper/>
