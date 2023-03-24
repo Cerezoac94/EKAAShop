@@ -1,10 +1,9 @@
 //Mobile
 header {
-  display: flex;
-
-  flex-direction: column;
-  justify-content: center;
-  background-color: $secondary_background;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: $secondary_background;
 }
 
 //navbar_styles
@@ -94,9 +93,8 @@ img.logo {
 //Links
 a,
 a:visited {
-
-  text-decoration: none;
-  color: $main_fonts;
+    text-decoration: none;
+    color: $main_fonts;
 }
 
 a.nav_menu_links {
@@ -127,20 +125,19 @@ a.nav_menu_links {
 }
 
 @media only screen and (min-width: 768px) {
-  //Offcanvas
-  .offcanvas-body{
-    justify-content: flex-end;
-  }
-
-  .offcanvas-header{
-    width: 150px !important;
-  }
-
-  .navbar-nav {
-    width: 100%;
-    align-items: center;
-    justify-content: space-evenly;
-    font-size: 0.875rem;
+    //Offcanvas
+    .offcanvas-body {
+        justify-content: flex-end;
+    }
+    .offcanvas-header {
+        width: 150px !important;
+    }
+    .navbar-nav {
+        width: 100%;
+        align-items: center;
+        justify-content: space-evenly;
+        font-size: 0.875rem;
+    }
 }
 
 @media only screen and (min-width: 768px) {
