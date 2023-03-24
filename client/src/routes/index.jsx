@@ -20,12 +20,13 @@ import OrdersListMap from "../modules/admin/components/order/OrdersListMap";
 import OrderDetail from "../modules/admin/components/order/orderDetail/OrderDetail";
 import UserOrders from "../pages/UserOrders";
 import OrderDetailMap from "../modules/user_orders/components/orderDetail/OrderDetailMap";
+import Error from "../pages/Error";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
-    errorElement: <h1>error</h1> ,
+    errorElement: <Error/>,
     children: [
       {
         path: "/",
