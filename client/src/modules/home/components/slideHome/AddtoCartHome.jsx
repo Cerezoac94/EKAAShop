@@ -8,7 +8,8 @@ const AddtoCartHome = ({ p, me }) => {
   const { register, handleSubmit, reset } = useForm();
 
   const submit = (e) => {
-    me ? addToCart({ id: me, idProduct: p, ...e })
+    me
+      ? addToCart({ id: me, idProduct: p, ...e })
       : Swal.fire({
           position: "top",
           icon: "error",
@@ -26,7 +27,6 @@ const AddtoCartHome = ({ p, me }) => {
         showConfirmButton: false,
         timer: 1000,
       });
-
   }, [data]);
 
   return (
