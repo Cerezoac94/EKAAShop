@@ -2,15 +2,12 @@ import ProductsMap from "./components/allproducts/ProductsMap";
 import ProductsByCategoryMap from "./components/productsByCategoryMap/ProductsByCategoryMap";
 
 export const AllProductsContainer = () => {
-  return (
-    <ProductsMap />
-  );
+  return <ProductsMap />;
 };
 
 export const DrinkwareContainer = () => {
-  return (
-    <ProductsByCategoryMap category={ 1 } />
-  );
+  return <ProductsByCategoryMap category={ 1 } />;
+ 
 };
 
 export const CoolerContainer = () => {
