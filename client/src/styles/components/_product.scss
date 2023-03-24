@@ -1,4 +1,25 @@
 /* Component Container */
+.filter {
+	padding-top: 1.6rem;
+	@include mixins.display(flex, unset, center, center);
+	@include mixins.media-up(md) {
+		font-size: 1rem;
+		padding-top: 1.4rem;
+	}
+	@include mixins.media-up(xl) {
+		padding-top: 1.8rem;
+		font-size: 1.4rem;
+	}
+}
+.filterSelect {
+	width: fit-content;
+	padding: .8rem;
+	margin-left: .5rem;
+	border: 1.5px solid lightgrey;
+	border-radius: .5rem;
+  outline: none;
+	box-shadow: 0px 0px 20px -18px;
+}
 
 .productContainer {
 	@include mixins.display(flex, row, space-evenly, center);
@@ -9,6 +30,8 @@
 		align-items: stretch;
 	}
 }
+
+
 
 /* Category container */
 
@@ -43,16 +66,16 @@ label.product_item_name {
 	@include mixins.media-up(md) {
 		font-size: 1rem;
 	}
-    @include mixins.media-up(xl) {
+	@include mixins.media-up(xl) {
 		font-size: 1.4rem;
 	}
-    color: $main_dark;
-    font-weight: 600;
+	color: $main_dark;
+	font-weight: 600;
 	font-size: 1.6rem;
 	margin-right: 1rem;
 	text-align: right;
 	width: 80%;
-    padding-top: 1rem;
+	padding-top: 1rem;
 	white-space: nowrap;
 	overflow: hidden;
 	text-overflow: ellipsis;
