@@ -16,7 +16,16 @@ const HomeContainer = () => {
       <Warranty/>
       <InterestYouSwiper/>
       <BannerOffersCont/>
-      <ReviewsClientMap/>
+      <div className="review">
+        <h2>Reseñas</h2>
+        <ion-icon color="warning" name="star"></ion-icon>
+        <ion-icon color="warning" name="star"></ion-icon>
+        <ion-icon color="warning" name="star"></ion-icon>
+        <ion-icon color="warning" name="star"></ion-icon>
+        <ion-icon color="warning" name="star"></ion-icon>
+        <ReviewsClientMap/>
+      </div>
+    
      { isLoading ? ( <Loading/>
      ) : ( !error && <KeepBuyingMap me={me.result.id}/> ) }
 </>
