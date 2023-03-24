@@ -1,4 +1,3 @@
-import InterestYouSwiper from "./components/interestYou/InterestYouSwiper"
 import KeepBuyingMap from "./components/keepBuying/KeepBuyingMap"
 import Warranty from "./components/warranty/Warranty"
 import { useMeQuery } from "../../redux/service/session.service"
@@ -6,6 +5,7 @@ import Loading from "../../components/loading/Loading"
 import SlideHomeSwipeMap from "./components/slideHome/SlideHomeSwipeMap"
 import BannerOffersCont from "./components/bannerOffers/BannerOffersCont"
 import ReviewsClientMap from "./components/reviewsClient/ReviewsClientMap"
+import InterestYouSwiperCont from "./components/interestYou/InterestYouSwiperCont"
 
 const HomeContainer = () => {
   const { data: me, isLoading, error } = useMeQuery()
@@ -14,7 +14,7 @@ const HomeContainer = () => {
     <>
       <SlideHomeSwipeMap/>
       <Warranty/>
-      <InterestYouSwiper/>
+      <InterestYouSwiperCont/>
       <BannerOffersCont/>
       <ReviewsClientMap/>
      { isLoading ? ( <Loading/>
