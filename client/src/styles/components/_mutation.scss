@@ -5,7 +5,7 @@
 .mutation {
     @include mixins.display(flex, column, unset, center);
     width: 100vw;
-    /* height: 80vh; */
+    /* height: 80vh ; */
 
     &__container {
         @include mixins.display(flex, column, space-between, unset);
