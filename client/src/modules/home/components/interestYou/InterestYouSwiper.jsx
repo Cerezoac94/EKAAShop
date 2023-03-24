@@ -1,13 +1,12 @@
 import { Link } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination } from "swiper";
-import Loading from "../../../../components/loading/Loading";
+import { Pagination } from "swiper";;
 import "swiper/css";
 import "swiper/css/pagination";
 
 const InterestYouSwiper = ({ interest }) => {
   
-  return interest.length != 0 && (
+  return (
     <section className="interestSection">
       <Swiper
         breakpoints={{
@@ -31,7 +30,7 @@ const InterestYouSwiper = ({ interest }) => {
         modules={[Pagination]}
         className="mySwiper"
       >
-        {interest.slice(0, 10).map((e) => {
+        {interest?.slice(0, 10).map((e) => {
           return (
             <SwiperSlide key={e.id}>
               <section className="interestCont">

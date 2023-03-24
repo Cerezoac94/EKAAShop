@@ -4,7 +4,7 @@ import Image from "react-bootstrap/Image";
 import Swal from "sweetalert2";
 import { useMeQuery } from "../../../redux/service/session.service";
 import { useAddProductWishMutation } from "../../../redux/service/wish.service";
-import InterestYouSwiper from "../../home/components/interestYou/InterestYouSwiper";
+import InterestYouSwiperCont from "../../home/components/interestYou/InterestYouSwiperCont";
 import AddToCart from "../../shoppinCart/components/Cart/AddToCart";
 
 const ProductDetail = ({ p }) => {
@@ -75,7 +75,7 @@ const ProductDetail = ({ p }) => {
 
       <section className="might_like_swiper_section">
         <label className="subtitle_label">Podría Gustarte!</label>
-        <InterestYouSwiper />
+        <InterestYouSwiperCont/>
       </section>
     </Container>
   );
