@@ -99,9 +99,12 @@ a:visited {
 
 a.nav_menu_links {
     margin: 0.625rem 0;
-    font-weight: 700;
+/*     font-weight: 700; */
 }
-
+a.nav_menu_links:hover{
+    color: $color10;
+    font-weight: 600;
+}
 .nav-link {
     color: $main_fonts;
     margin: 1rem 0;

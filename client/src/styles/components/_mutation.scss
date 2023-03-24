@@ -2,37 +2,56 @@
 @use '../abstracts/mixins';
 
 
-.mutation{
-    @include mixins.display(flex, column,unset, center);
+.mutation {
+    @include mixins.display(flex, column, unset, center);
     width: 100vw;
-    height: 80vh; 
-    
-    &__container{
+    /* height: 80vh ; */
+
+    &__container {
         @include mixins.display(flex, column, space-between, unset);
         width: 75%;
         margin-top: 5rem;
         z-index: 1;
     }
-    &__title{
+
+    &__title {
         margin-bottom: 2rem;
-        @include mixins.display(flex, row,unset)
+        @include mixins.display(flex, row, unset)
     }
-    &__name{
+
+    &__name {
 
         margin: 2rem;
     }
-    &__submit{
+
+    &__submit {
         margin: 2rem;
         @include mixins.button(unset, unset, unset, white, unset, unset, unset);
         @include mixins.display(flex, center, unset);
     }
-    &__button{
-        min-width: 100px;
-        height: 2.5rem;
-        border: none;
-        border-radius: 8px;
-        background: $secondary_background;
-        color: $main_background;
+
+    &__categoryLabel{
+        @include mixins.basic_fonts($main_fonts,2rem,0, 0, center);
+        font-weight: 600;
     }
-    
+
+    &__deleteBtn,
+    &__updateBtn {
+        @include mixins.secondary-btn;
+        font-size: 1rem;
+        width: 50%;
+        @include mixins.button-hover ($main_fonts, $color10);
+
+        @include mixins.media-up(md) {
+            width: 30%;
+            font-size: 0.8rem;
+        }
+        @include mixins.media-up(lg) {
+            width: 20%;
+        }
+        @include mixins.media-up(xl) {
+            width: 15%;
+        }
+    }
+
 }

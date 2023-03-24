@@ -54,7 +54,7 @@ console.log('data', data);
 
 			<section className="mutation__submit">
 				<button onClick={() => handleDelete(product.id)}
-					className="btn" title="Solo si el producto no existe en alguna orden o carrito">
+					className="mutation__deleteBtn" title="Solo si el producto no existe en alguna orden o carrito">
 					Eliminar
 				</button>
 			</section>

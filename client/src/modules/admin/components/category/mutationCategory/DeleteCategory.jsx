@@ -32,12 +32,12 @@ const DeleteCategory = ({ category }) => {
 			<h3 className="prop__title">Eliminar Categoría</h3>
 			<section>
 				<section className="mutation__name">
-					<li>{category?.name}</li>
+					<label className="mutation__categoryLabel">{category?.name}</label>
 				</section>
 			</section>
 
 			<section className="mutation__submit">
-				<button onClick={() => handleDelete(category.id)}className="btn">
+				<button onClick={() => handleDelete(category.id)}className="mutation__deleteBtn">
 					Eliminar
 				</button>
 			</section>

@@ -169,7 +169,7 @@ const UpdateProduct = ({ product }) => {
 					)}
 				</section>
 				<section className="mutation__submit">
-					<button className="btn">Actualizar</button>
+					<button className="mutation__updateBtn">Actualizar</button>
 				</section>
 			</form>
 		</section>
