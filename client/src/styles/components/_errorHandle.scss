@@ -1,0 +1,79 @@
+$background:#1a1a1a;
+$button:#0077d8f4;
+$font:'Gill Sans', sans-serif;
+
+.conten{
+    /* @include mixins.display(flex,column,center,unset); */
+    position: fixed;
+    width: 100%;
+    text-align: center;
+    background: $background;
+    height: 100vh;
+    &__img{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 15rem;
+        @include mixins.media-up(md){
+            margin:4rem;
+        }
+        img{
+            width: 300px;
+            display: block;
+            animation:  animates 2s linear infinite alternate;
+        }
+    }
+    &__number{
+        position: absolute;
+        font-size: 9.5rem;
+        font-family: $font;
+        font-weight: 600;
+        top: 36rem;
+        color: rgba(255,255,255,.5);
+        
+        animation:  animatestext 2s linear infinite alternate;
+
+        @include mixins.media-up(md){
+            font-size: 7rem;
+            top:16rem;
+        }
+    }
+    &__error{
+        color: #ffffff;
+        width: 50%;
+        margin: 2em auto;
+        font-family: $font;
+        font-size: 1.6rem;
+        @include mixins.media-up(md){
+            font-size: 1.4rem;
+        }
+    }
+    &__exitBtn{
+        @include mixins.primary-btn;
+        @include mixins.button-hover($secondary_background,$color10);
+    }
+}
+a.conten__exitBtn{
+    color: $color10;
+    font-size: 1.5rem;
+    @include mixins.media-up(md){
+        font-size: 1rem;
+    }
+}
+@keyframes animates{
+    0%{
+        transform: translateX(5%);
+    }
+    100%{
+        transform: translateX(-5%);
+    }
+}
+@keyframes animatestext{
+    0%{
+        transform: rotate(5deg);
+    }
+    100%{
+        transform: rotate(-5deg);
+    }
+}
