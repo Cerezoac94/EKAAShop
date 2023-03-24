@@ -18,11 +18,6 @@ const HomeContainer = () => {
       <BannerOffersCont/>
       <div className="review">
         <h2>Reseñas</h2>
-        <ion-icon color="warning" name="star"></ion-icon>
-        <ion-icon color="warning" name="star"></ion-icon>
-        <ion-icon color="warning" name="star"></ion-icon>
-        <ion-icon color="warning" name="star"></ion-icon>
-        <ion-icon color="warning" name="star"></ion-icon>
         <ReviewsClientMap/>
       </div>
     
