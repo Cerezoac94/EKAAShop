@@ -18,10 +18,23 @@
     background: none;
 }
 
-a.user_menu_login_btn.btn.btn-primary {
+
+.user_menu_login_btn.btn.btn-primary {
     @include mixins.secondary-btn;
     margin: 1rem 0;
     @include mixins.button-hover($main_fonts, $color10);
+   
+}
+.user_menu_logout_btn {
+    @include mixins.secondary-btn;
+    margin: 1rem 0;
+    @include mixins.button-hover($main_fonts, $color10);
+    width: 70%;
+}
+
+section.user_menu_links{
+    @include mixins.display(flex, row, center, unset);
+    
 }
 
 .login {
