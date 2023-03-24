@@ -143,6 +143,10 @@
         width: 70vw;
         height: 34vh;
     }
+    @include mixins.media-up(xxxl) {
+        width: 70vw;
+        height: 44vh;
+    }
     &__contImg {
         @include mixins.display(flex, column, space-around, center);
         width: 45%;
